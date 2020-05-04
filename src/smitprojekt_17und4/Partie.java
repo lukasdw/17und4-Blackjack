@@ -29,8 +29,8 @@ public class Partie {
         String lineTemp = "";
         try (BufferedReader br = new BufferedReader(new FileReader("Karten (png)/deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
-                String[] zeile = lineTemp.split(";");
-                this.deck.add(new Karte(Integer.parseInt(zeile[0]), zeile[1], zeile[2]));
+                String[] spalte = lineTemp.split(";");
+                this.deck.add(new Karte(Integer.parseInt(spalte[0]), spalte[1], spalte[2], spalte[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
