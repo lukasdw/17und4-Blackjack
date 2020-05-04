@@ -11,16 +11,20 @@ public class Partie {
     // Am Anfang jedes Spiels muss es mindestens zwei Spieler geben. Den Bänker und den Spieler
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    public Partie() {
-        deckEinlesen();
+    // Dies ist der Pool dem der Spieler pro Runde, Geld hinzufügen kann.
+    private int einsatzPool;
+
+    public Partie(){
     }
 
     // Hier wird ein Spieler hinzugefügt. Am Anfang muss man seinen Namen angeben.
-    public void spielerHinzufuegen() throws IOException {
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Geben Sie ihren Namen ein.");
-        String name = input.readLine();
-        this.spieler.add(new Spieler(name));
+    public void spielerHinzufuegen(int anzahlSpieler) throws IOException {
+        for (int i = 0; i < anzahlSpieler; i++) {
+            BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Geben Sie ihren Namen ein.");
+            String name = input.readLine();
+            this.spieler.add(new Spieler(name));
+        }
     }
 
     /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
@@ -35,9 +39,5 @@ public class Partie {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    /* Falls eine Karte nicht mehr im Spiel ist, wird diese Funktion aufgerufen */
-    public void karteEntfernen() {
     }
 }
