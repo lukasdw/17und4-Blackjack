@@ -43,11 +43,9 @@ public class Spieler {
     }
 
     // Der Einsatz wird eingelesen und dem einsatzPool hinzugefügt
-    public int einsatzSetzen(int einsatzPool) throws IOException {
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Geben Sie ihren Einsatz ein.");
-        this.einsatz = Integer.parseInt(input.readLine());
-        this.einsatz = +einsatzPool;
+    public int einsatzSetzen(int einsatzPool, int einsatz) throws IOException {
+        this.einsatz = einsatz;
+        einsatzPool =+ this.einsatz;
         return einsatzPool;
     }
 
