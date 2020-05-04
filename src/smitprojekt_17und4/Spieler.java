@@ -5,12 +5,20 @@ import java.util.ArrayList;
 public class Spieler {
 
     // Jeder Spieler bekommt am Anfang einen Einsatz von 10.
+    private String name;
     private int kontostand = 10;
-    private int punktestand;
+    private int punktestand = 0;
     private int einsatz;
     
+    // Es können belibig viel Karten gezogen werden.
     ArrayList<Karte> hand = new ArrayList<Karte>();
     private int handPunkte;
+    
+    /*Der Name wird direkt vergeben. Automatisch bekommt der Spieler, 10 Punkte
+    auf sein Kontostand und einen Punktstand von 0 Punkten */
+    public Spieler(String name){
+        this.name = name;
+    }
 
     public int getKontostand() {
         return kontostand;
