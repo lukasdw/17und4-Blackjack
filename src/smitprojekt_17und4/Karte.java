@@ -7,7 +7,7 @@ public class Karte {
     private String farbe;
     private String bilderPfad;
 
-    public Karte(int wert, String name, String farbe, String bilderPfad) {
+    public Karte(String name, int wert, String farbe, String bilderPfad) {
         this.farbe = farbe;
         this.name = name;
         this.wert = wert;

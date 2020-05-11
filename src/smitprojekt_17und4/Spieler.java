@@ -7,23 +7,23 @@ import java.util.ArrayList;
 
 public class Spieler {
 
-    // Jeder Spieler bekommt am Anfang einen Einsatz von 10.
+    /* Jeder Spieler bekommt am Anfang einen Einsatz von 10. */
     private String name;
 
-    /*Der Name wird direkt vergeben. Automatisch bekommt der Spieler, 10 Punkte
+    /* Der Name wird direkt vergeben. Automatisch bekommt der Spieler, 10 Punkte
     auf sein Kontostand */
     private int kontostand = 10;
 
     /* Der Kontostand ist zu aller Anfang auf 0 gesetzt */
     private int punktestand = 0;
-    private int einsatz;
+    private int einsatz = 0;
 
-    // Es können belibig viel Karten gezogen werden.
+    /* Es können belibig viel Karten gezogen werden. */
     ArrayList<Karte> hand = new ArrayList<Karte>();
-    private int handPunkte;
+    private int handPunkte = 0;
 
     public Spieler(String name) {
-        // Der Spieler benötigt immer einen Namen, mit dem er angesprochen wird.
+        /* Der Spieler benötigt immer einen Namen, mit dem er angesprochen wird. */
         this.name = name;
     }
 
@@ -32,23 +32,24 @@ public class Spieler {
         int zufallszahl = (int) (Math.random() * deck.size()) + 0;
 
         /* Diese Karte wird nun auf die Hand des Spielers bewegt */
-        hand.add(deck.get(zufallszahl));
-
-        /* Die Wertigkeit der aktuellen Hand wird errechnet */
-        handPunkte = +hand.get(zufallszahl).getWert();
-
+        this.hand.add(deck.get(zufallszahl));
+        
         /* Die gezogene Karte muss aus dem Deck entfernt werden, da sie nun
         auf der Hand des Spielers ist */
         deck.remove(zufallszahl);
+
+        /* Die Wertigkeit der aktuellen Hand wird errechnet */
+        handPunkte =+ hand.get(zufallszahl).getWert();
     }
 
-    // Der Einsatz wird eingelesen und dem einsatzPool hinzugefügt
+    /* Der Einsatz wird eingelesen und dem einsatzPool hinzugefügt */
     public int einsatzSetzen(int einsatzPool, int einsatz) throws IOException {
         this.einsatz = einsatz;
         einsatzPool =+ this.einsatz;
         return einsatzPool;
     }
 
+    /* Getter und Setter */
     public int getKontostand() {
         return kontostand;
     }
