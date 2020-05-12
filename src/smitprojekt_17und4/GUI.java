@@ -12,6 +12,7 @@ public class GUI extends javax.swing.JFrame {
     // Konstruktor
     public GUI() {
         initComponents();
+        jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
     }
 
@@ -563,7 +564,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
     private void jTextFieldEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEinsatzActionPerformed
@@ -592,19 +593,23 @@ public class GUI extends javax.swing.JFrame {
             spielerCounter++;
             SpielernameTextField.setText("");
             SpielernameText.setText("Wie heisst Spieler " + (this.spielerCounter + 1) + "?");
-            if (spielerCounter == partie.getAnzahlSpieler()) {
-                // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
-                SpielerNameJFrame.setVisible(false);
-                jButtonKarteZiehen.setVisible(true);
-                partie.highscoreAktuallisieren(jTableHighscore);
-                for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
-                    partie.getSpieler().get(i).karteZiehen(partie.getDeck());
-                    // karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(1).getBilderPfad())));
-                    // karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(2).getBilderPfad())));
-                }
+        }
+        if (spielerCounter == partie.getAnzahlSpieler()) {
+            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
+            SpielerNameJFrame.setVisible(false);
+            jButtonStopp.setVisible(true);
+            jButtonKarteZiehen.setVisible(true);
+            partie.highscoreAktuallisieren(jTableHighscore);
+            for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
+                partie.getSpieler().get(i).karteZiehen(partie.getDeck());
+                karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
             }
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
+
+    public Partie getPartie() {
+        return partie;
+    }
 
     public static void main(String args[]) {
         try {

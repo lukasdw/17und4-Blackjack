@@ -3,9 +3,8 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import javax.swing.table.*;
 
 public class Partie {
 
@@ -17,10 +16,10 @@ public class Partie {
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
     /* Dem Einsatzpool fügt jeder Spieler pro Runde seinen Einsatz hinzu. */
-    private int einsatzPool = 0;
+    private int einsatzPool;
 
     /* Gibt die Anzahl der Spieler an */
-    private int anzahlSpieler = 0;
+    private int anzahlSpieler;
 
     // Konstruktor
     public Partie() {
@@ -39,6 +38,27 @@ public class Partie {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void spielerNamenEingeben(int spielerCounter, JTextField SpielernameTextField, JLabel SpielernameText) {
+        if (spielerCounter < anzahlSpieler) {
+            spieler.add(new Spieler(SpielernameTextField.getText()));
+            spielerCounter++;
+            SpielernameTextField.setText("");
+            SpielernameText.setText("Wie heisst Spieler " + (spielerCounter + 1) + "?");
+        }
+    }
+
+    public void einsatzSetzenAlleSpieler(JTextField jTextFieldEinsatz) {
+        for (int i = 0; i < anzahlSpieler; i++) {
+            spieler.get(i).einsatzSetzen(einsatzPool, jTextFieldEinsatz);
+        }
+    }
+
+    public void karteZiehenAlleSpieler() {
+        for (int i = 0; i < anzahlSpieler; i++) {
+            spieler.get(i).karteZiehen(deck);
         }
     }
 
