@@ -69,6 +69,8 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5 = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
 
+        AnzahlSpielerJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
+
         AnzahlSpielerText.setText("Geben Sie die Anzahl der Spieler ein.");
 
         AnzahlSpielerButton.setText("Ok");
@@ -106,22 +108,14 @@ public class GUI extends javax.swing.JFrame {
         AnzahlSpielerJFrame.getContentPane().setLayout(AnzahlSpielerJFrameLayout);
         AnzahlSpielerJFrameLayout.setHorizontalGroup(
             AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
-            .addGroup(AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(AnzahlSpielerJFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         AnzahlSpielerJFrameLayout.setVerticalGroup(
             AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 45, Short.MAX_VALUE)
-            .addGroup(AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(AnzahlSpielerJFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        SpielerNameJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
         SpielernameText.setText("Wie heisst Spieler 1?");
 
@@ -143,7 +137,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(SpielernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SpielernameButton)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         SpielerNameJPanelLayout.setVerticalGroup(
             SpielerNameJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,21 +154,11 @@ public class GUI extends javax.swing.JFrame {
         SpielerNameJFrame.getContentPane().setLayout(SpielerNameJFrameLayout);
         SpielerNameJFrameLayout.setHorizontalGroup(
             SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-            .addGroup(SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(SpielerNameJFrameLayout.createSequentialGroup()
-                    .addGap(0, 4, Short.MAX_VALUE)
-                    .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 5, Short.MAX_VALUE)))
+            .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         SpielerNameJFrameLayout.setVerticalGroup(
             SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 45, Short.MAX_VALUE)
-            .addGroup(SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(SpielerNameJFrameLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
