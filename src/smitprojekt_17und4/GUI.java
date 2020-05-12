@@ -30,6 +30,11 @@ public class GUI extends javax.swing.JFrame {
         SpielernameText = new javax.swing.JLabel();
         SpielernameButton = new javax.swing.JButton();
         SpielernameTextField = new javax.swing.JTextField();
+        AnfangJFrame = new javax.swing.JFrame();
+        picLogo = new javax.swing.JLabel();
+        AnfangjProgressBar = new javax.swing.JProgressBar();
+        Anfang1jLabel = new javax.swing.JLabel();
+        Anfang2jLabel = new javax.swing.JLabel();
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
@@ -164,6 +169,25 @@ public class GUI extends javax.swing.JFrame {
             SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        AnfangJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        picLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo klein.png"))); // NOI18N
+        AnfangJFrame.getContentPane().add(picLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 220));
+
+        AnfangjProgressBar.setForeground(new java.awt.Color(0, 102, 51));
+        AnfangJFrame.getContentPane().add(AnfangjProgressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 220, 22));
+
+        Anfang1jLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Anfang1jLabel.setForeground(new java.awt.Color(0, 51, 0));
+        Anfang1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Anfang1jLabel.setText("von Timo, Bianca und Lukas");
+        AnfangJFrame.getContentPane().add(Anfang1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 180, 30));
+
+        Anfang2jLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        Anfang2jLabel.setForeground(new java.awt.Color(0, 51, 0));
+        Anfang2jLabel.setText("Blackjack - 17 und 4");
+        AnfangJFrame.getContentPane().add(Anfang2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -632,6 +656,17 @@ public class GUI extends javax.swing.JFrame {
         return partie;
     }
 
+    private void ladebildschirmStarten() {
+        AnfangJFrame.setVisible(true);
+        try {
+            for (int i = 0; i <= 100; i++) {
+                AnfangjProgressBar.setValue(i);
+                AnfangJFrame.setVisible(false);
+            }
+        } catch (Exception e) {
+        }
+    }
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -665,6 +700,10 @@ public class GUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Anfang1jLabel;
+    private javax.swing.JLabel Anfang2jLabel;
+    private javax.swing.JFrame AnfangJFrame;
+    private javax.swing.JProgressBar AnfangjProgressBar;
     private javax.swing.JButton AnzahlSpielerButton;
     private javax.swing.JFrame AnzahlSpielerJFrame;
     private javax.swing.JPanel AnzahlSpielerJPanel;
@@ -717,5 +756,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel karte3_Spieler4;
     private javax.swing.JLabel karte3_Spieler5;
     private javax.swing.JLabel picBrett;
+    private javax.swing.JLabel picLogo;
     // End of variables declaration//GEN-END:variables
 }
