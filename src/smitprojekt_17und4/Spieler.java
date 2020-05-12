@@ -43,7 +43,9 @@ public class Spieler {
         deck.remove(zufallszahl);
 
         /* Die Wertigkeit der aktuellen Hand wird errechnet */
-        handPunkte = handPunkte + hand.get(zufallszahl).getWert();
+        for (int i = 0; i < hand.size(); i++) {
+            handPunkte = handPunkte + hand.get(i).getWert();
+        }
     }
 
     /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen

@@ -597,6 +597,8 @@ public class GUI extends javax.swing.JFrame {
                 partie.highscoreAktuallisieren(jTableHighscore);
                 for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
                     partie.getSpieler().get(i).karteZiehen(partie.getDeck());
+                    karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(1).getBilderPfad())));
+                    karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(2).getBilderPfad())));
                 }
             }
         }

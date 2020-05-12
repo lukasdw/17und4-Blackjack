@@ -31,4 +31,21 @@ public class Karte {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getFarbe() {
+        return farbe;
+    }
+
+    public void setFarbe(String farbe) {
+        this.farbe = farbe;
+    }
+
+    public String getBilderPfad() {
+        return bilderPfad;
+    }
+
+    public void setBilderPfad(String bilderPfad) {
+        this.bilderPfad = bilderPfad;
+    }
+
 }
