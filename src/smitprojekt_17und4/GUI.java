@@ -10,7 +10,7 @@ public class GUI extends javax.swing.JFrame {
     private int spielerCounter = 0;
 
     // Konstruktor
-    public GUI() {
+    public GUI() {      
         initComponents();
         jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
