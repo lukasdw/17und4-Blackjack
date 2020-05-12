@@ -27,7 +27,7 @@ public class Spieler {
         this.name = name;
     }
 
-    // Der Spieler zieht eine Karte
+    /* Der Spieler zieht eine Karte */
     public void karteZiehen(ArrayList<Karte> deck) {
         /* Nun wird eine Karte per Zufall aus dem Deck gezogen. Die Zufallszahl
         ist zwischen 1 und 52. */
@@ -45,7 +45,7 @@ public class Spieler {
             handPunkte = handPunkte + hand.get(i).getWert();
         }
     }
-
+    
     /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
     und dem einsatzPool hinzugefügt. */
     public int einsatzSetzen(int einsatzPool, javax.swing.JTextField jTextFieldEinsatz) {
@@ -107,5 +107,4 @@ public class Spieler {
     public void setName(String name) {
         this.name = name;
     }
-
 }

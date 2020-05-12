@@ -34,6 +34,8 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
         deck = new javax.swing.JLabel();
+        jPanelAktuellerSpieler = new javax.swing.JPanel();
+        jLabelAktuellerSpieler = new javax.swing.JLabel();
         jPanelMenu = new javax.swing.JPanel();
         jButtonStart = new javax.swing.JButton();
         jButtonKarteZiehen = new javax.swing.JButton();
@@ -71,7 +73,6 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5 = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
 
-        AnzahlSpielerJFrame.setMaximumSize(new java.awt.Dimension(330, 90));
         AnzahlSpielerJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
         AnzahlSpielerText.setText("Geben Sie die Anzahl der Spieler ein.");
@@ -118,7 +119,6 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        SpielerNameJFrame.setMaximumSize(new java.awt.Dimension(330, 90));
         SpielerNameJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
         SpielernameText.setText("Wie heisst Spieler 1?");
@@ -205,6 +205,36 @@ public class GUI extends javax.swing.JFrame {
         deck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/quer_Unbenannt.png"))); // NOI18N
         deck.setAlignmentY(0.0F);
         jPanelBrett.add(deck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
+
+        jPanelAktuellerSpieler.setBackground(new java.awt.Color(51, 102, 0));
+        jPanelAktuellerSpieler.setForeground(new java.awt.Color(51, 102, 0));
+
+        jLabelAktuellerSpieler.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelAktuellerSpieler.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAktuellerSpieler.setText("Spieler 1 ist am Zug!");
+
+        javax.swing.GroupLayout jPanelAktuellerSpielerLayout = new javax.swing.GroupLayout(jPanelAktuellerSpieler);
+        jPanelAktuellerSpieler.setLayout(jPanelAktuellerSpielerLayout);
+        jPanelAktuellerSpielerLayout.setHorizontalGroup(
+            jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 190, Short.MAX_VALUE)
+            .addGroup(jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAktuellerSpielerLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabelAktuellerSpieler)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanelAktuellerSpielerLayout.setVerticalGroup(
+            jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAktuellerSpielerLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabelAktuellerSpieler)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanelBrett.add(jPanelAktuellerSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 190, 40));
 
         jPanelMenu.setBackground(new java.awt.Color(51, 102, 0));
 
@@ -537,7 +567,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, 90));
 
-        picBrett.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Dokumente/brett.png"))); // NOI18N
+        picBrett.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brett.png"))); // NOI18N
         jPanelBrett.add(picBrett, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 927, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -586,24 +616,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AnzahlSpielerButtonActionPerformed
 
     private void SpielernameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpielernameButtonActionPerformed
-        /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
-        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
-        if (spielerCounter < partie.getAnzahlSpieler()) {
-            partie.getSpieler().add(new Spieler(SpielernameTextField.getText()));
-            spielerCounter++;
-            SpielernameTextField.setText("");
-            SpielernameText.setText("Wie heisst Spieler " + (this.spielerCounter + 1) + "?");
-        }
-        if (spielerCounter == partie.getAnzahlSpieler()) {
-            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
-            SpielerNameJFrame.setVisible(false);
+        partie.spielerNamenEingeben(SpielernameTextField, SpielernameText, SpielerNameJFrame);
+        if (partie.getAnzahlSpielerCounter() == partie.getAnzahlSpieler()) {
+            /* Durch den Start werden bestimmte Buttons aktiviert und deaktiviert. */
             jButtonStopp.setVisible(true);
             jButtonKarteZiehen.setVisible(true);
+            jButtonStart.setVisible(false);
             partie.highscoreAktuallisieren(jTableHighscore);
-            for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
-                partie.getSpieler().get(i).karteZiehen(partie.getDeck());
-                karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
-            }
+            partie.karteZiehenAlleSpieler();
+            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
 
@@ -664,11 +685,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonKarteZiehen;
     private javax.swing.JButton jButtonStart;
     private javax.swing.JButton jButtonStopp;
+    private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
     private javax.swing.JLabel jLabelKontostandValue;
     private javax.swing.JLabel jLabelPunktestand;
     private javax.swing.JLabel jLabelPunktestandValue;
+    private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelStats;

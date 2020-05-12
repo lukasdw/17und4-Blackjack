@@ -20,15 +20,17 @@ public class Partie {
 
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler;
+    private int anzahlSpielerCounter;
+    private int aktuellerSpieler = 1;
 
-    // Konstruktor
+    /* Konstruktor */
     public Partie() {
         this.deckEinlesen();
     }
 
-    /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
-    die Felder in die ArrayListe, "deck".*/
     public void deckEinlesen() {
+        /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
+        die Felder in die ArrayListe, "deck". */
         String lineTemp = "";
         try (BufferedReader br = new BufferedReader(new FileReader("E:\\OneDrive\\Ausbildung zum Fachinformatiker für Systemintegration\\Programmieren II\\17 und 4 (Projekt)\\17und4\\src\\Karten (png)\\deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
@@ -41,27 +43,27 @@ public class Partie {
         }
     }
 
-    public void spielerNamenEingeben(int spielerCounter, JTextField SpielernameTextField, JLabel SpielernameText) {
-        if (spielerCounter < anzahlSpieler) {
+    public void spielerNamenEingeben(JTextField SpielernameTextField, JLabel SpielernameText, JFrame SpielerNameJFrame) {
+        /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
+        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
+        if ((anzahlSpielerCounter < anzahlSpieler) && (SpielernameTextField.getText() != "")) {
             spieler.add(new Spieler(SpielernameTextField.getText()));
-            spielerCounter++;
+            /* Wurde ein neuer Spieler hinzugefügt, wird der nächste Spieler eingelesen */
+            anzahlSpielerCounter++;
             SpielernameTextField.setText("");
-            SpielernameText.setText("Wie heisst Spieler " + (spielerCounter + 1) + "?");
+            SpielernameText.setText("Wie heißt Spieler " + (anzahlSpielerCounter + 1) + "?");
+        }
+        if (anzahlSpielerCounter == anzahlSpieler) {
+            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
+            SpielerNameJFrame.setVisible(false);
         }
     }
 
-    public void einsatzSetzenAlleSpieler(JTextField jTextFieldEinsatz) {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).einsatzSetzen(einsatzPool, jTextFieldEinsatz);
-        }
+    public void nächsterSpieler(JLabel jPanelAktuellerSpieler){
+        aktuellerSpieler++;
+        jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
     }
-
-    public void karteZiehenAlleSpieler() {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).karteZiehen(deck);
-        }
-    }
-
+    
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
@@ -79,7 +81,21 @@ public class Partie {
         }
     }
 
-    // Getter und Setter
+    /* Funktion zum Setzen der Einsätze ALLER Spieler */
+    public void einsatzSetzenAlleSpieler(JTextField jTextFieldEinsatz) {
+        for (int i = 0; i < anzahlSpieler; i++) {
+            spieler.get(i).einsatzSetzen(einsatzPool, jTextFieldEinsatz);
+        }
+    }
+
+    /* Funktion zum Ziehen einer Karte für ALLE Spieler */
+    public void karteZiehenAlleSpieler() {
+        for (int i = 0; i < anzahlSpieler; i++) {
+            spieler.get(i).karteZiehen(deck);
+        }
+    }
+
+    /* Getter und Setter */
     public ArrayList<Karte> getDeck() {
         return deck;
     }
@@ -110,5 +126,21 @@ public class Partie {
 
     public void setAnzahlSpieler(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
+    }
+
+    public int getAnzahlSpielerCounter() {
+        return anzahlSpielerCounter;
+    }
+
+    public void setAnzahlSpielerCounter(int anzahlSpielerCounter) {
+        this.anzahlSpielerCounter = anzahlSpielerCounter;
+    }
+
+    public int getAktuellerSpieler() {
+        return aktuellerSpieler;
+    }
+
+    public void setAktuellerSpieler(int aktuellerSpieler) {
+        this.aktuellerSpieler = aktuellerSpieler;
     }
 }
