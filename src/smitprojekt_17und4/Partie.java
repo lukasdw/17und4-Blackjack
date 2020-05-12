@@ -59,6 +59,7 @@ public class Partie {
         }
     }
 
+    // Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug.
     public void nächsterSpieler(JLabel jPanelAktuellerSpieler){
         aktuellerSpieler++;
         jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
