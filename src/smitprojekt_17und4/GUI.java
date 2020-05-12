@@ -552,6 +552,24 @@ public class GUI extends javax.swing.JFrame {
     private void jButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartActionPerformed
         AnzahlSpielerJDialog.setVisible(true);
         Partie partie = new Partie();
+
+        try {
+            // Spieler werden hinzugefügt. Bisher eine feste Anzahl.
+            partie.spielerHinzufuegen(Integer.parseInt(AnzahlSpielerTextField.getText()));
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // Die Spieler ziehen eine Karte
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            partie.getSpieler().get(i).karteZiehen(partie.getDeck());
+        }
+
+        // Ein Spieler setzt seinen Einsatz
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            partie.getSpieler().get(i).einsatzSetzen(partie.getEinsatzPool(), jTextFieldEinsatz);
+        }
+        
         try {
             partie.spielStarten(jTextFieldEinsatz);
 

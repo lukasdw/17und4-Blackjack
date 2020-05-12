@@ -7,45 +7,54 @@ import java.util.ArrayList;
 
 public class Spieler {
 
-    /* Jeder Spieler bekommt am Anfang einen Einsatz von 10. */
+    /* Der Name wird direkt vergeben. */
     private String name;
 
-    /* Der Name wird direkt vergeben. Automatisch bekommt der Spieler, 10 Punkte
-    auf sein Kontostand */
+    /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
 
-    /* Der Kontostand ist zu aller Anfang auf 0 gesetzt */
+    /* Am Anfang hat jeder Spieler 0 Punkte */
     private int punktestand = 0;
     private int einsatz = 0;
 
-    /* Es können belibig viel Karten gezogen werden. */
+    /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
+    Die Werte der Karten werden zusammengerechnet und in der Variable, "handPunkte"
+    gespeichert. Die Anzahl der Karten ist auf der Hand nicht begrenzt. */
     ArrayList<Karte> hand = new ArrayList<Karte>();
     private int handPunkte = 0;
 
     public Spieler(String name) {
-        /* Der Spieler benötigt immer einen Namen, mit dem er angesprochen wird. */
+        /* Der Spieler benötigt immer einen Namen, mit dem er im Spiel angesprochen wird. */
         this.name = name;
     }
 
+    // Der Spieler zieht eine Karte
     public void karteZiehen(ArrayList<Karte> deck) {
-        /* Nun wird eine Karte per Zufall aus dem Deck gezogen */
-        int zufallszahl = (int) (Math.random() * deck.size()) + 0;
+        /* Nun wird eine Karte per Zufall aus dem Deck gezogen. Die Zufallszahl
+        ist zwischen 1 und 52. */
+        int zufallszahl = (int) (Math.random() * deck.size()) + 1;
 
         /* Diese Karte wird nun auf die Hand des Spielers bewegt */
         this.hand.add(deck.get(zufallszahl));
-        
+
         /* Die gezogene Karte muss aus dem Deck entfernt werden, da sie nun
         auf der Hand des Spielers ist */
         deck.remove(zufallszahl);
 
         /* Die Wertigkeit der aktuellen Hand wird errechnet */
-        handPunkte =+ hand.get(zufallszahl).getWert();
+        handPunkte = +hand.get(zufallszahl).getWert();
     }
 
-    /* Der Einsatz wird eingelesen und dem einsatzPool hinzugefügt */
-    public int einsatzSetzen(int einsatzPool, int einsatz) throws IOException {
-        this.einsatz = einsatz;
-        einsatzPool =+ this.einsatz;
+    /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
+    und dem einsatzPool hinzugefügt. */
+    public int einsatzSetzen(int einsatzPool, javax.swing.JTextField jTextFieldEinsatz) {
+        /* Der Wert des Textfeldes wird in eine Ganzzahl umgewandelt und in
+        der Variable Einsatz des Spielers gespeichert.*/
+        this.einsatz = Integer.parseInt(jTextFieldEinsatz.getText());
+        /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
+        jeder Spieler nacheinander */
+        einsatzPool = +this.einsatz;
+        /* Der Einsatzpool wird zurückgegeben. */
         return einsatzPool;
     }
 

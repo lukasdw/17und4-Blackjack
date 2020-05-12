@@ -7,17 +7,15 @@ import javax.swing.JTextField;
 
 public class Partie {
 
-    // Am Anfang immer 52 Karten
+    /* Am Anfang sind immer 52 Karten im Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
-    // Am Anfang jedes Spiels muss es mindestens zwei Spieler geben. Den Bänker und den Spieler
+    /* Die Spieler werden in dieser ArrayListe gespeichert. Dazu werden am
+    Anfang immer zwei Spieler benötigt. Den Bänker und den Spieler */
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    // Dies ist der Pool, dem der Spieler pro Runde, Geld hinzufügen kann.
-    private int einsatzPool;
-
-    // Speichert die Anzahl der Spieler ab. Muss am Anfang abgefragt werden
-    private int anzahlSpieler = 2;
+    /* Dem Einsatzpool fügt jeder Spieler pro Runde seinen Einsatz hinzu. */
+    private int einsatzPool = 0;
 
     public Partie() {
     }
@@ -25,19 +23,6 @@ public class Partie {
     public void spielStarten(JTextField jTextFieldEinsatz) throws IOException {
         // Das Deck mit den 52 Karten wird eingelesen
         this.deckEinlesen();
-
-        // Spieler werden hinzugefügt. Bisher eine feste Anzahl.
-        spielerHinzufuegen(anzahlSpieler);
-
-        // Die Spieler ziehen eine Karte
-        for (int i = 0; i < anzahlSpieler; i++) {
-            this.spieler.get(i).karteZiehen(this.deck);
-        }
-
-        // Ein Spieler setzt seinen Einsatz
-        for (int i = 0; i < anzahlSpieler; i++) {
-            this.einsatzPool = getSpieler().get(1).einsatzSetzen(einsatzPool, Integer.parseInt(jTextFieldEinsatz.getText()));
-        }
     }
 
     // Hier wird ein Spieler hinzugefügt. Am Anfang muss man seinen Namen angeben.
