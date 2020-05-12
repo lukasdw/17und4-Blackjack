@@ -609,6 +609,9 @@ public class GUI extends javax.swing.JFrame {
                 // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
                 SpielerNameJFrame.setVisible(false);
                 partie.highscoreAktuallisieren(jTableHighscore);
+                for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
+                    partie.getSpieler().get(i).karteZiehen(partie.getDeck());
+                }
             }
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
