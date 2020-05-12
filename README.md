@@ -1,4 +1,4 @@
-# 17und4 - Blackjack
+# 17 und 4 - Blackjack
 WIT2B - No.3: 17 und 4  - Blackjack (12.05.2020 - 23.06.2020) 
 
 Quellen:
