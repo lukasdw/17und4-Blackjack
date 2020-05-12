@@ -69,6 +69,7 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5 = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
 
+        AnzahlSpielerJFrame.setMaximumSize(new java.awt.Dimension(330, 90));
         AnzahlSpielerJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
         AnzahlSpielerText.setText("Geben Sie die Anzahl der Spieler ein.");
@@ -115,6 +116,7 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        SpielerNameJFrame.setMaximumSize(new java.awt.Dimension(330, 90));
         SpielerNameJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
         SpielernameText.setText("Wie heisst Spieler 1?");

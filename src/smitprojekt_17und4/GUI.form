@@ -4,6 +4,9 @@
   <NonVisualComponents>
     <Container class="javax.swing.JFrame" name="AnzahlSpielerJFrame">
       <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[330, 90]"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[330, 90]"/>
         </Property>
@@ -74,6 +77,9 @@
     </Container>
     <Container class="javax.swing.JFrame" name="SpielerNameJFrame">
       <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[330, 90]"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[330, 90]"/>
         </Property>
