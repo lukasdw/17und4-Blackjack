@@ -7,11 +7,12 @@ import java.util.logging.Logger;
 public class GUI extends javax.swing.JFrame {
 
     private Partie partie = new Partie();
-    private int spielerCounter = 0;
 
-    // Konstruktor
-    public GUI() {      
+    /* Konstruktor */
+    public GUI() {
         initComponents();
+        setVisible(true);
+        ladebildschirmStarten();
         jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
     }
@@ -31,6 +32,7 @@ public class GUI extends javax.swing.JFrame {
         SpielernameButton = new javax.swing.JButton();
         SpielernameTextField = new javax.swing.JTextField();
         AnfangJFrame = new javax.swing.JFrame();
+        AnfangjPanel = new javax.swing.JPanel();
         picLogo = new javax.swing.JLabel();
         AnfangjProgressBar = new javax.swing.JProgressBar();
         Anfang1jLabel = new javax.swing.JLabel();
@@ -170,24 +172,72 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        AnfangJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        AnfangJFrame.setMaximumSize(null);
+        AnfangJFrame.setMinimumSize(new java.awt.Dimension(250, 400));
+
+        AnfangjPanel.setMaximumSize(null);
+        AnfangjPanel.setMinimumSize(null);
 
         picLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo klein.png"))); // NOI18N
-        AnfangJFrame.getContentPane().add(picLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 220));
 
         AnfangjProgressBar.setForeground(new java.awt.Color(0, 102, 51));
-        AnfangJFrame.getContentPane().add(AnfangjProgressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 220, 22));
 
         Anfang1jLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Anfang1jLabel.setForeground(new java.awt.Color(0, 51, 0));
         Anfang1jLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Anfang1jLabel.setText("von Timo, Bianca und Lukas");
-        AnfangJFrame.getContentPane().add(Anfang1jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 180, 30));
 
         Anfang2jLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Anfang2jLabel.setForeground(new java.awt.Color(0, 51, 0));
         Anfang2jLabel.setText("Blackjack - 17 und 4");
-        AnfangJFrame.getContentPane().add(Anfang2jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        javax.swing.GroupLayout AnfangjPanelLayout = new javax.swing.GroupLayout(AnfangjPanel);
+        AnfangjPanel.setLayout(AnfangjPanelLayout);
+        AnfangjPanelLayout.setHorizontalGroup(
+            AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+            .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(picLogo)
+                        .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Anfang1jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Anfang2jLabel)))
+                        .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 10, Short.MAX_VALUE)))
+        );
+        AnfangjPanelLayout.setVerticalGroup(
+            AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+            .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(picLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addComponent(Anfang1jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Anfang2jLabel))
+                    .addGap(10, 10, 10)
+                    .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout AnfangJFrameLayout = new javax.swing.GroupLayout(AnfangJFrame.getContentPane());
+        AnfangJFrame.getContentPane().setLayout(AnfangJFrameLayout);
+        AnfangJFrameLayout.setHorizontalGroup(
+            AnfangJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AnfangjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        AnfangJFrameLayout.setVerticalGroup(
+            AnfangJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AnfangjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -624,6 +674,7 @@ public class GUI extends javax.swing.JFrame {
     private void jTextFieldEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEinsatzActionPerformed
         /* Durch das Umbennen des Einsatzes wird direkt der Einsatz des 
         Spielers in der Variable live-umgeändert*/
+        partie.getSpieler().get(partie.getAktuellerSpieler());
     }//GEN-LAST:event_jTextFieldEinsatzActionPerformed
 
     private void jButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartActionPerformed
@@ -648,6 +699,7 @@ public class GUI extends javax.swing.JFrame {
             jButtonStart.setVisible(false);
             partie.highscoreAktuallisieren(jTableHighscore);
             partie.karteZiehenAlleSpieler();
+            /* Da hab ich versucht, das Bild der Karte umzuändern. Ging eher in die Hose */
             karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
@@ -703,6 +755,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel Anfang1jLabel;
     private javax.swing.JLabel Anfang2jLabel;
     private javax.swing.JFrame AnfangJFrame;
+    private javax.swing.JPanel AnfangjPanel;
     private javax.swing.JProgressBar AnfangjProgressBar;
     private javax.swing.JButton AnzahlSpielerButton;
     private javax.swing.JFrame AnzahlSpielerJFrame;
