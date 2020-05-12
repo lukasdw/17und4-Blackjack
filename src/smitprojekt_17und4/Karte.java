@@ -7,6 +7,7 @@ public class Karte {
     private String farbe;
     private String bilderPfad;
 
+    // Konstruktor
     public Karte(String name, int wert, String farbe, String bilderPfad) {
         this.farbe = farbe;
         this.name = name;
@@ -14,6 +15,7 @@ public class Karte {
         this.bilderPfad = bilderPfad;
     }
 
+    // Getter und Setter
     public int getWert() {
         return wert;
     }

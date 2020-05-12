@@ -23,6 +23,7 @@ public class Spieler {
     ArrayList<Karte> hand = new ArrayList<Karte>();
     private int handPunkte = 0;
 
+    // Konstruktor
     public Spieler(String name) {
         /* Der Spieler benötigt immer einen Namen, mit dem er im Spiel angesprochen wird. */
         this.name = name;

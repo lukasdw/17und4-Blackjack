@@ -22,6 +22,7 @@ public class Partie {
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler = 0;
 
+    // Konstruktor
     public Partie() {
         this.deckEinlesen();
     }
@@ -51,9 +52,9 @@ public class Partie {
         /* Nun werden die Werte der Spieler in ein Array, was als Zeile
         fungiert, gespeichert. Diese Zeile wird dann als Zeile in der Tabelle
         hinzugefügt. */
-        for (int i = 0; i < spieler.size(); i++) {
-            spalte[0] = spieler.get(i).getPunktestand();
-            spalte[1] = spieler.get(i).getName();
+        for (int i = 0; i <= spieler.size()+1; i++) {
+            spalte[0] = spieler.get(i).getName();
+            spalte[1] = spieler.get(i).getPunktestand();
             model.addRow(spalte);
         }
     }

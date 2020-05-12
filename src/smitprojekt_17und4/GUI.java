@@ -9,6 +9,7 @@ public class GUI extends javax.swing.JFrame {
     private Partie partie = new Partie();
     private int spielerCounter = 0;
 
+    // Konstruktor
     public GUI() {
         initComponents();
     }
@@ -181,13 +182,10 @@ public class GUI extends javax.swing.JFrame {
         jPanelBrett.setBackground(new java.awt.Color(204, 255, 204));
         jPanelBrett.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTableHighscore.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTableHighscore.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTableHighscore.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Name", "Punkte"
@@ -601,17 +599,18 @@ public class GUI extends javax.swing.JFrame {
 
     private void SpielernameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpielernameButtonActionPerformed
         /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
-        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/ 
-        if (spielerCounter <= partie.getAnzahlSpieler()) {
+        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
+        if (spielerCounter < partie.getAnzahlSpieler()) {
             partie.getSpieler().add(new Spieler(SpielernameTextField.getText()));
             spielerCounter++;
             SpielernameTextField.setText("");
             SpielernameText.setText("Wie heisst Spieler " + (this.spielerCounter + 1) + "?");
-        } else {
-            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
-            SpielerNameJFrame.setVisible(false);
-            partie.highscoreAktuallisieren(jTableHighscore);
-        }        
+            if (spielerCounter == partie.getAnzahlSpieler()) {
+                // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
+                SpielerNameJFrame.setVisible(false);
+                partie.highscoreAktuallisieren(jTableHighscore);
+            }
+        }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
 
     public static void main(String args[]) {
