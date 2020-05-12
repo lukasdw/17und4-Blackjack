@@ -3,7 +3,9 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 public class Partie {
 
@@ -17,22 +19,11 @@ public class Partie {
     /* Dem Einsatzpool fügt jeder Spieler pro Runde seinen Einsatz hinzu. */
     private int einsatzPool = 0;
 
+    /* Gibt die Anzahl der Spieler an */
+    private int anzahlSpieler = 0;
+
     public Partie() {
-    }
-
-    public void spielStarten(JTextField jTextFieldEinsatz) throws IOException {
-        // Das Deck mit den 52 Karten wird eingelesen
         this.deckEinlesen();
-    }
-
-    // Hier wird ein Spieler hinzugefügt. Am Anfang muss man seinen Namen angeben.
-    public void spielerHinzufuegen(int anzahlSpieler) throws IOException {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Geben Sie ihren Namen ein.");
-            String name = input.readLine();
-            this.spieler.add(new Spieler(name));
-        }
     }
 
     /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
@@ -47,6 +38,23 @@ public class Partie {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void highscoreAktuallisieren(JTable jTableTabelle) {
+        /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
+        Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
+        die nötigen Funktionen benutzen zu können */
+        DefaultTableModel model = (DefaultTableModel) jTableTabelle.getModel();
+        Object spalte[] = new Object[2];
+
+        /* Nun werden die Werte der Spieler in ein Array, was als Zeile
+        fungiert, gespeichert. Diese Zeile wird dann als Zeile in der Tabelle
+        hinzugefügt. */
+        for (int i = 0; i < spieler.size(); i++) {
+            spalte[0] = spieler.get(i).getPunktestand();
+            spalte[1] = spieler.get(i).getName();
+            model.addRow(spalte);
         }
     }
 
@@ -73,5 +81,13 @@ public class Partie {
 
     public void setEinsatzPool(int einsatzPool) {
         this.einsatzPool = einsatzPool;
+    }
+
+    public int getAnzahlSpieler() {
+        return anzahlSpieler;
+    }
+
+    public void setAnzahlSpieler(int anzahlSpieler) {
+        this.anzahlSpieler = anzahlSpieler;
     }
 }

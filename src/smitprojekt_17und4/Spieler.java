@@ -98,4 +98,13 @@ public class Spieler {
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

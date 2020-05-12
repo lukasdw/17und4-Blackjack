@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 public class GUI extends javax.swing.JFrame {
 
     private Partie partie = new Partie();
+    private int spielerCounter = 0;
 
     public GUI() {
         initComponents();
@@ -16,11 +17,13 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AnzahlSpielerJDialog = new javax.swing.JDialog();
+        AnzahlSpielerJFrame = new javax.swing.JFrame();
+        AnzahlSpielerJPanel = new javax.swing.JPanel();
         AnzahlSpielerText = new javax.swing.JLabel();
         AnzahlSpielerButton = new javax.swing.JButton();
         AnzahlSpielerTextField = new javax.swing.JTextField();
-        SpielernameJDialog = new javax.swing.JDialog();
+        SpielerNameJFrame = new javax.swing.JFrame();
+        SpielerNameJPanel = new javax.swing.JPanel();
         SpielernameText = new javax.swing.JLabel();
         SpielernameButton = new javax.swing.JButton();
         SpielernameTextField = new javax.swing.JTextField();
@@ -74,17 +77,11 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        AnzahlSpielerTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnzahlSpielerTextFieldActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AnzahlSpielerJDialogLayout = new javax.swing.GroupLayout(AnzahlSpielerJDialog.getContentPane());
-        AnzahlSpielerJDialog.getContentPane().setLayout(AnzahlSpielerJDialogLayout);
-        AnzahlSpielerJDialogLayout.setHorizontalGroup(
-            AnzahlSpielerJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AnzahlSpielerJDialogLayout.createSequentialGroup()
+        javax.swing.GroupLayout AnzahlSpielerJPanelLayout = new javax.swing.GroupLayout(AnzahlSpielerJPanel);
+        AnzahlSpielerJPanel.setLayout(AnzahlSpielerJPanelLayout);
+        AnzahlSpielerJPanelLayout.setHorizontalGroup(
+            AnzahlSpielerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AnzahlSpielerJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(AnzahlSpielerText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -93,15 +90,36 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(AnzahlSpielerButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        AnzahlSpielerJDialogLayout.setVerticalGroup(
-            AnzahlSpielerJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AnzahlSpielerJDialogLayout.createSequentialGroup()
+        AnzahlSpielerJPanelLayout.setVerticalGroup(
+            AnzahlSpielerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AnzahlSpielerJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(AnzahlSpielerJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(AnzahlSpielerJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AnzahlSpielerText)
                     .addComponent(AnzahlSpielerButton)
                     .addComponent(AnzahlSpielerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout AnzahlSpielerJFrameLayout = new javax.swing.GroupLayout(AnzahlSpielerJFrame.getContentPane());
+        AnzahlSpielerJFrame.getContentPane().setLayout(AnzahlSpielerJFrameLayout);
+        AnzahlSpielerJFrameLayout.setHorizontalGroup(
+            AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 270, Short.MAX_VALUE)
+            .addGroup(AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AnzahlSpielerJFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        AnzahlSpielerJFrameLayout.setVerticalGroup(
+            AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 45, Short.MAX_VALUE)
+            .addGroup(AnzahlSpielerJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AnzahlSpielerJFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(AnzahlSpielerJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         SpielernameText.setText("Wie heisst Spieler 1?");
@@ -113,17 +131,11 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        SpielernameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SpielernameTextFieldActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout SpielernameJDialogLayout = new javax.swing.GroupLayout(SpielernameJDialog.getContentPane());
-        SpielernameJDialog.getContentPane().setLayout(SpielernameJDialogLayout);
-        SpielernameJDialogLayout.setHorizontalGroup(
-            SpielernameJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SpielernameJDialogLayout.createSequentialGroup()
+        javax.swing.GroupLayout SpielerNameJPanelLayout = new javax.swing.GroupLayout(SpielerNameJPanel);
+        SpielerNameJPanel.setLayout(SpielerNameJPanelLayout);
+        SpielerNameJPanelLayout.setHorizontalGroup(
+            SpielerNameJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpielerNameJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(SpielernameText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -132,15 +144,36 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(SpielernameButton)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
-        SpielernameJDialogLayout.setVerticalGroup(
-            SpielernameJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SpielernameJDialogLayout.createSequentialGroup()
+        SpielerNameJPanelLayout.setVerticalGroup(
+            SpielerNameJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SpielerNameJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(SpielernameJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(SpielerNameJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SpielernameText)
                     .addComponent(SpielernameButton)
                     .addComponent(SpielernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout SpielerNameJFrameLayout = new javax.swing.GroupLayout(SpielerNameJFrame.getContentPane());
+        SpielerNameJFrame.getContentPane().setLayout(SpielerNameJFrameLayout);
+        SpielerNameJFrameLayout.setHorizontalGroup(
+            SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SpielerNameJFrameLayout.createSequentialGroup()
+                    .addGap(0, 4, Short.MAX_VALUE)
+                    .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 5, Short.MAX_VALUE)))
+        );
+        SpielerNameJFrameLayout.setVerticalGroup(
+            SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 45, Short.MAX_VALUE)
+            .addGroup(SpielerNameJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SpielerNameJFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -540,59 +573,46 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
-        // TODO add your handling code here:
+        /* Hier zieht der Spieler eine Karte */
+        partie.getSpieler().get(1).karteZiehen(partie.getDeck());
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
-        // TODO add your handling code here:
+        /* Durch das Drücken des Stopp-Buttons wird das Spiel gestoppt.*/
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
     private void jTextFieldEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEinsatzActionPerformed
-        // TODO add your handling code here:
+        /* Durch das Umbennen des Einsatzes wird direkt der Einsatz des 
+        Spielers in der Variable live-umgeändert*/
     }//GEN-LAST:event_jTextFieldEinsatzActionPerformed
 
     private void jButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartActionPerformed
-        AnzahlSpielerJDialog.setVisible(true);
-        // Die Spieler ziehen eine Karte
-        for (int i = 0; i < partie.getSpieler().size(); i++) {
-            partie.getSpieler().get(i).karteZiehen(partie.getDeck());
-        }
-
-        // Ein Spieler setzt seinen Einsatz
-        for (int i = 0; i < partie.getSpieler().size(); i++) {
-            partie.getSpieler().get(i).einsatzSetzen(partie.getEinsatzPool(), jTextFieldEinsatz);
-        }
-
-        try {
-            partie.spielStarten(jTextFieldEinsatz);
-
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        AnzahlSpielerJFrame.setVisible(true);
     }//GEN-LAST:event_jButtonStartActionPerformed
 
-    private void AnzahlSpielerTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AnzahlSpielerTextFieldActionPerformed
-
     private void AnzahlSpielerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButtonActionPerformed
-        try {
-            // Spieler werden hinzugefügt. Bisher eine feste Anzahl.
-            partie.spielerHinzufuegen(Integer.parseInt(AnzahlSpielerTextField.getText()));
-        } catch (IOException ex) {
-            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        AnzahlSpielerJDialog.setVisible(false);
-        SpielernameJDialog.setVisible(true);
+        // In dieser Abfrage wird die Anzahl der Spieler, im Textfeld angegeben.
+        partie.setAnzahlSpieler(Integer.parseInt(AnzahlSpielerTextField.getText()));
+        // Das Fenster verschwindet, wenn die Eingabe durch den Button bestätigt wurde.
+        AnzahlSpielerJFrame.setVisible(false);
+        // Jetzt öffnet sich das Fenster zur Eingabe der Spielernamen.
+        SpielerNameJFrame.setVisible(true);
     }//GEN-LAST:event_AnzahlSpielerButtonActionPerformed
 
     private void SpielernameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpielernameButtonActionPerformed
-        // TODO add your handling code here:
+        /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
+        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/ 
+        if (spielerCounter <= partie.getAnzahlSpieler()) {
+            partie.getSpieler().add(new Spieler(SpielernameTextField.getText()));
+            spielerCounter++;
+            SpielernameTextField.setText("");
+            SpielernameText.setText("Wie heisst Spieler " + (this.spielerCounter + 1) + "?");
+        } else {
+            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
+            SpielerNameJFrame.setVisible(false);
+            partie.highscoreAktuallisieren(jTableHighscore);
+        }        
     }//GEN-LAST:event_SpielernameButtonActionPerformed
-
-    private void SpielernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpielernameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SpielernameTextFieldActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -603,13 +623,17 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -624,7 +648,8 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AnzahlSpielerButton;
-    private javax.swing.JDialog AnzahlSpielerJDialog;
+    private javax.swing.JFrame AnzahlSpielerJFrame;
+    private javax.swing.JPanel AnzahlSpielerJPanel;
     private javax.swing.JLabel AnzahlSpielerText;
     private javax.swing.JTextField AnzahlSpielerTextField;
     private javax.swing.JPanel Karten_Baenker;
@@ -633,8 +658,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Karten_Spieler3;
     private javax.swing.JPanel Karten_Spieler4;
     private javax.swing.JPanel Karten_Spieler5;
+    private javax.swing.JFrame SpielerNameJFrame;
+    private javax.swing.JPanel SpielerNameJPanel;
     private javax.swing.JButton SpielernameButton;
-    private javax.swing.JDialog SpielernameJDialog;
     private javax.swing.JLabel SpielernameText;
     private javax.swing.JTextField SpielernameTextField;
     private javax.swing.JLabel deck;

@@ -2,106 +2,162 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JDialog" name="AnzahlSpielerJDialog">
+    <Container class="javax.swing.JFrame" name="AnzahlSpielerJFrame">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="AnzahlSpielerText" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="AnzahlSpielerTextField" min="-2" pref="20" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="AnzahlSpielerButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="AnzahlSpielerJPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AnzahlSpielerText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AnzahlSpielerButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AnzahlSpielerTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="AnzahlSpielerJPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="AnzahlSpielerText">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Geben Sie die Anzahl der Spieler ein."/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="AnzahlSpielerButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ok"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnzahlSpielerButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AnzahlSpielerTextField">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnzahlSpielerTextFieldActionPerformed"/>
-          </Events>
-        </Component>
+        <Container class="javax.swing.JPanel" name="AnzahlSpielerJPanel">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AnzahlSpielerText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AnzahlSpielerTextField" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AnzahlSpielerButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AnzahlSpielerText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnzahlSpielerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnzahlSpielerTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="AnzahlSpielerText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Geben Sie die Anzahl der Spieler ein."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="AnzahlSpielerButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ok"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnzahlSpielerButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="AnzahlSpielerTextField">
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JDialog" name="SpielernameJDialog">
+    <Container class="javax.swing.JFrame" name="SpielerNameJFrame">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="SpielernameText" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="SpielernameTextField" min="-2" pref="92" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="SpielernameButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="279" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
+                      <Component id="SpielerNameJPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="SpielernameText" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SpielernameButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="SpielernameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="SpielerNameJPanel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="SpielernameText">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Wie heisst Spieler 1?"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="SpielernameButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ok"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SpielernameButtonActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SpielernameTextField">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SpielernameTextFieldActionPerformed"/>
-          </Events>
-        </Component>
+        <Container class="javax.swing.JPanel" name="SpielerNameJPanel">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SpielernameText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SpielernameTextField" min="-2" pref="92" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="SpielernameButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="SpielernameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SpielernameButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SpielernameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="SpielernameText">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Wie heisst Spieler 1?"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="SpielernameButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ok"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SpielernameButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="SpielernameTextField">
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </NonVisualComponents>
