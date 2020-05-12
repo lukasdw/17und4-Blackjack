@@ -12,7 +12,6 @@ public class GUI extends javax.swing.JFrame {
     // Konstruktor
     public GUI() {
         initComponents();
-        jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
     }
 
