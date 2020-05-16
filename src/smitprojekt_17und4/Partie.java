@@ -8,6 +8,9 @@ import javax.swing.table.*;
 
 public class Partie implements PartieInterface {
 
+    /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
+    Netzwerkverbidung etc = new Netzwerkverbidung();
+    
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
@@ -25,6 +28,8 @@ public class Partie implements PartieInterface {
 
     /* Konstruktor */
     public Partie() {
+        /* Der Client baut die Verbindung zum Server auf. */
+        etc.verbinden();
         this.deckEinlesen();
     }
 
@@ -41,7 +46,7 @@ public class Partie implements PartieInterface {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
-                // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
+                /* this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad) */
                 this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], filePath + spalte[3]));
             }
         } catch (IOException e) {
@@ -59,7 +64,7 @@ public class Partie implements PartieInterface {
         }
     }
 
-    // Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug.
+    /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
     public void nächsterSpieler(JLabel jPanelAktuellerSpieler) {
         aktuellerSpieler++;
         jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");

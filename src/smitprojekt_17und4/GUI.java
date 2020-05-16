@@ -11,9 +11,13 @@ public class GUI extends javax.swing.JFrame {
     /* Konstruktor */
     public GUI() {
         initComponents();
+
+        //Setzt das JFrame in die Mitte des Bildschirms
         JFrameInDieMitteSetzen(SpielerNameJFrame);
         JFrameInDieMitteSetzen(AnzahlSpielerJFrame);
         JFrameInDieMitteSetzen(AnfangJFrame);
+
+        // Buttons unsichtbar schalten
         jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
         jButtonEinsatz.setVisible(false);
@@ -21,6 +25,8 @@ public class GUI extends javax.swing.JFrame {
         jPanelStats.setVisible(false);
         jLabelEinsatz.setVisible(false);
         jTextFieldEinsatz.setVisible(false);
+
+        // Startfenster starten
         setVisible(true);
         ladebildschirmStarten();
     }
@@ -691,7 +697,7 @@ public class GUI extends javax.swing.JFrame {
         if ((partie.getAktuellerSpieler() < partie.getSpieler().size())) {
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
             // kartenBilderUpdaten();
-            nächsterSpieler();
+            spielerWechseln();
             if (partie.getAktuellerSpieler() == partie.getSpieler().size()) {
                 partie.setAnzahlSpielerCounter(0);
             }
@@ -722,23 +728,26 @@ public class GUI extends javax.swing.JFrame {
             SpielernameText.setText("Wie heißt Spieler " + (partie.getAnzahlSpielerCounter() + 1) + "?");
         }
         if (partie.getAnzahlSpielerCounter() == partie.getAnzahlSpieler()) {
+            
             /* Sind alle Spielernamen eingegeben, wird das Fenster geschlossen. */
+            partie.setAnzahlSpielerCounter(0);
             SpielerNameJFrame.setVisible(false);
+            
             /* Durch den Start werden bestimmte Buttons aktiviert und deaktiviert. */
             jButtonStopp.setVisible(true);
             jButtonKarteZiehen.setVisible(true);
+            jButtonEinsatz.setVisible(true);
             jPanelAktuellerSpieler.setVisible(true);
             jPanelStats.setVisible(true);
             jLabelEinsatz.setVisible(true);
-            jButtonEinsatz.setVisible(true);
             jTextFieldEinsatz.setVisible(true);
-            /* Jetzt wo alle Spieler eingelesen sind, werden die Punkte der
-            Spieler in die Highscoretabelle eingelesen */
+            
+            /* Jetzt wo alle Spieler eingelesen sind, werden die
+            Spieler in die Highscoretabelle eingetragen */
             partie.highscoreAktuallisieren(jTableHighscore);
-            nächsterSpieler();
-        }
-        if (partie.getAktuellerSpieler() == partie.getSpieler().size()) {
-            partie.setAnzahlSpielerCounter(0);
+            
+            // Der 1. Spieler ist am Zug
+            spielerWechseln();
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
 
@@ -748,12 +757,10 @@ public class GUI extends javax.swing.JFrame {
         if ((partie.getAktuellerSpieler() < partie.getSpieler().size()) && (!jLabelEinsatz.getText().equals(""))) {
             partie.setEinsatzPool(partie.getSpieler().get(partie.getAktuellerSpieler()).einsatzSetzen(partie.getEinsatzPool(), Integer.parseInt(jLabelEinsatz.getText())));
             jLabelEinsatz.setText("");
-            nächsterSpieler();
-            jLabelEinsatz.setVisible(false);
-            jButtonEinsatz.setVisible(false);
-        }
-        if (partie.getAktuellerSpieler() == partie.getSpieler().size()) {
-            partie.setAnzahlSpielerCounter(0);
+            if (partie.getAktuellerSpieler() == partie.getSpieler().size()) {
+                partie.setAnzahlSpielerCounter(0);
+                spielerWechseln();
+            }
         }
     }//GEN-LAST:event_jButtonEinsatzActionPerformed
 
@@ -782,7 +789,7 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
     }
 
-    public void nächsterSpieler() {
+    public void spielerWechseln() {
         partie.setAktuellerSpieler((partie.getAktuellerSpieler() + 1));
         jLabelAktuellerSpieler.setText((partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist am Zug!"));
     }
