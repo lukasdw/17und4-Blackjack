@@ -665,7 +665,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         /* Am Anfang jeder Runde muss jeder Spieler erstmal einen Einsatz legen. */
-        partie.karteZiehenAlleSpieler();
+        partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
         kartenBilderUpdaten();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
@@ -699,7 +699,7 @@ public class GUI extends javax.swing.JFrame {
             SpielernameTextField.setText("");
             SpielernameText.setText("Wie heißt Spieler " + (partie.getAnzahlSpielerCounter() + 1) + "?");
         }
-        if(partie.getAnzahlSpielerCounter() == partie.getAnzahlSpieler()){
+        if (partie.getAnzahlSpielerCounter() == partie.getAnzahlSpieler()) {
             /* Sind alle Spielernamen eingegeben, wird das Fenster geschlossen. */
             SpielerNameJFrame.setVisible(false);
             /* Durch den Start werden bestimmte Buttons aktiviert und deaktiviert. */
@@ -712,6 +712,8 @@ public class GUI extends javax.swing.JFrame {
             partie.highscoreAktuallisieren(jTableHighscore);
             jLabelAktuellerSpieler.setText(("Das Spiel beginnt."));
             nächsterSpieler();
+            partie.karteZiehenAlleSpieler();
+            kartenBilderUpdaten();
         }
     }//GEN-LAST:event_SpielernameButtonActionPerformed
 
