@@ -31,7 +31,7 @@ public class Spieler implements SpielerInterface{
     public void karteZiehen(ArrayList<Karte> deck) {
         /* Nun wird eine Karte per Zufall aus dem Deck gezogen. Die Zufallszahl
         ist zwischen 1 und 52. */
-        int zufallszahl = (int) (Math.random() * deck.size()) + 1;
+        int zufallszahl = (int) (Math.random() * deck.size());
 
         /* Diese Karte wird nun auf die Hand des Spielers bewegt */
         this.hand.add(deck.get(zufallszahl));

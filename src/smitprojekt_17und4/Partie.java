@@ -32,17 +32,17 @@ public class Partie implements PartieInterface {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
 
+        /* Workaround für relativen Pfad */
         String root = System.getProperty("user.dir");
-        String FileName = "deck.csv";
-        String filePath = root + File.separator + "src\\Karten\\" + File.separator + FileName;
+        String filePath = root + File.separator + "src\\Karten\\" + File.separator;
         System.out.println(root);
 
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
-                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], root + File.separator + "src\\Karten" + File.separator + spalte[3]));
+                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], filePath + spalte[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,7 +92,7 @@ public class Partie implements PartieInterface {
     /* Funktion zum Ziehen einer Karte für ALLE Spieler */
     public void karteZiehenAlleSpieler() {
         for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).karteZiehen(deck);
+            spieler.get(i).karteZiehen(this.deck);
         }
     }
 
