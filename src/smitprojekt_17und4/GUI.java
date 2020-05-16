@@ -288,7 +288,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 310, 220, 170));
 
-        deck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/quer_Unbenannt.png"))); // NOI18N
+        deck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
         deck.setAlignmentY(0.0F);
         jPanelBrett.add(deck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
 
@@ -443,13 +443,13 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jPanelStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 240, 80));
 
-        karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Baenker.setAlignmentY(0.0F);
 
-        karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Baenker.setAlignmentY(0.0F);
 
-        karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Baenker.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_BaenkerLayout = new javax.swing.GroupLayout(Karten_Baenker);
@@ -478,13 +478,13 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, 90));
 
-        karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler1.setAlignmentY(0.0F);
 
-        karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Spieler1.setAlignmentY(0.0F);
 
-        karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Spieler1.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_Spieler1Layout = new javax.swing.GroupLayout(Karten_Spieler1);
@@ -513,13 +513,13 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, 90));
 
-        karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler2.setAlignmentY(0.0F);
 
-        karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Spieler2.setAlignmentY(0.0F);
 
-        karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Spieler2.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_Spieler2Layout = new javax.swing.GroupLayout(Karten_Spieler2);
@@ -548,13 +548,13 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, 90));
 
-        karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler3.setAlignmentY(0.0F);
 
-        karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Spieler3.setAlignmentY(0.0F);
 
-        karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Spieler3.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_Spieler3Layout = new javax.swing.GroupLayout(Karten_Spieler3);
@@ -583,13 +583,13 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, -1, 90));
 
-        karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler4.setAlignmentY(0.0F);
 
-        karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Spieler4.setAlignmentY(0.0F);
 
-        karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Spieler4.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_Spieler4Layout = new javax.swing.GroupLayout(Karten_Spieler4);
@@ -621,10 +621,10 @@ public class GUI extends javax.swing.JFrame {
         karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler5.setAlignmentY(0.0F);
 
-        karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte2_Spieler5.setAlignmentY(0.0F);
 
-        karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte3_Spieler5.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout Karten_Spieler5Layout = new javax.swing.GroupLayout(Karten_Spieler5);

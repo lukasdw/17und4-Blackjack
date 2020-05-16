@@ -371,7 +371,7 @@
         <Component class="javax.swing.JLabel" name="deck">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Karten (png)/quer_Unbenannt.png"/>
+              <Image iconType="3" name="/Karten/quer_Unbenannt.png"/>
             </Property>
             <Property name="alignmentY" type="float" value="0.0"/>
           </Properties>
@@ -676,7 +676,7 @@
             <Component class="javax.swing.JLabel" name="karte1_Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -684,7 +684,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -692,7 +692,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -738,7 +738,7 @@
             <Component class="javax.swing.JLabel" name="karte1_Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -746,7 +746,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -754,7 +754,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -800,7 +800,7 @@
             <Component class="javax.swing.JLabel" name="karte1_Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -808,7 +808,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -816,7 +816,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -862,7 +862,7 @@
             <Component class="javax.swing.JLabel" name="karte1_Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -870,7 +870,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -878,7 +878,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -924,7 +924,7 @@
             <Component class="javax.swing.JLabel" name="karte1_Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -932,7 +932,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -940,7 +940,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -994,7 +994,7 @@
             <Component class="javax.swing.JLabel" name="karte2_Spieler5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
@@ -1002,7 +1002,7 @@
             <Component class="javax.swing.JLabel" name="karte3_Spieler5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Karten (png)/klein/r&#xfc;ckseite.png"/>
+                  <Image iconType="3" name="/Karten/klein/r&#xfc;ckseite.png"/>
                 </Property>
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
