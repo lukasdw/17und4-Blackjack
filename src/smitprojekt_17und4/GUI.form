@@ -104,7 +104,7 @@
                       <Component id="SpielernameTextField" min="-2" pref="92" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="SpielernameButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -125,7 +125,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="SpielernameText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Wie heisst Spieler 1?"/>
+                <Property name="text" type="java.lang.String" value="Wie hei&#xdf;t Spieler 1?"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="SpielernameButton">

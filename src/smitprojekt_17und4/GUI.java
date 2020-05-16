@@ -129,7 +129,7 @@ public class GUI extends javax.swing.JFrame {
 
         SpielerNameJFrame.setMinimumSize(new java.awt.Dimension(330, 90));
 
-        SpielernameText.setText("Wie heisst Spieler 1?");
+        SpielernameText.setText("Wie heißt Spieler 1?");
 
         SpielernameButton.setText("Ok");
         SpielernameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +149,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(SpielernameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SpielernameButton)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         SpielerNameJPanelLayout.setVerticalGroup(
             SpielerNameJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +173,9 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(SpielerNameJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        AnfangJFrame.setMaximumSize(null);
         AnfangJFrame.setMinimumSize(new java.awt.Dimension(250, 400));
 
         AnfangjPanel.setMaximumSize(null);
-        AnfangjPanel.setMinimumSize(null);
 
         picLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo klein.png"))); // NOI18N
 
