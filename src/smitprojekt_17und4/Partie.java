@@ -81,21 +81,7 @@ public class Partie implements PartieInterface {
             model.addRow(spalte);
         }
     }
-
-    /* Funktion zum Setzen der Einsätze ALLER Spieler */
-    public void einsatzSetzenAlleSpieler(int einsatz) {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).einsatzSetzen(einsatzPool, einsatz);
-        }
-    }
-
-    /* Funktion zum Ziehen einer Karte für ALLE Spieler */
-    public void karteZiehenAlleSpieler() {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).karteZiehen(this.deck);
-        }
-    }
-
+    
     /* Getter und Setter */
     public ArrayList<Karte> getDeck() {
         return deck;
