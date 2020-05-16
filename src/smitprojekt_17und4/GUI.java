@@ -13,7 +13,7 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
         JFrameInDieMitteSetzen(SpielerNameJFrame);
         JFrameInDieMitteSetzen(AnzahlSpielerJFrame);
-        JFrameInDieMitteSetzen(AnfangJFrame);        
+        JFrameInDieMitteSetzen(AnfangJFrame);
         jButtonStopp.setVisible(false);
         jButtonKarteZiehen.setVisible(false);
         jPanelAktuellerSpieler.setVisible(false);
@@ -773,7 +773,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     private void JFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
-        JFrame.pack(); 
+        JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
 
