@@ -618,7 +618,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, -1, 90));
 
-        karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
+        karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/klein/rückseite.png"))); // NOI18N
         karte1_Spieler5.setAlignmentY(0.0F);
 
         karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten (png)/klein/rückseite.png"))); // NOI18N
@@ -723,7 +723,6 @@ public class GUI extends javax.swing.JFrame {
             /* Jetzt wo alle Spieler eingelesen sind, werden die Punkte der
             Spieler in die Highscoretabelle eingelesen */
             partie.highscoreAktuallisieren(jTableHighscore);
-            jLabelAktuellerSpieler.setText(("Das Spiel beginnt."));
             nächsterSpieler();
             partie.karteZiehenAlleSpieler();
             kartenBilderUpdaten();

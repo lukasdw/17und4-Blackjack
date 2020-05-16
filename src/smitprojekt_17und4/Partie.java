@@ -6,7 +6,7 @@ import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class Partie implements PartieInterface{
+public class Partie implements PartieInterface {
 
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
@@ -31,8 +31,14 @@ public class Partie implements PartieInterface{
     public void deckEinlesen() {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
+
+        String root = System.getProperty("user.dir");
+        String FileName = "deck.csv";
+        String filePath = root + File.separator + "src\\Karten\\" + File.separator + FileName;
+        System.out.println(root);
+
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader("*Hier müsste der Dateipfad zur CSV-Datei sein*"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
