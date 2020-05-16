@@ -3,7 +3,7 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Spieler {
+public class Spieler implements SpielerInterface{
 
     /* Der Name wird direkt vergeben. */
     private String name;
@@ -48,10 +48,10 @@ public class Spieler {
     
     /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
     und dem einsatzPool hinzugefügt. */
-    public int einsatzSetzen(int einsatzPool, javax.swing.JTextField jTextFieldEinsatz) {
+    public int einsatzSetzen(int einsatzPool, int einsatz) {
         /* Der Wert des Textfeldes wird in eine Ganzzahl umgewandelt und in
         der Variable Einsatz des Spielers gespeichert.*/
-        this.einsatz = Integer.parseInt(jTextFieldEinsatz.getText());
+        this.einsatz = einsatz;
         /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
         jeder Spieler nacheinander */
         einsatzPool = +this.einsatz;

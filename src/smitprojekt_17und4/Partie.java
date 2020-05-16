@@ -6,7 +6,7 @@ import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class Partie {
+public class Partie implements PartieInterface{
 
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
@@ -21,7 +21,7 @@ public class Partie {
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler;
     private int anzahlSpielerCounter;
-    private int aktuellerSpieler = 1;
+    private int aktuellerSpieler;
 
     /* Konstruktor */
     public Partie() {
@@ -43,19 +43,13 @@ public class Partie {
         }
     }
 
-    public void spielerNamenEingeben(JTextField SpielernameTextField, JLabel SpielernameText, JFrame SpielerNameJFrame) {
+    public void spielerNamenEingeben(String spielername) {
         /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
         bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
-        if ((anzahlSpielerCounter < anzahlSpieler) && (SpielernameTextField.getText() != "")) {
-            spieler.add(new Spieler(SpielernameTextField.getText()));
+        if ((anzahlSpielerCounter < anzahlSpieler)) {
+            spieler.add(new Spieler(spielername));
             /* Wurde ein neuer Spieler hinzugefügt, wird der nächste Spieler eingelesen */
             anzahlSpielerCounter++;
-            SpielernameTextField.setText("");
-            SpielernameText.setText("Wie heißt Spieler " + (anzahlSpielerCounter + 1) + "?");
-        }
-        if (anzahlSpielerCounter == anzahlSpieler) {
-            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
-            SpielerNameJFrame.setVisible(false);
         }
     }
 
@@ -83,9 +77,9 @@ public class Partie {
     }
 
     /* Funktion zum Setzen der Einsätze ALLER Spieler */
-    public void einsatzSetzenAlleSpieler(JTextField jTextFieldEinsatz) {
+    public void einsatzSetzenAlleSpieler(int einsatz) {
         for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).einsatzSetzen(einsatzPool, jTextFieldEinsatz);
+            spieler.get(i).einsatzSetzen(einsatzPool, einsatz);
         }
     }
 
