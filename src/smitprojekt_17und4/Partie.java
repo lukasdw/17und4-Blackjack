@@ -42,7 +42,7 @@ public class Partie implements PartieInterface {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
-                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], spalte[3]));
+                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], root + File.separator + "src\\Karten" + File.separator + spalte[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
