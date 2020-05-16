@@ -8,14 +8,14 @@ import javax.swing.table.*;
 
 public class Partie {
 
-    /* Am Anfang sind immer 52 Karten im Deck */
+    /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
     /* Die Spieler werden in dieser ArrayListe gespeichert. Dazu werden am
-    Anfang immer zwei Spieler benötigt. Den Bänker und den Spieler */
+    Anfang immer zwei Spieler benötigt. Der Dealer und die Spieler */
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    /* Dem Einsatzpool fügt jeder Spieler pro Runde seinen Einsatz hinzu. */
+    /* Jeder Spieler fügt am Anfang jeder Runde seinen Einsatz, dem Einsatzpool zu. */
     private int einsatzPool;
 
     /* Gibt die Anzahl der Spieler an */
@@ -32,7 +32,7 @@ public class Partie {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader("E:\\OneDrive\\Ausbildung zum Fachinformatiker für Systemintegration\\Programmieren II\\17 und 4 (Projekt)\\17und4\\src\\Karten (png)\\deck.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("*Hier müsste der Dateipfad zur CSV-Datei sein*"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
@@ -60,11 +60,11 @@ public class Partie {
     }
 
     // Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug.
-    public void nächsterSpieler(JLabel jPanelAktuellerSpieler){
+    public void nächsterSpieler(JLabel jPanelAktuellerSpieler) {
         aktuellerSpieler++;
         jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
     }
-    
+
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
