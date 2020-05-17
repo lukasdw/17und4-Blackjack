@@ -6,65 +6,70 @@ import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
-public class Partie {
+public class Partie implements PartieInterface {
 
-    /* Am Anfang sind immer 52 Karten im Deck */
+    /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
+    Netzwerkverbidung etc = new Netzwerkverbidung();
+    
+    /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
     /* Die Spieler werden in dieser ArrayListe gespeichert. Dazu werden am
-    Anfang immer zwei Spieler benötigt. Den Bänker und den Spieler */
+    Anfang immer zwei Spieler benötigt. Der Dealer und die Spieler */
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    /* Dem Einsatzpool fügt jeder Spieler pro Runde seinen Einsatz hinzu. */
+    /* Jeder Spieler fügt am Anfang jeder Runde seinen Einsatz, dem Einsatzpool zu. */
     private int einsatzPool;
 
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler;
     private int anzahlSpielerCounter;
-    private int aktuellerSpieler = 1;
+    private int aktuellerSpieler;
 
     /* Konstruktor */
     public Partie() {
+        /* Der Client baut die Verbindung zum Server auf. */
+        etc.verbinden();
         this.deckEinlesen();
     }
 
     public void deckEinlesen() {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
+
+        /* Workaround für relativen Pfad */
+        String root = System.getProperty("user.dir");
+        String filePath = root + File.separator + "src\\Karten\\" + File.separator;
+        System.out.println(root);
+
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader("E:\\OneDrive\\Ausbildung zum Fachinformatiker für Systemintegration\\Programmieren II\\17 und 4 (Projekt)\\17und4\\src\\Karten (png)\\deck.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
-                // this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad)
-                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], spalte[3]));
+                /* this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad) */
+                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], filePath + spalte[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void spielerNamenEingeben(JTextField SpielernameTextField, JLabel SpielernameText, JFrame SpielerNameJFrame) {
+    public void spielerNamenEingeben(String spielername) {
         /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
         bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
-        if ((anzahlSpielerCounter < anzahlSpieler) && (SpielernameTextField.getText() != "")) {
-            spieler.add(new Spieler(SpielernameTextField.getText()));
+        if ((anzahlSpielerCounter < anzahlSpieler)) {
+            spieler.add(new Spieler(spielername));
             /* Wurde ein neuer Spieler hinzugefügt, wird der nächste Spieler eingelesen */
             anzahlSpielerCounter++;
-            SpielernameTextField.setText("");
-            SpielernameText.setText("Wie heißt Spieler " + (anzahlSpielerCounter + 1) + "?");
-        }
-        if (anzahlSpielerCounter == anzahlSpieler) {
-            // Sind alle Spielernamen eingegeben, wird das Fenster geschlossen.
-            SpielerNameJFrame.setVisible(false);
         }
     }
 
-    // Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug.
-    public void nächsterSpieler(JLabel jPanelAktuellerSpieler){
+    /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
+    public void nächsterSpieler(JLabel jPanelAktuellerSpieler) {
         aktuellerSpieler++;
         jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
     }
-    
+
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
@@ -81,21 +86,7 @@ public class Partie {
             model.addRow(spalte);
         }
     }
-
-    /* Funktion zum Setzen der Einsätze ALLER Spieler */
-    public void einsatzSetzenAlleSpieler(JTextField jTextFieldEinsatz) {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).einsatzSetzen(einsatzPool, jTextFieldEinsatz);
-        }
-    }
-
-    /* Funktion zum Ziehen einer Karte für ALLE Spieler */
-    public void karteZiehenAlleSpieler() {
-        for (int i = 0; i < anzahlSpieler; i++) {
-            spieler.get(i).karteZiehen(deck);
-        }
-    }
-
+    
     /* Getter und Setter */
     public ArrayList<Karte> getDeck() {
         return deck;

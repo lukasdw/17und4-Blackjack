@@ -3,7 +3,7 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Spieler {
+public class Spieler implements SpielerInterface{
 
     /* Der Name wird direkt vergeben. */
     private String name;
@@ -31,7 +31,7 @@ public class Spieler {
     public void karteZiehen(ArrayList<Karte> deck) {
         /* Nun wird eine Karte per Zufall aus dem Deck gezogen. Die Zufallszahl
         ist zwischen 1 und 52. */
-        int zufallszahl = (int) (Math.random() * deck.size()) + 1;
+        int zufallszahl = (int) (Math.random() * deck.size());
 
         /* Diese Karte wird nun auf die Hand des Spielers bewegt */
         this.hand.add(deck.get(zufallszahl));
@@ -48,10 +48,10 @@ public class Spieler {
     
     /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
     und dem einsatzPool hinzugefügt. */
-    public int einsatzSetzen(int einsatzPool, javax.swing.JTextField jTextFieldEinsatz) {
+    public int einsatzSetzen(int einsatzPool, int einsatz) {
         /* Der Wert des Textfeldes wird in eine Ganzzahl umgewandelt und in
         der Variable Einsatz des Spielers gespeichert.*/
-        this.einsatz = Integer.parseInt(jTextFieldEinsatz.getText());
+        this.einsatz = einsatz;
         /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
         jeder Spieler nacheinander */
         einsatzPool = +this.einsatz;
@@ -64,8 +64,12 @@ public class Spieler {
         return kontostand;
     }
 
-    public void setKontostand(int kontostand) {
-        this.kontostand = kontostand;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPunktestand() {
@@ -98,13 +102,5 @@ public class Spieler {
 
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    } 
 }
