@@ -10,7 +10,7 @@ public class Partie implements PartieInterface {
 
     /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
     Netzwerkverbidung etc = new Netzwerkverbidung();
-    
+
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
@@ -26,11 +26,21 @@ public class Partie implements PartieInterface {
     private int anzahlSpielerCounter;
     private int aktuellerSpieler;
 
+    private int runde = 1;
+
     /* Konstruktor */
     public Partie() {
         /* Der Client baut die Verbindung zum Server auf. */
         etc.verbinden();
         this.deckEinlesen();
+    }
+
+    public void jederZiehtZweiKarten() {
+        for (int i = 0; i < spieler.size(); i++) {
+            for (int j = 0; j < 2; j++) {
+                spieler.get(i).einsatzSetzen(einsatzPool);
+            }
+        }
     }
 
     public void deckEinlesen() {
@@ -65,9 +75,11 @@ public class Partie implements PartieInterface {
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
-    public void nächsterSpieler(JLabel jPanelAktuellerSpieler) {
+    public void nächsterSpieler() {
         aktuellerSpieler++;
-        jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
+        if (aktuellerSpieler == spieler.size()) {
+            anzahlSpielerCounter = 0;
+        }
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
@@ -86,7 +98,7 @@ public class Partie implements PartieInterface {
             model.addRow(spalte);
         }
     }
-    
+
     /* Getter und Setter */
     public ArrayList<Karte> getDeck() {
         return deck;
@@ -134,5 +146,21 @@ public class Partie implements PartieInterface {
 
     public void setAktuellerSpieler(int aktuellerSpieler) {
         this.aktuellerSpieler = aktuellerSpieler;
+    }
+
+    public Netzwerkverbidung getEtc() {
+        return etc;
+    }
+
+    public void setEtc(Netzwerkverbidung etc) {
+        this.etc = etc;
+    }
+
+    public int getRunde() {
+        return runde;
+    }
+
+    public void setRunde(int runde) {
+        this.runde = runde;
     }
 }

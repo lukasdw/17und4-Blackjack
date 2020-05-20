@@ -48,15 +48,10 @@ public class Spieler implements SpielerInterface{
     
     /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
     und dem einsatzPool hinzugefügt. */
-    public int einsatzSetzen(int einsatzPool, int einsatz) {
-        /* Der Wert des Textfeldes wird in eine Ganzzahl umgewandelt und in
-        der Variable Einsatz des Spielers gespeichert.*/
-        this.einsatz = einsatz;
+    public void einsatzSetzen(int einsatzPool) {
         /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
         jeder Spieler nacheinander */
         einsatzPool = +this.einsatz;
-        /* Der Einsatzpool wird zurückgegeben. */
-        return einsatzPool;
     }
 
     /* Getter und Setter */
