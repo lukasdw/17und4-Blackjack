@@ -198,10 +198,15 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(1200, 579));
+        setMinimumSize(new java.awt.Dimension(1200, 579));
+        setPreferredSize(new java.awt.Dimension(1200, 579));
+        setResizable(false);
 
-        jPanelBrett.setBackground(new java.awt.Color(204, 204, 204));
+        jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));
         jPanelBrett.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableHighscore.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTableHighscore.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTableHighscore.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -238,18 +243,18 @@ public class GUI extends javax.swing.JFrame {
         deck.setAlignmentY(0.0F);
         jPanelBrett.add(deck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
 
-        jPanelAktuellerSpieler.setBackground(new java.awt.Color(51, 102, 0));
+        jPanelAktuellerSpieler.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelAktuellerSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelAktuellerSpieler.setForeground(new java.awt.Color(51, 102, 0));
 
         jLabelAktuellerSpieler.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelAktuellerSpieler.setForeground(new java.awt.Color(255, 255, 255));
         jLabelAktuellerSpieler.setText("Spieler 1 ist am Zug!");
 
         javax.swing.GroupLayout jPanelAktuellerSpielerLayout = new javax.swing.GroupLayout(jPanelAktuellerSpieler);
         jPanelAktuellerSpieler.setLayout(jPanelAktuellerSpielerLayout);
         jPanelAktuellerSpielerLayout.setHorizontalGroup(
             jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
+            .addGap(0, 184, Short.MAX_VALUE)
             .addGroup(jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelAktuellerSpielerLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -258,7 +263,7 @@ public class GUI extends javax.swing.JFrame {
         );
         jPanelAktuellerSpielerLayout.setVerticalGroup(
             jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 34, Short.MAX_VALUE)
             .addGroup(jPanelAktuellerSpielerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelAktuellerSpielerLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -268,7 +273,8 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jPanelAktuellerSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 190, 40));
 
-        jPanelMenu.setBackground(new java.awt.Color(51, 102, 0));
+        jPanelMenu.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jButtonKarteZiehen.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonKarteZiehen.setText("Karte ziehen");
@@ -278,8 +284,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelEinsatz.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelEinsatz.setText("Einsatz");
 
         jTextFieldEinsatz.addActionListener(new java.awt.event.ActionListener() {
@@ -332,31 +337,28 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jButtonKarteZiehen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonEinsatz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonStopp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldEinsatz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEinsatz, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE))
-                .addGap(10, 10, 10))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelBrett.add(jPanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 290, 80));
 
-        jPanelStats.setBackground(new java.awt.Color(51, 102, 0));
+        jPanelStats.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelStats.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelPunktestand.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelPunktestand.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPunktestand.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelPunktestand.setText("Punktestand");
 
-        jLabelKontostand.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelKontostand.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelKontostand.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelKontostand.setText("Kontostand");
 
-        jLabelPunktestandValue.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelPunktestandValue.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPunktestandValue.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelPunktestandValue.setText("0");
 
-        jLabelKontostandValue.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabelKontostandValue.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelKontostandValue.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelKontostandValue.setText("10");
 
         javax.swing.GroupLayout jPanelStatsLayout = new javax.swing.GroupLayout(jPanelStats);
@@ -368,7 +370,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanelStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPunktestand)
                     .addComponent(jLabelKontostand))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanelStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelKontostandValue)
                     .addComponent(jLabelPunktestandValue))
@@ -385,7 +387,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanelStatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelKontostand)
                     .addComponent(jLabelKontostandValue))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanelBrett.add(jPanelStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 240, 80));
@@ -606,6 +608,7 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelBrett.add(piMenuBackround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelMPInternet.setBackground(new java.awt.Color(255, 255, 255));
         jPanelMPInternet.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMPInternet1.setBackground(new java.awt.Color(255, 255, 255));
@@ -642,31 +645,32 @@ public class GUI extends javax.swing.JFrame {
         jPanelMPInternet1Layout.setHorizontalGroup(
             jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextFieldGebenSieIhrenNamenEin)
-                    .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextFieldPort)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMPInternet1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
                 .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
+                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TextFieldGebenSieIhrenNamenEin)
+                            .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                                .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
+                            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                                .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanelMPInternet1Layout.setVerticalGroup(
             jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(39, 39, 39)
                 .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -678,11 +682,11 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextFieldGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(jButtonZurueck)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonLobbySuchen)
-                .addGap(24, 24, 24))
+                .addGap(36, 36, 36))
         );
 
         jPanelMPInternet.add(jPanelMPInternet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
@@ -692,53 +696,71 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelMP1PC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanelMP1PC1.setBackground(new java.awt.Color(255, 255, 255));
         jPanelMP1PC1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanelMP1PC1.setPreferredSize(new java.awt.Dimension(250, 400));
+        jPanelMP1PC1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         AnzahlSpielerButton1.setText("Spiel starten");
+        AnzahlSpielerButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AnzahlSpielerButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AnzahlSpielerButton1ActionPerformed(evt);
             }
         });
+        jPanelMP1PC1.add(AnzahlSpielerButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 117, -1));
 
         jButtonZurueckMP1PC1.setText("Zurück");
+        jButtonZurueckMP1PC1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonZurueckMP1PC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonZurueckMP1PC1ActionPerformed(evt);
             }
         });
+        jPanelMP1PC1.add(jButtonZurueckMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 117, -1));
 
         jTextAreaInfoTextMP1PC1.setEditable(false);
-        jTextAreaInfoTextMP1PC1.setBackground(new java.awt.Color(240, 240, 240));
         jTextAreaInfoTextMP1PC1.setColumns(20);
         jTextAreaInfoTextMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaInfoTextMP1PC1.setRows(5);
         jTextAreaInfoTextMP1PC1.setText("Geben Sie die Anzahl der Spieler ein.\nEs können maximal fünf Spieler und\nein Bänker an einem Spiel teilnehmen.");
+        jPanelMP1PC1.add(jTextAreaInfoTextMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 42, 210, 50));
 
-        JLabelBänkerMP1PC1.setText("Bänker");
+        JLabelBänkerMP1PC1.setText("Bank");
+        jPanelMP1PC1.add(JLabelBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, -1, -1));
+        jPanelMP1PC1.add(JTextlBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 154, 90, -1));
 
         JLabelSpieler1MP1PC1.setText("Spieler 1");
+        jPanelMP1PC1.add(JLabelSpieler1MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 134, -1, -1));
+        jPanelMP1PC1.add(JTextSpieler1MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 154, 90, -1));
 
         JLabelSpieler2MP1PC1.setText("Spieler 2");
+        jPanelMP1PC1.add(JLabelSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         JTextSpieler2MP1PC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextSpieler2MP1PC1ActionPerformed(evt);
             }
         });
+        jPanelMP1PC1.add(JTextSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 90, -1));
 
         JLabelSpieler3MP1PC1.setText("Spieler 3");
+        jPanelMP1PC1.add(JLabelSpieler3MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 180, -1, -1));
+        jPanelMP1PC1.add(JTextSpieler3MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 195, 91, -1));
 
         JLabelSpieler4MP1PC1.setText("Spieler 4");
+        jPanelMP1PC1.add(JLabelSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 221, -1, -1));
 
         JTextSpieler4MP1PC1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextSpieler4MP1PC1ActionPerformed(evt);
             }
         });
+        jPanelMP1PC1.add(JTextSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 241, 92, -1));
 
         JLabelSpieler5MP1PC1.setText("Spieler 5");
+        jPanelMP1PC1.add(JLabelSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 221, -1, -1));
+        jPanelMP1PC1.add(JTextSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 241, 92, -1));
 
         jComboBoxAnzahlSpielerMP1PC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bank - 1 Spieler", "1 Bank - 2 Spieler", "1 Bank - 3 Spieler", "1 Bank - 4 Spieler", "1 Bank - 5 Spieler" }));
         jComboBoxAnzahlSpielerMP1PC1.setToolTipText("");
@@ -751,94 +773,7 @@ public class GUI extends javax.swing.JFrame {
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
-
-        javax.swing.GroupLayout jPanelMP1PC1Layout = new javax.swing.GroupLayout(jPanelMP1PC1);
-        jPanelMP1PC1.setLayout(jPanelMP1PC1Layout);
-        jPanelMP1PC1Layout.setHorizontalGroup(
-            jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(JLabelSpieler2MP1PC1)
-                        .addGap(80, 80, 80)
-                        .addComponent(JLabelSpieler3MP1PC1))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(JLabelSpieler4MP1PC1)
-                        .addGap(80, 80, 80)
-                        .addComponent(JLabelSpieler5MP1PC1))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jButtonZurueckMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(AnzahlSpielerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxAnzahlSpielerMP1PC1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                                        .addComponent(JLabelBänkerMP1PC1)
-                                        .addGap(88, 88, 88)
-                                        .addComponent(JLabelSpieler1MP1PC1))
-                                    .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(18, 18, 18))
-        );
-        jPanelMP1PC1Layout.setVerticalGroup(
-            jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelBänkerMP1PC1)
-                    .addComponent(JLabelSpieler1MP1PC1))
-                .addGap(6, 6, 6)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelSpieler2MP1PC1)
-                    .addComponent(JLabelSpieler3MP1PC1))
-                .addGap(1, 1, 1)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelSpieler4MP1PC1)
-                    .addComponent(JLabelSpieler5MP1PC1))
-                .addGap(6, 6, 6)
-                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(jButtonZurueckMP1PC1)
-                .addGap(6, 6, 6)
-                .addComponent(AnzahlSpielerButton1))
-        );
+        jPanelMP1PC1.add(jComboBoxAnzahlSpielerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 103, 212, -1));
 
         jPanelMP1PC.add(jPanelMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
@@ -923,7 +858,7 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -944,7 +879,7 @@ public class GUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
