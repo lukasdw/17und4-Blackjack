@@ -21,6 +21,17 @@ public class GUI extends javax.swing.JFrame {
         jPanelMP1PC.setVisible(false);
         jPanelMPInternet.setVisible(false);
         jPanelHauptmenue.setVisible(true);
+
+        // MP1PC1-Bildschirm
+        JLabelSpieler2MP1PC1.setVisible(false);
+        JTextSpieler2MP1PC1.setVisible(false);
+        JLabelSpieler3MP1PC1.setVisible(false);
+        JTextSpieler3MP1PC1.setVisible(false);
+        JLabelSpieler4MP1PC1.setVisible(false);
+        JTextSpieler4MP1PC1.setVisible(false);
+        JLabelSpieler5MP1PC1.setVisible(false);
+        JTextSpieler5MP1PC1.setVisible(false);
+
         ladebildschirmStarten();
     }
 
@@ -92,7 +103,6 @@ public class GUI extends javax.swing.JFrame {
         jPanelMP1PC1 = new javax.swing.JPanel();
         AnzahlSpielerButton1 = new javax.swing.JButton();
         jButtonZurueckMP1PC1 = new javax.swing.JButton();
-        TextFieldAnzahlSpielerMP1PC1 = new javax.swing.JTextField();
         jTextAreaInfoTextMP1PC1 = new javax.swing.JTextArea();
         JLabelBänkerMP1PC1 = new javax.swing.JLabel();
         JTextlBänkerMP1PC1 = new javax.swing.JTextField();
@@ -106,6 +116,7 @@ public class GUI extends javax.swing.JFrame {
         JTextSpieler4MP1PC1 = new javax.swing.JTextField();
         JLabelSpieler5MP1PC1 = new javax.swing.JLabel();
         JTextSpieler5MP1PC1 = new javax.swing.JTextField();
+        jComboBoxAnzahlSpielerMP1PC1 = new javax.swing.JComboBox<>();
         piMenuBackroundMP1PC1 = new javax.swing.JLabel();
         jPanelHauptmenue = new javax.swing.JPanel();
         jPanel1Hauptmenue = new javax.swing.JPanel();
@@ -685,6 +696,11 @@ public class GUI extends javax.swing.JFrame {
         jPanelMP1PC1.setPreferredSize(new java.awt.Dimension(250, 400));
 
         AnzahlSpielerButton1.setText("Spiel starten");
+        AnzahlSpielerButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnzahlSpielerButton1ActionPerformed(evt);
+            }
+        });
 
         jButtonZurueckMP1PC1.setText("Zurück");
         jButtonZurueckMP1PC1.addActionListener(new java.awt.event.ActionListener() {
@@ -694,7 +710,7 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jTextAreaInfoTextMP1PC1.setEditable(false);
-        jTextAreaInfoTextMP1PC1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextAreaInfoTextMP1PC1.setBackground(new java.awt.Color(240, 240, 240));
         jTextAreaInfoTextMP1PC1.setColumns(20);
         jTextAreaInfoTextMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaInfoTextMP1PC1.setRows(5);
@@ -724,60 +740,76 @@ public class GUI extends javax.swing.JFrame {
 
         JLabelSpieler5MP1PC1.setText("Spieler 5");
 
+        jComboBoxAnzahlSpielerMP1PC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bank - 1 Spieler", "1 Bank - 2 Spieler", "1 Bank - 3 Spieler", "1 Bank - 4 Spieler", "1 Bank - 5 Spieler" }));
+        jComboBoxAnzahlSpielerMP1PC1.setToolTipText("");
+        jComboBoxAnzahlSpielerMP1PC1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+
         javax.swing.GroupLayout jPanelMP1PC1Layout = new javax.swing.GroupLayout(jPanelMP1PC1);
         jPanelMP1PC1.setLayout(jPanelMP1PC1Layout);
         jPanelMP1PC1Layout.setHorizontalGroup(
             jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(TextFieldAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JLabelBänkerMP1PC1)
-                .addGap(88, 88, 88)
-                .addComponent(JLabelSpieler1MP1PC1))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JLabelSpieler2MP1PC1)
-                .addGap(80, 80, 80)
-                .addComponent(JLabelSpieler3MP1PC1))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JLabelSpieler4MP1PC1)
-                .addGap(80, 80, 80)
-                .addComponent(JLabelSpieler5MP1PC1))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jButtonZurueckMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(AnzahlSpielerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(JLabelSpieler2MP1PC1)
+                        .addGap(80, 80, 80)
+                        .addComponent(JLabelSpieler3MP1PC1))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(JLabelSpieler4MP1PC1)
+                        .addGap(80, 80, 80)
+                        .addComponent(JLabelSpieler5MP1PC1))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jButtonZurueckMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(AnzahlSpielerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxAnzahlSpielerMP1PC1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                                        .addComponent(JLabelBänkerMP1PC1)
+                                        .addGap(88, 88, 88)
+                                        .addComponent(JLabelSpieler1MP1PC1))
+                                    .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(18, 18, 18))
         );
         jPanelMP1PC1Layout.setVerticalGroup(
             jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(TextFieldAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JLabelBänkerMP1PC1)
@@ -1002,6 +1034,52 @@ public class GUI extends javax.swing.JFrame {
         jPanelHauptmenue.setVisible(true);
     }//GEN-LAST:event_jButtonZurueckActionPerformed
 
+    private void jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
+        System.out.println(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex());
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
+            JLabelBänkerMP1PC1.setVisible(true);
+            JTextlBänkerMP1PC1.setVisible(true);
+            JLabelSpieler1MP1PC1.setVisible(true);
+            JTextSpieler1MP1PC1.setVisible(true);
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
+            JLabelSpieler2MP1PC1.setVisible(true);
+            JTextSpieler2MP1PC1.setVisible(true);
+        } else {
+            JLabelSpieler2MP1PC1.setVisible(false);
+            JTextSpieler2MP1PC1.setVisible(false);
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
+            JLabelSpieler3MP1PC1.setVisible(true);
+            JTextSpieler3MP1PC1.setVisible(true);
+        } else {
+            JLabelSpieler3MP1PC1.setVisible(false);
+            JTextSpieler3MP1PC1.setVisible(false);
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
+            JLabelSpieler4MP1PC1.setVisible(true);
+            JTextSpieler4MP1PC1.setVisible(true);
+        } else {
+            JLabelSpieler4MP1PC1.setVisible(false);
+            JTextSpieler4MP1PC1.setVisible(false);
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
+            JLabelSpieler5MP1PC1.setVisible(true);
+            JTextSpieler5MP1PC1.setVisible(true);
+        } else {
+            JLabelSpieler5MP1PC1.setVisible(false);
+            JTextSpieler5MP1PC1.setVisible(false);
+        }
+    }//GEN-LAST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
+
+    private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
+        partie.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+        jPanelBrett.setVisible(true);
+    }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
+
     public Partie getPartie() {
         return partie;
     }
@@ -1148,7 +1226,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Karten_Spieler3;
     private javax.swing.JPanel Karten_Spieler4;
     private javax.swing.JPanel Karten_Spieler5;
-    private javax.swing.JTextField TextFieldAnzahlSpielerMP1PC1;
     private javax.swing.JTextField TextFieldGebenSieIhrenNamenEin;
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
@@ -1163,6 +1240,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonStopp;
     private javax.swing.JButton jButtonZurueck;
     private javax.swing.JButton jButtonZurueckMP1PC1;
+    private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;

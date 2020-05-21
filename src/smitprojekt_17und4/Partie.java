@@ -9,7 +9,7 @@ import javax.swing.table.*;
 public class Partie implements PartieInterface {
 
     /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
-    Netzwerkverbidung etc = new Netzwerkverbidung();
+    // Netzwerkverbidung etc = new Netzwerkverbidung();
 
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
@@ -31,7 +31,7 @@ public class Partie implements PartieInterface {
     /* Konstruktor */
     public Partie() {
         /* Der Client baut die Verbindung zum Server auf. */
-        etc.verbinden();
+        // etc.verbinden();
         this.deckEinlesen();
     }
 
@@ -146,14 +146,6 @@ public class Partie implements PartieInterface {
 
     public void setAktuellerSpieler(int aktuellerSpieler) {
         this.aktuellerSpieler = aktuellerSpieler;
-    }
-
-    public Netzwerkverbidung getEtc() {
-        return etc;
-    }
-
-    public void setEtc(Netzwerkverbidung etc) {
-        this.etc = etc;
     }
 
     public int getRunde() {

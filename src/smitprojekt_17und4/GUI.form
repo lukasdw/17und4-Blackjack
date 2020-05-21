@@ -1099,56 +1099,64 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="jTextAreaInfoTextMP1PC1" min="-2" pref="210" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="TextFieldAnzahlSpielerMP1PC1" min="-2" pref="210" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JLabelBänkerMP1PC1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="88" pref="88" max="-2" attributes="0"/>
-                      <Component id="JLabelSpieler1MP1PC1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JTextlBänkerMP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
-                      <Component id="JTextSpieler1MP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JLabelSpieler2MP1PC1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                      <Component id="JLabelSpieler3MP1PC1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JTextSpieler2MP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
-                      <Component id="JTextSpieler3MP1PC1" min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JLabelSpieler4MP1PC1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                      <Component id="JLabelSpieler5MP1PC1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="JTextSpieler4MP1PC1" min="-2" pref="92" max="-2" attributes="0"/>
-                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
-                      <Component id="JTextSpieler5MP1PC1" min="-2" pref="92" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
-                      <Component id="jButtonZurueckMP1PC1" min="-2" pref="117" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
-                      <Component id="AnzahlSpielerButton1" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="JTextlBänkerMP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+                              <Component id="JTextSpieler1MP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="JLabelSpieler2MP1PC1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                              <Component id="JLabelSpieler3MP1PC1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="JTextSpieler2MP1PC1" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+                              <Component id="JTextSpieler3MP1PC1" min="-2" pref="91" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="JLabelSpieler4MP1PC1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
+                              <Component id="JLabelSpieler5MP1PC1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Component id="JTextSpieler4MP1PC1" min="-2" pref="92" max="-2" attributes="0"/>
+                              <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                              <Component id="JTextSpieler5MP1PC1" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+                              <Component id="jButtonZurueckMP1PC1" min="-2" pref="117" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+                              <Component id="AnzahlSpielerButton1" min="-2" pref="117" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jComboBoxAnzahlSpielerMP1PC1" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="JLabelBänkerMP1PC1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="88" pref="88" max="-2" attributes="0"/>
+                                              <Component id="JLabelSpieler1MP1PC1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jTextAreaInfoTextMP1PC1" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1157,9 +1165,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="42" pref="42" max="-2" attributes="0"/>
                       <Component id="jTextAreaInfoTextMP1PC1" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                      <Component id="TextFieldAnzahlSpielerMP1PC1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jComboBoxAnzahlSpielerMP1PC1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="JLabelBänkerMP1PC1" min="-2" max="-2" attributes="0"/>
                           <Component id="JLabelSpieler1MP1PC1" min="-2" max="-2" attributes="0"/>
@@ -1202,6 +1210,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Spiel starten"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnzahlSpielerButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonZurueckMP1PC1">
               <Properties>
@@ -1211,13 +1222,11 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonZurueckMP1PC1ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="TextFieldAnzahlSpielerMP1PC1">
-            </Component>
             <Component class="javax.swing.JTextArea" name="jTextAreaInfoTextMP1PC1">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                  <Color blue="f0" green="f0" red="f0" type="rgb"/>
                 </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1274,6 +1283,26 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="JTextSpieler5MP1PC1">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxAnzahlSpielerMP1PC1">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="1 Bank - 1 Spieler"/>
+                    <StringItem index="1" value="1 Bank - 2 Spieler"/>
+                    <StringItem index="2" value="1 Bank - 3 Spieler"/>
+                    <StringItem index="3" value="1 Bank - 4 Spieler"/>
+                    <StringItem index="4" value="1 Bank - 5 Spieler"/>
+                  </StringArray>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
