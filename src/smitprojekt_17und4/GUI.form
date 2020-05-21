@@ -533,11 +533,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="karte3_Baenker" min="-2" max="-2" attributes="0"/>
+                      <Component id="karte1_Baenker" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="karte2_Baenker" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="karte1_Baenker" min="-2" max="-2" attributes="0"/>
+                      <Component id="karte3_Baenker" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -548,8 +548,8 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="karte2_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte3_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
                           <Component id="karte1_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="karte3_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -557,7 +557,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Baenker">
+            <Component class="javax.swing.JLabel" name="karte3_Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -573,7 +573,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Baenker">
+            <Component class="javax.swing.JLabel" name="karte1_Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
