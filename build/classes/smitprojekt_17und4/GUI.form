@@ -1177,6 +1177,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="JTextlB&#xe4;nkerMP1PC1">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTextlB&#xe4;nkerMP1PC1ActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="20" y="154" width="90" height="-1"/>

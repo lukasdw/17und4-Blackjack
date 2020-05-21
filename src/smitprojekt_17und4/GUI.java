@@ -728,6 +728,12 @@ public class GUI extends javax.swing.JFrame {
 
         JLabelBänkerMP1PC1.setText("Bank");
         jPanelMP1PC1.add(JLabelBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, -1, -1));
+
+        JTextlBänkerMP1PC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextlBänkerMP1PC1ActionPerformed(evt);
+            }
+        });
         jPanelMP1PC1.add(JTextlBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 154, 90, -1));
 
         JLabelSpieler1MP1PC1.setText("Spieler 1");
@@ -1009,11 +1015,33 @@ public class GUI extends javax.swing.JFrame {
 
     private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
         partie.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
+            partie.spielerNamenEingeben(JTextlBänkerMP1PC1.getText());
+            partie.spielerNamenEingeben(JTextSpieler1MP1PC1.getText());
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
+            partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
+            partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
+            partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
+            partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
+        }
+        partie.highscoreAktuallisieren(jTableHighscore);
+        spielerWechseln();
         jPanelMPInternet.setVisible(false);
         jPanelMP1PC.setVisible(false);
         jPanelHauptmenue.setVisible(false);
         jPanelBrett.setVisible(true);
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
+
+    private void JTextlBänkerMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextlBänkerMP1PC1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextlBänkerMP1PC1ActionPerformed
 
     public Partie getPartie() {
         return partie;
