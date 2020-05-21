@@ -17,6 +17,10 @@ public class GUI extends javax.swing.JFrame {
 
         // Startfenster starten
         setVisible(true);
+        jPanelBrett.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelHauptmenue.setVisible(true);
         ladebildschirmStarten();
     }
 
@@ -30,45 +34,6 @@ public class GUI extends javax.swing.JFrame {
         AnfangjProgressBar = new javax.swing.JProgressBar();
         Anfang1jLabel = new javax.swing.JLabel();
         Anfang2jLabel = new javax.swing.JLabel();
-        jPanelMPInternet = new javax.swing.JPanel();
-        jPanelMPInternet1 = new javax.swing.JPanel();
-        ButtonLobbySuchen = new javax.swing.JButton();
-        TextFieldGebenSieIhrenNamenEin = new javax.swing.JTextField();
-        jTextAreaGebenSieIhrenNamenEin = new javax.swing.JTextArea();
-        jTextAreaServerIP = new javax.swing.JTextArea();
-        TextFieldServerIP = new javax.swing.JTextField();
-        jTextAreaPort = new javax.swing.JTextArea();
-        TextFieldPort = new javax.swing.JTextField();
-        jButtonZurueck = new javax.swing.JButton();
-        piMenuBackround3 = new javax.swing.JLabel();
-        jPanelMP1PC = new javax.swing.JPanel();
-        jPanel2MP1PC = new javax.swing.JPanel();
-        AnzahlSpielerButton1 = new javax.swing.JButton();
-        TextFieldAnzahlSpieler = new javax.swing.JTextField();
-        jTextAreaInfoText = new javax.swing.JTextArea();
-        JLabelBänker = new javax.swing.JLabel();
-        JTextlBänker = new javax.swing.JTextField();
-        JLabelSpieler1 = new javax.swing.JLabel();
-        JTextSpieler1 = new javax.swing.JTextField();
-        JLabelSpieler2 = new javax.swing.JLabel();
-        JTextSpieler2 = new javax.swing.JTextField();
-        JLabelSpieler3 = new javax.swing.JLabel();
-        JTextSpieler3 = new javax.swing.JTextField();
-        JLabelSpieler4 = new javax.swing.JLabel();
-        JTextSpieler4 = new javax.swing.JTextField();
-        JLabelSpieler5 = new javax.swing.JLabel();
-        JTextSpieler5 = new javax.swing.JTextField();
-        jButtonZurueck1 = new javax.swing.JButton();
-        piMP1PCBackround = new javax.swing.JLabel();
-        jPanelHauptmenue = new javax.swing.JPanel();
-        jPanel1Hauptmenue = new javax.swing.JPanel();
-        jButtonMP1PC = new javax.swing.JButton();
-        jButtonMPInet = new javax.swing.JButton();
-        jButtonOptionen = new javax.swing.JButton();
-        jButtonCredits = new javax.swing.JButton();
-        jButtonBeenden = new javax.swing.JButton();
-        picLogo1 = new javax.swing.JLabel();
-        piMenuBackround = new javax.swing.JLabel();
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
@@ -112,6 +77,45 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5 = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
         piMenuBackround1 = new javax.swing.JLabel();
+        jPanelMPInternet = new javax.swing.JPanel();
+        jPanelMPInternet1 = new javax.swing.JPanel();
+        ButtonLobbySuchen = new javax.swing.JButton();
+        TextFieldGebenSieIhrenNamenEin = new javax.swing.JTextField();
+        jTextAreaGebenSieIhrenNamenEin = new javax.swing.JTextArea();
+        jTextAreaServerIP = new javax.swing.JTextArea();
+        TextFieldServerIP = new javax.swing.JTextField();
+        jTextAreaPort = new javax.swing.JTextArea();
+        TextFieldPort = new javax.swing.JTextField();
+        jButtonZurueck = new javax.swing.JButton();
+        piMenuBackround3 = new javax.swing.JLabel();
+        jPanelMP1PC = new javax.swing.JPanel();
+        jPanelMP1PC1 = new javax.swing.JPanel();
+        AnzahlSpielerButton1 = new javax.swing.JButton();
+        jButtonZurueckMP1PC1 = new javax.swing.JButton();
+        TextFieldAnzahlSpielerMP1PC1 = new javax.swing.JTextField();
+        jTextAreaInfoTextMP1PC1 = new javax.swing.JTextArea();
+        JLabelBänkerMP1PC1 = new javax.swing.JLabel();
+        JTextlBänkerMP1PC1 = new javax.swing.JTextField();
+        JLabelSpieler1MP1PC1 = new javax.swing.JLabel();
+        JTextSpieler1MP1PC1 = new javax.swing.JTextField();
+        JLabelSpieler2MP1PC1 = new javax.swing.JLabel();
+        JTextSpieler2MP1PC1 = new javax.swing.JTextField();
+        JLabelSpieler3MP1PC1 = new javax.swing.JLabel();
+        JTextSpieler3MP1PC1 = new javax.swing.JTextField();
+        JLabelSpieler4MP1PC1 = new javax.swing.JLabel();
+        JTextSpieler4MP1PC1 = new javax.swing.JTextField();
+        JLabelSpieler5MP1PC1 = new javax.swing.JLabel();
+        JTextSpieler5MP1PC1 = new javax.swing.JTextField();
+        piMenuBackroundMP1PC1 = new javax.swing.JLabel();
+        jPanelHauptmenue = new javax.swing.JPanel();
+        jPanel1Hauptmenue = new javax.swing.JPanel();
+        jButtonMP1PC = new javax.swing.JButton();
+        jButtonMPInet = new javax.swing.JButton();
+        jButtonOptionen = new javax.swing.JButton();
+        jButtonCredits = new javax.swing.JButton();
+        jButtonBeenden = new javax.swing.JButton();
+        picLogo1 = new javax.swing.JLabel();
+        piMenuBackround = new javax.swing.JLabel();
 
         AnfangJFrame.setAlwaysOnTop(true);
         AnfangJFrame.setMinimumSize(new java.awt.Dimension(250, 400));
@@ -183,334 +187,6 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jPanelMPInternet.setBackground(new java.awt.Color(204, 255, 204));
-        jPanelMPInternet.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanelMPInternet1.setBackground(new java.awt.Color(255, 255, 255));
-
-        ButtonLobbySuchen.setText("Lobby suchen");
-        ButtonLobbySuchen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonLobbySuchenActionPerformed(evt);
-            }
-        });
-
-        TextFieldGebenSieIhrenNamenEin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldGebenSieIhrenNamenEinActionPerformed(evt);
-            }
-        });
-
-        jTextAreaGebenSieIhrenNamenEin.setEditable(false);
-        jTextAreaGebenSieIhrenNamenEin.setColumns(20);
-        jTextAreaGebenSieIhrenNamenEin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTextAreaGebenSieIhrenNamenEin.setRows(5);
-        jTextAreaGebenSieIhrenNamenEin.setText("Geben Sie ihren Namen ein.");
-
-        jTextAreaServerIP.setEditable(false);
-        jTextAreaServerIP.setColumns(20);
-        jTextAreaServerIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTextAreaServerIP.setRows(5);
-        jTextAreaServerIP.setText("Server-IP\n");
-
-        TextFieldServerIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldServerIPActionPerformed(evt);
-            }
-        });
-
-        jTextAreaPort.setEditable(false);
-        jTextAreaPort.setColumns(20);
-        jTextAreaPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTextAreaPort.setRows(5);
-        jTextAreaPort.setText("Port\n");
-
-        TextFieldPort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldPortActionPerformed(evt);
-            }
-        });
-
-        jButtonZurueck.setText("Zurück");
-        jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonZurueckActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelMPInternet1Layout = new javax.swing.GroupLayout(jPanelMPInternet1);
-        jPanelMPInternet1.setLayout(jPanelMPInternet1Layout);
-        jPanelMPInternet1Layout.setHorizontalGroup(
-            jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextFieldGebenSieIhrenNamenEin)
-                    .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))
-                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextFieldPort)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMPInternet1Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
-        );
-        jPanelMPInternet1Layout.setVerticalGroup(
-            jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextFieldGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
-                .addComponent(jButtonZurueck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonLobbySuchen)
-                .addGap(24, 24, 24))
-        );
-
-        jPanelMPInternet.add(jPanelMPInternet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
-
-        piMenuBackround3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
-        jPanelMPInternet.add(piMenuBackround3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
-
-        jPanelMP1PC.setBackground(new java.awt.Color(204, 255, 204));
-        jPanelMP1PC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2MP1PC.setBackground(new java.awt.Color(255, 255, 255));
-
-        AnzahlSpielerButton1.setText("Spiel starten");
-        AnzahlSpielerButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnzahlSpielerButton1ActionPerformed(evt);
-            }
-        });
-
-        TextFieldAnzahlSpieler.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldAnzahlSpielerActionPerformed(evt);
-            }
-        });
-
-        jTextAreaInfoText.setEditable(false);
-        jTextAreaInfoText.setColumns(20);
-        jTextAreaInfoText.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTextAreaInfoText.setRows(5);
-        jTextAreaInfoText.setText("Geben Sie die Anzahl der Spieler ein.\nEs können maximal fünf Spieler und\nein Bänker an einem Spiel teilnehmen.");
-
-        JLabelBänker.setText("Bänker");
-
-        JLabelSpieler1.setText("Spieler 1");
-
-        JLabelSpieler2.setText("Spieler 2");
-
-        JLabelSpieler3.setText("Spieler 3");
-
-        JLabelSpieler4.setText("Spieler 4");
-
-        JLabelSpieler5.setText("Spieler 5");
-
-        JTextSpieler5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTextSpieler5ActionPerformed(evt);
-            }
-        });
-
-        jButtonZurueck1.setText("Zurück");
-        jButtonZurueck1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonZurueck1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2MP1PCLayout = new javax.swing.GroupLayout(jPanel2MP1PC);
-        jPanel2MP1PC.setLayout(jPanel2MP1PCLayout);
-        jPanel2MP1PCLayout.setHorizontalGroup(
-            jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLabelSpieler2)
-                    .addComponent(JLabelBänker)
-                    .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TextFieldAnzahlSpieler)
-                        .addComponent(jTextAreaInfoText, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
-                    .addComponent(JTextlBänker, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                        .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                                    .addComponent(JLabelSpieler4)
-                                    .addGap(69, 69, 69))
-                                .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                                    .addComponent(JTextSpieler2)
-                                    .addGap(20, 20, 20)))
-                            .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                                .addComponent(JTextSpieler4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(JTextSpieler5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2MP1PCLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JLabelSpieler5)
-                                    .addComponent(JTextSpieler3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JLabelSpieler3)
-                                    .addComponent(JTextSpieler1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JLabelSpieler1))))))
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2MP1PCLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonZurueck1, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                    .addComponent(AnzahlSpielerButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(64, 64, 64))
-        );
-        jPanel2MP1PCLayout.setVerticalGroup(
-            jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2MP1PCLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jTextAreaInfoText, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextFieldAnzahlSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLabelBänker)
-                    .addComponent(JLabelSpieler1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTextlBänker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLabelSpieler2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JLabelSpieler3))
-                .addGap(1, 1, 1)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTextSpieler2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLabelSpieler5)
-                    .addComponent(JLabelSpieler4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2MP1PCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTextSpieler4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTextSpieler5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(jButtonZurueck1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AnzahlSpielerButton1)
-                .addGap(25, 25, 25))
-        );
-
-        jPanelMP1PC.add(jPanel2MP1PC, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
-
-        piMP1PCBackround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
-        jPanelMP1PC.add(piMP1PCBackround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
-
-        jPanelHauptmenue.setBackground(new java.awt.Color(204, 255, 204));
-        jPanelHauptmenue.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1Hauptmenue.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButtonMP1PC.setText("Multiplayer (1 PC)");
-        jButtonMP1PC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMP1PCActionPerformed(evt);
-            }
-        });
-
-        jButtonMPInet.setText("Mehrspieler über Internet");
-        jButtonMPInet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMPInetActionPerformed(evt);
-            }
-        });
-
-        jButtonOptionen.setText("Optionen");
-        jButtonOptionen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOptionenActionPerformed(evt);
-            }
-        });
-
-        jButtonCredits.setText("Credits");
-        jButtonCredits.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCreditsActionPerformed(evt);
-            }
-        });
-
-        jButtonBeenden.setText("Beenden");
-        jButtonBeenden.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBeendenActionPerformed(evt);
-            }
-        });
-
-        picLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo noch kleiner.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel1HauptmenueLayout = new javax.swing.GroupLayout(jPanel1Hauptmenue);
-        jPanel1Hauptmenue.setLayout(jPanel1HauptmenueLayout);
-        jPanel1HauptmenueLayout.setHorizontalGroup(
-            jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1HauptmenueLayout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(picLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1HauptmenueLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonMP1PC, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonMPInet, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonBeenden, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
-        );
-        jPanel1HauptmenueLayout.setVerticalGroup(
-            jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1HauptmenueLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(picLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonMP1PC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButtonMPInet, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButtonOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButtonCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButtonBeenden, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-
-        jPanelHauptmenue.add(jPanel1Hauptmenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
-
-        piMenuBackround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
-        jPanelHauptmenue.add(piMenuBackround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
         jPanelBrett.setBackground(new java.awt.Color(204, 204, 204));
         jPanelBrett.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -630,7 +306,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jButtonEinsatz)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonStopp)
-                        .addGap(0, 1, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelMenuLayout.createSequentialGroup()
                         .addComponent(jLabelEinsatz)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -919,13 +595,303 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelBrett.add(piMenuBackround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelMPInternet.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelMPInternet1.setBackground(new java.awt.Color(255, 255, 255));
+
+        ButtonLobbySuchen.setText("Lobby suchen");
+
+        jTextAreaGebenSieIhrenNamenEin.setEditable(false);
+        jTextAreaGebenSieIhrenNamenEin.setColumns(20);
+        jTextAreaGebenSieIhrenNamenEin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaGebenSieIhrenNamenEin.setRows(5);
+        jTextAreaGebenSieIhrenNamenEin.setText("Geben Sie ihren Namen ein.");
+
+        jTextAreaServerIP.setEditable(false);
+        jTextAreaServerIP.setColumns(20);
+        jTextAreaServerIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaServerIP.setRows(5);
+        jTextAreaServerIP.setText("Server-IP\n");
+
+        jTextAreaPort.setEditable(false);
+        jTextAreaPort.setColumns(20);
+        jTextAreaPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaPort.setRows(5);
+        jTextAreaPort.setText("Port\n");
+
+        jButtonZurueck.setText("Zurück");
+        jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZurueckActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelMPInternet1Layout = new javax.swing.GroupLayout(jPanelMPInternet1);
+        jPanelMPInternet1.setLayout(jPanelMPInternet1Layout);
+        jPanelMPInternet1Layout.setHorizontalGroup(
+            jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TextFieldGebenSieIhrenNamenEin)
+                    .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                        .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
+                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                        .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextFieldPort)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMPInternet1Layout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
+        );
+        jPanelMPInternet1Layout.setVerticalGroup(
+            jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextFieldGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addComponent(jButtonZurueck)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonLobbySuchen)
+                .addGap(24, 24, 24))
+        );
+
+        jPanelMPInternet.add(jPanelMPInternet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
+
+        piMenuBackround3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        jPanelMPInternet.add(piMenuBackround3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
+
+        jPanelMP1PC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelMP1PC1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelMP1PC1.setPreferredSize(new java.awt.Dimension(250, 400));
+
+        AnzahlSpielerButton1.setText("Spiel starten");
+
+        jButtonZurueckMP1PC1.setText("Zurück");
+        jButtonZurueckMP1PC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZurueckMP1PC1ActionPerformed(evt);
+            }
+        });
+
+        jTextAreaInfoTextMP1PC1.setEditable(false);
+        jTextAreaInfoTextMP1PC1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextAreaInfoTextMP1PC1.setColumns(20);
+        jTextAreaInfoTextMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaInfoTextMP1PC1.setRows(5);
+        jTextAreaInfoTextMP1PC1.setText("Geben Sie die Anzahl der Spieler ein.\nEs können maximal fünf Spieler und\nein Bänker an einem Spiel teilnehmen.");
+
+        JLabelBänkerMP1PC1.setText("Bänker");
+
+        JLabelSpieler1MP1PC1.setText("Spieler 1");
+
+        JLabelSpieler2MP1PC1.setText("Spieler 2");
+
+        JTextSpieler2MP1PC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextSpieler2MP1PC1ActionPerformed(evt);
+            }
+        });
+
+        JLabelSpieler3MP1PC1.setText("Spieler 3");
+
+        JLabelSpieler4MP1PC1.setText("Spieler 4");
+
+        JTextSpieler4MP1PC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextSpieler4MP1PC1ActionPerformed(evt);
+            }
+        });
+
+        JLabelSpieler5MP1PC1.setText("Spieler 5");
+
+        javax.swing.GroupLayout jPanelMP1PC1Layout = new javax.swing.GroupLayout(jPanelMP1PC1);
+        jPanelMP1PC1.setLayout(jPanelMP1PC1Layout);
+        jPanelMP1PC1Layout.setHorizontalGroup(
+            jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(TextFieldAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JLabelBänkerMP1PC1)
+                .addGap(88, 88, 88)
+                .addComponent(JLabelSpieler1MP1PC1))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JLabelSpieler2MP1PC1)
+                .addGap(80, 80, 80)
+                .addComponent(JLabelSpieler3MP1PC1))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JLabelSpieler4MP1PC1)
+                .addGap(80, 80, 80)
+                .addComponent(JLabelSpieler5MP1PC1))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jButtonZurueckMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(AnzahlSpielerButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanelMP1PC1Layout.setVerticalGroup(
+            jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMP1PC1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jTextAreaInfoTextMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(TextFieldAnzahlSpielerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelBänkerMP1PC1)
+                    .addComponent(JLabelSpieler1MP1PC1))
+                .addGap(6, 6, 6)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTextlBänkerMP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextSpieler1MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelSpieler2MP1PC1)
+                    .addComponent(JLabelSpieler3MP1PC1))
+                .addGap(1, 1, 1)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTextSpieler2MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextSpieler3MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JLabelSpieler4MP1PC1)
+                    .addComponent(JLabelSpieler5MP1PC1))
+                .addGap(6, 6, 6)
+                .addGroup(jPanelMP1PC1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTextSpieler4MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextSpieler5MP1PC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addComponent(jButtonZurueckMP1PC1)
+                .addGap(6, 6, 6)
+                .addComponent(AnzahlSpielerButton1))
+        );
+
+        jPanelMP1PC.add(jPanelMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
+
+        piMenuBackroundMP1PC1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        jPanelMP1PC.add(piMenuBackroundMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
+
+        jPanelHauptmenue.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1Hauptmenue.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButtonMP1PC.setText("Multiplayer (1 PC)");
+        jButtonMP1PC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMP1PCActionPerformed(evt);
+            }
+        });
+
+        jButtonMPInet.setText("Mehrspieler über Internet");
+        jButtonMPInet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMPInetActionPerformed(evt);
+            }
+        });
+
+        jButtonOptionen.setText("Optionen");
+
+        jButtonCredits.setText("Credits");
+
+        jButtonBeenden.setText("Beenden");
+        jButtonBeenden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBeendenActionPerformed(evt);
+            }
+        });
+
+        picLogo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo noch kleiner.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1HauptmenueLayout = new javax.swing.GroupLayout(jPanel1Hauptmenue);
+        jPanel1Hauptmenue.setLayout(jPanel1HauptmenueLayout);
+        jPanel1HauptmenueLayout.setHorizontalGroup(
+            jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1HauptmenueLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(picLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1HauptmenueLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonMP1PC, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonMPInet, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonBeenden, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19))
+        );
+        jPanel1HauptmenueLayout.setVerticalGroup(
+            jPanel1HauptmenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1HauptmenueLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(picLogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonMP1PC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonMPInet, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonBeenden, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        jPanelHauptmenue.add(jPanel1Hauptmenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
+
+        piMenuBackround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        jPanelHauptmenue.add(piMenuBackround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 1203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -945,8 +911,8 @@ public class GUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -978,7 +944,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
-        System.exit(0);
+        programmBeenden();
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
     // Sollte so tatsächlich funktionieren
@@ -996,61 +962,45 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEinsatzActionPerformed
 
-    private void jButtonCreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCreditsActionPerformed
+    private void jButtonBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBeendenActionPerformed
+        programmBeenden();
+    }//GEN-LAST:event_jButtonBeendenActionPerformed
 
     private void jButtonMP1PCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMP1PCActionPerformed
-        // TODO add your handling code here:
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+        jPanelMP1PC.setVisible(true);
     }//GEN-LAST:event_jButtonMP1PCActionPerformed
 
     private void jButtonMPInetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMPInetActionPerformed
-        // TODO add your handling code here:
+        jPanelBrett.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelMPInternet.setVisible(true);
     }//GEN-LAST:event_jButtonMPInetActionPerformed
 
-    private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonOptionenActionPerformed
+    private void jButtonZurueckMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckMP1PC1ActionPerformed
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(true);
+    }//GEN-LAST:event_jButtonZurueckMP1PC1ActionPerformed
 
-    private void jButtonBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBeendenActionPerformed
+    private void JTextSpieler2MP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler2MP1PC1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBeendenActionPerformed
+    }//GEN-LAST:event_JTextSpieler2MP1PC1ActionPerformed
 
-    private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
+    private void JTextSpieler4MP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler4MP1PC1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
-
-    private void JTextSpieler5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextSpieler5ActionPerformed
-
-    private void TextFieldAnzahlSpielerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldAnzahlSpielerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldAnzahlSpielerActionPerformed
-
-    private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
-
-    private void TextFieldGebenSieIhrenNamenEinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldGebenSieIhrenNamenEinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldGebenSieIhrenNamenEinActionPerformed
-
-    private void TextFieldServerIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldServerIPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldServerIPActionPerformed
-
-    private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPortActionPerformed
+    }//GEN-LAST:event_JTextSpieler4MP1PC1ActionPerformed
 
     private void jButtonZurueckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckActionPerformed
-        // TODO add your handling code here:
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(true);
     }//GEN-LAST:event_jButtonZurueckActionPerformed
-
-    private void jButtonZurueck1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueck1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonZurueck1ActionPerformed
 
     public Partie getPartie() {
         return partie;
@@ -1111,8 +1061,13 @@ public class GUI extends javax.swing.JFrame {
                     karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
                 }
             }
-            default: System.out.println("Fehler");
+            default:
+                System.out.println("Fehler");
         }
+    }
+
+    private void programmBeenden() {
+        System.exit(0);
     }
 
     private void spielerWechseln() {
@@ -1175,25 +1130,25 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JProgressBar AnfangjProgressBar;
     private javax.swing.JButton AnzahlSpielerButton1;
     private javax.swing.JButton ButtonLobbySuchen;
-    private javax.swing.JLabel JLabelBänker;
-    private javax.swing.JLabel JLabelSpieler1;
-    private javax.swing.JLabel JLabelSpieler2;
-    private javax.swing.JLabel JLabelSpieler3;
-    private javax.swing.JLabel JLabelSpieler4;
-    private javax.swing.JLabel JLabelSpieler5;
-    private javax.swing.JTextField JTextSpieler1;
-    private javax.swing.JTextField JTextSpieler2;
-    private javax.swing.JTextField JTextSpieler3;
-    private javax.swing.JTextField JTextSpieler4;
-    private javax.swing.JTextField JTextSpieler5;
-    private javax.swing.JTextField JTextlBänker;
+    private javax.swing.JLabel JLabelBänkerMP1PC1;
+    private javax.swing.JLabel JLabelSpieler1MP1PC1;
+    private javax.swing.JLabel JLabelSpieler2MP1PC1;
+    private javax.swing.JLabel JLabelSpieler3MP1PC1;
+    private javax.swing.JLabel JLabelSpieler4MP1PC1;
+    private javax.swing.JLabel JLabelSpieler5MP1PC1;
+    private javax.swing.JTextField JTextSpieler1MP1PC1;
+    private javax.swing.JTextField JTextSpieler2MP1PC1;
+    private javax.swing.JTextField JTextSpieler3MP1PC1;
+    private javax.swing.JTextField JTextSpieler4MP1PC1;
+    private javax.swing.JTextField JTextSpieler5MP1PC1;
+    private javax.swing.JTextField JTextlBänkerMP1PC1;
     private javax.swing.JPanel Karten_Baenker;
     private javax.swing.JPanel Karten_Spieler1;
     private javax.swing.JPanel Karten_Spieler2;
     private javax.swing.JPanel Karten_Spieler3;
     private javax.swing.JPanel Karten_Spieler4;
     private javax.swing.JPanel Karten_Spieler5;
-    private javax.swing.JTextField TextFieldAnzahlSpieler;
+    private javax.swing.JTextField TextFieldAnzahlSpielerMP1PC1;
     private javax.swing.JTextField TextFieldGebenSieIhrenNamenEin;
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
@@ -1207,7 +1162,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOptionen;
     private javax.swing.JButton jButtonStopp;
     private javax.swing.JButton jButtonZurueck;
-    private javax.swing.JButton jButtonZurueck1;
+    private javax.swing.JButton jButtonZurueckMP1PC1;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
@@ -1215,11 +1170,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPunktestand;
     private javax.swing.JLabel jLabelPunktestandValue;
     private javax.swing.JPanel jPanel1Hauptmenue;
-    private javax.swing.JPanel jPanel2MP1PC;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
     private javax.swing.JPanel jPanelHauptmenue;
     private javax.swing.JPanel jPanelMP1PC;
+    private javax.swing.JPanel jPanelMP1PC1;
     private javax.swing.JPanel jPanelMPInternet;
     private javax.swing.JPanel jPanelMPInternet1;
     private javax.swing.JPanel jPanelMenu;
@@ -1227,7 +1182,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableHighscore;
     private javax.swing.JTextArea jTextAreaGebenSieIhrenNamenEin;
-    private javax.swing.JTextArea jTextAreaInfoText;
+    private javax.swing.JTextArea jTextAreaInfoTextMP1PC1;
     private javax.swing.JTextArea jTextAreaPort;
     private javax.swing.JTextArea jTextAreaServerIP;
     private javax.swing.JTextField jTextFieldEinsatz;
@@ -1249,10 +1204,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel karte3_Spieler3;
     private javax.swing.JLabel karte3_Spieler4;
     private javax.swing.JLabel karte3_Spieler5;
-    private javax.swing.JLabel piMP1PCBackround;
     private javax.swing.JLabel piMenuBackround;
     private javax.swing.JLabel piMenuBackround1;
     private javax.swing.JLabel piMenuBackround3;
+    private javax.swing.JLabel piMenuBackroundMP1PC1;
     private javax.swing.JLabel picBrett;
     private javax.swing.JLabel picLogo;
     private javax.swing.JLabel picLogo1;
