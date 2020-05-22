@@ -584,6 +584,11 @@ public class GUI extends javax.swing.JFrame {
         jPanelMPInternet1.setBackground(new java.awt.Color(255, 255, 255));
 
         ButtonLobbySuchen.setText("Lobby suchen");
+        ButtonLobbySuchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonLobbySuchenActionPerformed(evt);
+            }
+        });
 
         jTextAreaGebenSieIhrenNamenEin.setEditable(false);
         jTextAreaGebenSieIhrenNamenEin.setColumns(20);
@@ -1003,6 +1008,10 @@ public class GUI extends javax.swing.JFrame {
     private void JTextlBänkerMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextlBänkerMP1PC1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTextlBänkerMP1PC1ActionPerformed
+
+    private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
+        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()));
+    }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
 
     public Partie getPartie() {
         return partie;
