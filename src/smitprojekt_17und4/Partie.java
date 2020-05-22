@@ -18,9 +18,6 @@ public class Partie implements PartieInterface {
     Anfang immer zwei Spieler benötigt. Der Dealer und die Spieler */
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    /* Jeder Spieler fügt am Anfang jeder Runde seinen Einsatz, dem Einsatzpool zu. */
-    private int einsatzPool;
-
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler;
     private int anzahlSpielerCounter;
@@ -47,7 +44,7 @@ public class Partie implements PartieInterface {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
 
-        /* Workaround für relativen Pfad */
+ /* Workaround für relativen Pfad */
         String root = System.getProperty("user.dir");
         String filePath = root + File.separator + "src\\Karten\\";
 
@@ -86,19 +83,33 @@ public class Partie implements PartieInterface {
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
         die nötigen Funktionen benutzen zu können */
         DefaultTableModel model = (DefaultTableModel) jTableTabelle.getModel();
-        Object spalte[] = new Object[2];
+        Object spalte[] = new Object[4];
 
         /* Nun werden die Werte der Spieler in ein Array, was als Zeile
         fungiert, gespeichert. Diese Zeile wird dann als Zeile in der Tabelle
         hinzugefügt. */
         for (int i = 0; i < spieler.size(); i++) {
-            spalte[0] = spieler.get(i).getName();
-            spalte[1] = spieler.get(i).getKontostand();
+            if (i == 0) {
+                spalte[0] = "Bank";
+            } else {
+                spalte[0] = "Spieler " + i;
+            }
+            spalte[1] = spieler.get(i).getName();
+            spalte[2] = spieler.get(i).getKontostand();
+            spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);
         }
     }
 
     /* Getter und Setter */
+    public Netzwerkverbidung getEtc() {
+        return etc;
+    }
+
+    public void setEtc(Netzwerkverbidung etc) {
+        this.etc = etc;
+    }
+
     public ArrayList<Karte> getDeck() {
         return deck;
     }
@@ -113,14 +124,6 @@ public class Partie implements PartieInterface {
 
     public void setSpieler(ArrayList<Spieler> spieler) {
         this.spieler = spieler;
-    }
-
-    public int getEinsatzPool() {
-        return einsatzPool;
-    }
-
-    public void setEinsatzPool(int einsatzPool) {
-        this.einsatzPool = einsatzPool;
     }
 
     public int getAnzahlSpieler() {
@@ -155,11 +158,4 @@ public class Partie implements PartieInterface {
         this.runde = runde;
     }
 
-    public Netzwerkverbidung getEtc() {
-        return etc;
-    }
-
-    public void setEtc(Netzwerkverbidung etc) {
-        this.etc = etc;
-    }
 }

@@ -4,5 +4,4 @@ import java.util.ArrayList;
 
 public interface SpielerInterface {
     public void karteZiehen(ArrayList<Karte> deck);
-    public void einsatzSetzen(int einsatzPool);
 }

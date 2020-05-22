@@ -3,7 +3,7 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Spieler implements SpielerInterface{
+public class Spieler implements SpielerInterface {
 
     /* Der Name wird direkt vergeben. */
     private String name;
@@ -42,26 +42,22 @@ public class Spieler implements SpielerInterface{
             handPunkte = handPunkte + hand.get(i).getWert();
         }
     }
-    
-    /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
-    und dem einsatzPool hinzugefügt. */
-    public void einsatzSetzen(int einsatzPool) {
-        /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
-        jeder Spieler nacheinander */
-        einsatzPool = +this.einsatz;
-    }
 
     /* Getter und Setter */
-    public int getKontostand() {
-        return kontostand;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getKontostand() {
+        return kontostand;
+    }
+
+    public void setKontostand(int kontostand) {
+        this.kontostand = kontostand;
     }
 
     public int getEinsatz() {
@@ -86,5 +82,5 @@ public class Spieler implements SpielerInterface{
 
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
-    } 
+    }
 }

@@ -33,7 +33,6 @@ public class GUI extends javax.swing.JFrame {
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
-        picDeck = new javax.swing.JLabel();
         jPanelAktuellerSpieler = new javax.swing.JPanel();
         jLabelAktuellerSpieler = new javax.swing.JLabel();
         jPanelMenu = new javax.swing.JPanel();
@@ -69,8 +68,17 @@ public class GUI extends javax.swing.JFrame {
         karte1_Spieler5 = new javax.swing.JLabel();
         karte2_Spieler5 = new javax.swing.JLabel();
         karte3_Spieler5 = new javax.swing.JLabel();
+        picDeck = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
         piMenuBackround1 = new javax.swing.JLabel();
+        jPanelOptionen = new javax.swing.JPanel();
+        jPanelOptionen1 = new javax.swing.JPanel();
+        jButtonZurueckOptionen = new javax.swing.JButton();
+        piMenuBackroundMP1PC2 = new javax.swing.JLabel();
+        jPanelCredits = new javax.swing.JPanel();
+        jPanelCredits1 = new javax.swing.JPanel();
+        jButtonZurueckCredits = new javax.swing.JButton();
+        piMenuBackroundMP1PC3 = new javax.swing.JLabel();
         jPanelMPInternet = new javax.swing.JPanel();
         jPanelMPInternet1 = new javax.swing.JPanel();
         ButtonLobbySuchen = new javax.swing.JButton();
@@ -196,19 +204,12 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Name", "Punktestand"
+                "Rolle", "Name", "Punktestand", "Einsatz"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -218,13 +219,11 @@ public class GUI extends javax.swing.JFrame {
         if (jTableHighscore.getColumnModel().getColumnCount() > 0) {
             jTableHighscore.getColumnModel().getColumn(0).setResizable(false);
             jTableHighscore.getColumnModel().getColumn(1).setResizable(false);
+            jTableHighscore.getColumnModel().getColumn(2).setResizable(false);
+            jTableHighscore.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jPanelBrett.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 310, 250, 170));
-
-        picDeck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
-        picDeck.setAlignmentY(0.0F);
-        jPanelBrett.add(picDeck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
+        jPanelBrett.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 280, 170));
 
         jPanelAktuellerSpieler.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAktuellerSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -271,12 +270,6 @@ public class GUI extends javax.swing.JFrame {
 
         jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelEinsatz.setText("Einsatz");
-
-        jTextFieldEinsatz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEinsatzActionPerformed(evt);
-            }
-        });
 
         jButtonEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonEinsatz.setText("Einsatz setzen");
@@ -430,7 +423,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, 90));
+        jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, 90));
 
         karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler2.setAlignmentY(0.0F);
@@ -465,7 +458,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, -1, 90));
+        jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, 90));
 
         karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler3.setAlignmentY(0.0F);
@@ -500,7 +493,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, -1, 90));
+        jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, 90));
 
         karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler4.setAlignmentY(0.0F);
@@ -535,7 +528,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, -1, 90));
+        jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, -1, 90));
 
         karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler5.setAlignmentY(0.0F);
@@ -570,13 +563,59 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelBrett.add(Karten_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, 90));
+        jPanelBrett.add(Karten_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, -1, 90));
+
+        picDeck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
+        picDeck.setAlignmentY(0.0F);
+        jPanelBrett.add(picDeck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
 
         picBrett.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brett.png"))); // NOI18N
         jPanelBrett.add(picBrett, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 927, 460));
 
         piMenuBackround1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelBrett.add(piMenuBackround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
+
+        jPanelOptionen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelOptionen1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelOptionen1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelOptionen1.setPreferredSize(new java.awt.Dimension(250, 400));
+        jPanelOptionen1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonZurueckOptionen.setText("Zurück");
+        jButtonZurueckOptionen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonZurueckOptionen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZurueckOptionenActionPerformed(evt);
+            }
+        });
+        jPanelOptionen1.add(jButtonZurueckOptionen, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 117, -1));
+
+        jPanelOptionen.add(jPanelOptionen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
+
+        piMenuBackroundMP1PC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        jPanelOptionen.add(piMenuBackroundMP1PC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
+
+        jPanelCredits.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelCredits1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelCredits1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelCredits1.setPreferredSize(new java.awt.Dimension(250, 400));
+        jPanelCredits1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButtonZurueckCredits.setText("Zurück");
+        jButtonZurueckCredits.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonZurueckCredits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonZurueckCreditsActionPerformed(evt);
+            }
+        });
+        jPanelCredits1.add(jButtonZurueckCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 117, -1));
+
+        jPanelCredits.add(jPanelCredits1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
+
+        piMenuBackroundMP1PC3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        jPanelCredits.add(piMenuBackroundMP1PC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
         jPanelMPInternet.setBackground(new java.awt.Color(255, 255, 255));
         jPanelMPInternet.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -703,12 +742,6 @@ public class GUI extends javax.swing.JFrame {
 
         JLabelBänkerMP1PC1.setText("Bank");
         jPanelMP1PC1.add(JLabelBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, -1, -1));
-
-        JTextlBänkerMP1PC1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTextlBänkerMP1PC1ActionPerformed(evt);
-            }
-        });
         jPanelMP1PC1.add(JTextlBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 154, 90, -1));
 
         JLabelSpieler1MP1PC1.setText("Spieler 1");
@@ -717,12 +750,6 @@ public class GUI extends javax.swing.JFrame {
 
         JLabelSpieler2MP1PC1.setText("Spieler 2");
         jPanelMP1PC1.add(JLabelSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-
-        JTextSpieler2MP1PC1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTextSpieler2MP1PC1ActionPerformed(evt);
-            }
-        });
         jPanelMP1PC1.add(JTextSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 90, -1));
 
         JLabelSpieler3MP1PC1.setText("Spieler 3");
@@ -731,12 +758,6 @@ public class GUI extends javax.swing.JFrame {
 
         JLabelSpieler4MP1PC1.setText("Spieler 4");
         jPanelMP1PC1.add(JLabelSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 221, -1, -1));
-
-        JTextSpieler4MP1PC1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTextSpieler4MP1PC1ActionPerformed(evt);
-            }
-        });
         jPanelMP1PC1.add(JTextSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 241, 92, -1));
 
         JLabelSpieler5MP1PC1.setText("Spieler 5");
@@ -780,8 +801,18 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jButtonOptionen.setText("Optionen");
+        jButtonOptionen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOptionenActionPerformed(evt);
+            }
+        });
 
         jButtonCredits.setText("Credits");
+        jButtonCredits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCreditsActionPerformed(evt);
+            }
+        });
 
         jButtonBeenden.setText("Beenden");
         jButtonBeenden.addActionListener(new java.awt.event.ActionListener() {
@@ -855,6 +886,16 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -876,6 +917,16 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -883,61 +934,80 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
-        /* Am Anfang jeder Runde muss jeder Spieler erstmal einen Einsatz legen. */
-        spielerWechseln();
-        if (partie.getAktuellerSpieler() == partie.getSpieler().size()) {
-            partie.setAnzahlSpielerCounter(0);
-        }
+        karteZiehenButton();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
+        // Das Programm wird beendet
         programmBeenden();
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
-    // Sollte so tatsächlich funktionieren
     private void jButtonEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEinsatzActionPerformed
-        /* Durch das Umbennen des Einsatzes wird direkt der Einsatz des 
-        Spielers in der Variable live-umgeändert*/
-        if ((partie.getAktuellerSpieler() <= partie.getSpieler().size()) && (!jLabelEinsatz.getText().equals(""))) {
-            partie.getSpieler().get(partie.getAktuellerSpieler()).einsatzSetzen(partie.getEinsatzPool());
-            spielerWechseln();
-            jLabelEinsatz.setText("");
-        }
+        einsatzSetzenButton();
     }//GEN-LAST:event_jButtonEinsatzActionPerformed
 
-    private void jTextFieldEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEinsatzActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEinsatzActionPerformed
-
     private void jButtonBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBeendenActionPerformed
+        // Das Programm wird beendet
         programmBeenden();
     }//GEN-LAST:event_jButtonBeendenActionPerformed
 
     private void jButtonMP1PCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMP1PCActionPerformed
+        // Nur das Menü für den Multiplayer an einem Computer, ist sichbar.
         menuMP1PCVisible();
     }//GEN-LAST:event_jButtonMP1PCActionPerformed
 
     private void jButtonMPInetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMPInetActionPerformed
+        // Nur das Menü für den Multiplayer über das Internet, ist sichbar.
         menuMPInternetVisible();
     }//GEN-LAST:event_jButtonMPInetActionPerformed
 
     private void jButtonZurueckMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckMP1PC1ActionPerformed
+        // Nur das Hauptmenü ist sichbar.
         menuHauptmenueVisible();
     }//GEN-LAST:event_jButtonZurueckMP1PC1ActionPerformed
 
-    private void JTextSpieler2MP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler2MP1PC1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextSpieler2MP1PC1ActionPerformed
-
-    private void JTextSpieler4MP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler4MP1PC1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextSpieler4MP1PC1ActionPerformed
-
     private void jButtonZurueckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckActionPerformed
+        // Man kehrt zurück zum Hauptmenü zurück. -> (Hauptmenü ist sichbar)
         menuHauptmenueVisible();
     }//GEN-LAST:event_jButtonZurueckActionPerformed
 
     private void jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
+        /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
+        Möglichkeiten der Spielenameneingaben aktualisiert */
+        comboBoxSpieleranzahlAnzeigeUpdate();
+    }//GEN-LAST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
+
+    private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
+        comboBoxSpielernamenEingeben();
+        partie.highscoreAktuallisieren(jTableHighscore);
+        menuBrettVisible();
+    }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
+
+    private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
+        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()));
+    }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
+
+    private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
+        // Nur die Optionen sind sichbar.
+        menuOptionenVisible();
+    }//GEN-LAST:event_jButtonOptionenActionPerformed
+
+    private void jButtonCreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditsActionPerformed
+        // Nur die Credits sind sichbar.
+        menuCreditsVisible();
+    }//GEN-LAST:event_jButtonCreditsActionPerformed
+
+    private void jButtonZurueckCreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckCreditsActionPerformed
+        menuHauptmenueVisible();
+    }//GEN-LAST:event_jButtonZurueckCreditsActionPerformed
+
+    private void jButtonZurueckOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckOptionenActionPerformed
+        menuHauptmenueVisible();
+    }//GEN-LAST:event_jButtonZurueckOptionenActionPerformed
+
+    public void comboBoxSpieleranzahlAnzeigeUpdate() {
+        /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
+        Möglichkeiten der Spielenameneingaben aktualisiert */
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
             JLabelBänkerMP1PC1.setVisible(true);
             JTextlBänkerMP1PC1.setVisible(true);
@@ -972,59 +1042,27 @@ public class GUI extends javax.swing.JFrame {
             JLabelSpieler5MP1PC1.setVisible(false);
             JTextSpieler5MP1PC1.setVisible(false);
         }
-    }//GEN-LAST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
-
-    private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
-        partie.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
-            partie.spielerNamenEingeben(JTextlBänkerMP1PC1.getText());
-            partie.spielerNamenEingeben(JTextSpieler1MP1PC1.getText());
-            Karten_Baenker.setVisible(true);
-            Karten_Spieler1.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
-            partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
-            Karten_Spieler2.setVisible(true);
-
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
-            partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
-            Karten_Spieler3.setVisible(true);
-
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
-            partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
-            Karten_Spieler4.setVisible(true);
-
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
-            partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
-            Karten_Spieler5.setVisible(true);
-        }
-        partie.highscoreAktuallisieren(jTableHighscore);
-        menuBrettVisible();
-    }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
-
-    private void JTextlBänkerMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextlBänkerMP1PC1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTextlBänkerMP1PC1ActionPerformed
-
-    private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
-        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()));
-    }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
-
-    public Partie getPartie() {
-        return partie;
     }
 
     public void kartenBilderUpdaten() {
+        /* Diese Funktion ist bisher noch übel buggy. Die Idee dahinter war,
+        zu gucken welcher Spieler momentan am Zug ist und demenstrepchendent
+        seine Karten sichtbar zu machen. Somit soll nur der aktuelle Spieler
+        seine eigenen Karten sehen und keine Anderen.*/
+
+        // Mit Switch-Case könnte man das tatsächlich am einfachsten lösen.
         switch (partie.getAktuellerSpieler()) {
+            // Wenn also der Spieler 0 (Bank) am Zug ist ...
             case 0: {
+                // ... und wir uns in der ersten Runde befinden, ...
                 if (partie.getRunde() == 1) {
+                    // werden seine ersten zwei Karten aufgedeckt.
                     karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
                     karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
                 }
+                // Befinden wir uns schon in Runde zwei, wird überprüft, ob der Spieler eine dritte Karte hat.
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    // Ist dies der Fall, wird diese aufgedeckt.
                     karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
                 }
             }
@@ -1080,36 +1118,127 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
+    private void comboBoxSpielernamenEingeben() {
+        /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler.
+        somit muss bei der Übergabe +2 gerechnet werden.*/
+        partie.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
+
+        /* Hier wird überprüft welche Spieler mitspielen und somit die Karten
+        sichtbar gemacht. */
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
+            partie.spielerNamenEingeben(JTextlBänkerMP1PC1.getText());
+            partie.spielerNamenEingeben(JTextSpieler1MP1PC1.getText());
+            Karten_Baenker.setVisible(true);
+            Karten_Spieler1.setVisible(true);
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
+            partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
+            Karten_Spieler2.setVisible(true);
+
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
+            partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
+            Karten_Spieler3.setVisible(true);
+
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
+            partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
+            Karten_Spieler4.setVisible(true);
+
+        }
+        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
+            partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
+            Karten_Spieler5.setVisible(true);
+        }
+    }
+
     private void programmBeenden() {
         System.exit(0);
     }
 
     private void menuMPInternetVisible() {
+        // Es wird alles unsichtbar gestellt, außer das "Multiplayer über Internet"-Menü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(true);
         jPanelMP1PC.setVisible(false);
         jPanelHauptmenue.setVisible(false);
+        jPanelOptionen.setVisible(false);
+        jPanelCredits.setVisible(false);
     }
 
     private void menuBrettVisible() {
+        // Es wird alles unsichtbar gestellt, außer das Brett
         jPanelBrett.setVisible(true);
         jPanelMPInternet.setVisible(false);
         jPanelMP1PC.setVisible(false);
         jPanelHauptmenue.setVisible(false);
+        jPanelOptionen.setVisible(false);
+        jPanelCredits.setVisible(false);
     }
 
     private void menuMP1PCVisible() {
+        // Es wird alles unsichtbar gestellt, außer das "Multiplayer an einem Computer"-Menü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
         jPanelMP1PC.setVisible(true);
         jPanelHauptmenue.setVisible(false);
+        jPanelOptionen.setVisible(false);
+        jPanelCredits.setVisible(false);
     }
 
     private void menuHauptmenueVisible() {
+        // Es wird alles unsichtbar gestellt, außer das Hauptmenü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
         jPanelMP1PC.setVisible(false);
         jPanelHauptmenue.setVisible(true);
+        jPanelOptionen.setVisible(false);
+        jPanelCredits.setVisible(false);
+    }
+
+    private void menuCreditsVisible() {
+        // Es wird alles unsichtbar gestellt, außer die Credits
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+        jPanelOptionen.setVisible(false);
+        jPanelCredits.setVisible(true);
+    }
+
+    private void menuOptionenVisible() {
+        // Es wird alles unsichtbar gestellt, außer die Optionen
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+        jPanelOptionen.setVisible(true);
+        jPanelCredits.setVisible(false);
+    }
+
+    private void karteZiehenButton() {
+        // Der Button funktioniert nur dann, wenn der Spieler zwei Karten hat.
+        if (partie.getSpieler().get(WIDTH).getHand().size() == 2) {
+            // Der Spieler zieht eine Karte
+            partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
+            // Der nächste Spieler ist am Zug
+            partie.nächsterSpieler();
+            // Die Anzeige des aktuellen Spielers wird aktualisiert.
+            spielerAnzeigeUpdaten();
+        }
+    }
+
+    private void einsatzSetzenButton() {
+        /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
+        if ((!jLabelEinsatz.getText().equals("")) && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())) {
+            // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
+            partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
+            // Nachdem ist der nächste Spieler am Zug.
+            partie.nächsterSpieler();
+            // Die Anzeige des Einsatzes wird zurückgesetzt.
+            jLabelEinsatz.setText("");
+            spielerAnzeigeUpdaten();
+        }
     }
 
     private void programmStarten() {
@@ -1136,6 +1265,8 @@ public class GUI extends javax.swing.JFrame {
         Karten_Spieler4.setVisible(false);
         Karten_Spieler5.setVisible(false);
 
+        /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
+        selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
         karte3_Baenker.setVisible(false);
         karte3_Spieler1.setVisible(false);
         karte3_Spieler2.setVisible(false);
@@ -1144,12 +1275,14 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5.setVisible(false);
     }
 
-    private void spielerWechseln() {
+    private void spielerAnzeigeUpdaten() {
+        // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
         jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
     }
 
     private void ladebildschirmStarten() {
+        // Läuft noch nicht, aber ist glaube auch nicht zwingend notwendig
         AnfangJFrame.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
@@ -1161,6 +1294,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
     private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
+        // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
@@ -1234,7 +1368,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOptionen;
     private javax.swing.JButton jButtonStopp;
     private javax.swing.JButton jButtonZurueck;
+    private javax.swing.JButton jButtonZurueckCredits;
     private javax.swing.JButton jButtonZurueckMP1PC1;
+    private javax.swing.JButton jButtonZurueckOptionen;
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
@@ -1243,12 +1379,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
+    private javax.swing.JPanel jPanelCredits;
+    private javax.swing.JPanel jPanelCredits1;
     private javax.swing.JPanel jPanelHauptmenue;
     private javax.swing.JPanel jPanelMP1PC;
     private javax.swing.JPanel jPanelMP1PC1;
     private javax.swing.JPanel jPanelMPInternet;
     private javax.swing.JPanel jPanelMPInternet1;
     private javax.swing.JPanel jPanelMenu;
+    private javax.swing.JPanel jPanelOptionen;
+    private javax.swing.JPanel jPanelOptionen1;
     private javax.swing.JPanel jPanelStats;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableHighscore;
@@ -1279,6 +1419,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel piMenuBackround1;
     private javax.swing.JLabel piMenuBackround3;
     private javax.swing.JLabel piMenuBackroundMP1PC1;
+    private javax.swing.JLabel piMenuBackroundMP1PC2;
+    private javax.swing.JLabel piMenuBackroundMP1PC3;
     private javax.swing.JLabel picBrett;
     private javax.swing.JLabel picDeck;
     private javax.swing.JLabel picLogo;
