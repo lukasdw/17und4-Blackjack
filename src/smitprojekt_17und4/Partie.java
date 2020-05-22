@@ -10,7 +10,7 @@ public class Partie implements PartieInterface {
 
     /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
     Netzwerkverbidung etc = new Netzwerkverbidung();
-    
+
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();
 
@@ -18,29 +18,35 @@ public class Partie implements PartieInterface {
     Anfang immer zwei Spieler benötigt. Der Dealer und die Spieler */
     private ArrayList<Spieler> spieler = new ArrayList<Spieler>();
 
-    /* Jeder Spieler fügt am Anfang jeder Runde seinen Einsatz, dem Einsatzpool zu. */
-    private int einsatzPool;
-
     /* Gibt die Anzahl der Spieler an */
     private int anzahlSpieler;
     private int anzahlSpielerCounter;
     private int aktuellerSpieler;
 
+    /* Gibt an in welcher Runde man sich momentan befindet */
+    private int runde = 1;
+
     /* Konstruktor */
     public Partie() {
         /* Der Client baut die Verbindung zum Server auf. */
-        etc.verbinden();
         this.deckEinlesen();
+    }
+
+    public void jederZiehtZweiKarten() {
+        for (int i = 0; i < spieler.size(); i++) {
+            for (int j = 0; j < 2; j++) {
+                spieler.get(i).karteZiehen(deck);
+            }
+        }
     }
 
     public void deckEinlesen() {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
 
-        /* Workaround für relativen Pfad */
+ /* Workaround für relativen Pfad */
         String root = System.getProperty("user.dir");
-        String filePath = root + File.separator + "src\\Karten\\" + File.separator;
-        System.out.println(root);
+        String filePath = root + File.separator + "src\\Karten\\";
 
         String lineTemp = "";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
@@ -65,9 +71,11 @@ public class Partie implements PartieInterface {
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
-    public void nächsterSpieler(JLabel jPanelAktuellerSpieler) {
+    public void nächsterSpieler() {
         aktuellerSpieler++;
-        jPanelAktuellerSpieler.setText("Spieler " + aktuellerSpieler + " ist am Zug!");
+        if (aktuellerSpieler == spieler.size()) {
+            anzahlSpielerCounter = 0;
+        }
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
@@ -75,19 +83,33 @@ public class Partie implements PartieInterface {
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
         die nötigen Funktionen benutzen zu können */
         DefaultTableModel model = (DefaultTableModel) jTableTabelle.getModel();
-        Object spalte[] = new Object[2];
+        Object spalte[] = new Object[4];
 
         /* Nun werden die Werte der Spieler in ein Array, was als Zeile
         fungiert, gespeichert. Diese Zeile wird dann als Zeile in der Tabelle
         hinzugefügt. */
         for (int i = 0; i < spieler.size(); i++) {
-            spalte[0] = spieler.get(i).getName();
-            spalte[1] = spieler.get(i).getPunktestand();
+            if (i == 0) {
+                spalte[0] = "Bank";
+            } else {
+                spalte[0] = "Spieler " + i;
+            }
+            spalte[1] = spieler.get(i).getName();
+            spalte[2] = spieler.get(i).getKontostand();
+            spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);
         }
     }
-    
+
     /* Getter und Setter */
+    public Netzwerkverbidung getEtc() {
+        return etc;
+    }
+
+    public void setEtc(Netzwerkverbidung etc) {
+        this.etc = etc;
+    }
+
     public ArrayList<Karte> getDeck() {
         return deck;
     }
@@ -102,14 +124,6 @@ public class Partie implements PartieInterface {
 
     public void setSpieler(ArrayList<Spieler> spieler) {
         this.spieler = spieler;
-    }
-
-    public int getEinsatzPool() {
-        return einsatzPool;
-    }
-
-    public void setEinsatzPool(int einsatzPool) {
-        this.einsatzPool = einsatzPool;
     }
 
     public int getAnzahlSpieler() {
@@ -135,4 +149,13 @@ public class Partie implements PartieInterface {
     public void setAktuellerSpieler(int aktuellerSpieler) {
         this.aktuellerSpieler = aktuellerSpieler;
     }
+
+    public int getRunde() {
+        return runde;
+    }
+
+    public void setRunde(int runde) {
+        this.runde = runde;
+    }
+
 }

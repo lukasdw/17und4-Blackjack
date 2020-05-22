@@ -3,16 +3,13 @@ package smitprojekt_17und4;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Spieler implements SpielerInterface{
+public class Spieler implements SpielerInterface {
 
     /* Der Name wird direkt vergeben. */
     private String name;
 
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
-
-    /* Am Anfang hat jeder Spieler 0 Punkte */
-    private int punktestand = 0;
     private int einsatz = 0;
 
     /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
@@ -45,25 +42,8 @@ public class Spieler implements SpielerInterface{
             handPunkte = handPunkte + hand.get(i).getWert();
         }
     }
-    
-    /* Der Einsatz wird aus dem JTextfeld, jTextFieldEinsatz eingelesen
-    und dem einsatzPool hinzugefügt. */
-    public int einsatzSetzen(int einsatzPool, int einsatz) {
-        /* Der Wert des Textfeldes wird in eine Ganzzahl umgewandelt und in
-        der Variable Einsatz des Spielers gespeichert.*/
-        this.einsatz = einsatz;
-        /* Der Einsatz wird dem Einsatzpool hinzugefügt. Dies macht
-        jeder Spieler nacheinander */
-        einsatzPool = +this.einsatz;
-        /* Der Einsatzpool wird zurückgegeben. */
-        return einsatzPool;
-    }
 
     /* Getter und Setter */
-    public int getKontostand() {
-        return kontostand;
-    }
-
     public String getName() {
         return name;
     }
@@ -72,12 +52,12 @@ public class Spieler implements SpielerInterface{
         this.name = name;
     }
 
-    public int getPunktestand() {
-        return punktestand;
+    public int getKontostand() {
+        return kontostand;
     }
 
-    public void setPunktestand(int punktestand) {
-        this.punktestand = punktestand;
+    public void setKontostand(int kontostand) {
+        this.kontostand = kontostand;
     }
 
     public int getEinsatz() {
@@ -102,5 +82,5 @@ public class Spieler implements SpielerInterface{
 
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
-    } 
+    }
 }
