@@ -13,41 +13,10 @@ public class GUI extends javax.swing.JFrame {
         initComponents();
 
         //Setzt das JFrame in die Mitte des Bildschirms
-        JFrameInDieMitteSetzen(AnfangJFrame);
+        jFrameInDieMitteSetzen(AnfangJFrame);
 
-        // Startfenster starten
-        setVisible(true);
-        jPanelBrett.setVisible(false);
-        jPanelMP1PC.setVisible(false);
-        jPanelMPInternet.setVisible(false);
-        jPanelHauptmenue.setVisible(true);
-
-        // MP1PC1-Bildschirm
-        JLabelSpieler2MP1PC1.setVisible(false);
-        JTextSpieler2MP1PC1.setVisible(false);
-        JLabelSpieler3MP1PC1.setVisible(false);
-        JTextSpieler3MP1PC1.setVisible(false);
-        JLabelSpieler4MP1PC1.setVisible(false);
-        JTextSpieler4MP1PC1.setVisible(false);
-        JLabelSpieler5MP1PC1.setVisible(false);
-        JTextSpieler5MP1PC1.setVisible(false);
-
-        // Brett
-        jPanelAktuellerSpieler.setVisible(false);
-        Karten_Baenker.setVisible(false);
-        Karten_Spieler1.setVisible(false);
-        Karten_Spieler2.setVisible(false);
-        Karten_Spieler3.setVisible(false);
-        Karten_Spieler4.setVisible(false);
-        Karten_Spieler5.setVisible(false);
-
-        karte3_Baenker.setVisible(false);
-        karte3_Spieler1.setVisible(false);
-        karte3_Spieler2.setVisible(false);
-        karte3_Spieler3.setVisible(false);
-        karte3_Spieler4.setVisible(false);
-        karte3_Spieler5.setVisible(false);
-
+        //Startet die GUI, sodass nur das Hauptmenü am Anfang zu sehen ist.
+        programmStarten();
         ladebildschirmStarten();
     }
 
@@ -64,7 +33,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
-        deck = new javax.swing.JLabel();
+        picDeck = new javax.swing.JLabel();
         jPanelAktuellerSpieler = new javax.swing.JPanel();
         jLabelAktuellerSpieler = new javax.swing.JLabel();
         jPanelMenu = new javax.swing.JPanel();
@@ -253,9 +222,9 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 310, 250, 170));
 
-        deck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
-        deck.setAlignmentY(0.0F);
-        jPanelBrett.add(deck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
+        picDeck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
+        picDeck.setAlignmentY(0.0F);
+        jPanelBrett.add(picDeck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 70));
 
         jPanelAktuellerSpieler.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAktuellerSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -940,24 +909,15 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBeendenActionPerformed
 
     private void jButtonMP1PCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMP1PCActionPerformed
-        jPanelBrett.setVisible(false);
-        jPanelMPInternet.setVisible(false);
-        jPanelHauptmenue.setVisible(false);
-        jPanelMP1PC.setVisible(true);
+        menuMP1PCVisible();
     }//GEN-LAST:event_jButtonMP1PCActionPerformed
 
     private void jButtonMPInetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMPInetActionPerformed
-        jPanelBrett.setVisible(false);
-        jPanelHauptmenue.setVisible(false);
-        jPanelMP1PC.setVisible(false);
-        jPanelMPInternet.setVisible(true);
+        menuMPInternetVisible();
     }//GEN-LAST:event_jButtonMPInetActionPerformed
 
     private void jButtonZurueckMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckMP1PC1ActionPerformed
-        jPanelBrett.setVisible(false);
-        jPanelMPInternet.setVisible(false);
-        jPanelMP1PC.setVisible(false);
-        jPanelHauptmenue.setVisible(true);
+        menuHauptmenueVisible();
     }//GEN-LAST:event_jButtonZurueckMP1PC1ActionPerformed
 
     private void JTextSpieler2MP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextSpieler2MP1PC1ActionPerformed
@@ -969,10 +929,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_JTextSpieler4MP1PC1ActionPerformed
 
     private void jButtonZurueckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckActionPerformed
-        jPanelBrett.setVisible(false);
-        jPanelMPInternet.setVisible(false);
-        jPanelMP1PC.setVisible(false);
-        jPanelHauptmenue.setVisible(true);
+        menuHauptmenueVisible();
     }//GEN-LAST:event_jButtonZurueckActionPerformed
 
     private void jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
@@ -1040,10 +997,7 @@ public class GUI extends javax.swing.JFrame {
             Karten_Spieler5.setVisible(true);
         }
         partie.highscoreAktuallisieren(jTableHighscore);
-        jPanelMPInternet.setVisible(false);
-        jPanelMP1PC.setVisible(false);
-        jPanelHauptmenue.setVisible(false);
-        jPanelBrett.setVisible(true);
+        menuBrettVisible();
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void JTextlBänkerMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextlBänkerMP1PC1ActionPerformed
@@ -1061,7 +1015,7 @@ public class GUI extends javax.swing.JFrame {
                     karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
                     karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
                 }
             }
@@ -1070,7 +1024,7 @@ public class GUI extends javax.swing.JFrame {
                     karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
                     karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(2).getBilderPfad())));
                 }
             }
@@ -1079,7 +1033,7 @@ public class GUI extends javax.swing.JFrame {
                     karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
                     karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(2).getBilderPfad())));
                 }
             }
@@ -1088,28 +1042,26 @@ public class GUI extends javax.swing.JFrame {
                     karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
                     karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(2).getBilderPfad())));
                 }
             }
-
             case 4: {
                 if (partie.getRunde() == 1) {
                     karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
                     karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(2).getBilderPfad())));
                 }
             }
-
             case 5: {
                 if (partie.getRunde() == 1) {
                     karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
                     karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
 
                 }
-                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() < 3) {
+                if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
                 }
                 partie.setRunde(2);
@@ -1121,6 +1073,66 @@ public class GUI extends javax.swing.JFrame {
 
     private void programmBeenden() {
         System.exit(0);
+    }
+
+    private void menuMPInternetVisible() {
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(true);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+    }
+
+    private void menuBrettVisible() {
+        jPanelBrett.setVisible(true);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(false);
+    }
+
+    private void menuMP1PCVisible() {
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(true);
+        jPanelHauptmenue.setVisible(false);
+    }
+
+    private void menuHauptmenueVisible() {
+        jPanelBrett.setVisible(false);
+        jPanelMPInternet.setVisible(false);
+        jPanelMP1PC.setVisible(false);
+        jPanelHauptmenue.setVisible(true);
+    }
+
+    private void programmStarten() {
+        // Startfenster starten
+        setVisible(true);
+        menuHauptmenueVisible();
+
+        // MP1PC1-JPanel
+        JLabelSpieler2MP1PC1.setVisible(false);
+        JTextSpieler2MP1PC1.setVisible(false);
+        JLabelSpieler3MP1PC1.setVisible(false);
+        JTextSpieler3MP1PC1.setVisible(false);
+        JLabelSpieler4MP1PC1.setVisible(false);
+        JTextSpieler4MP1PC1.setVisible(false);
+        JLabelSpieler5MP1PC1.setVisible(false);
+        JTextSpieler5MP1PC1.setVisible(false);
+
+        // Brett-JPanel
+        jPanelAktuellerSpieler.setVisible(false);
+        Karten_Baenker.setVisible(false);
+        Karten_Spieler1.setVisible(false);
+        Karten_Spieler2.setVisible(false);
+        Karten_Spieler3.setVisible(false);
+        Karten_Spieler4.setVisible(false);
+        Karten_Spieler5.setVisible(false);
+
+        karte3_Baenker.setVisible(false);
+        karte3_Spieler1.setVisible(false);
+        karte3_Spieler2.setVisible(false);
+        karte3_Spieler3.setVisible(false);
+        karte3_Spieler4.setVisible(false);
+        karte3_Spieler5.setVisible(false);
     }
 
     private void spielerWechseln() {
@@ -1139,7 +1151,7 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void JFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
+    private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
@@ -1175,7 +1187,6 @@ public class GUI extends javax.swing.JFrame {
         });
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Anfang1jLabel;
     private javax.swing.JLabel Anfang2jLabel;
@@ -1205,7 +1216,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldGebenSieIhrenNamenEin;
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
-    private javax.swing.JLabel deck;
     private javax.swing.JButton jButtonBeenden;
     private javax.swing.JButton jButtonCredits;
     private javax.swing.JButton jButtonEinsatz;
@@ -1261,6 +1271,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel piMenuBackround3;
     private javax.swing.JLabel piMenuBackroundMP1PC1;
     private javax.swing.JLabel picBrett;
+    private javax.swing.JLabel picDeck;
     private javax.swing.JLabel picLogo;
     private javax.swing.JLabel picLogo1;
     // End of variables declaration//GEN-END:variables

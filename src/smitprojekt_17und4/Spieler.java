@@ -10,9 +10,6 @@ public class Spieler implements SpielerInterface{
 
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
-
-    /* Am Anfang hat jeder Spieler 0 Punkte */
-    private int punktestand = 0;
     private int einsatz = 0;
 
     /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
@@ -65,14 +62,6 @@ public class Spieler implements SpielerInterface{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getPunktestand() {
-        return punktestand;
-    }
-
-    public void setPunktestand(int punktestand) {
-        this.punktestand = punktestand;
     }
 
     public int getEinsatz() {

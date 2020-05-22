@@ -38,7 +38,7 @@ public class Partie implements PartieInterface {
     public void jederZiehtZweiKarten() {
         for (int i = 0; i < spieler.size(); i++) {
             for (int j = 0; j < 2; j++) {
-                spieler.get(i).einsatzSetzen(einsatzPool);
+                spieler.get(i).karteZiehen(deck);
             }
         }
     }
@@ -49,8 +49,7 @@ public class Partie implements PartieInterface {
 
         /* Workaround für relativen Pfad */
         String root = System.getProperty("user.dir");
-        String filePath = root + File.separator + "src\\Karten\\" + File.separator;
-        System.out.println(root);
+        String filePath = root + File.separator + "src\\Karten\\";
 
         String lineTemp = "";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
@@ -94,7 +93,7 @@ public class Partie implements PartieInterface {
         hinzugefügt. */
         for (int i = 0; i < spieler.size(); i++) {
             spalte[0] = spieler.get(i).getName();
-            spalte[1] = spieler.get(i).getPunktestand();
+            spalte[1] = spieler.get(i).getKontostand();
             model.addRow(spalte);
         }
     }
