@@ -1203,6 +1203,40 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
+    private void programmStarten() {
+        // Startfenster starten
+        setVisible(true);
+        menuHauptmenueVisible();
+
+        // MP1PC1-JPanel
+        JLabelSpieler2MP1PC1.setVisible(false);
+        JTextSpieler2MP1PC1.setVisible(false);
+        JLabelSpieler3MP1PC1.setVisible(false);
+        JTextSpieler3MP1PC1.setVisible(false);
+        JLabelSpieler4MP1PC1.setVisible(false);
+        JTextSpieler4MP1PC1.setVisible(false);
+        JLabelSpieler5MP1PC1.setVisible(false);
+        JTextSpieler5MP1PC1.setVisible(false);
+
+        // Brett-JPanel
+        jPanelAktuellerSpieler.setVisible(false);
+        Karten_Baenker.setVisible(false);
+        Karten_Spieler1.setVisible(false);
+        Karten_Spieler2.setVisible(false);
+        Karten_Spieler3.setVisible(false);
+        Karten_Spieler4.setVisible(false);
+        Karten_Spieler5.setVisible(false);
+
+        /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
+        selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
+        karte3_Baenker.setVisible(false);
+        karte3_Spieler1.setVisible(false);
+        karte3_Spieler2.setVisible(false);
+        karte3_Spieler3.setVisible(false);
+        karte3_Spieler4.setVisible(false);
+        karte3_Spieler5.setVisible(false);
+    }
+
     private void programmBeenden() {
         System.exit(0);
     }
@@ -1290,40 +1324,6 @@ public class GUI extends javax.swing.JFrame {
             jLabelEinsatz.setText("");
             spielerAnzeigeUpdaten();
         }
-    }
-
-    private void programmStarten() {
-        // Startfenster starten
-        setVisible(true);
-        menuHauptmenueVisible();
-
-        // MP1PC1-JPanel
-        JLabelSpieler2MP1PC1.setVisible(false);
-        JTextSpieler2MP1PC1.setVisible(false);
-        JLabelSpieler3MP1PC1.setVisible(false);
-        JTextSpieler3MP1PC1.setVisible(false);
-        JLabelSpieler4MP1PC1.setVisible(false);
-        JTextSpieler4MP1PC1.setVisible(false);
-        JLabelSpieler5MP1PC1.setVisible(false);
-        JTextSpieler5MP1PC1.setVisible(false);
-
-        // Brett-JPanel
-        jPanelAktuellerSpieler.setVisible(false);
-        Karten_Baenker.setVisible(false);
-        Karten_Spieler1.setVisible(false);
-        Karten_Spieler2.setVisible(false);
-        Karten_Spieler3.setVisible(false);
-        Karten_Spieler4.setVisible(false);
-        Karten_Spieler5.setVisible(false);
-
-        /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
-        selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
-        karte3_Baenker.setVisible(false);
-        karte3_Spieler1.setVisible(false);
-        karte3_Spieler2.setVisible(false);
-        karte3_Spieler3.setVisible(false);
-        karte3_Spieler4.setVisible(false);
-        karte3_Spieler5.setVisible(false);
     }
 
     private void spielerAnzeigeUpdaten() {
