@@ -17,6 +17,7 @@ public class GUI extends javax.swing.JFrame {
 
         //Startet die GUI, sodass nur das Hauptmenü am Anfang zu sehen ist.
         programmStarten();
+        fehlermeldungGenerieren("\"fehlermeldungGenerieren\" erzeugt diese\nFehlermeldung mit einem String eurer Wahl.");
         ladebildschirmStarten();
     }
 
@@ -30,6 +31,11 @@ public class GUI extends javax.swing.JFrame {
         AnfangjProgressBar = new javax.swing.JProgressBar();
         Anfang1jLabel = new javax.swing.JLabel();
         Anfang2jLabel = new javax.swing.JLabel();
+        jDialogFehlermeldung = new javax.swing.JDialog();
+        jPanelFehlermeldung = new javax.swing.JPanel();
+        picDreieck = new javax.swing.JLabel();
+        jTextAreaFehlermeldung = new javax.swing.JTextArea();
+        jButtonFehlermeldungOk = new javax.swing.JButton();
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
@@ -184,6 +190,47 @@ public class GUI extends javax.swing.JFrame {
         AnfangJFrameLayout.setVerticalGroup(
             AnfangJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(AnfangjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jDialogFehlermeldung.setBackground(new java.awt.Color(255, 255, 255));
+        jDialogFehlermeldung.setMaximumSize(new java.awt.Dimension(325, 135));
+        jDialogFehlermeldung.setMinimumSize(new java.awt.Dimension(325, 135));
+        jDialogFehlermeldung.setPreferredSize(new java.awt.Dimension(325, 135));
+
+        jPanelFehlermeldung.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelFehlermeldung.setMaximumSize(new java.awt.Dimension(310, 103));
+        jPanelFehlermeldung.setMinimumSize(new java.awt.Dimension(310, 103));
+        jPanelFehlermeldung.setPreferredSize(new java.awt.Dimension(310, 103));
+        jPanelFehlermeldung.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        picDreieck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dreieck.png"))); // NOI18N
+        picDreieck.setAlignmentY(0.0F);
+        jPanelFehlermeldung.add(picDreieck, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
+
+        jTextAreaFehlermeldung.setEditable(false);
+        jTextAreaFehlermeldung.setColumns(20);
+        jTextAreaFehlermeldung.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaFehlermeldung.setRows(5);
+        jTextAreaFehlermeldung.setText("Dieser Text wird in der Funktion verändert.");
+        jPanelFehlermeldung.add(jTextAreaFehlermeldung, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 240, 40));
+
+        jButtonFehlermeldungOk.setText("Ok");
+        jButtonFehlermeldungOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFehlermeldungOkActionPerformed(evt);
+            }
+        });
+        jPanelFehlermeldung.add(jButtonFehlermeldungOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
+
+        javax.swing.GroupLayout jDialogFehlermeldungLayout = new javax.swing.GroupLayout(jDialogFehlermeldung.getContentPane());
+        jDialogFehlermeldung.getContentPane().setLayout(jDialogFehlermeldungLayout);
+        jDialogFehlermeldungLayout.setHorizontalGroup(
+            jDialogFehlermeldungLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelFehlermeldung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDialogFehlermeldungLayout.setVerticalGroup(
+            jDialogFehlermeldungLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelFehlermeldung, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1005,6 +1052,10 @@ public class GUI extends javax.swing.JFrame {
         menuHauptmenueVisible();
     }//GEN-LAST:event_jButtonZurueckOptionenActionPerformed
 
+    private void jButtonFehlermeldungOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFehlermeldungOkActionPerformed
+        jDialogFehlermeldung.setVisible(false);
+    }//GEN-LAST:event_jButtonFehlermeldungOkActionPerformed
+
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
@@ -1293,6 +1344,13 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
+    private void fehlermeldungGenerieren(String anzeigeText) {
+        jTextAreaFehlermeldung.setText(anzeigeText);
+        jDialogFehlermeldung.setVisible(true);
+        jDialogFehlermeldung.pack();
+        jDialogFehlermeldung.setLocationRelativeTo(null);
+    }
+
     private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
         // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
@@ -1362,6 +1420,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonBeenden;
     private javax.swing.JButton jButtonCredits;
     private javax.swing.JButton jButtonEinsatz;
+    private javax.swing.JButton jButtonFehlermeldungOk;
     private javax.swing.JButton jButtonKarteZiehen;
     private javax.swing.JButton jButtonMP1PC;
     private javax.swing.JButton jButtonMPInet;
@@ -1372,6 +1431,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonZurueckMP1PC1;
     private javax.swing.JButton jButtonZurueckOptionen;
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
+    private javax.swing.JDialog jDialogFehlermeldung;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
@@ -1381,6 +1441,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBrett;
     private javax.swing.JPanel jPanelCredits;
     private javax.swing.JPanel jPanelCredits1;
+    private javax.swing.JPanel jPanelFehlermeldung;
     private javax.swing.JPanel jPanelHauptmenue;
     private javax.swing.JPanel jPanelMP1PC;
     private javax.swing.JPanel jPanelMP1PC1;
@@ -1392,6 +1453,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelStats;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableHighscore;
+    private javax.swing.JTextArea jTextAreaFehlermeldung;
     private javax.swing.JTextArea jTextAreaGebenSieIhrenNamenEin;
     private javax.swing.JTextArea jTextAreaInfoTextMP1PC1;
     private javax.swing.JTextArea jTextAreaPort;
@@ -1423,6 +1485,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel piMenuBackroundMP1PC3;
     private javax.swing.JLabel picBrett;
     private javax.swing.JLabel picDeck;
+    private javax.swing.JLabel picDreieck;
     private javax.swing.JLabel picLogo;
     private javax.swing.JLabel picLogo1;
     // End of variables declaration//GEN-END:variables
