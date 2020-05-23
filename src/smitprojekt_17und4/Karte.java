@@ -1,6 +1,6 @@
 package smitprojekt_17und4;
 
-public class Karte implements KarteInterface{
+public class Karte implements KarteInterface {
 
     private int wert;
     private String name;

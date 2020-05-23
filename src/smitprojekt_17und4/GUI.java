@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GUI extends javax.swing.JFrame {
-
+    
     private Partie partie = new Partie();
 
     /* Konstruktor */
@@ -20,7 +20,7 @@ public class GUI extends javax.swing.JFrame {
         fehlermeldungGenerieren("\"fehlermeldungGenerieren\" erzeugt diese\nFehlermeldung mit einem String eurer Wahl.");
         ladebildschirmStarten();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1085,7 +1085,8 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
-        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText(), jTableSpieler);
+        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText());
+        partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
     }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
 
     private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
@@ -1113,7 +1114,7 @@ public class GUI extends javax.swing.JFrame {
     private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldPortActionPerformed
-
+    
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
@@ -1152,7 +1153,7 @@ public class GUI extends javax.swing.JFrame {
             JTextSpieler5MP1PC1.setVisible(false);
         }
     }
-
+    
     public void kartenBilderUpdaten() {
         /* Diese Funktion ist bisher noch übel buggy. Die Idee dahinter war,
         zu gucken welcher Spieler momentan am Zug ist und demenstrepchendent
@@ -1215,7 +1216,7 @@ public class GUI extends javax.swing.JFrame {
                 if (partie.getRunde() == 1) {
                     karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
                     karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-
+                    
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
@@ -1226,7 +1227,7 @@ public class GUI extends javax.swing.JFrame {
                 System.out.println("Fehler");
         }
     }
-
+    
     private void comboBoxSpielernamenEingeben() {
         /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler.
         somit muss bei der Übergabe +2 gerechnet werden.*/
@@ -1243,24 +1244,24 @@ public class GUI extends javax.swing.JFrame {
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
             partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
             Karten_Spieler2.setVisible(true);
-
+            
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
             partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
             Karten_Spieler3.setVisible(true);
-
+            
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
             partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
             Karten_Spieler4.setVisible(true);
-
+            
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
             partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
             Karten_Spieler5.setVisible(true);
         }
     }
-
+    
     private void programmStarten() {
         // Startfenster starten
         setVisible(true);
@@ -1294,11 +1295,11 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler4.setVisible(false);
         karte3_Spieler5.setVisible(false);
     }
-
+    
     private void programmBeenden() {
         System.exit(0);
     }
-
+    
     private void menuMPInternetVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer über Internet"-Menü
         jPanelBrett.setVisible(false);
@@ -1308,7 +1309,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-
+    
     private void menuBrettVisible() {
         // Es wird alles unsichtbar gestellt, außer das Brett
         jPanelBrett.setVisible(true);
@@ -1318,7 +1319,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-
+    
     private void menuMP1PCVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer an einem Computer"-Menü
         jPanelBrett.setVisible(false);
@@ -1328,7 +1329,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-
+    
     private void menuHauptmenueVisible() {
         // Es wird alles unsichtbar gestellt, außer das Hauptmenü
         jPanelBrett.setVisible(false);
@@ -1338,7 +1339,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-
+    
     private void menuCreditsVisible() {
         // Es wird alles unsichtbar gestellt, außer die Credits
         jPanelBrett.setVisible(false);
@@ -1348,7 +1349,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(true);
     }
-
+    
     private void menuOptionenVisible() {
         // Es wird alles unsichtbar gestellt, außer die Optionen
         jPanelBrett.setVisible(false);
@@ -1358,7 +1359,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(true);
         jPanelCredits.setVisible(false);
     }
-
+    
     private void karteZiehenButton() {
         // Der Button funktioniert nur dann, wenn der Spieler zwei Karten hat.
         if (partie.getSpieler().get(WIDTH).getHand().size() == 2) {
@@ -1370,7 +1371,7 @@ public class GUI extends javax.swing.JFrame {
             spielerAnzeigeUpdaten();
         }
     }
-
+    
     private void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
         if ((!jLabelEinsatz.getText().equals("")) && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())) {
@@ -1383,13 +1384,13 @@ public class GUI extends javax.swing.JFrame {
             spielerAnzeigeUpdaten();
         }
     }
-
+    
     private void spielerAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
         jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
     }
-
+    
     private void ladebildschirmStarten() {
         // Läuft noch nicht, aber ist glaube auch nicht zwingend notwendig
         AnfangJFrame.setVisible(true);
@@ -1401,20 +1402,20 @@ public class GUI extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }
-
+    
     private void fehlermeldungGenerieren(String anzeigeText) {
         jTextAreaFehlermeldung.setText(anzeigeText);
         jDialogFehlermeldung.setVisible(true);
         jDialogFehlermeldung.pack();
         jDialogFehlermeldung.setLocationRelativeTo(null);
     }
-
+    
     private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
         // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
-
+    
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
