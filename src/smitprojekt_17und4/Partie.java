@@ -157,5 +157,4 @@ public class Partie implements PartieInterface {
     public void setRunde(int runde) {
         this.runde = runde;
     }
-
 }

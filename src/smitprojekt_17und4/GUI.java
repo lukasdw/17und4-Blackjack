@@ -95,6 +95,9 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaPort = new javax.swing.JTextArea();
         TextFieldPort = new javax.swing.JTextField();
         jButtonZurueck = new javax.swing.JButton();
+        jScrollPaneSpieler = new javax.swing.JScrollPane();
+        jTableSpieler = new javax.swing.JTable();
+        jLabelServerstatus = new javax.swing.JLabel();
         piMenuBackround3 = new javax.swing.JLabel();
         jPanelMP1PC = new javax.swing.JPanel();
         jPanelMP1PC1 = new javax.swing.JPanel();
@@ -193,9 +196,7 @@ public class GUI extends javax.swing.JFrame {
         );
 
         jDialogFehlermeldung.setBackground(new java.awt.Color(255, 255, 255));
-        jDialogFehlermeldung.setMaximumSize(new java.awt.Dimension(325, 135));
         jDialogFehlermeldung.setMinimumSize(new java.awt.Dimension(325, 135));
-        jDialogFehlermeldung.setPreferredSize(new java.awt.Dimension(325, 135));
 
         jPanelFehlermeldung.setBackground(new java.awt.Color(255, 255, 255));
         jPanelFehlermeldung.setMaximumSize(new java.awt.Dimension(310, 103));
@@ -676,6 +677,8 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        TextFieldGebenSieIhrenNamenEin.setText("Testuser");
+
         jTextAreaGebenSieIhrenNamenEin.setEditable(false);
         jTextAreaGebenSieIhrenNamenEin.setColumns(20);
         jTextAreaGebenSieIhrenNamenEin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -688,11 +691,20 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaServerIP.setRows(5);
         jTextAreaServerIP.setText("Server-IP\n");
 
+        TextFieldServerIP.setText("127.0.0.1");
+
         jTextAreaPort.setEditable(false);
         jTextAreaPort.setColumns(20);
         jTextAreaPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaPort.setRows(5);
         jTextAreaPort.setText("Port\n");
+
+        TextFieldPort.setText("1337");
+        TextFieldPort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldPortActionPerformed(evt);
+            }
+        });
 
         jButtonZurueck.setText("Zurück");
         jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
@@ -701,6 +713,30 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jTableSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTableSpieler.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTableSpieler.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Rolle", "Name", "IP-Adresse"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPaneSpieler.setViewportView(jTableSpieler);
+
+        jLabelServerstatus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabelServerstatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelServerstatus.setText("SERVERSTATUS");
+
         javax.swing.GroupLayout jPanelMPInternet1Layout = new javax.swing.GroupLayout(jPanelMPInternet1);
         jPanelMPInternet1.setLayout(jPanelMPInternet1Layout);
         jPanelMPInternet1Layout.setHorizontalGroup(
@@ -708,24 +744,27 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
                 .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelServerstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPaneSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TextFieldGebenSieIhrenNamenEin)
+                                .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                                    .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(21, 21, 21))
+                                .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                                    .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
                         .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanelMPInternet1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TextFieldGebenSieIhrenNamenEin)
-                            .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                                .addComponent(jTextAreaServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21))
-                            .addGroup(jPanelMPInternet1Layout.createSequentialGroup()
-                                .addComponent(TextFieldServerIP, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(ButtonLobbySuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanelMPInternet1Layout.setVerticalGroup(
@@ -743,11 +782,15 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jTextAreaGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextFieldGebenSieIhrenNamenEin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelServerstatus)
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPaneSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonZurueck)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonLobbySuchen)
-                .addGap(36, 36, 36))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanelMPInternet.add(jPanelMPInternet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
@@ -1031,7 +1074,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
-        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()));
+        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText(), jTableSpieler);
     }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
 
     private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
@@ -1055,6 +1098,10 @@ public class GUI extends javax.swing.JFrame {
     private void jButtonFehlermeldungOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFehlermeldungOkActionPerformed
         jDialogFehlermeldung.setVisible(false);
     }//GEN-LAST:event_jButtonFehlermeldungOkActionPerformed
+
+    private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldPortActionPerformed
 
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
@@ -1436,6 +1483,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
     private javax.swing.JLabel jLabelKontostandValue;
+    private javax.swing.JLabel jLabelServerstatus;
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
@@ -1452,7 +1500,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelOptionen1;
     private javax.swing.JPanel jPanelStats;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneSpieler;
     private javax.swing.JTable jTableHighscore;
+    private javax.swing.JTable jTableSpieler;
     private javax.swing.JTextArea jTextAreaFehlermeldung;
     private javax.swing.JTextArea jTextAreaGebenSieIhrenNamenEin;
     private javax.swing.JTextArea jTextAreaInfoTextMP1PC1;
