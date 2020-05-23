@@ -11,6 +11,7 @@ public class Spieler implements SpielerInterface {
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
     private int einsatz = 0;
+    private int platz; 
 
     /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
     Die Werte der Karten werden zusammengerechnet und in der Variable, "handPunkte"

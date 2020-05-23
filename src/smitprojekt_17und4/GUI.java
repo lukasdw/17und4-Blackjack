@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class GUI extends javax.swing.JFrame {
-    
+
     private Partie partie = new Partie();
 
     /* Konstruktor */
@@ -20,7 +20,7 @@ public class GUI extends javax.swing.JFrame {
         fehlermeldungGenerieren("\"fehlermeldungGenerieren\" erzeugt diese\nFehlermeldung mit einem String eurer Wahl.");
         ladebildschirmStarten();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,6 +39,8 @@ public class GUI extends javax.swing.JFrame {
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
+        jPanelRunde = new javax.swing.JPanel();
+        jLabelRunde = new javax.swing.JLabel();
         jPanelAktuellerSpieler = new javax.swing.JPanel();
         jLabelAktuellerSpieler = new javax.swing.JLabel();
         jPanelMenu = new javax.swing.JPanel();
@@ -80,6 +82,16 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen = new javax.swing.JPanel();
         jPanelOptionen1 = new javax.swing.JPanel();
         jButtonZurueckOptionen = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBoxKarten = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         piMenuBackroundMP1PC2 = new javax.swing.JLabel();
         jPanelCredits = new javax.swing.JPanel();
         jPanelCredits1 = new javax.swing.JPanel();
@@ -274,6 +286,36 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 310, 280, 170));
 
+        jPanelRunde.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRunde.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelRunde.setForeground(new java.awt.Color(51, 102, 0));
+
+        jLabelRunde.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelRunde.setText("Setze deinen Einsatz!");
+
+        javax.swing.GroupLayout jPanelRundeLayout = new javax.swing.GroupLayout(jPanelRunde);
+        jPanelRunde.setLayout(jPanelRundeLayout);
+        jPanelRundeLayout.setHorizontalGroup(
+            jPanelRundeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 194, Short.MAX_VALUE)
+            .addGroup(jPanelRundeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelRundeLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabelRunde)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanelRundeLayout.setVerticalGroup(
+            jPanelRundeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 34, Short.MAX_VALUE)
+            .addGroup(jPanelRundeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelRundeLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabelRunde)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanelBrett.add(jPanelRunde, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 260, 200, 40));
+
         jPanelAktuellerSpieler.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAktuellerSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelAktuellerSpieler.setForeground(new java.awt.Color(51, 102, 0));
@@ -319,6 +361,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelEinsatz.setText("Einsatz");
+
+        jTextFieldEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
 
         jButtonEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonEinsatz.setText("Einsatz setzen");
@@ -640,7 +684,65 @@ public class GUI extends javax.swing.JFrame {
                 jButtonZurueckOptionenActionPerformed(evt);
             }
         });
-        jPanelOptionen1.add(jButtonZurueckOptionen, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 117, -1));
+        jPanelOptionen1.add(jButtonZurueckOptionen, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 117, -1));
+
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jCheckBox1.setText("Animationen");
+        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanelOptionen1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 190, 20));
+
+        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jCheckBox2.setText("Sounds");
+        jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanelOptionen1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 190, 20));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setText("Internet-IP");
+        jPanelOptionen1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Kartenspiel");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 10));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setText("LAN-IP");
+        jPanelOptionen1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Sounds und Animationen");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 10));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("192.168.178.64");
+        jPanelOptionen1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("87.56.233.77");
+        jPanelOptionen1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 110, -1));
+
+        jComboBoxKarten.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jComboBoxKarten.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "52 Karten", "32 Karten" }));
+        jPanelOptionen1.add(jComboBoxKarten, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 20));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Internet- und LAN");
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 190, 10));
 
         jPanelOptionen.add(jPanelOptionen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
@@ -663,7 +765,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonZurueckCreditsActionPerformed(evt);
             }
         });
-        jPanelCredits1.add(jButtonZurueckCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 117, -1));
+        jPanelCredits1.add(jButtonZurueckCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 117, -1));
 
         jPanelCredits.add(jPanelCredits1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
@@ -678,6 +780,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelMPInternet1.setMaximumSize(new java.awt.Dimension(250, 400));
         jPanelMPInternet1.setMinimumSize(new java.awt.Dimension(250, 400));
 
+        ButtonLobbySuchen.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         ButtonLobbySuchen.setText("Lobby suchen");
         ButtonLobbySuchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -685,6 +788,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        TextFieldGebenSieIhrenNamenEin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         TextFieldGebenSieIhrenNamenEin.setText("Testuser");
 
         jTextAreaGebenSieIhrenNamenEin.setEditable(false);
@@ -699,6 +803,7 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaServerIP.setRows(5);
         jTextAreaServerIP.setText("Server-IP\n");
 
+        TextFieldServerIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         TextFieldServerIP.setText("127.0.0.1");
 
         jTextAreaPort.setEditable(false);
@@ -707,6 +812,7 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaPort.setRows(5);
         jTextAreaPort.setText("Port\n");
 
+        TextFieldPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         TextFieldPort.setText("1337");
         TextFieldPort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -714,6 +820,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonZurueck.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonZurueck.setText("Zurück");
         jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -741,7 +848,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPaneSpieler.setViewportView(jTableSpieler);
 
-        jLabelServerstatus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabelServerstatus.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelServerstatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelServerstatus.setText("SERVERSTATUS");
 
@@ -798,7 +905,7 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(jButtonZurueck)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonLobbySuchen)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanelMPInternet.add(jPanelMPInternet1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
@@ -815,6 +922,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelMP1PC1.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanelMP1PC1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        AnzahlSpielerButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         AnzahlSpielerButton1.setText("Spiel starten");
         AnzahlSpielerButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AnzahlSpielerButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -824,6 +932,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jPanelMP1PC1.add(AnzahlSpielerButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 117, -1));
 
+        jButtonZurueckMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonZurueckMP1PC1.setText("Zurück");
         jButtonZurueckMP1PC1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonZurueckMP1PC1.addActionListener(new java.awt.event.ActionListener() {
@@ -840,30 +949,55 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaInfoTextMP1PC1.setText("Geben Sie die Anzahl der Spieler ein.\nEs können maximal fünf Spieler und\nein Bänker an einem Spiel teilnehmen.");
         jPanelMP1PC1.add(jTextAreaInfoTextMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 42, 210, 50));
 
+        JLabelBänkerMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelBänkerMP1PC1.setText("Bank");
         jPanelMP1PC1.add(JLabelBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 134, -1, -1));
+
+        JTextlBänkerMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextlBänkerMP1PC1.setText("Bank");
         jPanelMP1PC1.add(JTextlBänkerMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 154, 90, -1));
 
+        JLabelSpieler1MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelSpieler1MP1PC1.setText("Spieler 1");
         jPanelMP1PC1.add(JLabelSpieler1MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 134, -1, -1));
+
+        JTextSpieler1MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextSpieler1MP1PC1.setText("Spieler 1");
         jPanelMP1PC1.add(JTextSpieler1MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 154, 90, -1));
 
+        JLabelSpieler2MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelSpieler2MP1PC1.setText("Spieler 2");
         jPanelMP1PC1.add(JLabelSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
-        jPanelMP1PC1.add(JTextSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 195, 90, -1));
 
+        JTextSpieler2MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextSpieler2MP1PC1.setText("Spieler 2");
+        jPanelMP1PC1.add(JTextSpieler2MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 90, -1));
+
+        JLabelSpieler3MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelSpieler3MP1PC1.setText("Spieler 3");
         jPanelMP1PC1.add(JLabelSpieler3MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 180, -1, -1));
-        jPanelMP1PC1.add(JTextSpieler3MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 195, 91, -1));
 
+        JTextSpieler3MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextSpieler3MP1PC1.setText("Spieler 3");
+        jPanelMP1PC1.add(JTextSpieler3MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 91, -1));
+
+        JLabelSpieler4MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelSpieler4MP1PC1.setText("Spieler 4");
-        jPanelMP1PC1.add(JLabelSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 221, -1, -1));
-        jPanelMP1PC1.add(JTextSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 241, 92, -1));
+        jPanelMP1PC1.add(JLabelSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
+        JTextSpieler4MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextSpieler4MP1PC1.setText("Spieler 4");
+        jPanelMP1PC1.add(JTextSpieler4MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 92, -1));
+
+        JLabelSpieler5MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         JLabelSpieler5MP1PC1.setText("Spieler 5");
-        jPanelMP1PC1.add(JLabelSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 221, -1, -1));
-        jPanelMP1PC1.add(JTextSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 241, 92, -1));
+        jPanelMP1PC1.add(JLabelSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
+        JTextSpieler5MP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        JTextSpieler5MP1PC1.setText("Spieler 5");
+        jPanelMP1PC1.add(JTextSpieler5MP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 92, -1));
+
+        jComboBoxAnzahlSpielerMP1PC1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBoxAnzahlSpielerMP1PC1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bank - 1 Spieler", "1 Bank - 2 Spieler", "1 Bank - 3 Spieler", "1 Bank - 4 Spieler", "1 Bank - 5 Spieler" }));
         jComboBoxAnzahlSpielerMP1PC1.setToolTipText("");
         jComboBoxAnzahlSpielerMP1PC1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
@@ -889,6 +1023,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel1Hauptmenue.setMaximumSize(new java.awt.Dimension(250, 400));
         jPanel1Hauptmenue.setMinimumSize(new java.awt.Dimension(250, 400));
 
+        jButtonMP1PC.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonMP1PC.setText("Multiplayer (1 PC)");
         jButtonMP1PC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -896,6 +1031,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonMPInet.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonMPInet.setText("Mehrspieler über Internet");
         jButtonMPInet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -903,6 +1039,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonOptionen.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonOptionen.setText("Optionen");
         jButtonOptionen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -910,6 +1047,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonCredits.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonCredits.setText("Credits");
         jButtonCredits.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -917,6 +1055,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jButtonBeenden.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonBeenden.setText("Beenden");
         jButtonBeenden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1017,17 +1156,17 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 15, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 15, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 15, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1082,6 +1221,7 @@ public class GUI extends javax.swing.JFrame {
         comboBoxSpielernamenEingeben();
         partie.highscoreAktuallisieren(jTableHighscore);
         menuBrettVisible();
+        starteRunde1();
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
@@ -1114,7 +1254,11 @@ public class GUI extends javax.swing.JFrame {
     private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldPortActionPerformed
-    
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
@@ -1153,7 +1297,7 @@ public class GUI extends javax.swing.JFrame {
             JTextSpieler5MP1PC1.setVisible(false);
         }
     }
-    
+
     public void kartenBilderUpdaten() {
         /* Diese Funktion ist bisher noch übel buggy. Die Idee dahinter war,
         zu gucken welcher Spieler momentan am Zug ist und demenstrepchendent
@@ -1216,7 +1360,7 @@ public class GUI extends javax.swing.JFrame {
                 if (partie.getRunde() == 1) {
                     karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
                     karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-                    
+
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
@@ -1227,7 +1371,7 @@ public class GUI extends javax.swing.JFrame {
                 System.out.println("Fehler");
         }
     }
-    
+
     private void comboBoxSpielernamenEingeben() {
         /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler.
         somit muss bei der Übergabe +2 gerechnet werden.*/
@@ -1244,24 +1388,24 @@ public class GUI extends javax.swing.JFrame {
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
             partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
             Karten_Spieler2.setVisible(true);
-            
+
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
             partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
             Karten_Spieler3.setVisible(true);
-            
+
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
             partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
             Karten_Spieler4.setVisible(true);
-            
+
         }
         if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
             partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
             Karten_Spieler5.setVisible(true);
         }
     }
-    
+
     private void programmStarten() {
         // Startfenster starten
         setVisible(true);
@@ -1295,11 +1439,11 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler4.setVisible(false);
         karte3_Spieler5.setVisible(false);
     }
-    
+
     private void programmBeenden() {
         System.exit(0);
     }
-    
+
     private void menuMPInternetVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer über Internet"-Menü
         jPanelBrett.setVisible(false);
@@ -1309,7 +1453,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-    
+
     private void menuBrettVisible() {
         // Es wird alles unsichtbar gestellt, außer das Brett
         jPanelBrett.setVisible(true);
@@ -1319,7 +1463,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-    
+
     private void menuMP1PCVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer an einem Computer"-Menü
         jPanelBrett.setVisible(false);
@@ -1329,7 +1473,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-    
+
     private void menuHauptmenueVisible() {
         // Es wird alles unsichtbar gestellt, außer das Hauptmenü
         jPanelBrett.setVisible(false);
@@ -1339,7 +1483,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(false);
     }
-    
+
     private void menuCreditsVisible() {
         // Es wird alles unsichtbar gestellt, außer die Credits
         jPanelBrett.setVisible(false);
@@ -1349,7 +1493,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(false);
         jPanelCredits.setVisible(true);
     }
-    
+
     private void menuOptionenVisible() {
         // Es wird alles unsichtbar gestellt, außer die Optionen
         jPanelBrett.setVisible(false);
@@ -1359,63 +1503,115 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen.setVisible(true);
         jPanelCredits.setVisible(false);
     }
-    
+
+    public void gewinnerAuswählen() {
+        int[] gewinner = new int[partie.getAnzahlSpieler()];
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            gewinner[i] = partie.getSpieler().get(0).getHandPunkte();
+        }
+        int temp;
+        for (int i = 1; i < gewinner.length; i++) {
+            for (int j = 0; j < gewinner.length - i; j++) {
+                if (gewinner[j] > gewinner[j + 1]) {
+                    temp = gewinner[j];
+                    gewinner[j] = gewinner[j + 1];
+                    gewinner[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println(gewinner[0]);
+    }
+
+    public void starteRunde1() {
+        partie.setRunde(1);
+        jLabelRunde.setText("Setze deinen Einsatz!");
+        jButtonKarteZiehen.setVisible(false);
+        partie.setAktuellerSpieler(0);
+        spielerAnzeigeUpdaten();
+    }
+
+    public void starteRunde2() {
+        partie.setRunde(2);
+        partie.jederZiehtZweiKarten();
+        jLabelRunde.setText("Eine weitere Karte?");
+        partie.setAktuellerSpieler(0);
+        spielerAnzeigeUpdaten();
+        jButtonKarteZiehen.setVisible(true);
+        jButtonEinsatz.setVisible(false);
+        jLabelEinsatz.setVisible(false);
+        jTextFieldEinsatz.setVisible(false);
+    }
+
     private void karteZiehenButton() {
         // Der Button funktioniert nur dann, wenn der Spieler zwei Karten hat.
-        if (partie.getSpieler().get(WIDTH).getHand().size() == 2) {
+        if ((partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) && (partie.getRunde() == 2)) {
             // Der Spieler zieht eine Karte
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
+            if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
+                gewinnerAuswählen();
+            }
             // Der nächste Spieler ist am Zug
             partie.nächsterSpieler();
             // Die Anzeige des aktuellen Spielers wird aktualisiert.
             spielerAnzeigeUpdaten();
+        } else {
+            fehlermeldungGenerieren("Fehler. Der Button darf zurzeit nicht zu sehen sein.");
         }
     }
-    
+
     private void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        if ((!jLabelEinsatz.getText().equals("")) && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())) {
+        // && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())
+        if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
-            // Nachdem ist der nächste Spieler am Zug.
-            partie.nächsterSpieler();
             // Die Anzeige des Einsatzes wird zurückgesetzt.
-            jLabelEinsatz.setText("");
-            spielerAnzeigeUpdaten();
+            jTextFieldEinsatz.setText("");
+            // Der nächste Spieler ist am Zug
+            if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
+                starteRunde2();
+            } else {
+                partie.nächsterSpieler();
+                // Die Anzeige des aktuellen Spielers wird aktualisiert.
+                spielerAnzeigeUpdaten();
+                partie.highscoreAktuallisieren(jTableHighscore);
+            }
+        } else {
+            fehlermeldungGenerieren("Fehler. Der Button darf zurzeit nicht zu sehen sein.");
         }
     }
-    
+
     private void spielerAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
         jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
     }
-    
+
     private void ladebildschirmStarten() {
         // Läuft noch nicht, aber ist glaube auch nicht zwingend notwendig
         AnfangJFrame.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
                 AnfangjProgressBar.setValue(i);
-                AnfangJFrame.setVisible(false);
             }
+            AnfangJFrame.setVisible(false);
         } catch (Exception e) {
         }
     }
-    
+
     private void fehlermeldungGenerieren(String anzeigeText) {
         jTextAreaFehlermeldung.setText(anzeigeText);
         jDialogFehlermeldung.setVisible(true);
         jDialogFehlermeldung.pack();
         jDialogFehlermeldung.setLocationRelativeTo(null);
     }
-    
+
     private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
         // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
-    
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1489,12 +1685,23 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonZurueckCredits;
     private javax.swing.JButton jButtonZurueckMP1PC1;
     private javax.swing.JButton jButtonZurueckOptionen;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
+    private javax.swing.JComboBox<String> jComboBoxKarten;
     private javax.swing.JDialog jDialogFehlermeldung;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
     private javax.swing.JLabel jLabelKontostandValue;
+    private javax.swing.JLabel jLabelRunde;
     private javax.swing.JLabel jLabelServerstatus;
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
@@ -1510,6 +1717,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelMenu;
     private javax.swing.JPanel jPanelOptionen;
     private javax.swing.JPanel jPanelOptionen1;
+    private javax.swing.JPanel jPanelRunde;
     private javax.swing.JPanel jPanelStats;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPaneSpieler;

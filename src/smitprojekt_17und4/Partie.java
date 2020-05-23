@@ -61,21 +61,15 @@ public class Partie implements PartieInterface {
     }
 
     public void spielerNamenEingeben(String spielername) {
-        /* Die Namen der Spieler werden nacheinander eingelesen. Wird der Button
-        bestätigt, aktualisiert sich das Fenster und der nächste Spieler wird abgefragt.*/
-        if ((anzahlSpielerCounter < anzahlSpieler)) {
-            spieler.add(new Spieler(spielername));
-            /* Wurde ein neuer Spieler hinzugefügt, wird der nächste Spieler eingelesen */
-            anzahlSpielerCounter++;
-        }
+        spieler.add(new Spieler(spielername));
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
     public void nächsterSpieler() {
         aktuellerSpieler++;
-        if (aktuellerSpieler == spieler.size()) {
+        /*if (aktuellerSpieler == spieler.size()) {
             anzahlSpielerCounter = 0;
-        }
+        }*/
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
@@ -84,6 +78,10 @@ public class Partie implements PartieInterface {
         die nötigen Funktionen benutzen zu können */
         DefaultTableModel model = (DefaultTableModel) jTableTabelle.getModel();
         Object spalte[] = new Object[4];
+
+        if (model.getRowCount() > 0) {
+            model.setRowCount(0);
+        }
 
         /* Nun werden die Werte der Spieler in ein Array, was als Zeile
         fungiert, gespeichert. Diese Zeile wird dann als Zeile in der Tabelle
