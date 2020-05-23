@@ -235,7 +235,7 @@ public class GUI extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
+        setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(1200, 579));
         setMinimumSize(new java.awt.Dimension(1200, 579));
@@ -243,6 +243,7 @@ public class GUI extends javax.swing.JFrame {
         setResizable(false);
 
         jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelBrett.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelBrett.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableHighscore.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -623,10 +624,12 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelBrett.add(piMenuBackround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelOptionen.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelOptionen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelOptionen1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelOptionen1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelOptionen1.setMaximumSize(new java.awt.Dimension(250, 400));
+        jPanelOptionen1.setMinimumSize(new java.awt.Dimension(250, 400));
         jPanelOptionen1.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanelOptionen1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -644,10 +647,12 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackroundMP1PC2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelOptionen.add(piMenuBackroundMP1PC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelCredits.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelCredits.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelCredits1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCredits1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelCredits1.setMaximumSize(new java.awt.Dimension(250, 400));
+        jPanelCredits1.setMinimumSize(new java.awt.Dimension(250, 400));
         jPanelCredits1.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanelCredits1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -666,9 +671,12 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.add(piMenuBackroundMP1PC3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
         jPanelMPInternet.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMPInternet.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelMPInternet.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMPInternet1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMPInternet1.setMaximumSize(new java.awt.Dimension(250, 400));
+        jPanelMPInternet1.setMinimumSize(new java.awt.Dimension(250, 400));
 
         ButtonLobbySuchen.setText("Lobby suchen");
         ButtonLobbySuchen.addActionListener(new java.awt.event.ActionListener() {
@@ -798,10 +806,12 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelMPInternet.add(piMenuBackround3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelMP1PC.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelMP1PC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelMP1PC1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelMP1PC1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanelMP1PC1.setMaximumSize(new java.awt.Dimension(250, 400));
+        jPanelMP1PC1.setMinimumSize(new java.awt.Dimension(250, 400));
         jPanelMP1PC1.setPreferredSize(new java.awt.Dimension(250, 400));
         jPanelMP1PC1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -872,9 +882,12 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackroundMP1PC1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelMP1PC.add(piMenuBackroundMP1PC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
+        jPanelHauptmenue.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelHauptmenue.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1Hauptmenue.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1Hauptmenue.setMaximumSize(new java.awt.Dimension(250, 400));
+        jPanel1Hauptmenue.setMinimumSize(new java.awt.Dimension(250, 400));
 
         jButtonMP1PC.setText("Multiplayer (1 PC)");
         jButtonMP1PC.addActionListener(new java.awt.event.ActionListener() {
@@ -959,7 +972,7 @@ public class GUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelBrett, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 3, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -973,25 +986,23 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 1, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 2, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 1, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 2, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 1, Short.MAX_VALUE)
+                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 2, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+            .addComponent(jPanelBrett, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1006,17 +1017,17 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 1, Short.MAX_VALUE)))
         );
 
         pack();

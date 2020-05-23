@@ -28,13 +28,20 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("(Server) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
+        setMaximumSize(new java.awt.Dimension(1200, 579));
+        setMinimumSize(new java.awt.Dimension(1200, 579));
+        setPreferredSize(new java.awt.Dimension(1200, 579));
+        setResizable(false);
 
         jPanelServer.setBackground(new java.awt.Color(255, 255, 255));
         jPanelServer.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelServer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelServer1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelServer1.setMaximumSize(new java.awt.Dimension(250, 400));
         jPanelServer1.setMinimumSize(new java.awt.Dimension(250, 400));
+        jPanelServer1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonLobbyAnzahlSpieler.setText("Server starten");
         ButtonLobbyAnzahlSpieler.addActionListener(new java.awt.event.ActionListener() {
@@ -42,28 +49,34 @@ public class GUI extends javax.swing.JFrame {
                 ButtonLobbyAnzahlSpielerActionPerformed(evt);
             }
         });
+        jPanelServer1.add(ButtonLobbyAnzahlSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 355, 117, -1));
 
         jTextAreaSpieleranzahl.setEditable(false);
         jTextAreaSpieleranzahl.setColumns(20);
         jTextAreaSpieleranzahl.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaSpieleranzahl.setRows(5);
         jTextAreaSpieleranzahl.setText("Wähle eine Option aus.\n");
+        jPanelServer1.add(jTextAreaSpieleranzahl, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 91, 210, 20));
 
         jTextAreaServername.setEditable(false);
         jTextAreaServername.setColumns(20);
         jTextAreaServername.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaServername.setRows(5);
         jTextAreaServername.setText("Servername\n");
+        jPanelServer1.add(jTextAreaServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, 70, 20));
 
         TextFieldServername.setText("Testserver");
+        jPanelServer1.add(TextFieldServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 65, 126, -1));
 
         jTextAreaPort.setEditable(false);
         jTextAreaPort.setColumns(20);
         jTextAreaPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaPort.setRows(5);
         jTextAreaPort.setText("Port\n");
+        jPanelServer1.add(jTextAreaPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 39, 56, 20));
 
         TextFieldPort.setText("1337");
+        jPanelServer1.add(TextFieldPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 65, 74, -1));
 
         jButtonZurueck.setText("Beenden");
         jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +84,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonZurueckActionPerformed(evt);
             }
         });
+        jPanelServer1.add(jButtonZurueck, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 326, 117, -1));
 
         jTableSpieler.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTableSpieler.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -92,93 +106,32 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPaneSpieler.setViewportView(jTableSpieler);
 
+        jPanelServer1.add(jScrollPaneSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 178, 210, 130));
+
         jLabelServerstatus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabelServerstatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelServerstatus.setText("SERVERSTATUS");
+        jPanelServer1.add(jLabelServerstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 148, 210, -1));
 
         jComboBoxAnzahlSpieler.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bank - 1 Spieler", "1 Bank - 2 Spieler", "1 Bank - 3 Spieler", "1 Bank - 4 Spieler", "1 Bank - 5 Spieler" }));
         jComboBoxAnzahlSpieler.setToolTipText("");
-
-        javax.swing.GroupLayout jPanelServer1Layout = new javax.swing.GroupLayout(jPanelServer1);
-        jPanelServer1.setLayout(jPanelServer1Layout);
-        jPanelServer1Layout.setHorizontalGroup(
-            jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelServer1Layout.createSequentialGroup()
-                .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelServer1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonZurueck, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonLobbyAnzahlSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelServer1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelServerstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPaneSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextAreaSpieleranzahl, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelServer1Layout.createSequentialGroup()
-                                    .addComponent(jTextAreaServername, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(21, 21, 21))
-                                .addGroup(jPanelServer1Layout.createSequentialGroup()
-                                    .addComponent(TextFieldServername, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jComboBoxAnzahlSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        jPanelServer1Layout.setVerticalGroup(
-            jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelServer1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextAreaServername, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextAreaPort, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelServer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextFieldServername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextFieldPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextAreaSpieleranzahl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxAnzahlSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelServerstatus)
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPaneSpieler, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonZurueck)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonLobbyAnzahlSpieler)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        jPanelServer1.add(jComboBoxAnzahlSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 117, 210, -1));
 
         jPanelServer.add(jPanelServer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
         piMenuBackround3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
+        piMenuBackround3.setAlignmentY(0.0F);
         jPanelServer.add(piMenuBackround3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1220, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanelServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jPanelServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanelServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jPanelServer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -186,7 +139,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void ButtonLobbyAnzahlSpielerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbyAnzahlSpielerActionPerformed
         server = new Server(Integer.parseInt(TextFieldPort.getText()), TextFieldServername.getText());
-        server.laufen(jTableSpieler);
+        server.spielerSuchen();
+        server.spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
         jLabelServerstatus.setText(server.getSpielername() + "ist dem Server beigetreten.");
     }//GEN-LAST:event_ButtonLobbyAnzahlSpielerActionPerformed
 
