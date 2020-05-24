@@ -95,6 +95,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits = new javax.swing.JPanel();
         jPanelCredits1 = new javax.swing.JPanel();
         jButtonZurueckCredits = new javax.swing.JButton();
+        jTextAreaInfoTextMP1PC2 = new javax.swing.JTextArea();
         piMenuBackroundMP1PC3 = new javax.swing.JLabel();
         jPanelMPInternet = new javax.swing.JPanel();
         jPanelMPInternet1 = new javax.swing.JPanel();
@@ -736,6 +737,14 @@ public class GUI extends javax.swing.JFrame {
         });
         jPanelCredits1.add(jButtonZurueckCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 117, -1));
 
+        jTextAreaInfoTextMP1PC2.setEditable(false);
+        jTextAreaInfoTextMP1PC2.setColumns(20);
+        jTextAreaInfoTextMP1PC2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jTextAreaInfoTextMP1PC2.setRows(5);
+        jTextAreaInfoTextMP1PC2.setText("WIT2B - No.3: Blackjack\n(12.05.2020 - 23.06.2020)\n\nDas Spiel, 17 und 4 bzw. Blackjack ist\nein Projekt, welches wir am 12. Juni\nstarteten und am 23. Juni 2020\nvollenden. Am Ende sollen wir vor\nunserer Klasse, unser Programm in\nForm, eines Kundenvortrages\nvorstellen. Jedes Team bestand dabei\naus drei Mitgliedern und wurde mit\ndem Kundenauftrag, \n„homeschooling_WIT2_\nProjektBeschreibung_Black_Jack.pdf“\nins Projekt geschickt.\n\nvon Bianca, Timo und Lukas\naus der WIT2B :)");
+        jTextAreaInfoTextMP1PC2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanelCredits1.add(jTextAreaInfoTextMP1PC2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 42, 210, 290));
+
         jPanelCredits.add(jPanelCredits1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
         piMenuBackroundMP1PC3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
@@ -1079,9 +1088,7 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBrett, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+            .addComponent(jPanelBrett, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1094,19 +1101,19 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 1, Short.MAX_VALUE)
+                    .addGap(0, 2, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 2, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 1, Short.MAX_VALUE)
+                    .addGap(0, 2, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 2, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 1, Short.MAX_VALUE)
+                    .addGap(0, 2, Short.MAX_VALUE)
                     .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 2, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1125,17 +1132,17 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1473,47 +1480,34 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    public void gewinnerAuswählen() {
-        jButtonKarteZiehen.setVisible(false);
-        jButtonEinsatz.setVisible(false);
-        jLabelEinsatz.setVisible(false);
-        jTextFieldEinsatz.setVisible(false);
-
-        partie.kartenWerteRechnen();
-        
-        String[] namen = new String[partie.getAnzahlSpieler()];
-        int[] gewinner = new int[partie.getAnzahlSpieler()];
-
-        for (int i = 0; i < partie.getSpieler().size(); i++) {
-            gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
-            namen[i] = partie.getSpieler().get(i).getName();
-        }
-
-        int tempGewinner;
-        String tempName;
-        
-        for (int i = 1; i < gewinner.length; i++) {
-            for (int j = 0; j < gewinner.length - i; j++) {
-                if (gewinner[j] > gewinner[j + 1]) {
-                    tempGewinner = gewinner[j];
-                    tempName = namen[j];
-                    gewinner[j] = gewinner[j + 1];
-                    namen[j] = namen[j + 1];
-                    gewinner[j + 1] = tempGewinner;
-                    namen[j + 1] = tempName;
-                }
-            }
-        }
-        partie.highscoreAktuallisieren(jTableSpieler);
-        fehlermeldungGenerieren("1. Platz - "+namen[partie.getAnzahlSpieler() - 1]+": "+gewinner[partie.getAnzahlSpieler() - 1]);
-    }
-
     public void starteRunde1() {
         partie.setRunde(1);
         jLabelRunde.setText("Setze deinen Einsatz!");
         jButtonKarteZiehen.setVisible(false);
         partie.setAktuellerSpieler(0);
         spielerAnzeigeUpdaten();
+    }
+
+    public void einsatzSetzenButton() {
+        /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
+        // && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())
+        if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
+            // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
+            partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
+            partie.highscoreAktuallisieren(jTableHighscore);
+            // Die Anzeige des Einsatzes wird zurückgesetzt.
+            jTextFieldEinsatz.setText("");
+            // Der nächste Spieler ist am Zug
+            if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
+                starteRunde2();
+            } else {
+                partie.nächsterSpieler();
+                // Die Anzeige des aktuellen Spielers wird aktualisiert.
+                spielerAnzeigeUpdaten();
+            }
+        } else {
+            fehlermeldungGenerieren("Fehler.");
+        }
     }
 
     public void starteRunde2() {
@@ -1546,26 +1540,41 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    public void einsatzSetzenButton() {
-        /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        // && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())
-        if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
-            // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
-            partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
-            partie.highscoreAktuallisieren(jTableHighscore);
-            // Die Anzeige des Einsatzes wird zurückgesetzt.
-            jTextFieldEinsatz.setText("");
-            // Der nächste Spieler ist am Zug
-            if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
-                starteRunde2();
-            } else {
-                partie.nächsterSpieler();
-                // Die Anzeige des aktuellen Spielers wird aktualisiert.
-                spielerAnzeigeUpdaten();
-            }
-        } else {
-            fehlermeldungGenerieren("Fehler.");
+    public void gewinnerAuswählen() {
+        jButtonKarteZiehen.setVisible(false);
+        jButtonEinsatz.setVisible(false);
+        jLabelEinsatz.setVisible(false);
+        jTextFieldEinsatz.setVisible(false);
+
+        jLabelRunde.setText("Der Gewinner ist...");
+        
+        partie.kartenWerteRechnen();
+
+        String[] namen = new String[partie.getAnzahlSpieler()];
+        int[] gewinner = new int[partie.getAnzahlSpieler()];
+
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
+            namen[i] = partie.getSpieler().get(i).getName();
         }
+
+        int tempGewinner;
+        String tempName;
+
+        for (int i = 1; i < gewinner.length; i++) {
+            for (int j = 0; j < gewinner.length - i; j++) {
+                if (gewinner[j] > gewinner[j + 1]) {
+                    tempGewinner = gewinner[j];
+                    tempName = namen[j];
+                    gewinner[j] = gewinner[j + 1];
+                    namen[j] = namen[j + 1];
+                    gewinner[j + 1] = tempGewinner;
+                    namen[j + 1] = tempName;
+                }
+            }
+        }
+        partie.highscoreAktuallisieren(jTableSpieler);
+        fehlermeldungGenerieren("1. Platz - " + namen[partie.getAnzahlSpieler() - 1] + ": " + gewinner[partie.getAnzahlSpieler() - 1]);
     }
 
     public void spielerAnzeigeUpdaten() {
@@ -1623,7 +1632,7 @@ public class GUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
+ /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
             }
@@ -1713,6 +1722,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaFehlermeldung;
     private javax.swing.JTextArea jTextAreaGebenSieIhrenNamenEin;
     private javax.swing.JTextArea jTextAreaInfoTextMP1PC1;
+    private javax.swing.JTextArea jTextAreaInfoTextMP1PC2;
     private javax.swing.JTextArea jTextAreaPort;
     private javax.swing.JTextArea jTextAreaServerIP;
     private javax.swing.JTextField jTextFieldEinsatz;
