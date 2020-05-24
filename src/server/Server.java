@@ -38,7 +38,7 @@ public class Server {
     public void spielerSuchen() {
         while (true) {
             try {
-                Socket client = server.accept();
+                client = server.accept();
                 // Dies sind die gesendeten Daten
                 DataOutputStream output = new DataOutputStream(client.getOutputStream());
                 output.writeUTF(name);

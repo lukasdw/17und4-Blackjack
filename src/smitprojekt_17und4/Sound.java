@@ -5,6 +5,8 @@ import java.io.*;
 
 public class Sound implements SoundInterface {
 
+    /* Die Klasse + Funktion ist ungetestet. Ein Sound soll zum Einsatz
+    kommen, wenn Karten gemischt, ausgeteilt oder gelegt werden. → Version 4.0 */
     public void abspielen(String audioFilePath) {
         try {
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(audioFilePath));

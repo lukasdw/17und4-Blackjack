@@ -17,7 +17,6 @@ public class GUI extends javax.swing.JFrame {
 
         //Startet die GUI, sodass nur das Hauptmenü am Anfang zu sehen ist.
         programmStarten();
-        fehlermeldungGenerieren("\"fehlermeldungGenerieren\" erzeugt diese\nFehlermeldung mit einem String eurer Wahl.");
         ladebildschirmStarten();
     }
 
@@ -1483,26 +1482,32 @@ public class GUI extends javax.swing.JFrame {
         jTextFieldEinsatz.setVisible(false);
 
         partie.kartenWerteRechnen();
-
+        
+        String[] namen = new String[partie.getAnzahlSpieler()];
         int[] gewinner = new int[partie.getAnzahlSpieler()];
 
         for (int i = 0; i < partie.getSpieler().size(); i++) {
             gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
+            namen[i] = partie.getSpieler().get(i).getName();
         }
 
-        int temp;
+        int tempGewinner;
+        String tempName;
+        
         for (int i = 1; i < gewinner.length; i++) {
             for (int j = 0; j < gewinner.length - i; j++) {
                 if (gewinner[j] > gewinner[j + 1]) {
-                    temp = gewinner[j];
+                    tempGewinner = gewinner[j];
+                    tempName = namen[j];
                     gewinner[j] = gewinner[j + 1];
-                    gewinner[j + 1] = temp;
+                    namen[j] = namen[j + 1];
+                    gewinner[j + 1] = tempGewinner;
+                    namen[j + 1] = tempName;
                 }
             }
         }
-        for (int i = 0; i < gewinner.length; i++) {
-            System.out.println(gewinner[i]);
-        }
+        partie.highscoreAktuallisieren(jTableSpieler);
+        fehlermeldungGenerieren("1. Platz - "+namen[partie.getAnzahlSpieler() - 1]+": "+gewinner[partie.getAnzahlSpieler() - 1]);
     }
 
     public void starteRunde1() {
