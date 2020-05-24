@@ -350,6 +350,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelMenu.setMaximumSize(new java.awt.Dimension(295, 82));
         jPanelMenu.setMinimumSize(new java.awt.Dimension(295, 82));
+        jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonKarteZiehen.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonKarteZiehen.setText("Karte ziehen");
@@ -358,11 +359,14 @@ public class GUI extends javax.swing.JFrame {
                 jButtonKarteZiehenActionPerformed(evt);
             }
         });
+        jPanelMenu.add(jButtonKarteZiehen, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
 
         jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelEinsatz.setText("Einsatz");
+        jPanelMenu.add(jLabelEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 43, -1, 23));
 
         jTextFieldEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jPanelMenu.add(jTextFieldEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 47, 205, -1));
 
         jButtonEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonEinsatz.setText("Einsatz setzen");
@@ -371,6 +375,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonEinsatzActionPerformed(evt);
             }
         });
+        jPanelMenu.add(jButtonEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 14, -1, -1));
 
         jButtonStopp.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonStopp.setText("Stop");
@@ -379,42 +384,9 @@ public class GUI extends javax.swing.JFrame {
                 jButtonStoppActionPerformed(evt);
             }
         });
+        jPanelMenu.add(jButtonStopp, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 14, -1, -1));
 
-        javax.swing.GroupLayout jPanelMenuLayout = new javax.swing.GroupLayout(jPanelMenu);
-        jPanelMenu.setLayout(jPanelMenuLayout);
-        jPanelMenuLayout.setHorizontalGroup(
-            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelMenuLayout.createSequentialGroup()
-                        .addComponent(jButtonKarteZiehen, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonEinsatz, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonStopp))
-                    .addGroup(jPanelMenuLayout.createSequentialGroup()
-                        .addComponent(jLabelEinsatz)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldEinsatz)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanelMenuLayout.setVerticalGroup(
-            jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonKarteZiehen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonEinsatz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonStopp))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEinsatz, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelEinsatz, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelBrett.add(jPanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, 80));
+        jPanelBrett.add(jPanelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 300, 80));
 
         jPanelStats.setBackground(new java.awt.Color(255, 255, 255));
         jPanelStats.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1505,10 +1477,19 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void gewinnerAuswählen() {
+        jButtonKarteZiehen.setVisible(false);
+        jButtonEinsatz.setVisible(false);
+        jLabelEinsatz.setVisible(false);
+        jTextFieldEinsatz.setVisible(false);
+
+        partie.kartenWerteRechnen();
+
         int[] gewinner = new int[partie.getAnzahlSpieler()];
+
         for (int i = 0; i < partie.getSpieler().size(); i++) {
-            gewinner[i] = partie.getSpieler().get(0).getHandPunkte();
+            gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
         }
+
         int temp;
         for (int i = 1; i < gewinner.length; i++) {
             for (int j = 0; j < gewinner.length - i; j++) {
@@ -1519,7 +1500,9 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         }
-        System.out.println(gewinner[0]);
+        for (int i = 0; i < gewinner.length; i++) {
+            System.out.println(gewinner[i]);
+        }
     }
 
     public void starteRunde1() {
@@ -1549,13 +1532,14 @@ public class GUI extends javax.swing.JFrame {
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
             if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
                 gewinnerAuswählen();
+            } else {
+                // Der nächste Spieler ist am Zug
+                partie.nächsterSpieler();
+                // Die Anzeige des aktuellen Spielers wird aktualisiert.
+                spielerAnzeigeUpdaten();
             }
-            // Der nächste Spieler ist am Zug
-            partie.nächsterSpieler();
-            // Die Anzeige des aktuellen Spielers wird aktualisiert.
-            spielerAnzeigeUpdaten();
         } else {
-            fehlermeldungGenerieren("Fehler. Der Button darf zurzeit nicht zu sehen sein.");
+            fehlermeldungGenerieren("Fehler.");
         }
     }
 
@@ -1565,6 +1549,7 @@ public class GUI extends javax.swing.JFrame {
         if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
+            partie.highscoreAktuallisieren(jTableHighscore);
             // Die Anzeige des Einsatzes wird zurückgesetzt.
             jTextFieldEinsatz.setText("");
             // Der nächste Spieler ist am Zug
@@ -1574,10 +1559,9 @@ public class GUI extends javax.swing.JFrame {
                 partie.nächsterSpieler();
                 // Die Anzeige des aktuellen Spielers wird aktualisiert.
                 spielerAnzeigeUpdaten();
-                partie.highscoreAktuallisieren(jTableHighscore);
             }
         } else {
-            fehlermeldungGenerieren("Fehler. Der Button darf zurzeit nicht zu sehen sein.");
+            fehlermeldungGenerieren("Fehler.");
         }
     }
 

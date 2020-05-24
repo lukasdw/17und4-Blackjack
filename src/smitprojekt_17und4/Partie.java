@@ -40,6 +40,15 @@ public class Partie implements PartieInterface {
         }
     }
 
+    public void kartenWerteRechnen() {
+        /* Die Wertigkeit der aktuellen Hand wird errechnet */
+        for (int j = 0; j < anzahlSpieler; j++) {
+            for (int i = 0; i < spieler.get(j).getHand().size(); i++) {
+                spieler.get(j).setHandPunkte(spieler.get(j).getHandPunkte() + spieler.get(j).getHand().get(i).getWert());
+            }
+        }
+    }
+
     public void deckEinlesen() {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". */
@@ -67,9 +76,6 @@ public class Partie implements PartieInterface {
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
     public void nächsterSpieler() {
         aktuellerSpieler++;
-        /*if (aktuellerSpieler == spieler.size()) {
-            anzahlSpielerCounter = 0;
-        }*/
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {

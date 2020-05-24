@@ -11,7 +11,6 @@ public class Spieler implements SpielerInterface {
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
     private int einsatz = 0;
-    private int platz; 
 
     /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
     Die Werte der Karten werden zusammengerechnet und in der Variable, "handPunkte"
@@ -37,11 +36,6 @@ public class Spieler implements SpielerInterface {
         /* Die gezogene Karte muss aus dem Deck entfernt werden, da sie nun
         auf der Hand des Spielers ist */
         deck.remove(zufallszahl);
-
-        /* Die Wertigkeit der aktuellen Hand wird errechnet */
-        for (int i = 0; i < hand.size(); i++) {
-            handPunkte = handPunkte + hand.get(i).getWert();
-        }
     }
 
     /* Getter und Setter */
