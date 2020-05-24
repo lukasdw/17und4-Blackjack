@@ -1,4 +1,4 @@
-package smitprojekt_17und4;
+package client;
 
 public class Karte implements KarteInterface {
 

@@ -1,4 +1,4 @@
-package smitprojekt_17und4;
+package client;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -248,9 +248,7 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1200, 579));
         setMinimumSize(new java.awt.Dimension(1200, 579));
-        setPreferredSize(new java.awt.Dimension(1200, 579));
         setResizable(false);
 
         jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));
@@ -1343,7 +1341,7 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void comboBoxSpielernamenEingeben() {
+    public void comboBoxSpielernamenEingeben() {
         /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler.
         somit muss bei der Übergabe +2 gerechnet werden.*/
         partie.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
@@ -1377,7 +1375,7 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void programmStarten() {
+    public void programmStarten() {
         // Startfenster starten
         setVisible(true);
         menuHauptmenueVisible();
@@ -1411,11 +1409,11 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5.setVisible(false);
     }
 
-    private void programmBeenden() {
+    public void programmBeenden() {
         System.exit(0);
     }
 
-    private void menuMPInternetVisible() {
+    public void menuMPInternetVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer über Internet"-Menü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(true);
@@ -1425,7 +1423,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    private void menuBrettVisible() {
+    public void menuBrettVisible() {
         // Es wird alles unsichtbar gestellt, außer das Brett
         jPanelBrett.setVisible(true);
         jPanelMPInternet.setVisible(false);
@@ -1435,7 +1433,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    private void menuMP1PCVisible() {
+    public void menuMP1PCVisible() {
         // Es wird alles unsichtbar gestellt, außer das "Multiplayer an einem Computer"-Menü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
@@ -1445,7 +1443,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    private void menuHauptmenueVisible() {
+    public void menuHauptmenueVisible() {
         // Es wird alles unsichtbar gestellt, außer das Hauptmenü
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
@@ -1455,7 +1453,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    private void menuCreditsVisible() {
+    public void menuCreditsVisible() {
         // Es wird alles unsichtbar gestellt, außer die Credits
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
@@ -1465,7 +1463,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(true);
     }
 
-    private void menuOptionenVisible() {
+    public void menuOptionenVisible() {
         // Es wird alles unsichtbar gestellt, außer die Optionen
         jPanelBrett.setVisible(false);
         jPanelMPInternet.setVisible(false);
@@ -1530,7 +1528,7 @@ public class GUI extends javax.swing.JFrame {
         jTextFieldEinsatz.setVisible(false);
     }
 
-    private void karteZiehenButton() {
+    public void karteZiehenButton() {
         // Der Button funktioniert nur dann, wenn der Spieler zwei Karten hat.
         if ((partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) && (partie.getRunde() == 2)) {
             // Der Spieler zieht eine Karte
@@ -1548,7 +1546,7 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void einsatzSetzenButton() {
+    public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
         // && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())
         if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
@@ -1570,13 +1568,13 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void spielerAnzeigeUpdaten() {
+    public void spielerAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
         jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
     }
 
-    private void ladebildschirmStarten() {
+    public void ladebildschirmStarten() {
         // Läuft noch nicht, aber ist glaube auch nicht zwingend notwendig
         AnfangJFrame.setVisible(true);
         try {
@@ -1588,20 +1586,20 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    private void fehlermeldungGenerieren(String anzeigeText) {
+    public void fehlermeldungGenerieren(String anzeigeText) {
         jTextAreaFehlermeldung.setText(anzeigeText);
         jDialogFehlermeldung.setVisible(true);
         jDialogFehlermeldung.pack();
         jDialogFehlermeldung.setLocationRelativeTo(null);
     }
 
-    private void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
+    public void jFrameInDieMitteSetzen(javax.swing.JFrame JFrame) {
         // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
 
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -1625,12 +1623,12 @@ public class GUI extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUI().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Anfang1jLabel;
