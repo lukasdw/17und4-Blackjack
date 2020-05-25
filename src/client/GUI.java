@@ -15,8 +15,7 @@ public class GUI extends javax.swing.JFrame {
         //Setzt das JFrame in die Mitte des Bildschirms
         jFrameInDieMitteSetzen(AnfangJFrame);
 
-        //Startet die GUI, sodass nur das Hauptmenü am Anfang zu sehen ist.
-        programmStarten();
+        //Startet den LoadingScreen und danach startet das Hauptmenü.
         ladebildschirmStarten();
     }
 
@@ -27,9 +26,9 @@ public class GUI extends javax.swing.JFrame {
         AnfangJFrame = new javax.swing.JFrame();
         AnfangjPanel = new javax.swing.JPanel();
         picLogo = new javax.swing.JLabel();
-        AnfangjProgressBar = new javax.swing.JProgressBar();
         Anfang1jLabel = new javax.swing.JLabel();
         Anfang2jLabel = new javax.swing.JLabel();
+        AnfangjProgressBar = new javax.swing.JProgressBar();
         jDialogFehlermeldung = new javax.swing.JDialog();
         jPanelFehlermeldung = new javax.swing.JPanel();
         picDreieck = new javax.swing.JLabel();
@@ -43,18 +42,18 @@ public class GUI extends javax.swing.JFrame {
         jPanelAktuellerSpieler = new javax.swing.JPanel();
         jLabelAktuellerSpieler = new javax.swing.JLabel();
         jPanelMenu = new javax.swing.JPanel();
-        jButtonKarteZiehen = new javax.swing.JButton();
         jLabelEinsatz = new javax.swing.JLabel();
         jTextFieldEinsatz = new javax.swing.JTextField();
+        jButtonKarteZiehen = new javax.swing.JButton();
         jButtonEinsatz = new javax.swing.JButton();
         jButtonStopp = new javax.swing.JButton();
         jPanelStats = new javax.swing.JPanel();
         jLabelKontostand = new javax.swing.JLabel();
         jLabelKontostandValue = new javax.swing.JLabel();
         Karten_Baenker = new javax.swing.JPanel();
-        karte3_Baenker = new javax.swing.JLabel();
-        karte2_Baenker = new javax.swing.JLabel();
         karte1_Baenker = new javax.swing.JLabel();
+        karte2_Baenker = new javax.swing.JLabel();
+        karte3_Baenker = new javax.swing.JLabel();
         Karten_Spieler1 = new javax.swing.JPanel();
         karte1_Spieler1 = new javax.swing.JLabel();
         karte2_Spieler1 = new javax.swing.JLabel();
@@ -141,14 +140,16 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround = new javax.swing.JLabel();
 
         AnfangJFrame.setAlwaysOnTop(true);
-        AnfangJFrame.setMinimumSize(new java.awt.Dimension(250, 400));
+        AnfangJFrame.setMaximumSize(new java.awt.Dimension(240, 325));
+        AnfangJFrame.setMinimumSize(new java.awt.Dimension(260, 365));
+        AnfangJFrame.setPreferredSize(new java.awt.Dimension(260, 365));
         AnfangJFrame.setResizable(false);
+        AnfangJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        AnfangjPanel.setMaximumSize(null);
+        AnfangjPanel.setMaximumSize(new java.awt.Dimension(240, 325));
+        AnfangjPanel.setMinimumSize(new java.awt.Dimension(240, 325));
 
         picLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo klein.png"))); // NOI18N
-
-        AnfangjProgressBar.setForeground(new java.awt.Color(0, 102, 51));
 
         Anfang1jLabel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Anfang1jLabel.setForeground(new java.awt.Color(0, 51, 0));
@@ -159,11 +160,16 @@ public class GUI extends javax.swing.JFrame {
         Anfang2jLabel.setForeground(new java.awt.Color(0, 51, 0));
         Anfang2jLabel.setText("Blackjack - 17 und 4");
 
+        AnfangjProgressBar.setForeground(new java.awt.Color(0, 102, 51));
+
         javax.swing.GroupLayout AnfangjPanelLayout = new javax.swing.GroupLayout(AnfangjPanel);
         AnfangjPanel.setLayout(AnfangjPanelLayout);
         AnfangjPanelLayout.setHorizontalGroup(
             AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 250, Short.MAX_VALUE)
+            .addGroup(AnfangjPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(AnfangjPanelLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -173,39 +179,28 @@ public class GUI extends javax.swing.JFrame {
                             .addGap(30, 30, 30)
                             .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(Anfang1jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Anfang2jLabel)))
-                        .addGroup(AnfangjPanelLayout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(0, 10, Short.MAX_VALUE)))
+                                .addComponent(Anfang2jLabel))))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         AnfangjPanelLayout.setVerticalGroup(
             AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AnfangjPanelLayout.createSequentialGroup()
+                .addContainerGap(284, Short.MAX_VALUE)
+                .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
             .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(AnfangjPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 6, Short.MAX_VALUE)
                     .addComponent(picLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AnfangjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(AnfangjPanelLayout.createSequentialGroup()
                             .addGap(20, 20, 20)
                             .addComponent(Anfang1jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(Anfang2jLabel))
-                    .addGap(10, 10, 10)
-                    .addComponent(AnfangjProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 49, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout AnfangJFrameLayout = new javax.swing.GroupLayout(AnfangJFrame.getContentPane());
-        AnfangJFrame.getContentPane().setLayout(AnfangJFrameLayout);
-        AnfangJFrameLayout.setHorizontalGroup(
-            AnfangJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AnfangjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        AnfangJFrameLayout.setVerticalGroup(
-            AnfangJFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AnfangjPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        AnfangJFrame.getContentPane().add(AnfangjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jDialogFehlermeldung.setBackground(new java.awt.Color(255, 255, 255));
         jDialogFehlermeldung.setMinimumSize(new java.awt.Dimension(325, 135));
@@ -249,7 +244,9 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(1200, 579));
+        setMaximumSize(new java.awt.Dimension(1200, 589));
+        setMinimumSize(new java.awt.Dimension(1200, 589));
+        setPreferredSize(new java.awt.Dimension(1200, 589));
         setResizable(false);
 
         jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));
@@ -350,6 +347,13 @@ public class GUI extends javax.swing.JFrame {
         jPanelMenu.setMinimumSize(new java.awt.Dimension(295, 82));
         jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelEinsatz.setText("Einsatz");
+        jPanelMenu.add(jLabelEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 43, -1, 23));
+
+        jTextFieldEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jPanelMenu.add(jTextFieldEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 47, 205, -1));
+
         jButtonKarteZiehen.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonKarteZiehen.setText("Karte ziehen");
         jButtonKarteZiehen.addActionListener(new java.awt.event.ActionListener() {
@@ -358,13 +362,6 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jPanelMenu.add(jButtonKarteZiehen, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 14, -1, -1));
-
-        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelEinsatz.setText("Einsatz");
-        jPanelMenu.add(jLabelEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 43, -1, 23));
-
-        jTextFieldEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jPanelMenu.add(jTextFieldEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 47, 205, -1));
 
         jButtonEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButtonEinsatz.setText("Einsatz setzen");
@@ -418,215 +415,107 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jPanelStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 240, 50));
 
-        karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
-        karte3_Baenker.setAlignmentY(0.0F);
-
-        karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
-        karte2_Baenker.setAlignmentY(0.0F);
+        Karten_Baenker.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Baenker.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Baenker.setAlignmentY(0.0F);
+        Karten_Baenker.add(karte1_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_BaenkerLayout = new javax.swing.GroupLayout(Karten_Baenker);
-        Karten_Baenker.setLayout(Karten_BaenkerLayout);
-        Karten_BaenkerLayout.setHorizontalGroup(
-            Karten_BaenkerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_BaenkerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte1_Baenker)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Baenker)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte3_Baenker)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_BaenkerLayout.setVerticalGroup(
-            Karten_BaenkerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_BaenkerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_BaenkerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Baenker, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Baenker, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Baenker, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
+        karte2_Baenker.setAlignmentY(0.0F);
+        Karten_Baenker.add(karte2_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
-        jPanelBrett.add(Karten_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, -1, 90));
+        karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
+        karte3_Baenker.setAlignmentY(0.0F);
+        Karten_Baenker.add(karte3_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
+
+        jPanelBrett.add(Karten_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 170, 90));
+
+        Karten_Spieler1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Spieler1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler1.setAlignmentY(0.0F);
+        Karten_Spieler1.add(karte1_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
 
         karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte2_Spieler1.setAlignmentY(0.0F);
+        Karten_Spieler1.add(karte2_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
         karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte3_Spieler1.setAlignmentY(0.0F);
+        Karten_Spieler1.add(karte3_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_Spieler1Layout = new javax.swing.GroupLayout(Karten_Spieler1);
-        Karten_Spieler1.setLayout(Karten_Spieler1Layout);
-        Karten_Spieler1Layout.setHorizontalGroup(
-            Karten_Spieler1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte3_Spieler1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Spieler1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte1_Spieler1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_Spieler1Layout.setVerticalGroup(
-            Karten_Spieler1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_Spieler1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Spieler1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Spieler1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Spieler1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 170, 90));
 
-        jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, 90));
+        Karten_Spieler2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Spieler2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler2.setAlignmentY(0.0F);
+        Karten_Spieler2.add(karte1_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
 
         karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte2_Spieler2.setAlignmentY(0.0F);
+        Karten_Spieler2.add(karte2_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
         karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte3_Spieler2.setAlignmentY(0.0F);
+        Karten_Spieler2.add(karte3_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_Spieler2Layout = new javax.swing.GroupLayout(Karten_Spieler2);
-        Karten_Spieler2.setLayout(Karten_Spieler2Layout);
-        Karten_Spieler2Layout.setHorizontalGroup(
-            Karten_Spieler2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte3_Spieler2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Spieler2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte1_Spieler2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_Spieler2Layout.setVerticalGroup(
-            Karten_Spieler2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_Spieler2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Spieler2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Spieler2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Spieler2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 170, 90));
 
-        jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, 90));
+        Karten_Spieler3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Spieler3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler3.setAlignmentY(0.0F);
+        Karten_Spieler3.add(karte1_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
 
         karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte2_Spieler3.setAlignmentY(0.0F);
+        Karten_Spieler3.add(karte2_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
         karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte3_Spieler3.setAlignmentY(0.0F);
+        Karten_Spieler3.add(karte3_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_Spieler3Layout = new javax.swing.GroupLayout(Karten_Spieler3);
-        Karten_Spieler3.setLayout(Karten_Spieler3Layout);
-        Karten_Spieler3Layout.setHorizontalGroup(
-            Karten_Spieler3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte3_Spieler3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Spieler3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte1_Spieler3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_Spieler3Layout.setVerticalGroup(
-            Karten_Spieler3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_Spieler3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Spieler3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Spieler3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Spieler3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 170, 90));
 
-        jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, 90));
+        Karten_Spieler4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Spieler4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler4.setAlignmentY(0.0F);
+        Karten_Spieler4.add(karte1_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
 
         karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte2_Spieler4.setAlignmentY(0.0F);
+        Karten_Spieler4.add(karte2_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
         karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte3_Spieler4.setAlignmentY(0.0F);
+        Karten_Spieler4.add(karte3_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_Spieler4Layout = new javax.swing.GroupLayout(Karten_Spieler4);
-        Karten_Spieler4.setLayout(Karten_Spieler4Layout);
-        Karten_Spieler4Layout.setHorizontalGroup(
-            Karten_Spieler4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte3_Spieler4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Spieler4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte1_Spieler4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_Spieler4Layout.setVerticalGroup(
-            Karten_Spieler4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_Spieler4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Spieler4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Spieler4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Spieler4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 170, 90));
 
-        jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, -1, 90));
+        Karten_Spieler5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Karten_Spieler5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte1_Spieler5.setAlignmentY(0.0F);
+        Karten_Spieler5.add(karte1_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 11, -1, 70));
 
         karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte2_Spieler5.setAlignmentY(0.0F);
+        Karten_Spieler5.add(karte2_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 11, -1, 70));
 
         karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
         karte3_Spieler5.setAlignmentY(0.0F);
+        Karten_Spieler5.add(karte3_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, 70));
 
-        javax.swing.GroupLayout Karten_Spieler5Layout = new javax.swing.GroupLayout(Karten_Spieler5);
-        Karten_Spieler5.setLayout(Karten_Spieler5Layout);
-        Karten_Spieler5Layout.setHorizontalGroup(
-            Karten_Spieler5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(karte3_Spieler5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte2_Spieler5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(karte1_Spieler5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        Karten_Spieler5Layout.setVerticalGroup(
-            Karten_Spieler5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Karten_Spieler5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Karten_Spieler5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(karte2_Spieler5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte3_Spieler5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(karte1_Spieler5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jPanelBrett.add(Karten_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, -1, 90));
+        jPanelBrett.add(Karten_Spieler5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 170, 90));
 
         picDeck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Karten/quer_Unbenannt.png"))); // NOI18N
         picDeck.setAlignmentY(0.0F);
@@ -1151,6 +1040,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         karteZiehenButton();
+        kartenBilderUpdaten();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
@@ -1201,8 +1091,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
-        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText());
-        partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
+        lobbySuchenButton();
     }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
 
     private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
@@ -1287,61 +1176,78 @@ public class GUI extends javax.swing.JFrame {
                 // ... und wir uns in der ersten Runde befinden, ...
                 if (partie.getRunde() == 1) {
                     // werden seine ersten zwei Karten aufgedeckt.
+                    karte1_Baenker.setVisible(true);
                     karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
+                    karte2_Baenker.setVisible(true);
                     karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
                 }
                 // Befinden wir uns schon in Runde zwei, wird überprüft, ob der Spieler eine dritte Karte hat.
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
                     // Ist dies der Fall, wird diese aufgedeckt.
+                    karte3_Baenker.setVisible(true);
                     karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
                 }
             }
             case 1: {
                 if (partie.getRunde() == 1) {
+                    karte1_Spieler1.setVisible(true);
                     karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
+                    karte2_Spieler1.setVisible(true);
                     karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    karte3_Spieler1.setVisible(true);
                     karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(2).getBilderPfad())));
                 }
             }
             case 2: {
                 if (partie.getRunde() == 1) {
+                    karte1_Spieler2.setVisible(true);
                     karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
+                    karte2_Spieler2.setVisible(true);
                     karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    karte3_Spieler2.setVisible(true);
                     karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(2).getBilderPfad())));
                 }
             }
             case 3: {
                 if (partie.getRunde() == 1) {
+                    karte1_Spieler3.setVisible(true);
                     karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
+                    karte2_Spieler3.setVisible(true);
                     karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    karte3_Spieler3.setVisible(true);
                     karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(2).getBilderPfad())));
                 }
             }
             case 4: {
                 if (partie.getRunde() == 1) {
+                    karte1_Spieler4.setVisible(true);
                     karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
+                    karte2_Spieler4.setVisible(true);
                     karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    karte3_Spieler4.setVisible(true);
                     karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(2).getBilderPfad())));
                 }
             }
             case 5: {
                 if (partie.getRunde() == 1) {
+                    karte1_Spieler5.setVisible(true);
                     karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
+                    karte2_Spieler5.setVisible(true);
                     karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-
+                    partie.setRunde(2);
                 }
                 if (partie.getRunde() == 2 && partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 3) {
+                    karte3_Spieler5.setVisible(true);
                     karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
                 }
-                partie.setRunde(2);
             }
             default:
                 System.out.println("Fehler");
@@ -1408,11 +1314,23 @@ public class GUI extends javax.swing.JFrame {
 
         /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
         selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
+        karte1_Baenker.setVisible(false);
+        karte2_Baenker.setVisible(false);
         karte3_Baenker.setVisible(false);
+        karte1_Spieler1.setVisible(false);
+        karte2_Spieler1.setVisible(false);
         karte3_Spieler1.setVisible(false);
+        karte1_Spieler2.setVisible(false);
+        karte2_Spieler2.setVisible(false);
         karte3_Spieler2.setVisible(false);
+        karte1_Spieler3.setVisible(false);
+        karte2_Spieler3.setVisible(false);
         karte3_Spieler3.setVisible(false);
+        karte1_Spieler4.setVisible(false);
+        karte2_Spieler4.setVisible(false);
         karte3_Spieler4.setVisible(false);
+        karte1_Spieler5.setVisible(false);
+        karte2_Spieler5.setVisible(false);
         karte3_Spieler5.setVisible(false);
     }
 
@@ -1513,9 +1431,9 @@ public class GUI extends javax.swing.JFrame {
     public void starteRunde2() {
         partie.setRunde(2);
         partie.jederZiehtZweiKarten();
+        kartenBilderUpdaten();
         jLabelRunde.setText("Eine weitere Karte?");
         partie.setAktuellerSpieler(0);
-        spielerAnzeigeUpdaten();
         jButtonKarteZiehen.setVisible(true);
         jButtonEinsatz.setVisible(false);
         jLabelEinsatz.setVisible(false);
@@ -1540,6 +1458,11 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
+    public void lobbySuchenButton() {
+        partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText());
+        partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
+    }
+
     public void gewinnerAuswählen() {
         jButtonKarteZiehen.setVisible(false);
         jButtonEinsatz.setVisible(false);
@@ -1547,7 +1470,7 @@ public class GUI extends javax.swing.JFrame {
         jTextFieldEinsatz.setVisible(false);
 
         jLabelRunde.setText("Der Gewinner ist...");
-        
+
         partie.kartenWerteRechnen();
 
         String[] namen = new String[partie.getAnzahlSpieler()];
@@ -1588,9 +1511,11 @@ public class GUI extends javax.swing.JFrame {
         AnfangJFrame.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
+                Thread.sleep(20);
                 AnfangjProgressBar.setValue(i);
             }
             AnfangJFrame.setVisible(false);
+            programmStarten();
         } catch (Exception e) {
         }
     }
@@ -1607,37 +1532,6 @@ public class GUI extends javax.swing.JFrame {
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
     }
-
-    /*public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
- /*java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUI().setVisible(true);
-            }
-        });
-    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Anfang1jLabel;
