@@ -1504,7 +1504,7 @@ public class GUI extends javax.swing.JFrame {
             jButtonEinsatz.setVisible(false);
             jLabelEinsatz.setVisible(false);
             jTextFieldEinsatz.setVisible(false);
-            gewinnerAuswählen();
+            gewinnerHandPunkteAuswählen();
         } else {
             partie.nächsterSpieler();
             kartenBilderUpdaten();
@@ -1518,36 +1518,40 @@ public class GUI extends javax.swing.JFrame {
         partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
     }
 
-    public void gewinnerAuswählen() {
+    public void gewinnerHandPunkteAuswählen() {
         jLabelRunde.setText("Der Gewinner ist...");
 
         partie.kartenWerteRechnen();
 
         String[] namen = new String[partie.getAnzahlSpieler()];
-        int[] gewinner = new int[partie.getAnzahlSpieler()];
+        int[] gewinnerHandPunkte = new int[partie.getAnzahlSpieler()];
 
         for (int i = 0; i < partie.getSpieler().size(); i++) {
-            gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
+            gewinnerHandPunkte[i] = partie.getSpieler().get(i).getHandPunkte();
             namen[i] = partie.getSpieler().get(i).getName();
         }
 
-        int tempGewinner;
+        int tempGewinnerHandPunkte;
         String tempName;
 
-        for (int i = 1; i < gewinner.length; i++) {
-            for (int j = 0; j < gewinner.length - i; j++) {
-                if (gewinner[j] > gewinner[j + 1]) {
-                    tempGewinner = gewinner[j];
+        for (int i = 1; i < gewinnerHandPunkte.length; i++) {
+            for (int j = 0; j < gewinnerHandPunkte.length - i; j++) {
+                if (gewinnerHandPunkte[j] < gewinnerHandPunkte[j + 1]) {
+                    tempGewinnerHandPunkte = gewinnerHandPunkte[j];
                     tempName = namen[j];
-                    gewinner[j] = gewinner[j + 1];
+                    gewinnerHandPunkte[j] = gewinnerHandPunkte[j + 1];
                     namen[j] = namen[j + 1];
-                    gewinner[j + 1] = tempGewinner;
+                    gewinnerHandPunkte[j + 1] = tempGewinnerHandPunkte;
                     namen[j + 1] = tempName;
                 }
             }
         }
-        partie.highscoreAktuallisieren(jTableSpieler);
-        fehlermeldungGenerieren("1. Platz - " + namen[partie.getAnzahlSpieler() - 1] + ": " + gewinner[partie.getAnzahlSpieler() - 1]);
+
+        for (int i = 1; i < gewinnerHandPunkte.length; i++) {
+            if (gewinnerHandPunkte[i] <= 21) {
+                System.out.println(i+". Platz - " + namen[i] + ": " + gewinnerHandPunkte[i]);
+            }
+        }
     }
 
     public void spielerAnzeigeUpdaten() {
