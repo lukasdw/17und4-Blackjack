@@ -82,4 +82,5 @@ public class Spieler implements SpielerInterface {
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
     }
+
 }
