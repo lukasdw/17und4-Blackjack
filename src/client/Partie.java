@@ -71,14 +71,14 @@ public class Partie implements PartieInterface {
 
         // Workaround für relativen Pfad → läuft noch nicht wirklich
         String root = System.getProperty("user.dir");
-        String filePath = root + File.separator + "src\\Karten\\";
+        String filePath = root + File.separator + "src\\";
 
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "deck.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "Karten\\deck.csv"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 /* this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad) */
-                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], filePath + spalte[3]));
+                this.deck.add(new Karte(spalte[0], Integer.parseInt(spalte[1]), spalte[2], spalte[3]));
             }
         } catch (IOException e) {
             e.printStackTrace();
