@@ -75,7 +75,6 @@ public class Netzwerkverbidung implements NetzwerkverbindungInterface {
         } catch (UnknownHostException e) {
         }
         return null;
-     
        
     }
 
