@@ -81,16 +81,16 @@ public class GUI extends javax.swing.JFrame {
         jPanelOptionen = new javax.swing.JPanel();
         jPanelOptionen1 = new javax.swing.JPanel();
         jButtonZurueckOptionen = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jCheckBoxAnimation = new javax.swing.JCheckBox();
+        jCheckBoxSounds = new javax.swing.JCheckBox();
+        jLabelInternetText = new javax.swing.JLabel();
+        jLabelKartenspielAnzeige = new javax.swing.JLabel();
+        jLabelLANIPText = new javax.swing.JLabel();
+        jLabelSoundUndAnimationAnzeige = new javax.swing.JLabel();
+        jLabelLANIP = new javax.swing.JLabel();
+        jLabelInternetIP = new javax.swing.JLabel();
+        jLabelInternetUndLANAnzeige = new javax.swing.JLabel();
         jComboBoxKarten = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         piMenuBackroundMP1PC2 = new javax.swing.JLabel();
         jPanelCredits = new javax.swing.JPanel();
         jPanelCredits1 = new javax.swing.JPanel();
@@ -545,63 +545,63 @@ public class GUI extends javax.swing.JFrame {
         });
         jPanelOptionen1.add(jButtonZurueckOptionen, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 117, -1));
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jCheckBox1.setText("Animationen");
-        jCheckBox1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxAnimation.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBoxAnimation.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jCheckBoxAnimation.setText("Animationen");
+        jCheckBoxAnimation.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jCheckBoxAnimation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jCheckBoxAnimationActionPerformed(evt);
             }
         });
-        jPanelOptionen1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 190, 20));
+        jPanelOptionen1.add(jCheckBoxAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 190, 20));
 
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jCheckBox2.setText("Sounds");
-        jCheckBox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jCheckBox2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanelOptionen1.add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 190, 20));
+        jCheckBoxSounds.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBoxSounds.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jCheckBoxSounds.setText("Sounds");
+        jCheckBoxSounds.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jCheckBoxSounds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanelOptionen1.add(jCheckBoxSounds, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 190, 20));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel1.setText("Internet-IP");
-        jPanelOptionen1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        jLabelInternetText.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelInternetText.setText("Internet-IP");
+        jPanelOptionen1.add(jLabelInternetText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Kartenspiel");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jPanelOptionen1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 10));
+        jLabelKartenspielAnzeige.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelKartenspielAnzeige.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelKartenspielAnzeige.setText("Kartenspiel");
+        jLabelKartenspielAnzeige.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabelKartenspielAnzeige, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 190, 10));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel3.setText("LAN-IP");
-        jPanelOptionen1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jLabelLANIPText.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelLANIPText.setText("LAN-IP");
+        jPanelOptionen1.add(jLabelLANIPText, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Sounds und Animationen");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jPanelOptionen1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 10));
+        jLabelSoundUndAnimationAnzeige.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelSoundUndAnimationAnzeige.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSoundUndAnimationAnzeige.setText("Sounds und Animationen");
+        jLabelSoundUndAnimationAnzeige.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabelSoundUndAnimationAnzeige, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 10));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("192.168.178.64");
-        jPanelOptionen1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, -1));
+        jLabelLANIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelLANIP.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelLANIP.setText("192.168.178.64");
+        jPanelOptionen1.add(jLabelLANIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("87.56.233.77");
-        jPanelOptionen1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 110, -1));
+        jLabelInternetIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelInternetIP.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelInternetIP.setText("87.56.233.77");
+        jPanelOptionen1.add(jLabelInternetIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 110, -1));
+
+        jLabelInternetUndLANAnzeige.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelInternetUndLANAnzeige.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelInternetUndLANAnzeige.setText("Internet- und LAN");
+        jLabelInternetUndLANAnzeige.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelOptionen1.add(jLabelInternetUndLANAnzeige, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 190, 10));
 
         jComboBoxKarten.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBoxKarten.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "52 Karten", "32 Karten" }));
         jPanelOptionen1.add(jComboBoxKarten, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 20));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Internet- und LAN");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jPanelOptionen1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 190, 10));
 
         jPanelOptionen.add(jPanelOptionen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 
@@ -982,14 +982,14 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 3, Short.MAX_VALUE)
                     .addComponent(jPanelHauptmenue, javax.swing.GroupLayout.PREFERRED_SIZE, 1203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 4, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 3, Short.MAX_VALUE)
                     .addComponent(jPanelMP1PC, javax.swing.GroupLayout.PREFERRED_SIZE, 1203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 4, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 5, Short.MAX_VALUE)
@@ -1044,7 +1044,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         karteZiehenButton();
-        kartenBilderUpdaten();
+        KartenBilderUpdaten_aktuellerSpieler();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
@@ -1095,7 +1095,7 @@ public class GUI extends javax.swing.JFrame {
         comboBoxSpielernamenEingeben();
         partie.highscoreAktuallisieren(jTableHighscore);
         menuBrettVisible();
-        starteRunde1();
+        starteRunde1_EinsatzSetzen();
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
@@ -1128,9 +1128,9 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextFieldPortActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBoxAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxAnimationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCheckBoxAnimationActionPerformed
 
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
@@ -1171,13 +1171,13 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    public void kartenBilderUpdaten() {
+    public void KartenBilderUpdaten_aktuellerSpieler() {
         /* Diese Funktion ist bisher noch übel buggy. Die Idee dahinter war,
         zu gucken welcher Spieler momentan am Zug ist und demenstrechend
         seine Karten sichtbar zu machen. Somit soll nur der aktuelle Spieler
         seine eigenen Karten sehen und keine Anderen.*/
 
-        if (partie.getAktuellerSpieler() == 0) {
+        if (partie.getAktuellerSpieler() == 0 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Baenker.setVisible(true);
                 karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
@@ -1193,7 +1193,7 @@ public class GUI extends javax.swing.JFrame {
             karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
 
-        if (partie.getAktuellerSpieler() == 1) {
+        if (partie.getAktuellerSpieler() == 1 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Spieler1.setVisible(true);
                 karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
@@ -1209,7 +1209,7 @@ public class GUI extends javax.swing.JFrame {
             karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
 
-        if (partie.getAktuellerSpieler() == 2) {
+        if (partie.getAktuellerSpieler() == 2 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Spieler2.setVisible(true);
                 karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
@@ -1225,7 +1225,7 @@ public class GUI extends javax.swing.JFrame {
             karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
 
-        if (partie.getAktuellerSpieler() == 3) {
+        if (partie.getAktuellerSpieler() == 3 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Spieler3.setVisible(true);
                 karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
@@ -1241,7 +1241,7 @@ public class GUI extends javax.swing.JFrame {
             karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
 
-        if (partie.getAktuellerSpieler() == 4) {
+        if (partie.getAktuellerSpieler() == 4 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Spieler4.setVisible(true);
                 karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
@@ -1257,7 +1257,7 @@ public class GUI extends javax.swing.JFrame {
             karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
 
-        if (partie.getAktuellerSpieler() == 5) {
+        if (partie.getAktuellerSpieler() == 5 || partie.getRunde() == 3) {
             if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
                 karte1_Spieler5.setVisible(true);
                 karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
@@ -1271,6 +1271,57 @@ public class GUI extends javax.swing.JFrame {
             karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
             karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
             karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
+        }
+    }
+
+    public void KartenBilderUpdaten_alleKarten() {
+        if (partie.getSpieler().get(0).getHand().size() == 2) {
+            karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
+            karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
+            karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
+            karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
+        }
+        if (partie.getSpieler().get(1).getHand().size() == 2) {
+            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
+            karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
+            karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
+            karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(2).getBilderPfad())));
+        }
+        if (partie.getSpieler().get(2).getHand().size() == 2) {
+            karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
+            karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
+            karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
+            karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(2).getBilderPfad())));
+        }
+        if (partie.getSpieler().get(3).getHand().size() == 2) {
+            karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
+            karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
+            karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
+            karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(2).getBilderPfad())));
+        }
+        if (partie.getSpieler().get(4).getHand().size() == 2) {
+            karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
+            karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
+            karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
+            karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(2).getBilderPfad())));
+        }
+        if (partie.getSpieler().get(5).getHand().size() == 2) {
+            karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
+            karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
+        } else {
+            karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
+            karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
+            karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
         }
     }
 
@@ -1415,7 +1466,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelCredits.setVisible(false);
     }
 
-    public void starteRunde1() {
+    public void starteRunde1_EinsatzSetzen() {
         partie.setRunde(1);
         jLabelRunde.setText("Setze deinen Einsatz!");
         jButtonKarteZiehen.setVisible(false);
@@ -1423,13 +1474,13 @@ public class GUI extends javax.swing.JFrame {
         spielerAnzeigeUpdaten();
     }
 
-    public void starteRunde2() {
+    public void starteRunde2_KartenZiehen() {
         partie.setRunde(2);
         partie.jederZiehtZweiKarten();
         jLabelRunde.setText("Eine weitere Karte?");
         partie.setAktuellerSpieler(0);
         spielerAnzeigeUpdaten();
-        kartenBilderUpdaten();
+        KartenBilderUpdaten_aktuellerSpieler();
         jButtonKarteZiehen.setVisible(true);
         jButtonEinsatz.setText("Weiter");
     }
@@ -1469,7 +1520,6 @@ public class GUI extends javax.swing.JFrame {
 
     public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        // && ((Integer.parseInt(jLabelEinsatz.getText())) <= partie.getSpieler().get(0).getEinsatz())
         if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
@@ -1478,7 +1528,7 @@ public class GUI extends javax.swing.JFrame {
             jTextFieldEinsatz.setText("");
             // Der nächste Spieler ist am Zug
             if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
-                starteRunde2();
+                starteRunde2_KartenZiehen();
             } else {
                 partie.nächsterSpieler();
                 // Die Anzeige des aktuellen Spielers wird aktualisiert.
@@ -1492,7 +1542,7 @@ public class GUI extends javax.swing.JFrame {
     public void karteZiehenButton() {
         if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
-            kartenBilderUpdaten();
+            KartenBilderUpdaten_aktuellerSpieler();
         } else {
             fehlermeldungGenerieren("Fehler.");
         }
@@ -1504,10 +1554,12 @@ public class GUI extends javax.swing.JFrame {
             jButtonEinsatz.setVisible(false);
             jLabelEinsatz.setVisible(false);
             jTextFieldEinsatz.setVisible(false);
+            partie.setRunde(3);
+            KartenBilderUpdaten_alleKarten();
             gewinnerHandPunkteAuswählen();
         } else {
             partie.nächsterSpieler();
-            kartenBilderUpdaten();
+            KartenBilderUpdaten_aktuellerSpieler();
             spielerAnzeigeUpdaten();
             jButtonKarteZiehen.setText("Karte Ziehen");
         }
@@ -1520,7 +1572,6 @@ public class GUI extends javax.swing.JFrame {
 
     public void gewinnerHandPunkteAuswählen() {
         jLabelRunde.setText("Der Gewinner ist...");
-
         partie.kartenWerteRechnen();
 
         String[] namen = new String[partie.getAnzahlSpieler()];
@@ -1549,7 +1600,7 @@ public class GUI extends javax.swing.JFrame {
 
         for (int i = 1; i < gewinnerHandPunkte.length; i++) {
             if (gewinnerHandPunkte[i] <= 21) {
-                System.out.println(i+". Platz - " + namen[i] + ": " + gewinnerHandPunkte[i]);
+                System.out.println(i + ". Platz - " + namen[i] + ": " + gewinnerHandPunkte[i]);
             }
         }
     }
@@ -1630,24 +1681,24 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonZurueckCredits;
     private javax.swing.JButton jButtonZurueckMP1PC1;
     private javax.swing.JButton jButtonZurueckOptionen;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBoxAnimation;
+    private javax.swing.JCheckBox jCheckBoxSounds;
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
     private javax.swing.JComboBox<String> jComboBoxKarten;
     private javax.swing.JDialog jDialogFehlermeldung;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
+    private javax.swing.JLabel jLabelInternetIP;
+    private javax.swing.JLabel jLabelInternetText;
+    private javax.swing.JLabel jLabelInternetUndLANAnzeige;
+    private javax.swing.JLabel jLabelKartenspielAnzeige;
     private javax.swing.JLabel jLabelKontostand;
     private javax.swing.JLabel jLabelKontostandValue;
+    private javax.swing.JLabel jLabelLANIP;
+    private javax.swing.JLabel jLabelLANIPText;
     private javax.swing.JLabel jLabelRunde;
     private javax.swing.JLabel jLabelServerstatus;
+    private javax.swing.JLabel jLabelSoundUndAnimationAnzeige;
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
