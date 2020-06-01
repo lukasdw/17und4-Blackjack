@@ -1,7 +1,9 @@
 package client;
 
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +24,7 @@ public class Netzwerkverbidung implements NetzwerkverbindungInterface {
     // Keine Ahnung hab ich so im Internet gefunden.
     private Socket client;
 
+    @Override
     public void verbinden(String ip, int port, String spielername) {
         this.ip = ip;
         this.port = port;
@@ -47,6 +50,7 @@ public class Netzwerkverbidung implements NetzwerkverbindungInterface {
         }
     }
 
+    @Override
     public void spieleZurLobbyTabelleHinzugefuegen(JTable jTableTabelle) {
         /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
@@ -63,34 +67,49 @@ public class Netzwerkverbidung implements NetzwerkverbindungInterface {
         model.addRow(spalte);
     }
 
+    @Override
     public String getIp() {
-        return ip;
+        
+        try {
+            return InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+        }
+        return null;
+     
+       
     }
 
+    @Override
     public void setIp(String ip) {
         this.ip = ip;
     }
 
+    @Override
     public int getPort() {
         return port;
     }
 
+    @Override
     public void setPort(int port) {
         this.port = port;
     }
 
+    @Override
     public Socket getClient() {
         return client;
     }
 
+    @Override
     public void setClient(Socket client) {
         this.client = client;
     }
 
+    @Override
     public String getServername() {
         return servername;
     }
 
+    @Override
     public void setServername(String servername) {
         this.servername = servername;
     }

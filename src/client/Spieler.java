@@ -43,42 +43,54 @@ public class Spieler implements SpielerInterface {
     }
 
     /* Getter und Setter */
-    public String getName() {
+    @Override
+    public String getSpielerName() {
         return name;
     }
 
-    public void setName(String name) {
+    @Override
+    public void setSpielerName (String name){
         this.name = name;
     }
+    
 
+    @Override
     public int getKontostand() {
         return kontostand;
     }
+
+    @Override
 
     public void setKontostand(int kontostand) {
         this.kontostand = kontostand;
     }
 
+    @Override
     public int getEinsatz() {
         return einsatz;
     }
 
+    @Override
     public void setEinsatz(int einsatz) {
         this.einsatz = einsatz;
     }
 
+    @Override
     public ArrayList<Karte> getHand() {
         return hand;
     }
 
+    @Override
     public void setHand(ArrayList<Karte> hand) {
         this.hand = hand;
     }
 
+    @Override
     public int getHandPunkte() {
         return handPunkte;
     }
 
+    @Override
     public void setHandPunkte(int handPunkte) {
         this.handPunkte = handPunkte;
     }

@@ -1478,7 +1478,7 @@ public class GUI extends javax.swing.JFrame {
 
         for (int i = 0; i < partie.getSpieler().size(); i++) {
             gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
-            namen[i] = partie.getSpieler().get(i).getName();
+            namen[i] = partie.getSpieler().get(i).getSpielerName();
         }
 
         int tempGewinner;
@@ -1503,7 +1503,7 @@ public class GUI extends javax.swing.JFrame {
     public void spielerAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
-        jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
+        jLabelAktuellerSpieler.setText(partie.getSpieler().get(partie.getAktuellerSpieler()).getSpielerName() + " ist jetzt am Zug!");
     }
 
     public void ladebildschirmStarten() {

@@ -16,34 +16,42 @@ public class Karte implements KarteInterface {
     }
 
     /* Getter und Setter */
+    @Override
     public int getWert() {
         return wert;
     }
 
+    @Override
     public void setWert(int wert) {
         this.wert = wert;
     }
 
-    public String getName() {
+    @Override
+    public String getKartenName() {
         return name;
     }
 
-    public void setName(String name) {
+    @Override
+    public void setKartenName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getFarbe() {
         return farbe;
     }
 
+    @Override
     public void setFarbe(String farbe) {
         this.farbe = farbe;
     }
 
+    @Override
     public String getBilderPfad() {
         return bilderPfad;
     }
 
+    @Override
     public void setBilderPfad(String bilderPfad) {
         this.bilderPfad = bilderPfad;
     }

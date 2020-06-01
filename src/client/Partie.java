@@ -39,6 +39,7 @@ public class Partie implements PartieInterface {
     /* Nachdem der Einsatz der Spieler gesetzt wurde, muss jeder Spieler
     zwei Karten ziehen. Diese Funktion wird also genau zwischen Runde 1
     und 2 ausgeführt. */
+    @Override
     public void jederZiehtZweiKarten() {
         // Alle Spieler(i) ...
         for (int i = 0; i < spieler.size(); i++) {
@@ -63,6 +64,7 @@ public class Partie implements PartieInterface {
         }
     }
 
+    @Override
     public void deckEinlesen() {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". Theoretisch könnte man nun eine
@@ -86,15 +88,23 @@ public class Partie implements PartieInterface {
     }
 
     // Mit dieser Funktion wird ein Spieler hinzugefügt.
+    @Override
     public void spielerNamenEingeben(String spielername) {
         spieler.add(new Spieler(spielername));
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
+
+    /**
+     *
+     */
+
+    @Override
     public void nächsterSpieler() {
         aktuellerSpieler++;
     }
 
+    @Override
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         /* Die Spieler werden nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
@@ -122,7 +132,7 @@ public class Partie implements PartieInterface {
             } else {
                 spalte[0] = "Spieler " + i;
             }
-            spalte[1] = spieler.get(i).getName();
+            spalte[1] = spieler.get(i).getSpielerName();
             spalte[2] = spieler.get(i).getKontostand();
             spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);
@@ -130,58 +140,73 @@ public class Partie implements PartieInterface {
     }
 
     /* Getter und Setter */
+    @Override
     public Netzwerkverbidung getEtc() {
         return etc;
     }
 
+    
+    @Override
     public void setEtc(Netzwerkverbidung etc) {
         this.etc = etc;
     }
 
+    @Override
     public ArrayList<Karte> getDeck() {
         return deck;
     }
 
+    @Override
     public void setDeck(ArrayList<Karte> deck) {
         this.deck = deck;
     }
 
+    @Override
     public ArrayList<Spieler> getSpieler() {
         return spieler;
     }
 
+    @Override
     public void setSpieler(ArrayList<Spieler> spieler) {
         this.spieler = spieler;
     }
 
+    @Override
     public int getAnzahlSpieler() {
         return anzahlSpieler;
     }
 
+    @Override
     public void setAnzahlSpieler(int anzahlSpieler) {
         this.anzahlSpieler = anzahlSpieler;
     }
 
+    @Override
     public int getAnzahlSpielerCounter() {
         return anzahlSpielerCounter;
     }
 
+    @Override
     public void setAnzahlSpielerCounter(int anzahlSpielerCounter) {
         this.anzahlSpielerCounter = anzahlSpielerCounter;
     }
 
+    @Override
     public int getAktuellerSpieler() {
         return aktuellerSpieler;
     }
 
+    @Override
     public void setAktuellerSpieler(int aktuellerSpieler) {
         this.aktuellerSpieler = aktuellerSpieler;
     }
 
+    @Override
     public int getRunde() {
         return runde;
     }
 
+    @Override
     public void setRunde(int runde) {
         this.runde = runde;
     }
