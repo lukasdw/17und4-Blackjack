@@ -8,6 +8,10 @@ import java.util.logging.Logger;
 public class GUI extends javax.swing.JFrame {
 
     private Partie partie = new Partie();
+    private javax.swing.JLabel spielerKartenJLabelArray[][] = new javax.swing.JLabel[6][3];
+    private javax.swing.JTextField comboBoxSpieleranzahlJTextArray[] = new javax.swing.JTextField[6];
+    private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
+    private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
 
     /* Konstruktor */
     public GUI() {
@@ -18,6 +22,8 @@ public class GUI extends javax.swing.JFrame {
 
         //Startet den LoadingScreen und danach startet das Hauptmenü.
         ladebildschirmStarten();
+        
+        arraysFuellen();
     }
 
     @SuppressWarnings("unchecked")
@@ -1135,39 +1141,20 @@ public class GUI extends javax.swing.JFrame {
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
-            JLabelBänkerMP1PC1.setVisible(true);
-            JTextlBänkerMP1PC1.setVisible(true);
-            JLabelSpieler1MP1PC1.setVisible(true);
-            JTextSpieler1MP1PC1.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
-            JLabelSpieler2MP1PC1.setVisible(true);
-            JTextSpieler2MP1PC1.setVisible(true);
-        } else {
-            JLabelSpieler2MP1PC1.setVisible(false);
-            JTextSpieler2MP1PC1.setVisible(false);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
-            JLabelSpieler3MP1PC1.setVisible(true);
-            JTextSpieler3MP1PC1.setVisible(true);
-        } else {
-            JLabelSpieler3MP1PC1.setVisible(false);
-            JTextSpieler3MP1PC1.setVisible(false);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
-            JLabelSpieler4MP1PC1.setVisible(true);
-            JTextSpieler4MP1PC1.setVisible(true);
-        } else {
-            JLabelSpieler4MP1PC1.setVisible(false);
-            JTextSpieler4MP1PC1.setVisible(false);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
-            JLabelSpieler5MP1PC1.setVisible(true);
-            JTextSpieler5MP1PC1.setVisible(true);
-        } else {
-            JLabelSpieler5MP1PC1.setVisible(false);
-            JTextSpieler5MP1PC1.setVisible(false);
+        for (int i = 0; i < jComboBoxAnzahlSpielerMP1PC1.getItemCount(); i++) {
+            if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
+                comboBoxSpieleranzahlJLabelArray[0].setVisible(true);
+                comboBoxSpieleranzahlJTextArray[0].setVisible(true);
+                comboBoxSpieleranzahlJLabelArray[1].setVisible(true);
+                comboBoxSpieleranzahlJTextArray[1].setVisible(true);
+            }
+            if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= i) {
+                comboBoxSpieleranzahlJTextArray[i + 1].setVisible(true);
+                comboBoxSpieleranzahlJLabelArray[i + 1].setVisible(true);
+            } else {
+                comboBoxSpieleranzahlJTextArray[i + 1].setVisible(false);
+                comboBoxSpieleranzahlJLabelArray[i + 1].setVisible(false);
+            }
         }
     }
 
@@ -1176,152 +1163,23 @@ public class GUI extends javax.swing.JFrame {
         zu gucken welcher Spieler momentan am Zug ist und demenstrechend
         seine Karten sichtbar zu machen. Somit soll nur der aktuelle Spieler
         seine eigenen Karten sehen und keine Anderen.*/
-
-        if (partie.getAktuellerSpieler() == 0 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Baenker.setVisible(true);
-                karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
-                karte2_Baenker.setVisible(true);
-                karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Baenker.setVisible(true);
-                karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            for (int j = 0; j < partie.getSpieler().get(i).getHand().size(); j++) {
+                if (partie.getAktuellerSpieler() == i) {
+                    spielerKartenJLabelArray[i][j].setVisible(true);
+                    spielerKartenJLabelArray[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(j).getBilderPfad())));
+                } else {
+                    spielerKartenJLabelArray[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
+                }
             }
-        } else {
-            karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-        }
-
-        if (partie.getAktuellerSpieler() == 1 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Spieler1.setVisible(true);
-                karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
-                karte2_Spieler1.setVisible(true);
-                karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Spieler1.setVisible(true);
-                karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(2).getBilderPfad())));
-            }
-        } else {
-            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-        }
-
-        if (partie.getAktuellerSpieler() == 2 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Spieler2.setVisible(true);
-                karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
-                karte2_Spieler2.setVisible(true);
-                karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Spieler2.setVisible(true);
-                karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(2).getBilderPfad())));
-            }
-        } else {
-            karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-        }
-
-        if (partie.getAktuellerSpieler() == 3 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Spieler3.setVisible(true);
-                karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
-                karte2_Spieler3.setVisible(true);
-                karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Spieler3.setVisible(true);
-                karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(2).getBilderPfad())));
-            }
-        } else {
-            karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-        }
-
-        if (partie.getAktuellerSpieler() == 4 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Spieler4.setVisible(true);
-                karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
-                karte2_Spieler4.setVisible(true);
-                karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Spieler4.setVisible(true);
-                karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(2).getBilderPfad())));
-            }
-        } else {
-            karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-        }
-
-        if (partie.getAktuellerSpieler() == 5 || partie.getRunde() == 3) {
-            if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
-                karte1_Spieler5.setVisible(true);
-                karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
-                karte2_Spieler5.setVisible(true);
-                karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-            } else {
-                karte3_Spieler5.setVisible(true);
-                karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
-            }
-        } else {
-            karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
-            karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
         }
     }
 
     public void KartenBilderUpdaten_alleKarten() {
-        if (partie.getSpieler().get(0).getHand().size() == 2) {
-            karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
-            karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(0).getBilderPfad())));
-            karte2_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(1).getBilderPfad())));
-            karte3_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(0).getHand().get(2).getBilderPfad())));
-        }
-        if (partie.getSpieler().get(1).getHand().size() == 2) {
-            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
-            karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(0).getBilderPfad())));
-            karte2_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(1).getBilderPfad())));
-            karte3_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(1).getHand().get(2).getBilderPfad())));
-        }
-        if (partie.getSpieler().get(2).getHand().size() == 2) {
-            karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
-            karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(0).getBilderPfad())));
-            karte2_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(1).getBilderPfad())));
-            karte3_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(2).getHand().get(2).getBilderPfad())));
-        }
-        if (partie.getSpieler().get(3).getHand().size() == 2) {
-            karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
-            karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(0).getBilderPfad())));
-            karte2_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(1).getBilderPfad())));
-            karte3_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(3).getHand().get(2).getBilderPfad())));
-        }
-        if (partie.getSpieler().get(4).getHand().size() == 2) {
-            karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
-            karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(0).getBilderPfad())));
-            karte2_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(1).getBilderPfad())));
-            karte3_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(4).getHand().get(2).getBilderPfad())));
-        }
-        if (partie.getSpieler().get(5).getHand().size() == 2) {
-            karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
-            karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-        } else {
-            karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(0).getBilderPfad())));
-            karte2_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(1).getBilderPfad())));
-            karte3_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(5).getHand().get(2).getBilderPfad())));
+        for (int i = 0; i < partie.getSpieler().size(); i++) {
+            for (int j = 0; j < partie.getSpieler().get(i).getHand().size(); j++) {
+                spielerKartenJLabelArray[i][j].setIcon(new javax.swing.ImageIcon(getClass().getResource(partie.getSpieler().get(i).getHand().get(j).getBilderPfad())));
+            }
         }
     }
 
@@ -1332,27 +1190,9 @@ public class GUI extends javax.swing.JFrame {
 
         /* Hier wird überprüft welche Spieler mitspielen und somit die Karten
         sichtbar gemacht. */
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
-            partie.spielerNamenEingeben(JTextlBänkerMP1PC1.getText());
-            partie.spielerNamenEingeben(JTextSpieler1MP1PC1.getText());
-            Karten_Baenker.setVisible(true);
-            Karten_Spieler1.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 1) {
-            partie.spielerNamenEingeben(JTextSpieler2MP1PC1.getText());
-            Karten_Spieler2.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 2) {
-            partie.spielerNamenEingeben(JTextSpieler3MP1PC1.getText());
-            Karten_Spieler3.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 3) {
-            partie.spielerNamenEingeben(JTextSpieler4MP1PC1.getText());
-            Karten_Spieler4.setVisible(true);
-        }
-        if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() == 4) {
-            partie.spielerNamenEingeben(JTextSpieler5MP1PC1.getText());
-            Karten_Spieler5.setVisible(true);
+        for (int i = 0; i < partie.getAnzahlSpieler(); i++) {
+            partie.spielerNamenEingeben(comboBoxSpieleranzahlJTextArray[i].getText());
+            spielerKartenJPanelArray[i].setVisible(true);
         }
     }
 
@@ -1486,35 +1326,12 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void schaltflaecheDesAktuellenSpielersFarbigAktuallisieren() {
-        if (partie.getAktuellerSpieler() == 0) {
-            Karten_Baenker.setBackground(Color.green);
-        } else {
-            Karten_Baenker.setBackground(Color.white);
-        }
-        if (partie.getAktuellerSpieler() == 1) {
-            Karten_Spieler1.setBackground(Color.green);
-        } else {
-            Karten_Spieler1.setBackground(Color.white);
-        }
-        if (partie.getAktuellerSpieler() == 2) {
-            Karten_Spieler2.setBackground(Color.green);
-        } else {
-            Karten_Spieler2.setBackground(Color.white);
-        }
-        if (partie.getAktuellerSpieler() == 3) {
-            Karten_Spieler3.setBackground(Color.green);
-        } else {
-            Karten_Spieler3.setBackground(Color.white);
-        }
-        if (partie.getAktuellerSpieler() == 4) {
-            Karten_Spieler4.setBackground(Color.green);
-        } else {
-            Karten_Spieler4.setBackground(Color.white);
-        }
-        if (partie.getAktuellerSpieler() == 5) {
-            Karten_Spieler5.setBackground(Color.green);
-        } else {
-            Karten_Spieler5.setBackground(Color.white);
+        for (int i = 0; i < spielerKartenJPanelArray.length; i++) {
+            if (partie.getAktuellerSpieler() == i) {
+                spielerKartenJPanelArray[i].setBackground(Color.green);
+            } else {
+                spielerKartenJPanelArray[i].setBackground(Color.white);
+            }
         }
     }
 
@@ -1637,6 +1454,48 @@ public class GUI extends javax.swing.JFrame {
         // Setzt das Fenster ganz einfach in die Mitte des Bildschirms
         JFrame.pack();
         JFrame.setLocationRelativeTo(null);
+    }
+
+    public void arraysFuellen() {
+        spielerKartenJLabelArray[0][0] = karte1_Baenker;
+        spielerKartenJLabelArray[0][1] = karte2_Baenker;
+        spielerKartenJLabelArray[0][2] = karte3_Baenker;
+        spielerKartenJLabelArray[1][0] = karte1_Spieler1;
+        spielerKartenJLabelArray[1][1] = karte2_Spieler1;
+        spielerKartenJLabelArray[1][2] = karte3_Spieler1;
+        spielerKartenJLabelArray[2][0] = karte1_Spieler2;
+        spielerKartenJLabelArray[2][1] = karte2_Spieler2;
+        spielerKartenJLabelArray[2][2] = karte3_Spieler2;
+        spielerKartenJLabelArray[3][0] = karte1_Spieler3;
+        spielerKartenJLabelArray[3][1] = karte2_Spieler3;
+        spielerKartenJLabelArray[3][2] = karte3_Spieler3;
+        spielerKartenJLabelArray[4][0] = karte1_Spieler4;
+        spielerKartenJLabelArray[4][1] = karte2_Spieler4;
+        spielerKartenJLabelArray[4][2] = karte3_Spieler4;
+        spielerKartenJLabelArray[5][0] = karte1_Spieler5;
+        spielerKartenJLabelArray[5][1] = karte2_Spieler5;
+        spielerKartenJLabelArray[5][2] = karte3_Spieler5;
+
+        comboBoxSpieleranzahlJLabelArray[0] = JLabelBänkerMP1PC1;
+        comboBoxSpieleranzahlJLabelArray[1] = JLabelSpieler1MP1PC1;
+        comboBoxSpieleranzahlJLabelArray[2] = JLabelSpieler2MP1PC1;
+        comboBoxSpieleranzahlJLabelArray[3] = JLabelSpieler3MP1PC1;
+        comboBoxSpieleranzahlJLabelArray[4] = JLabelSpieler4MP1PC1;
+        comboBoxSpieleranzahlJLabelArray[5] = JLabelSpieler5MP1PC1;
+
+        comboBoxSpieleranzahlJTextArray[0] = JTextlBänkerMP1PC1;
+        comboBoxSpieleranzahlJTextArray[1] = JTextSpieler1MP1PC1;
+        comboBoxSpieleranzahlJTextArray[2] = JTextSpieler2MP1PC1;
+        comboBoxSpieleranzahlJTextArray[3] = JTextSpieler3MP1PC1;
+        comboBoxSpieleranzahlJTextArray[4] = JTextSpieler4MP1PC1;
+        comboBoxSpieleranzahlJTextArray[5] = JTextSpieler5MP1PC1;
+
+        spielerKartenJPanelArray[0] = Karten_Baenker;
+        spielerKartenJPanelArray[1] = Karten_Spieler1;
+        spielerKartenJPanelArray[2] = Karten_Spieler2;
+        spielerKartenJPanelArray[3] = Karten_Spieler3;
+        spielerKartenJPanelArray[4] = Karten_Spieler4;
+        spielerKartenJPanelArray[5] = Karten_Spieler5;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
