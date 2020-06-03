@@ -77,6 +77,7 @@ public class GUI extends javax.swing.JFrame {
         karte3_Spieler5 = new javax.swing.JLabel();
         picDeck = new javax.swing.JLabel();
         picBrett = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         piMenuBackround1 = new javax.swing.JLabel();
         jPanelOptionen = new javax.swing.JPanel();
         jPanelOptionen1 = new javax.swing.JPanel();
@@ -523,6 +524,14 @@ public class GUI extends javax.swing.JFrame {
 
         picBrett.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brett.png"))); // NOI18N
         jPanelBrett.add(picBrett, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 927, 460));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanelBrett.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
 
         piMenuBackround1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menu_backround.png"))); // NOI18N
         jPanelBrett.add(piMenuBackround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 550));
@@ -1132,6 +1141,10 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxAnimationActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        VerschiebeKarte(karte3_Baenker);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
@@ -1541,8 +1554,12 @@ public class GUI extends javax.swing.JFrame {
 
     public void karteZiehenButton() {
         if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
+            karte1_Baenker.setVisible(true);
+            VerschiebeKarte(karte3_Baenker);
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
             KartenBilderUpdaten_aktuellerSpieler();
+            //Karte zum Deck verschieben
+
         } else {
             fehlermeldungGenerieren("Fehler.");
         }
@@ -1668,6 +1685,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldGebenSieIhrenNamenEin;
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonBeenden;
     private javax.swing.JButton jButtonCredits;
     private javax.swing.JButton jButtonEinsatz;
@@ -1756,4 +1774,75 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel picLogo;
     private javax.swing.JLabel picLogo1;
     // End of variables declaration//GEN-END:variables
+
+    public void VerschiebeKarte(javax.swing.JLabel karte) {
+        //java.util.Timer T = new java.util.Timer();
+        System.out.println(picDeck.getX());
+        System.out.println(picDeck.getY());
+        for (int AnfangX = picDeck.getX(); karte.getX() < AnfangX; AnfangX--) {
+            for (int AnfangY = picDeck.getY(); karte.getY() < AnfangY ; AnfangY--) {
+                try {
+                    System.out.println(karte.getX());
+                    System.out.println(karte.getY());
+
+                    System.out.println(AnfangX);
+                    System.out.println(AnfangY);
+                    Thread.sleep(1000);
+                    picDeck.setLocation(AnfangX, AnfangY);
+                    picDeck.repaint();
+
+                } catch (Exception e) {
+                }
+            }
+        }
+
+    }
+
+    /*while (picDeck.getLocation().x != 50) {
+
+            picDeck.setLocation((picDeck.getLocation().x + 3), (picDeck.getLocation().y + 1));
+            picDeck.repaint();
+
+        }*/
+
+ /*  if (Dest != 0){ //Bewege Die Karte zum Deck von Spieler 0 
+            java.util.Timer T = new java.util.Timer();
+            
+            while(picDeck.getLocation().x == 0){
+                
+                    
+                    //T.wait(100);
+                    picDeck.setLocation((picDeck.getLocation().x-30), (picDeck.getLocation().y-10));
+                    picDeck.repaint();
+               
+                
+             
+            }
+            
+            //jTextField1.setText(Integer.toString(Dest));
+
+           // picDeck.setLocation(400,400);
+            //picDeck.setLocation(picDeck.getLocation().x+50, picDeck.getLocation().y+50);
+            picDeck.repaint(); 
+        
+      /*  } else if (Dest == 1) {//Bewege Die Karte zum Deck von Spieler 1
+             
+        
+        } else if (Dest == 2) {//Bewege Die Karte zum Deck von Spieler 2
+             
+        
+        } else if (Dest == 3) {//Bewege Die Karte zum Deck von Spieler 3
+            
+        
+        } else if (Dest == 4) {//Bewege Die Karte zum Deck von Spieler 4
+             
+        
+        } else if (Dest == 5) {//Bewege Die Karte zum Deck von Spieler 5
+            
+        
+        
+        } else {
+        
+        }
+     */
 }
