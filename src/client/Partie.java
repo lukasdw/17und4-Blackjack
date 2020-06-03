@@ -9,7 +9,7 @@ import javax.swing.table.*;
 public class Partie implements PartieInterface {
 
     /* Objekt der Klasse Netzwerkverbindung baut Netzwerkverbindung zum Server */
-    Netzwerkverbidung etc = new Netzwerkverbidung();
+    private Netzwerkverbidung etc = new Netzwerkverbidung();
 
     /* Am Anfang sind immer 52 Karten in einem Deck */
     private ArrayList<Karte> deck = new ArrayList<Karte>();

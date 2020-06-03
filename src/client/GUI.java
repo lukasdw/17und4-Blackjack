@@ -22,7 +22,7 @@ public class GUI extends javax.swing.JFrame {
 
         //Startet den LoadingScreen und danach startet das Hauptmenü.
         ladebildschirmStarten();
-        
+
         arraysFuellen();
     }
 
@@ -1050,7 +1050,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         karteZiehenButton();
-        KartenBilderUpdaten_aktuellerSpieler();
+        //KartenBilderUpdaten_aktuellerSpieler();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
@@ -1359,7 +1359,7 @@ public class GUI extends javax.swing.JFrame {
     public void karteZiehenButton() {
         if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
-            KartenBilderUpdaten_aktuellerSpieler();
+            verschiebeKarte(spielerKartenJLabelArray[0][2]);
         } else {
             fehlermeldungGenerieren("Fehler.");
         }
@@ -1496,6 +1496,25 @@ public class GUI extends javax.swing.JFrame {
         spielerKartenJPanelArray[3] = Karten_Spieler3;
         spielerKartenJPanelArray[4] = Karten_Spieler4;
         spielerKartenJPanelArray[5] = Karten_Spieler5;
+    }
+
+    // Läuft nicht!
+    public void verschiebeKarte(javax.swing.JLabel karte) {
+        try {
+            for (int x = picDeck.getLocation().x; x != karte.getLocation().y; x--) {
+                for (int y = picDeck.getLocation().y; y != karte.getLocation().y; y--) {
+                    picDeck.setLayout(null);
+                    System.out.println("Zur Sicherheit X: " + x);
+                    System.out.println("Zur Sicherheit Y: " + y + "\n");
+                    picDeck.setLocation(x, y);
+                    picDeck.repaint();
+                    this.repaint();
+                    Thread.sleep(100);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

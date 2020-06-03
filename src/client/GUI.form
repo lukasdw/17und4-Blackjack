@@ -216,7 +216,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)"/>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-      <Color id="Default Cursor"/>
+      <Color id="Standardcursor"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1200, 589]"/>
@@ -1160,7 +1160,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sounds"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardcursor"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
               </Properties>
@@ -1366,7 +1366,7 @@
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="WIT2B - No.3: Blackjack&#xa;(12.05.2020 - 23.06.2020)&#xa;&#xa;Das Spiel, 17 und 4 bzw. Blackjack ist&#xa;ein Projekt, welches wir am 12. Juni&#xa;starteten und am 23. Juni 2020&#xa;vollenden. Am Ende sollen wir vor&#xa;unserer Klasse, unser Programm in&#xa;Form, eines Kundenvortrages&#xa;vorstellen. Jedes Team bestand dabei&#xa;aus drei Mitgliedern und wurde mit&#xa;dem Kundenauftrag, &#xa;&#x201e;homeschooling_WIT2_&#xa;ProjektBeschreibung_Black_Jack.pdf&#x201c;&#xa;ins Projekt geschickt.&#xa;&#xa;von Bianca, Timo und Lukas&#xa;aus der WIT2B :)"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Standardcursor"/>
                 </Property>
               </Properties>
               <Constraints>
