@@ -1050,7 +1050,6 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         karteZiehenButton();
-        //KartenBilderUpdaten_aktuellerSpieler();
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
@@ -1337,7 +1336,7 @@ public class GUI extends javax.swing.JFrame {
 
     public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        if ((!jLabelEinsatz.getText().equals("")) && (partie.getRunde() == 1)) {
+        if (!(jLabelEinsatz.getText().equals("")) && partie.getRunde() == 1) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             partie.getSpieler().get(partie.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
             partie.highscoreAktuallisieren(jTableHighscore);
@@ -1359,7 +1358,7 @@ public class GUI extends javax.swing.JFrame {
     public void karteZiehenButton() {
         if (partie.getSpieler().get(partie.getAktuellerSpieler()).getHand().size() == 2) {
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
-            verschiebeKarte(spielerKartenJLabelArray[0][2]);
+            KartenBilderUpdaten_aktuellerSpieler();
         } else {
             fehlermeldungGenerieren("Fehler.");
         }
@@ -1373,7 +1372,7 @@ public class GUI extends javax.swing.JFrame {
             jTextFieldEinsatz.setVisible(false);
             partie.setRunde(3);
             KartenBilderUpdaten_alleKarten();
-            gewinnerHandPunkteAuswählen();
+            gewinnerAusgaben();
         } else {
             partie.nächsterSpieler();
             KartenBilderUpdaten_aktuellerSpieler();
@@ -1387,39 +1386,20 @@ public class GUI extends javax.swing.JFrame {
         partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
     }
 
-    public void gewinnerHandPunkteAuswählen() {
+    public void gewinnerAusgaben() {
         jLabelRunde.setText("Der Gewinner ist...");
         partie.kartenWerteRechnen();
 
-        String[] namen = new String[partie.getAnzahlSpieler()];
-        int[] gewinnerHandPunkte = new int[partie.getAnzahlSpieler()];
-
+        int tempGewinner = 0;
+        int tempPunkte = 0;
         for (int i = 0; i < partie.getSpieler().size(); i++) {
-            gewinnerHandPunkte[i] = partie.getSpieler().get(i).getHandPunkte();
-            namen[i] = partie.getSpieler().get(i).getName();
-        }
-
-        int tempGewinnerHandPunkte;
-        String tempName;
-
-        for (int i = 1; i < gewinnerHandPunkte.length; i++) {
-            for (int j = 0; j < gewinnerHandPunkte.length - i; j++) {
-                if (gewinnerHandPunkte[j] < gewinnerHandPunkte[j + 1]) {
-                    tempGewinnerHandPunkte = gewinnerHandPunkte[j];
-                    tempName = namen[j];
-                    gewinnerHandPunkte[j] = gewinnerHandPunkte[j + 1];
-                    namen[j] = namen[j + 1];
-                    gewinnerHandPunkte[j + 1] = tempGewinnerHandPunkte;
-                    namen[j + 1] = tempName;
-                }
+            if (tempPunkte < partie.getSpieler().get(i).getHandPunkte() && partie.getSpieler().get(i).getHandPunkte() <= 21) {
+                tempGewinner = i;
+                tempPunkte = partie.getSpieler().get(i).getHandPunkte();
             }
         }
 
-        for (int i = 1; i < gewinnerHandPunkte.length; i++) {
-            if (gewinnerHandPunkte[i] <= 21) {
-                System.out.println(i + ". Platz - " + namen[i] + ": " + gewinnerHandPunkte[i]);
-            }
-        }
+        fehlermeldungGenerieren(partie.getSpieler().get(tempGewinner).getName() + " hat mit " + partie.getSpieler().get(tempGewinner).getHandPunkte() + " Punkten gewonnen!");
     }
 
     public void spielerAnzeigeUpdaten() {
