@@ -2,7 +2,7 @@ package client;
 
 import java.awt.Color;
 
-public class ViewGUI extends javax.swing.JFrame {
+public class GUI extends javax.swing.JFrame {
 
     private Controller controller = new Controller(this);
     private javax.swing.JLabel spielerKartenJLabelArray[][] = new javax.swing.JLabel[6][3];
@@ -11,7 +11,7 @@ public class ViewGUI extends javax.swing.JFrame {
     private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
 
     /* Konstruktor */
-    public ViewGUI() {
+    public GUI() {
         initComponents();
 
         //Setzt das JFrame in die Mitte des Bildschirms
@@ -246,9 +246,7 @@ public class ViewGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1200, 589));
         setMinimumSize(new java.awt.Dimension(1200, 589));
-        setPreferredSize(new java.awt.Dimension(1200, 589));
         setResizable(false);
 
         jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));

@@ -11,104 +11,104 @@ import javax.swing.JTable;
 
 public class Controller {
 
-    private ViewGUI viewGUI;
-    private PartieInterface partieInterface;
+    private GUI view;
+    private PartieInterface model;
 
-    public Controller(ViewGUI viewGUI) {
-        this.viewGUI = viewGUI;
-        this.partieInterface = new Partie();
+    public Controller(GUI view) {
+        this.view = view;
+        this.model = new Partie();
     }
     
     // Getter und Setter (Controller)
     public void jederZiehtZweiKarten() {
-        partieInterface.jederZiehtZweiKarten();
+        model.jederZiehtZweiKarten();
     }
 
     public void kartenWerteRechnen() {
-        partieInterface.kartenWerteRechnen();
+        model.kartenWerteRechnen();
     }
 
     public void deckEinlesen(String datei) {
-        partieInterface.deckEinlesen(datei);
+        model.deckEinlesen(datei);
     }
 
     public void spielerNamenEingeben(String spielername) {
-        partieInterface.spielerNamenEingeben(spielername);
+        model.spielerNamenEingeben(spielername);
     }
 
     public void nächsterSpieler() {
-        partieInterface.nächsterSpieler();
+        model.nächsterSpieler();
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
-        partieInterface.highscoreAktuallisieren(jTableTabelle);
+        model.highscoreAktuallisieren(jTableTabelle);
     }
 
     public void verschiebeKarte(JLabel karte, JLabel picDeck) {
-        partieInterface.verschiebeKarte(karte, picDeck);
+        model.verschiebeKarte(karte, picDeck);
     }
 
     public NetzwerkInterface getEtc() {
-        return partieInterface.getEtc();
+        return model.getEtc();
     }
 
     public void setEtc(NetzwerkInterface etc) {
-        partieInterface.setEtc(etc);
+        model.setEtc(etc);
     }
 
     public ArrayList<KarteInterface> getDeck() {
-        return partieInterface.getDeck();
+        return model.getDeck();
     }
 
     public void setDeck(ArrayList<KarteInterface> deck) {
-        partieInterface.setDeck(deck);
+        model.setDeck(deck);
     }
 
     public ArrayList<SpielerInterface> getSpieler() {
-        return partieInterface.getSpieler();
+        return model.getSpieler();
     }
 
     public void setSpieler(ArrayList<SpielerInterface> spieler) {
-        partieInterface.setSpieler(spieler);
+        model.setSpieler(spieler);
     }
 
     public int getAnzahlSpieler() {
-        return partieInterface.getAnzahlSpieler();
+        return model.getAnzahlSpieler();
     }
 
     public void setAnzahlSpieler(int anzahlSpieler) {
-        partieInterface.setAnzahlSpieler(anzahlSpieler);
+        model.setAnzahlSpieler(anzahlSpieler);
     }
 
     public int getAnzahlSpielerCounter() {
-        return partieInterface.getAnzahlSpielerCounter();
+        return model.getAnzahlSpielerCounter();
     }
 
     public void setAnzahlSpielerCounter(int anzahlSpielerCounter) {
-        partieInterface.setAnzahlSpielerCounter(anzahlSpielerCounter);
+        model.setAnzahlSpielerCounter(anzahlSpielerCounter);
     }
 
     public int getAktuellerSpieler() {
-        return partieInterface.getAktuellerSpieler();
+        return model.getAktuellerSpieler();
     }
 
     public void setAktuellerSpieler(int aktuellerSpieler) {
-        partieInterface.setAktuellerSpieler(aktuellerSpieler);
+        model.setAktuellerSpieler(aktuellerSpieler);
     }
 
     public int getRunde() {
-        return partieInterface.getRunde();
+        return model.getRunde();
     }
 
     public void setRunde(int runde) {
-        partieInterface.setRunde(runde);
+        model.setRunde(runde);
     }
 
     public SoundInterface getSound() {
-        return partieInterface.getSound();
+        return model.getSound();
     }
 
     public void setSound(SoundInterface sound) {
-        partieInterface.setSound(sound);
+        model.setSound(sound);
     }
 }
