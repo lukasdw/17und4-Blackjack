@@ -3,14 +3,14 @@ package client.Karte;
 public class Karte implements KarteInterface {
 
     private int wert;
-    private String name;
+    private String karteName;
     private String farbe;
     private String bilderPfad;
 
     /* Konstruktor */
-    public Karte(String name, int wert, String farbe, String bilderPfad) {
+    public Karte(String karteName, int wert, String farbe, String bilderPfad) {
         this.farbe = farbe;
-        this.name = name;
+        this.karteName = karteName;
         this.wert = wert;
         this.bilderPfad = bilderPfad;
     }
@@ -24,12 +24,12 @@ public class Karte implements KarteInterface {
         this.wert = wert;
     }
 
-    public String getName() {
-        return name;
+    public String getKarteName() {
+        return karteName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setKarteName(String karteName) {
+        this.karteName = karteName;
     }
 
     public String getFarbe() {

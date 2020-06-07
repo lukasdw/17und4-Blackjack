@@ -11,11 +11,13 @@ public interface NetzwerkInterface {
 
     /* Methoden und Funktionen */
     public void verbinden(String ip, int port, String spielername);
+    public String getInternetIP();
+    public String getLocalIP();
     public void spieleZurLobbyTabelleHinzugefuegen(JTable jTableTabelle);
     
     /* Getter und Setter */
-    public String getIp();
-    public void setIp(String ip);
+    public String getServerIP();
+    public void setServerIP(String ip);
     public int getPort();
     public void setPort(int port);
     public Socket getClient();

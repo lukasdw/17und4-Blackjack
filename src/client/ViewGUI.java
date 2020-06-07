@@ -1300,6 +1300,8 @@ public class ViewGUI extends javax.swing.JFrame {
         jPanelHauptmenue.setVisible(false);
         jPanelOptionen.setVisible(true);
         jPanelCredits.setVisible(false);
+        jLabelLANIP.setText(controller.getEtc().getLocalIP());
+        jLabelInternetIP.setText(controller.getEtc().getInternetIP());
     }
 
     public void starteRunde1_EinsatzSetzen() {
@@ -1396,13 +1398,13 @@ public class ViewGUI extends javax.swing.JFrame {
             }
         }
 
-        fehlermeldungGenerieren(controller.getSpieler().get(tempGewinner).getName() + " hat mit " + controller.getSpieler().get(tempGewinner).getHandPunkte() + " Punkten gewonnen!");
+        fehlermeldungGenerieren(controller.getSpieler().get(tempGewinner).getSpielerName() + " hat mit " + controller.getSpieler().get(tempGewinner).getHandPunkte() + " Punkten gewonnen!");
     }
 
     public void spielerAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
-        jLabelAktuellerSpieler.setText(controller.getSpieler().get(controller.getAktuellerSpieler()).getName() + " ist jetzt am Zug!");
+        jLabelAktuellerSpieler.setText(controller.getSpieler().get(controller.getAktuellerSpieler()).getSpielerName() + " ist jetzt am Zug!");
         schaltflaecheDesAktuellenSpielersFarbigAktuallisieren();
     }
 

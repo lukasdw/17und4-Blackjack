@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Spieler implements SpielerInterface {
 
     /* Der Name wird direkt vergeben. */
-    private String name;
+    private String spielerName;
 
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
@@ -24,9 +24,9 @@ public class Spieler implements SpielerInterface {
     private int handPunkte = 0;
 
     /* Konstruktor */
-    public Spieler(String name) {
+    public Spieler(String spielerName) {
         /* Der Spieler benötigt immer einen Namen, mit dem er im Spiel angesprochen wird. */
-        this.name = name;
+        this.spielerName = spielerName;
     }
 
     /* Der Spieler zieht eine Karte */
@@ -44,12 +44,12 @@ public class Spieler implements SpielerInterface {
     }
 
     /* Getter und Setter */
-    public String getName() {
-        return name;
+    public String getSpielerName() {
+        return spielerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSpielerName(String spielerName) {
+        this.spielerName = spielerName;
     }
 
     public int getKontostand() {

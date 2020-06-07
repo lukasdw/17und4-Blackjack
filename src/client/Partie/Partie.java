@@ -125,7 +125,7 @@ public class Partie implements PartieInterface {
             } else {
                 spalte[0] = "Spieler " + i;
             }
-            spalte[1] = spieler.get(i).getName();
+            spalte[1] = spieler.get(i).getSpielerName();
             spalte[2] = spieler.get(i).getKontostand();
             spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);

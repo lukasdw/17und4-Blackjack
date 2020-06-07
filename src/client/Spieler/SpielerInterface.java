@@ -11,8 +11,8 @@ public interface SpielerInterface {
     public void karteZiehen(ArrayList<KarteInterface> deck);
 
     /* Getter und Setter */
-    public String getName();
-    public void setName(String name);
+    public String getSpielerName();
+    public void setSpielerName(String spielerName);
     public int getKontostand();
     public void setKontostand(int kontostand);
     public int getEinsatz();

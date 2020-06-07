@@ -1,7 +1,9 @@
 package client.Netzwerk;
 
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.net.URL;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -9,26 +11,32 @@ public class Netzwerk implements NetzwerkInterface {
 
     // Hier wird der Server-Port abgespeichert, mit dem sich der Client verbindet
     private int port;
-    
+
     // Hier wird die Server-IP abgespeichert, mit dem sich der Client verbindet
-    private String ip;
-    
+    private String serverIP;
+
+    // Diese IP zeigt die HostIP im internen Netz
+    private String localIP = "keine Verbindung";
+
+    // Diese IP zeigt die HostIP im internen Netz
+    private String internetIP = "keine Verbindung";
+
     // Hier wird der Servername abgespeichert, mit dem sich der Client verbindet
     private String servername;
-    
+
     // Hier befindet sich zurzeit der Spielername, mit dem sich der Client verbindet
     private String spielername;
-    
+
     // Keine Ahnung hab ich so im Internet gefunden.
     private Socket client;
 
     public void verbinden(String ip, int port, String spielername) {
-        this.ip = ip;
+        this.serverIP = ip;
         this.port = port;
         this.spielername = spielername;
         try {
             client = new Socket(ip, port);
-            
+
             // Der DataOutputStream sendet Daten zum Server
             DataOutputStream output = new DataOutputStream(client.getOutputStream());
             output.writeUTF(spielername);
@@ -47,6 +55,24 @@ public class Netzwerk implements NetzwerkInterface {
         }
     }
 
+    public String getLocalIP() {
+        try {
+            this.localIP = InetAddress.getLocalHost().getHostAddress();
+        } catch (Exception e) {
+        }
+        return this.localIP;
+    }
+
+    public String getInternetIP() {
+        try {
+            URL url_name = new URL("http://bot.whatismyipaddress.com");
+            BufferedReader sc = new BufferedReader(new InputStreamReader(url_name.openStream()));
+            this.internetIP = sc.readLine().trim();
+        } catch (Exception e) {
+        }
+        return internetIP;
+    }
+
     public void spieleZurLobbyTabelleHinzugefuegen(JTable jTableTabelle) {
         /* Die Zeile wird nun in die Tabelle (jTableTabelle) hinzugefügt.
         Dazu müssen wir unser Model in ein "DefaultTableModel" umwandeln, um
@@ -63,12 +89,13 @@ public class Netzwerk implements NetzwerkInterface {
         model.addRow(spalte);
     }
 
-    public String getIp() {
-        return ip;
+    // Getter und Setter
+    public String getServerIP() {
+        return serverIP;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setServerIP(String serverIP) {
+        this.serverIP = serverIP;
     }
 
     public int getPort() {
