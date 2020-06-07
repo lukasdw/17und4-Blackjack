@@ -14,15 +14,15 @@ public class Netzwerk implements NetzwerkInterface {
 
     // Hier wird die Server-IP abgespeichert, mit dem sich der Client verbindet
     private String serverIP;
+    
+    // Hier wird der Servername abgespeichert, mit dem sich der Client verbindet
+    private String servername;
 
     // Diese IP zeigt die HostIP im internen Netz
     private String localIP = "keine Verbindung";
 
     // Diese IP zeigt die HostIP im internen Netz
     private String internetIP = "keine Verbindung";
-
-    // Hier wird der Servername abgespeichert, mit dem sich der Client verbindet
-    private String servername;
 
     // Hier befindet sich zurzeit der Spielername, mit dem sich der Client verbindet
     private String spielername;
