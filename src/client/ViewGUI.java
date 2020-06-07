@@ -1052,11 +1052,13 @@ public class ViewGUI extends javax.swing.JFrame {
 
     private void jButtonKarteZiehenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKarteZiehenActionPerformed
         karteZiehenButton();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonKarteZiehenActionPerformed
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
         // Das Programm wird beendet
         programmBeenden();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
     private void jButtonEinsatzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEinsatzActionPerformed
@@ -1065,37 +1067,44 @@ public class ViewGUI extends javax.swing.JFrame {
         } else if (jButtonEinsatz.getText().equals("Weiter")) {
             weiterZiehenButton();
         }
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonEinsatzActionPerformed
 
     private void jButtonBeendenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBeendenActionPerformed
         // Das Programm wird beendet
         programmBeenden();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonBeendenActionPerformed
 
     private void jButtonMP1PCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMP1PCActionPerformed
         // Nur das Menü für den Multiplayer an einem Computer, ist sichbar.
         menuMP1PCVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonMP1PCActionPerformed
 
     private void jButtonMPInetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMPInetActionPerformed
         // Nur das Menü für den Multiplayer über das Internet, ist sichbar.
         menuMPInternetVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonMPInetActionPerformed
 
     private void jButtonZurueckMP1PC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckMP1PC1ActionPerformed
         // Nur das Hauptmenü ist sichbar.
         menuHauptmenueVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonZurueckMP1PC1ActionPerformed
 
     private void jButtonZurueckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckActionPerformed
         // Man kehrt zurück zum Hauptmenü zurück. -> (Hauptmenü ist sichbar)
         menuHauptmenueVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonZurueckActionPerformed
 
     private void jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
         comboBoxSpieleranzahlAnzeigeUpdate();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jComboBoxAnzahlSpielerMP1PC1PopupMenuWillBecomeInvisible
 
     private void AnzahlSpielerButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnzahlSpielerButton1ActionPerformed
@@ -1103,32 +1112,39 @@ public class ViewGUI extends javax.swing.JFrame {
         controller.highscoreAktuallisieren(jTableHighscore);
         menuBrettVisible();
         starteRunde1_EinsatzSetzen();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_AnzahlSpielerButton1ActionPerformed
 
     private void ButtonLobbySuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbySuchenActionPerformed
         lobbySuchenButton();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_ButtonLobbySuchenActionPerformed
 
     private void jButtonOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOptionenActionPerformed
         // Nur die Optionen sind sichbar.
         menuOptionenVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonOptionenActionPerformed
 
     private void jButtonCreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditsActionPerformed
         // Nur die Credits sind sichbar.
         menuCreditsVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonCreditsActionPerformed
 
     private void jButtonZurueckCreditsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckCreditsActionPerformed
         menuHauptmenueVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonZurueckCreditsActionPerformed
 
     private void jButtonZurueckOptionenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonZurueckOptionenActionPerformed
         menuHauptmenueVisible();
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonZurueckOptionenActionPerformed
 
     private void jButtonFehlermeldungOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFehlermeldungOkActionPerformed
         jDialogFehlermeldung.setVisible(false);
+        controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonFehlermeldungOkActionPerformed
 
     private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
@@ -1205,6 +1221,7 @@ public class ViewGUI extends javax.swing.JFrame {
         // Startfenster starten
         setVisible(true);
         menuHauptmenueVisible();
+        controller.getSound().abspielen("music");
 
         // MP1PC1-JPanel
         JLabelSpieler2MP1PC1.setVisible(false);
@@ -1407,6 +1424,7 @@ public class ViewGUI extends javax.swing.JFrame {
             }
         }
 
+        controller.getSound().abspielen("win");
         fehlermeldungGenerieren(controller.getSpieler().get(tempGewinner).getSpielerName() + " hat mit " + controller.getSpieler().get(tempGewinner).getHandPunkte() + " Punkten gewonnen!");
     }
 

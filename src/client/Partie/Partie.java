@@ -1,8 +1,12 @@
 package client.Partie;
+import client.*;
 
-import client.Netzwerk.*;
 import client.Karte.*;
+import client.Sound.*;
 import client.Spieler.*;
+import client.Netzwerk.*;
+import client.Partie.*;
+
 import java.io.*;
 import java.util.*;
 import java.util.logging.*;
@@ -32,6 +36,12 @@ public class Partie implements PartieInterface {
 
     /* Gibt an in welcher Runde man sich momentan befindet */
     private int runde = 1;
+    
+    private SoundInterface sound = new Sound();
+
+    public Partie() {
+        deckEinlesen("deck-52");
+    }    
 
     /* Nachdem der Einsatz der Spieler gesetzt wurde, muss jeder Spieler
     zwei Karten ziehen. Diese Funktion wird also genau zwischen Runde 1
@@ -200,5 +210,13 @@ public class Partie implements PartieInterface {
 
     public void setRunde(int runde) {
         this.runde = runde;
+    }
+
+    public SoundInterface getSound() {
+        return sound;
+    }
+
+    public void setSound(SoundInterface sound) {
+        this.sound = sound;
     }
 }

@@ -3,6 +3,7 @@ package client.Partie;
 // Interfaces der anderen Klassen
 import client.Karte.KarteInterface;
 import client.Netzwerk.NetzwerkInterface;
+import client.Sound.SoundInterface;
 import client.Spieler.SpielerInterface;
 
 import java.util.ArrayList;
@@ -34,4 +35,6 @@ public interface PartieInterface {
     public void setAktuellerSpieler(int aktuellerSpieler);
     public int getRunde();
     public void setRunde(int runde);
+    public SoundInterface getSound();
+    public void setSound(SoundInterface sound);
 }

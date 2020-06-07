@@ -1,5 +1,11 @@
 package client.Karte;
 
+import client.Karte.*;
+import client.Sound.*;
+import client.Spieler.*;
+import client.Netzwerk.*;
+import client.Partie.*;
+
 public class Karte implements KarteInterface {
 
     private int wert;

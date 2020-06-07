@@ -1,6 +1,11 @@
 package client.Spieler;
 
-import client.Karte.KarteInterface;
+import client.Karte.*;
+import client.Sound.*;
+import client.Spieler.*;
+import client.Netzwerk.*;
+import client.Partie.*;
+
 import java.io.*;
 import java.util.ArrayList;
 

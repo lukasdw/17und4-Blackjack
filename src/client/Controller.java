@@ -3,6 +3,7 @@ package client;
 import client.Partie.*;
 import client.Karte.KarteInterface;
 import client.Netzwerk.NetzwerkInterface;
+import client.Sound.SoundInterface;
 import client.Spieler.SpielerInterface;
 import java.util.ArrayList;
 import javax.swing.JLabel;
@@ -101,5 +102,13 @@ public class Controller {
 
     public void setRunde(int runde) {
         partieInterface.setRunde(runde);
+    }
+
+    public SoundInterface getSound() {
+        return partieInterface.getSound();
+    }
+
+    public void setSound(SoundInterface sound) {
+        partieInterface.setSound(sound);
     }
 }

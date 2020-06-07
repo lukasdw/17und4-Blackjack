@@ -1,5 +1,11 @@
 package client.Netzwerk;
 
+import client.Karte.*;
+import client.Sound.*;
+import client.Spieler.*;
+import client.Netzwerk.*;
+import client.Partie.*;
+
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
