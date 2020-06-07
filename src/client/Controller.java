@@ -5,6 +5,7 @@ import client.Karte.KarteInterface;
 import client.Netzwerk.NetzwerkInterface;
 import client.Spieler.SpielerInterface;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 
 public class Controller {
@@ -18,23 +19,6 @@ public class Controller {
     }
     
     // Getter und Setter (Controller)
-    public ViewGUI getViewGUI() {
-        return viewGUI;
-    }
-
-    public void setViewGUI(ViewGUI viewGUI) {
-        this.viewGUI = viewGUI;
-    }
-
-    public PartieInterface getPartieInterface() {
-        return partieInterface;
-    }
-
-    public void setPartieInterface(PartieInterface partieInterface) {
-        this.partieInterface = partieInterface;
-    }
-
-    // Getter und Setter (Partie)
     public void jederZiehtZweiKarten() {
         partieInterface.jederZiehtZweiKarten();
     }
@@ -43,8 +27,8 @@ public class Controller {
         partieInterface.kartenWerteRechnen();
     }
 
-    public void deckEinlesen() {
-        partieInterface.deckEinlesen();
+    public void deckEinlesen(String datei) {
+        partieInterface.deckEinlesen(datei);
     }
 
     public void spielerNamenEingeben(String spielername) {
@@ -57,6 +41,10 @@ public class Controller {
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         partieInterface.highscoreAktuallisieren(jTableTabelle);
+    }
+
+    public void verschiebeKarte(JLabel karte, JLabel picDeck) {
+        partieInterface.verschiebeKarte(karte, picDeck);
     }
 
     public NetzwerkInterface getEtc() {

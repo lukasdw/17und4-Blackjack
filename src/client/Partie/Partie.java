@@ -33,12 +33,6 @@ public class Partie implements PartieInterface {
     /* Gibt an in welcher Runde man sich momentan befindet */
     private int runde = 1;
 
-    /* Konstruktor */
-    public Partie() {
-        /* Der Client baut die Verbindung zum Server auf. */
-        this.deckEinlesen();
-    }
-
     /* Nachdem der Einsatz der Spieler gesetzt wurde, muss jeder Spieler
     zwei Karten ziehen. Diese Funktion wird also genau zwischen Runde 1
     und 2 ausgeführt. */
@@ -66,7 +60,7 @@ public class Partie implements PartieInterface {
         }
     }
 
-    public void deckEinlesen() {
+    public void deckEinlesen(String datei) {
         /* Diese Funktion liest das Deck aus der CSV-Datei ein und speichert
         die Felder in die ArrayListe, "deck". Theoretisch könnte man nun eine
         CSV mit 32 Karten einfach dazu anlegen. Der Spieler könnte unter den
@@ -77,7 +71,7 @@ public class Partie implements PartieInterface {
         String filePath = root + File.separator + "src\\";
 
         String lineTemp = "";
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "Karten\\deck.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + "Karten\\" + datei + ".csv"))) {
             while ((lineTemp = br.readLine()) != null) {
                 String[] spalte = lineTemp.split(";");
                 /* this.deck.add(new Karte(String name, int wert, String farbe, String bilderPfad) */
@@ -129,6 +123,25 @@ public class Partie implements PartieInterface {
             spalte[2] = spieler.get(i).getKontostand();
             spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);
+        }
+    }
+
+    // Läuft nicht!
+    public void verschiebeKarte(javax.swing.JLabel karte, javax.swing.JLabel picDeck) {
+        try {
+            for (int x = picDeck.getLocation().x; x != karte.getLocation().y; x--) {
+                for (int y = picDeck.getLocation().y; y != karte.getLocation().y; y--) {
+                    picDeck.setLayout(null);
+                    System.out.println("Zur Sicherheit X: " + x);
+                    System.out.println("Zur Sicherheit Y: " + y + "\n");
+                    picDeck.setLocation(x, y);
+                    picDeck.repaint();
+                    picDeck.revalidate();
+                    Thread.sleep(100);
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 

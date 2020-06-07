@@ -13,10 +13,11 @@ public interface PartieInterface {
     /* Methoden und Funktionen */
     public void jederZiehtZweiKarten();
     public void kartenWerteRechnen();
-    public void deckEinlesen();
+    public void deckEinlesen(String datei);
     public void spielerNamenEingeben(String spielername);
     public void nächsterSpieler();
     public void highscoreAktuallisieren(JTable jTableTabelle);
+    public void verschiebeKarte(javax.swing.JLabel karte, javax.swing.JLabel picDeck);
 
     /* Getter und Setter */
     public NetzwerkInterface getEtc();
