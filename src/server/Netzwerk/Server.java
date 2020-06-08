@@ -1,23 +1,22 @@
-package server;
+package server.Netzwerk;
 
 import java.io.*;
 import java.net.*;
-import java.util.*;
 import java.util.logging.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Server {
+public class Server implements ServerInterface {
 
     // Quelle: https://www.youtube.com/watch?v=O7TuxKJXBII
     private ServerSocket server;
     private Socket client;
     private int port;
     private String name;
-    
+
     // Empfangener Spielername
     private String spielername;
-    
+
     // Ein und Ausgabe des Servers
     private DataOutputStream output;
     private DataInputStream input;

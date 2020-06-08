@@ -1,7 +1,11 @@
 package server;
 
+import server.ServerController;
+import server.Netzwerk.Server;
+
 public class GUI extends javax.swing.JFrame {
 
+    private ServerController controller = new ServerController(this);
     Server server;
 
     public GUI() {

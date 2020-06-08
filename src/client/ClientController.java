@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 
-public class Controller {
+public class ClientController {
 
     private GUI view;
     private PartieInterface model;
 
-    public Controller(GUI view) {
+    public ClientController(GUI view) {
         this.view = view;
         this.model = new Partie();
     }

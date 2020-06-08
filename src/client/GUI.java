@@ -4,7 +4,8 @@ import java.awt.Color;
 
 public class GUI extends javax.swing.JFrame {
 
-    private Controller controller = new Controller(this);
+    private ClientController controller = new ClientController(this);
+    
     private javax.swing.JLabel spielerKartenJLabelArray[][] = new javax.swing.JLabel[6][3];
     private javax.swing.JTextField comboBoxSpieleranzahlJTextArray[] = new javax.swing.JTextField[6];
     private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
@@ -1363,14 +1364,12 @@ public class GUI extends javax.swing.JFrame {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             controller.getSpieler().get(controller.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
             controller.highscoreAktuallisieren(jTableHighscore);
-            // Die Anzeige des Einsatzes wird zurückgesetzt.
             jTextFieldEinsatz.setText("");
             // Der nächste Spieler ist am Zug
             if (controller.getAktuellerSpieler() == controller.getAnzahlSpieler() - 1) {
                 starteRunde2_KartenZiehen();
             } else {
                 controller.nächsterSpieler();
-                // Die Anzeige des aktuellen Spielers wird aktualisiert.
                 spielerAnzeigeUpdaten();
             }
         } else {

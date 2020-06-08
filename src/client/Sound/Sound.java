@@ -1,11 +1,5 @@
 package client.Sound;
 
-import client.Karte.*;
-import client.Sound.*;
-import client.Spieler.*;
-import client.Netzwerk.*;
-import client.Partie.*;
-
 import javax.sound.sampled.*;
 import java.io.*;
 import java.util.ArrayList;
