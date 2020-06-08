@@ -40,7 +40,6 @@ public class Partie implements PartieInterface {
     private SoundInterface sound = new Sound();
 
     public Partie() {
-        deckEinlesen("deck-52");
     }
 
     /* Nachdem der Einsatz der Spieler gesetzt wurde, muss jeder Spieler

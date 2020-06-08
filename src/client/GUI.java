@@ -1275,9 +1275,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void KartenBilderUpdaten_alleKarten() {
-
         for (int spieler = 0; spieler < controller.getSpieler().size(); spieler++) {
-            for (int karten = 0; karten < controller.getSpieler().get(karten).getHand().size(); karten++) {
+            for (int karten = 0; karten < controller.getSpieler().get(spieler).getHand().size(); karten++) {
                 spielerKartenJLabelArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource(controller.getSpieler().get(spieler).getHand().get(karten).getBilderPfad())));
             }
         }
@@ -1410,21 +1409,33 @@ public class GUI extends javax.swing.JFrame {
 
     public void starteRunde1_EinsatzSetzen() {
         controller.setRunde(1);
+        controller.setAktuellerSpieler(0);
+        
+        controller.deckEinlesen(jComboBoxKarten.getSelectedItem().toString());
+
         jLabelRunde.setText("Setze deinen Einsatz!");
         jButtonKarteZiehen.setVisible(false);
-        controller.setAktuellerSpieler(0);
+
+        jButtonEinsatz.setText("Einsatz setzen");
+        jButtonEinsatz.setVisible(true);
+
         spielerAnzeigeUpdaten();
+        KartenBilderUpdaten_aktuellerSpieler();
     }
 
     public void starteRunde2_KartenZiehen() {
         controller.setRunde(2);
-        controller.jederZiehtZweiKarten();
-        jLabelRunde.setText("Eine weitere Karte?");
         controller.setAktuellerSpieler(0);
+        controller.jederZiehtZweiKarten();
+
+        jLabelRunde.setText("Eine weitere Karte?");
+        jButtonKarteZiehen.setVisible(true);
+
+        jButtonEinsatz.setText("Weiter");
+        jButtonEinsatz.setVisible(true);
+
         spielerAnzeigeUpdaten();
         KartenBilderUpdaten_aktuellerSpieler();
-        jButtonKarteZiehen.setVisible(true);
-        jButtonEinsatz.setText("Weiter");
     }
 
     public void schaltflaecheDesAktuellenSpielersFarbigAktuallisieren() {
@@ -1439,7 +1450,7 @@ public class GUI extends javax.swing.JFrame {
 
     public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        if (!(jLabelEinsatz.getText().equals("")) && controller.getRunde() == 1) {
+        if (!jLabelEinsatz.getText().equals("") && controller.getRunde() == 1){
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             controller.getSpieler().get(controller.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
             controller.highscoreAktuallisieren(jTableHighscore);
@@ -1480,7 +1491,7 @@ public class GUI extends javax.swing.JFrame {
             controller.nächsterSpieler();
             KartenBilderUpdaten_aktuellerSpieler();
             spielerAnzeigeUpdaten();
-            jButtonKarteZiehen.setText("Karte Ziehen");
+            jButtonKarteZiehen.setText("Karte ziehen");
         }
     }
 
@@ -1518,11 +1529,25 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-        for (int i = 0; i < ArrayGewinnerNamen.length; i++) {
-            if (ArrayGewinnerPunkte[0] == ArrayGewinnerPunkte[i]) {
-                fehlermeldungGenerieren(ArrayGewinnerNamen[0] + "hat mit " + ArrayGewinnerPunkte[0] + "gewonnen!");
+        if (ArrayGewinnerNamen[0].equals("null")) {
+            fehlermeldungGenerieren("Jeder ist ueber 21.. Die Bank hat gewonnen!");
+            controller.getSpieler().get(0).setKontostand(controller.getSpieler().get(0).getKontostand() + (controller.getSpieler().get(0).getEinsatz() * 2));
+        } else {
+            for (int i = 0; i < ArrayGewinnerNamen.length; i++) {
+                if (ArrayGewinnerPunkte[0] == ArrayGewinnerPunkte[i]) {
+                    fehlermeldungGenerieren(ArrayGewinnerNamen[0] + " hat mit " + ArrayGewinnerPunkte[0] + " gewonnen!");
+                }
+            }
+
+            for (int i = 0; i < controller.getSpieler().size(); i++) {
+                if (controller.getSpieler().get(i).getSpielerName().equals(ArrayGewinnerNamen[0])) {
+                    controller.getSpieler().get(i).setKontostand(controller.getSpieler().get(i).getKontostand() + (controller.getSpieler().get(i).getEinsatz() * 2));
+                } else {
+                    controller.getSpieler().get(i).setKontostand(controller.getSpieler().get(i).getKontostand() - controller.getSpieler().get(i).getEinsatz());
+                }
             }
         }
+        controller.highscoreAktuallisieren(jTableHighscore);
     }
 
     public void spielerAnzeigeUpdaten() {
