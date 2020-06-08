@@ -3,19 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/GUI.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/server/Main.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Karte/Karte.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Karte/KarteInterface.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/server/Netzwerk/ServerInterface.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Main.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/server/ServerController.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/ClientController.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/server/Netzwerk/Server.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Sound/Sound.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Netzwerk/Netzwerk.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/server/GUI.java</file>
-            <file>file:/C:/Users/lukas.deweerdt/Documents/NetBeansProjects/2/17und4-Blackjack2/src/client/Partie/Partie.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/GUI.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Main.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/ClientController.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Sound/Sound.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Partie/PartieInterface.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/server/Netzwerk/Server.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Partie/Partie.java</file>
         </group>
     </open-files>
 </project-private>

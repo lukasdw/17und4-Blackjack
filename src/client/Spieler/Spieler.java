@@ -16,14 +16,14 @@ public class Spieler implements SpielerInterface {
 
     /* Jeder Spieler bekommt am Anfang einen Kontostand von 10. */
     private int kontostand = 10;
-    
+
     /* Der Einsatz beträgt am Anfang 0 */
     private int einsatz = 0;
 
     /* Werden Karten aus dem Deck gezogen landen die Karten vom Deck auf die Hand.
     Die Anzahl der Karten, auf der ist auf drei begrenzt. */
     ArrayList<KarteInterface> hand = new ArrayList<KarteInterface>();
-    
+
     /* Die Werte der Karten werden zusammengerechnet und in der Variable, "handPunkte"
     gespeichert. Anhand dieser Handpunkte wird am Ende der Gewinner errechnet.*/
     private int handPunkte = 0;
@@ -46,6 +46,9 @@ public class Spieler implements SpielerInterface {
         /* Die gezogene Karte muss aus dem Deck entfernt werden, da sie nun
         auf der Hand des Spielers ist. Ansonsten wäre die Karte zwei Mal im Spiel*/
         deck.remove(zufallszahl);
+
+        /* Hier werden die Handpunkte der aktuell gezogenen Karte addiert */
+        handPunkte = handPunkte + hand.get(hand.size()-1).getWert();
     }
 
     /* Getter und Setter */

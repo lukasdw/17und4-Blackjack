@@ -1,4 +1,5 @@
 package client.Partie;
+
 import client.*;
 
 import client.Karte.*;
@@ -35,12 +36,12 @@ public class Partie implements PartieInterface {
 
     /* Gibt an in welcher Runde man sich momentan befindet */
     private int runde = 1;
-    
+
     private SoundInterface sound = new Sound();
 
     public Partie() {
         deckEinlesen("deck-52");
-    }    
+    }
 
     /* Nachdem der Einsatz der Spieler gesetzt wurde, muss jeder Spieler
     zwei Karten ziehen. Diese Funktion wird also genau zwischen Runde 1
@@ -53,20 +54,7 @@ public class Partie implements PartieInterface {
                 spieler.get(i).karteZiehen(this.deck);
             }
         }
-    }
-
-    /* Hier wird der Wert der Karten berechnet. Zurzeit passiert dies erst am
-    Ende jeder Partie. Theoretisch könnte man auch beim Ziehen einer Karte
-    direkt den Wert addieren. Optional könnte man dann mit diesen Informationen,
-    den Noobs eine Live-Anzeige mit der aktuellen Punktzahl bereitstellen. */
-    public void kartenWerteRechnen() {
-        // Alle Spieler(j) ..
-        for (int j = 0; j < anzahlSpieler; j++) {
-            // Alle Karten(i), die auf der Hand(i) des Spielers sind, werden dazuaddiert.
-            for (int i = 0; i < spieler.get(j).getHand().size(); i++) {
-                spieler.get(j).setHandPunkte(spieler.get(j).getHandPunkte() + spieler.get(j).getHand().get(i).getWert());
-            }
-        }
+        sound.abspielen("card");
     }
 
     public void deckEinlesen(String datei) {
@@ -132,25 +120,6 @@ public class Partie implements PartieInterface {
             spalte[2] = spieler.get(i).getKontostand();
             spalte[3] = spieler.get(i).getEinsatz();
             model.addRow(spalte);
-        }
-    }
-
-    // Läuft nicht!
-    public void verschiebeKarte(javax.swing.JLabel karte, javax.swing.JLabel picDeck) {
-        try {
-            for (int x = picDeck.getLocation().x; x != karte.getLocation().y; x--) {
-                for (int y = picDeck.getLocation().y; y != karte.getLocation().y; y--) {
-                    picDeck.setLayout(null);
-                    System.out.println("Zur Sicherheit X: " + x);
-                    System.out.println("Zur Sicherheit Y: " + y + "\n");
-                    picDeck.setLocation(x, y);
-                    picDeck.repaint();
-                    picDeck.revalidate();
-                    Thread.sleep(100);
-                }
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }
 

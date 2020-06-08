@@ -24,10 +24,6 @@ public class ClientController {
         model.jederZiehtZweiKarten();
     }
 
-    public void kartenWerteRechnen() {
-        model.kartenWerteRechnen();
-    }
-
     public void deckEinlesen(String datei) {
         model.deckEinlesen(datei);
     }
@@ -42,10 +38,6 @@ public class ClientController {
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
         model.highscoreAktuallisieren(jTableTabelle);
-    }
-
-    public void verschiebeKarte(JLabel karte, JLabel picDeck) {
-        model.verschiebeKarte(karte, picDeck);
     }
 
     public NetzwerkInterface getEtc() {
@@ -111,4 +103,6 @@ public class ClientController {
     public void setSound(SoundInterface sound) {
         model.setSound(sound);
     }
+    
+    
 }
