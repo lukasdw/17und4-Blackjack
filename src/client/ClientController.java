@@ -102,7 +102,5 @@ public class ClientController {
 
     public void setSound(SoundInterface sound) {
         model.setSound(sound);
-    }
-    
-    
+    }   
 }

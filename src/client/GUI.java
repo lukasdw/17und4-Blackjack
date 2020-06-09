@@ -2,6 +2,7 @@ package client;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 public class GUI extends javax.swing.JFrame {
 
@@ -15,13 +16,8 @@ public class GUI extends javax.swing.JFrame {
     /* Konstruktor */
     public GUI() {
         initComponents();
-
-        //Setzt das JFrame in die Mitte des Bildschirms
-        jFrameInDieMitteSetzen(AnfangJFrame);
-
         //Startet den LoadingScreen und danach startet das Hauptmenü.
         ladebildschirmStarten();
-
         arraysFuellen();
     }
 
@@ -146,9 +142,7 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround1 = new javax.swing.JLabel();
 
         AnfangJFrame.setAlwaysOnTop(true);
-        AnfangJFrame.setMaximumSize(new java.awt.Dimension(250, 365));
         AnfangJFrame.setMinimumSize(new java.awt.Dimension(250, 365));
-        AnfangJFrame.setPreferredSize(new java.awt.Dimension(250, 365));
         AnfangJFrame.setResizable(false);
         AnfangJFrame.setSize(new java.awt.Dimension(250, 365));
         AnfangJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -218,9 +212,7 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1200, 579));
         setMinimumSize(new java.awt.Dimension(1200, 579));
-        setPreferredSize(new java.awt.Dimension(1200, 579));
         setResizable(false);
         setSize(new java.awt.Dimension(1200, 579));
 
@@ -459,11 +451,6 @@ public class GUI extends javax.swing.JFrame {
 
         TextFieldPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         TextFieldPort.setText("1337");
-        TextFieldPort.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldPortActionPerformed(evt);
-            }
-        });
 
         jButtonZurueck.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButtonZurueck.setText("Zurück");
@@ -580,11 +567,6 @@ public class GUI extends javax.swing.JFrame {
         jCheckBoxAnimation.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jCheckBoxAnimation.setText("Animationen");
         jCheckBoxAnimation.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jCheckBoxAnimation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxAnimationActionPerformed(evt);
-            }
-        });
         jPanelOptionen1.add(jCheckBoxAnimation, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 190, 20));
 
         jCheckBoxSounds.setBackground(new java.awt.Color(255, 255, 255));
@@ -632,11 +614,6 @@ public class GUI extends javax.swing.JFrame {
 
         jComboBoxKarten.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jComboBoxKarten.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "52 Karten", "32 Karten" }));
-        jComboBoxKarten.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxKartenActionPerformed(evt);
-            }
-        });
         jPanelOptionen1.add(jComboBoxKarten, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 190, 20));
 
         jPanelOptionen.add(jPanelOptionen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
@@ -773,7 +750,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelMenu.setMinimumSize(new java.awt.Dimension(295, 82));
         jPanelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelEinsatz.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabelEinsatz.setText("Einsatz");
         jPanelMenu.add(jLabelEinsatz, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 43, -1, 23));
 
@@ -1143,6 +1120,8 @@ public class GUI extends javax.swing.JFrame {
             einsatzSetzenButton();
         } else if (jButtonEinsatz.getText().equals("Weiter")) {
             weiterZiehenButton();
+        } else {
+            starteRunde1_EinsatzSetzen();
         }
         controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonEinsatzActionPerformed
@@ -1224,18 +1203,6 @@ public class GUI extends javax.swing.JFrame {
         controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonFehlermeldungOkActionPerformed
 
-    private void TextFieldPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPortActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPortActionPerformed
-
-    private void jCheckBoxAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxAnimationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxAnimationActionPerformed
-
-    private void jComboBoxKartenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxKartenActionPerformed
-
-    }//GEN-LAST:event_jComboBoxKartenActionPerformed
-
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
         Möglichkeiten der Spielenameneingaben aktualisiert */
@@ -1285,11 +1252,15 @@ public class GUI extends javax.swing.JFrame {
     public void comboBoxSpielernamenEingeben() {
         /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler, daher muss bei der Übergabe +2 gerechnet werden.*/
         controller.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
+        for (int i = 0; i < controller.getAnzahlSpieler(); i++) {
+            controller.spielerNamenEingeben(comboBoxSpieleranzahlJTextArray[i].getText());
+        }
+    }
 
+    public void spielerKartenJPanelArraySichtbarMachen() {
         /* Hier wird überprüft welche Spieler mitspielen und somit die Karten
         sichtbar gemacht. */
         for (int i = 0; i < controller.getAnzahlSpieler(); i++) {
-            controller.spielerNamenEingeben(comboBoxSpieleranzahlJTextArray[i].getText());
             spielerKartenJPanelArray[i].setVisible(true);
         }
     }
@@ -1309,36 +1280,22 @@ public class GUI extends javax.swing.JFrame {
         JTextSpieler4MP1PC1.setVisible(false);
         JLabelSpieler5MP1PC1.setVisible(false);
         JTextSpieler5MP1PC1.setVisible(false);
+        brettKartenUnsichtbarMachen();
+    }
 
-        // Brett-JPanel
-        jPanelAktuellerSpieler.setVisible(false);
-        Karten_Baenker.setVisible(false);
-        Karten_Spieler1.setVisible(false);
-        Karten_Spieler2.setVisible(false);
-        Karten_Spieler3.setVisible(false);
-        Karten_Spieler4.setVisible(false);
-        Karten_Spieler5.setVisible(false);
-
+    public void brettKartenUnsichtbarMachen() {
         /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
         selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
-        karte1_Baenker.setVisible(false);
-        karte2_Baenker.setVisible(false);
-        karte3_Baenker.setVisible(false);
-        karte1_Spieler1.setVisible(false);
-        karte2_Spieler1.setVisible(false);
-        karte3_Spieler1.setVisible(false);
-        karte1_Spieler2.setVisible(false);
-        karte2_Spieler2.setVisible(false);
-        karte3_Spieler2.setVisible(false);
-        karte1_Spieler3.setVisible(false);
-        karte2_Spieler3.setVisible(false);
-        karte3_Spieler3.setVisible(false);
-        karte1_Spieler4.setVisible(false);
-        karte2_Spieler4.setVisible(false);
-        karte3_Spieler4.setVisible(false);
-        karte1_Spieler5.setVisible(false);
-        karte2_Spieler5.setVisible(false);
-        karte3_Spieler5.setVisible(false);
+        for (int i = 0; i < spielerKartenJLabelArray.length; i++) {
+            for (int j = 0; j < 3; j++) {
+                spielerKartenJLabelArray[i][j].setVisible(false);
+            }
+        }
+
+        // Brett-JPanel
+        for (int i = 0; i < spielerKartenJLabelArray.length; i++) {
+            spielerKartenJPanelArray[i].setVisible(false);
+        }
     }
 
     public void programmBeenden() {
@@ -1403,6 +1360,10 @@ public class GUI extends javax.swing.JFrame {
         jPanelHauptmenue.setVisible(false);
         jPanelOptionen.setVisible(true);
         jPanelCredits.setVisible(false);
+        menuOptionenUpdateIPs();
+    }
+
+    public void menuOptionenUpdateIPs() {
         jLabelLANIP.setText(controller.getEtc().getLocalIP());
         jLabelInternetIP.setText(controller.getEtc().getInternetIP());
     }
@@ -1410,16 +1371,29 @@ public class GUI extends javax.swing.JFrame {
     public void starteRunde1_EinsatzSetzen() {
         controller.setRunde(1);
         controller.setAktuellerSpieler(0);
-        
+
+        brettKartenUnsichtbarMachen();
+        spielerKartenJPanelArraySichtbarMachen();
+
+        for (int i = 0; i < controller.getSpieler().size(); i++) {
+            controller.getSpieler().get(i).getHand().clear();
+            controller.getSpieler().get(i).setHandPunkte(0);
+            controller.getSpieler().get(i).setEinsatz(0);
+        }
+
         controller.deckEinlesen(jComboBoxKarten.getSelectedItem().toString());
 
-        jLabelRunde.setText("Setze deinen Einsatz!");
+        jLabelRunde.setVisible(true);
+        jButtonEinsatz.setVisible(true);
+        jLabelEinsatz.setVisible(true);
+        jTextFieldEinsatz.setVisible(true);
+        
         jButtonKarteZiehen.setVisible(false);
 
+        jLabelRunde.setText("Setze deinen Einsatz!");
         jButtonEinsatz.setText("Einsatz setzen");
-        jButtonEinsatz.setVisible(true);
 
-        spielerAnzeigeUpdaten();
+        spielerTextfeldAnzeigeUpdaten();
         KartenBilderUpdaten_aktuellerSpieler();
     }
 
@@ -1428,13 +1402,16 @@ public class GUI extends javax.swing.JFrame {
         controller.setAktuellerSpieler(0);
         controller.jederZiehtZweiKarten();
 
-        jLabelRunde.setText("Eine weitere Karte?");
         jButtonKarteZiehen.setVisible(true);
+        jButtonEinsatz.setVisible(true);
+        jLabelEinsatz.setVisible(false);
+        
+        jTextFieldEinsatz.setVisible(false);
 
         jButtonEinsatz.setText("Weiter");
-        jButtonEinsatz.setVisible(true);
+        jLabelRunde.setText("Eine weitere Karte?");
 
-        spielerAnzeigeUpdaten();
+        spielerTextfeldAnzeigeUpdaten();
         KartenBilderUpdaten_aktuellerSpieler();
     }
 
@@ -1450,7 +1427,7 @@ public class GUI extends javax.swing.JFrame {
 
     public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        if (!jLabelEinsatz.getText().equals("") && controller.getRunde() == 1){
+        if (!jLabelEinsatz.getText().equals("") && controller.getRunde() == 1) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             controller.getSpieler().get(controller.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
             controller.highscoreAktuallisieren(jTableHighscore);
@@ -1460,7 +1437,7 @@ public class GUI extends javax.swing.JFrame {
                 starteRunde2_KartenZiehen();
             } else {
                 controller.nächsterSpieler();
-                spielerAnzeigeUpdaten();
+                spielerTextfeldAnzeigeUpdaten();
             }
         } else {
             fehlermeldungGenerieren("Fehler.");
@@ -1481,17 +1458,13 @@ public class GUI extends javax.swing.JFrame {
     public void weiterZiehenButton() {
         if (controller.getAktuellerSpieler() == controller.getAnzahlSpieler() - 1) {
             jButtonKarteZiehen.setVisible(false);
-            jButtonEinsatz.setVisible(false);
-            jLabelEinsatz.setVisible(false);
-            jTextFieldEinsatz.setVisible(false);
             controller.setRunde(3);
             KartenBilderUpdaten_alleKarten();
-            gewinnerAusgaben();
+            starteRunde3_gewinnerAusgeben();
         } else {
             controller.nächsterSpieler();
             KartenBilderUpdaten_aktuellerSpieler();
-            spielerAnzeigeUpdaten();
-            jButtonKarteZiehen.setText("Karte ziehen");
+            spielerTextfeldAnzeigeUpdaten();
         }
     }
 
@@ -1500,7 +1473,7 @@ public class GUI extends javax.swing.JFrame {
         controller.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
     }
 
-    public void gewinnerAusgaben() {
+    public void starteRunde3_gewinnerAusgeben() {
         jLabelRunde.setText("Der Gewinner ist...");
         controller.getSound().abspielen("win");
 
@@ -1548,9 +1521,10 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         controller.highscoreAktuallisieren(jTableHighscore);
+        jButtonEinsatz.setText("naechste Runde");
     }
 
-    public void spielerAnzeigeUpdaten() {
+    public void spielerTextfeldAnzeigeUpdaten() {
         // Hier wird überprüft, welcher Spieler momentan am Zug ist und dementsprechend die Anzeige aktualisiert.
         jPanelAktuellerSpieler.setVisible(true);
         jLabelAktuellerSpieler.setText(controller.getSpieler().get(controller.getAktuellerSpieler()).getSpielerName() + " ist jetzt am Zug!");
@@ -1560,6 +1534,8 @@ public class GUI extends javax.swing.JFrame {
     public void ladebildschirmStarten() {
         // Läuft noch nicht, aber ist glaube auch nicht zwingend notwendig
         AnfangJFrame.setVisible(true);
+        // Setzt das JFrame in die Mitte des Bildschirms
+        jFrameInDieMitteSetzen(AnfangJFrame);
         try {
             for (int i = 0; i <= 100; i++) {
                 Thread.sleep(10);
