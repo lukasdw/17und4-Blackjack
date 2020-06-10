@@ -17,6 +17,8 @@ public class GUI extends javax.swing.JFrame {
 
         //Startet den LoadingScreen und danach startet das Hauptmenü.
         ladebildschirmStarten();
+        
+        jLabelLANIP.setText(partie.getEtc().getIp());
     }
 
     @SuppressWarnings("unchecked")
@@ -34,6 +36,12 @@ public class GUI extends javax.swing.JFrame {
         picDreieck = new javax.swing.JLabel();
         jTextAreaFehlermeldung = new javax.swing.JTextArea();
         jButtonFehlermeldungOk = new javax.swing.JButton();
+        jFrameGewinner = new javax.swing.JFrame();
+        jLabelBild = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jTextGewinner1 = new javax.swing.JTextField();
+        jTextGewinner2 = new javax.swing.JTextField();
+        jTextGewinner3 = new javax.swing.JTextField();
         jPanelBrett = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
@@ -86,7 +94,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabelLANIP = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jComboBoxKarten = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -140,9 +148,7 @@ public class GUI extends javax.swing.JFrame {
         piMenuBackround = new javax.swing.JLabel();
 
         AnfangJFrame.setAlwaysOnTop(true);
-        AnfangJFrame.setMaximumSize(new java.awt.Dimension(240, 325));
         AnfangJFrame.setMinimumSize(new java.awt.Dimension(260, 365));
-        AnfangJFrame.setPreferredSize(new java.awt.Dimension(260, 365));
         AnfangJFrame.setResizable(false);
         AnfangJFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -241,12 +247,69 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(jPanelFehlermeldung, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE)
         );
 
+        jLabelBild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gewinner.jpg"))); // NOI18N
+        jLabelBild.setText("jLabelBild");
+
+        jTextGewinner1.setText("jTextField1");
+        jTextGewinner1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextGewinner1ActionPerformed(evt);
+            }
+        });
+
+        jTextGewinner2.setText("jTextField1");
+
+        jTextGewinner3.setText("jTextField1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(117, 117, 117)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextGewinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextGewinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextGewinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jTextGewinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(119, 119, 119)
+                .addComponent(jTextGewinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addComponent(jTextGewinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58))
+        );
+
+        javax.swing.GroupLayout jFrameGewinnerLayout = new javax.swing.GroupLayout(jFrameGewinner.getContentPane());
+        jFrameGewinner.getContentPane().setLayout(jFrameGewinnerLayout);
+        jFrameGewinnerLayout.setHorizontalGroup(
+            jFrameGewinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelBild, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jFrameGewinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameGewinnerLayout.createSequentialGroup()
+                    .addContainerGap(222, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(175, Short.MAX_VALUE)))
+        );
+        jFrameGewinnerLayout.setVerticalGroup(
+            jFrameGewinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabelBild, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jFrameGewinnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrameGewinnerLayout.createSequentialGroup()
+                    .addContainerGap(58, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(59, Short.MAX_VALUE)))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1200, 589));
         setMinimumSize(new java.awt.Dimension(1200, 589));
-        setPreferredSize(new java.awt.Dimension(1200, 589));
         setResizable(false);
 
         jPanelBrett.setBackground(new java.awt.Color(255, 255, 255));
@@ -583,10 +646,10 @@ public class GUI extends javax.swing.JFrame {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         jPanelOptionen1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 190, 10));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("192.168.178.64");
-        jPanelOptionen1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, -1));
+        jLabelLANIP.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelLANIP.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelLANIP.setText("192.168.178.64");
+        jPanelOptionen1.add(jLabelLANIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -1021,17 +1084,17 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelMPInternet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 74, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 74, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelOptionen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 74, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1123,6 +1186,10 @@ public class GUI extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jTextGewinner1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextGewinner1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextGewinner1ActionPerformed
 
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
@@ -1446,7 +1513,7 @@ public class GUI extends javax.swing.JFrame {
             // Der Spieler zieht eine Karte
             partie.getSpieler().get(partie.getAktuellerSpieler()).karteZiehen(partie.getDeck());
             if (partie.getAktuellerSpieler() == partie.getAnzahlSpieler() - 1) {
-                gewinnerAuswählen();
+                gewinnerHandPunkteAuswählen();
             } else {
                 // Der nächste Spieler ist am Zug
                 partie.nächsterSpieler();
@@ -1462,42 +1529,45 @@ public class GUI extends javax.swing.JFrame {
         partie.getEtc().verbinden(TextFieldServerIP.getText(), Integer.parseInt(TextFieldPort.getText()), TextFieldGebenSieIhrenNamenEin.getText());
         partie.getEtc().spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
     }
-
-    public void gewinnerAuswählen() {
-        jButtonKarteZiehen.setVisible(false);
-        jButtonEinsatz.setVisible(false);
-        jLabelEinsatz.setVisible(false);
-        jTextFieldEinsatz.setVisible(false);
-
+    //JTableGewinner gewinner = new JTableGewinner ();
+    public void gewinnerHandPunkteAuswählen() {
         jLabelRunde.setText("Der Gewinner ist...");
-
         partie.kartenWerteRechnen();
 
         String[] namen = new String[partie.getAnzahlSpieler()];
-        int[] gewinner = new int[partie.getAnzahlSpieler()];
+        int[] gewinnerHandPunkte = new int[partie.getAnzahlSpieler()];
 
         for (int i = 0; i < partie.getSpieler().size(); i++) {
-            gewinner[i] = partie.getSpieler().get(i).getHandPunkte();
+            gewinnerHandPunkte[i] = partie.getSpieler().get(i).getHandPunkte();
             namen[i] = partie.getSpieler().get(i).getSpielerName();
         }
 
-        int tempGewinner;
+        int tempGewinnerHandPunkte;
         String tempName;
 
-        for (int i = 1; i < gewinner.length; i++) {
-            for (int j = 0; j < gewinner.length - i; j++) {
-                if (gewinner[j] > gewinner[j + 1]) {
-                    tempGewinner = gewinner[j];
+        for (int i = 1; i < gewinnerHandPunkte.length; i++) {
+            for (int j = 0; j < gewinnerHandPunkte.length - i; j++) {
+                if (gewinnerHandPunkte[j] < gewinnerHandPunkte[j + 1]) {
+                    tempGewinnerHandPunkte = gewinnerHandPunkte[j];
                     tempName = namen[j];
-                    gewinner[j] = gewinner[j + 1];
+                    gewinnerHandPunkte[j] = gewinnerHandPunkte[j + 1];
                     namen[j] = namen[j + 1];
-                    gewinner[j + 1] = tempGewinner;
+                    gewinnerHandPunkte[j + 1] = tempGewinnerHandPunkte;
                     namen[j + 1] = tempName;
                 }
             }
         }
-        partie.highscoreAktuallisieren(jTableSpieler);
-        fehlermeldungGenerieren("1. Platz - " + namen[partie.getAnzahlSpieler() - 1] + ": " + gewinner[partie.getAnzahlSpieler() - 1]);
+
+        for (int i = 1; i < 2; i++) {
+            if (gewinnerHandPunkte[i] <= 21) {
+                jFrameGewinner.setVisible(true);
+                jTextGewinner1.setText(namen[i]);
+                jTextGewinner2.setText(namen[i+1]);
+                jTextGewinner3.setText(namen[i+2]);
+                
+               
+            }
+        }
     }
 
     public void spielerAnzeigeUpdaten() {
@@ -1580,19 +1650,22 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
     private javax.swing.JComboBox<String> jComboBoxKarten;
     private javax.swing.JDialog jDialogFehlermeldung;
+    private javax.swing.JFrame jFrameGewinner;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAktuellerSpieler;
+    private javax.swing.JLabel jLabelBild;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelKontostand;
     private javax.swing.JLabel jLabelKontostandValue;
+    private javax.swing.JLabel jLabelLANIP;
     private javax.swing.JLabel jLabelRunde;
     private javax.swing.JLabel jLabelServerstatus;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
@@ -1620,6 +1693,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaPort;
     private javax.swing.JTextArea jTextAreaServerIP;
     private javax.swing.JTextField jTextFieldEinsatz;
+    private javax.swing.JTextField jTextGewinner1;
+    private javax.swing.JTextField jTextGewinner2;
+    private javax.swing.JTextField jTextGewinner3;
     private javax.swing.JLabel karte1_Baenker;
     private javax.swing.JLabel karte1_Spieler1;
     private javax.swing.JLabel karte1_Spieler2;
