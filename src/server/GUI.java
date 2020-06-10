@@ -1,7 +1,11 @@
 package server;
 
+import server.ServerController;
+import server.Netzwerk.Server;
+
 public class GUI extends javax.swing.JFrame {
 
+    private ServerController controller = new ServerController(this);
     Server server;
 
     public GUI() {
@@ -56,27 +60,28 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaSpieleranzahl.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaSpieleranzahl.setRows(5);
         jTextAreaSpieleranzahl.setText("Wähle eine Option aus.\n");
-        jPanelServer1.add(jTextAreaSpieleranzahl, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 91, 210, 20));
+        jTextAreaSpieleranzahl.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanelServer1.add(jTextAreaSpieleranzahl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 210, 20));
 
         jTextAreaServername.setEditable(false);
         jTextAreaServername.setColumns(20);
         jTextAreaServername.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaServername.setRows(5);
         jTextAreaServername.setText("Servername\n");
-        jPanelServer1.add(jTextAreaServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, 70, 20));
+        jPanelServer1.add(jTextAreaServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 70, 20));
 
         TextFieldServername.setText("Testserver");
-        jPanelServer1.add(TextFieldServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 65, 126, -1));
+        jPanelServer1.add(TextFieldServername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 126, -1));
 
         jTextAreaPort.setEditable(false);
         jTextAreaPort.setColumns(20);
         jTextAreaPort.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaPort.setRows(5);
         jTextAreaPort.setText("Port\n");
-        jPanelServer1.add(jTextAreaPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 39, 56, 20));
+        jPanelServer1.add(jTextAreaPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 56, 20));
 
         TextFieldPort.setText("1337");
-        jPanelServer1.add(TextFieldPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 65, 74, -1));
+        jPanelServer1.add(TextFieldPort, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 74, -1));
 
         jButtonZurueck.setText("Beenden");
         jButtonZurueck.addActionListener(new java.awt.event.ActionListener() {
@@ -111,11 +116,11 @@ public class GUI extends javax.swing.JFrame {
         jLabelServerstatus.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabelServerstatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelServerstatus.setText("SERVERSTATUS");
-        jPanelServer1.add(jLabelServerstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 148, 210, -1));
+        jPanelServer1.add(jLabelServerstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 210, 40));
 
         jComboBoxAnzahlSpieler.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bank - 1 Spieler", "1 Bank - 2 Spieler", "1 Bank - 3 Spieler", "1 Bank - 4 Spieler", "1 Bank - 5 Spieler" }));
         jComboBoxAnzahlSpieler.setToolTipText("");
-        jPanelServer1.add(jComboBoxAnzahlSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 117, 210, -1));
+        jPanelServer1.add(jComboBoxAnzahlSpieler, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, -1));
 
         jPanelServer.add(jPanelServer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 250, 400));
 

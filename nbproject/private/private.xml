@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/GUI.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/Karte.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/SoundInterface.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/Spieler.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/Partie.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/server/Main.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/Sound.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/Netzwerkverbidung.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/server/Server.java</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/Karten/deck.csv</file>
-            <file>file:/E:/OneDrive/Ausbildung%20zum%20Fachinformatiker%20für%20Systemintegration/Programmieren%20II/17%20und%204%20(Projekt)_newer123/17und4/src/client/PartieInterface.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/GUI.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Main.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/ClientController.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Sound/Sound.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Partie/PartieInterface.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/server/Netzwerk/Server.java</file>
+            <file>file:/E:/Desktop/070620203/17und4/src/client/Partie/Partie.java</file>
         </group>
     </open-files>
 </project-private>
