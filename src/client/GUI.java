@@ -9,6 +9,7 @@ public class GUI extends javax.swing.JFrame {
     private ClientController controller = new ClientController(this);
 
     private javax.swing.JLabel spielerKartenJLabelArray[][] = new javax.swing.JLabel[6][3];
+    private javax.swing.JLabel spielerCoins[][] = new javax.swing.JLabel[6][2];
     private javax.swing.JTextField comboBoxSpieleranzahlJTextArray[] = new javax.swing.JTextField[6];
     private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
     private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
@@ -98,6 +99,18 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaInfoTextMP1PC2 = new javax.swing.JTextArea();
         piMenuBackroundMP1PC3 = new javax.swing.JLabel();
         jPanelBrett = new javax.swing.JPanel();
+        BankCoin1 = new javax.swing.JLabel();
+        BankCoin2 = new javax.swing.JLabel();
+        Spieler1Coin1 = new javax.swing.JLabel();
+        Spieler1Coin2 = new javax.swing.JLabel();
+        Spieler2Coin1 = new javax.swing.JLabel();
+        Spieler2Coin2 = new javax.swing.JLabel();
+        Spieler3Coin1 = new javax.swing.JLabel();
+        Spieler3Coin2 = new javax.swing.JLabel();
+        Spieler4Coin1 = new javax.swing.JLabel();
+        Spieler4Coin2 = new javax.swing.JLabel();
+        Spieler5Coin1 = new javax.swing.JLabel();
+        Spieler5Coin2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableHighscore = new javax.swing.JTable();
         jPanelRunde = new javax.swing.JPanel();
@@ -656,6 +669,54 @@ public class GUI extends javax.swing.JFrame {
         jPanelBrett.setMaximumSize(new java.awt.Dimension(1200, 550));
         jPanelBrett.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BankCoin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BankCoin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(BankCoin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 30, 30));
+
+        BankCoin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BankCoin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(BankCoin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 30, 30));
+
+        Spieler1Coin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler1Coin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(Spieler1Coin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 30, 30));
+
+        Spieler1Coin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler1Coin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(Spieler1Coin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 30, 30));
+
+        Spieler2Coin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler2Coin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(Spieler2Coin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 30, 30));
+
+        Spieler2Coin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler2Coin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(Spieler2Coin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 30, 30));
+
+        Spieler3Coin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler3Coin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(Spieler3Coin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 30, 30));
+
+        Spieler3Coin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler3Coin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(Spieler3Coin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 30, 30));
+
+        Spieler4Coin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler4Coin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(Spieler4Coin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 30, 30));
+
+        Spieler4Coin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler4Coin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(Spieler4Coin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 30, 30));
+
+        Spieler5Coin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler5Coin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-blau.png"))); // NOI18N
+        jPanelBrett.add(Spieler5Coin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 150, 30, 30));
+
+        Spieler5Coin2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Spieler5Coin2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chip-rot.png"))); // NOI18N
+        jPanelBrett.add(Spieler5Coin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 30, 30));
+
         jTableHighscore.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTableHighscore.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTableHighscore.setModel(new javax.swing.table.DefaultTableModel(
@@ -819,6 +880,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(jPanelStats, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 260, 50));
 
+        Karten_Baenker.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Baenker.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Baenker.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -852,8 +914,9 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(karte3_Baenker, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanelBrett.add(Karten_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 170, 90));
+        jPanelBrett.add(Karten_Baenker, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 170, 90));
 
+        Karten_Spieler1.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Spieler1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Spieler1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -889,6 +952,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 170, 90));
 
+        Karten_Spieler2.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Spieler2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Spieler2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -924,6 +988,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 170, 90));
 
+        Karten_Spieler3.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Spieler3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Spieler3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -959,6 +1024,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 170, 90));
 
+        Karten_Spieler4.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Spieler4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Spieler4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -994,6 +1060,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelBrett.add(Karten_Spieler4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 280, 170, 90));
 
+        Karten_Spieler5.setBackground(new java.awt.Color(9, 86, 6));
         Karten_Spieler5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         karte1_Spieler5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png"))); // NOI18N
@@ -1387,8 +1454,14 @@ public class GUI extends javax.swing.JFrame {
         jButtonEinsatz.setVisible(true);
         jLabelEinsatz.setVisible(true);
         jTextFieldEinsatz.setVisible(true);
-        
+
         jButtonKarteZiehen.setVisible(false);
+
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 2; j++) {
+                spielerCoins[i][j].setVisible(false);
+            }
+        }
 
         jLabelRunde.setText("Setze deinen Einsatz!");
         jButtonEinsatz.setText("Einsatz setzen");
@@ -1405,7 +1478,7 @@ public class GUI extends javax.swing.JFrame {
         jButtonKarteZiehen.setVisible(true);
         jButtonEinsatz.setVisible(true);
         jLabelEinsatz.setVisible(false);
-        
+
         jTextFieldEinsatz.setVisible(false);
 
         jButtonEinsatz.setText("Weiter");
@@ -1418,9 +1491,11 @@ public class GUI extends javax.swing.JFrame {
     public void schaltflaecheDesAktuellenSpielersFarbigAktuallisieren() {
         for (int i = 0; i < spielerKartenJPanelArray.length; i++) {
             if (controller.getAktuellerSpieler() == i) {
-                spielerKartenJPanelArray[i].setBackground(Color.green);
+                float[] hsb = Color.RGBtoHSB(4, 39, 3, null);
+                spielerKartenJPanelArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
             } else {
-                spielerKartenJPanelArray[i].setBackground(Color.white);
+                float[] hsb = Color.RGBtoHSB(9, 88, 7, null);
+                spielerKartenJPanelArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
             }
         }
     }
@@ -1430,6 +1505,7 @@ public class GUI extends javax.swing.JFrame {
         if (!jLabelEinsatz.getText().equals("") && controller.getRunde() == 1) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             controller.getSpieler().get(controller.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
+            spielerCoins[controller.getAktuellerSpieler()][(int) (Math.random() * 2)*1].setVisible(true);
             controller.highscoreAktuallisieren(jTableHighscore);
             jTextFieldEinsatz.setText("");
             // Der nächste Spieler ist am Zug
@@ -1580,6 +1656,19 @@ public class GUI extends javax.swing.JFrame {
         spielerKartenJLabelArray[5][1] = karte2_Spieler5;
         spielerKartenJLabelArray[5][2] = karte3_Spieler5;
 
+        spielerCoins[0][0] = BankCoin1;
+        spielerCoins[0][1] = BankCoin2;
+        spielerCoins[1][0] = Spieler1Coin1;
+        spielerCoins[1][1] = Spieler1Coin2;
+        spielerCoins[2][0] = Spieler2Coin1;
+        spielerCoins[2][1] = Spieler2Coin2;
+        spielerCoins[3][0] = Spieler3Coin1;
+        spielerCoins[3][1] = Spieler3Coin2;
+        spielerCoins[4][0] = Spieler4Coin1;
+        spielerCoins[4][1] = Spieler4Coin2;
+        spielerCoins[5][0] = Spieler5Coin1;
+        spielerCoins[5][1] = Spieler5Coin2;
+
         comboBoxSpieleranzahlJLabelArray[0] = JLabelBänkerMP1PC1;
         comboBoxSpieleranzahlJLabelArray[1] = JLabelSpieler1MP1PC1;
         comboBoxSpieleranzahlJLabelArray[2] = JLabelSpieler2MP1PC1;
@@ -1628,6 +1717,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel AnfangjPanel;
     private javax.swing.JProgressBar AnfangjProgressBar;
     private javax.swing.JButton AnzahlSpielerButton1;
+    private javax.swing.JLabel BankCoin1;
+    private javax.swing.JLabel BankCoin2;
     private javax.swing.JButton ButtonLobbySuchen;
     private javax.swing.JLabel JLabelBänkerMP1PC1;
     private javax.swing.JLabel JLabelSpieler1MP1PC1;
@@ -1647,6 +1738,16 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel Karten_Spieler3;
     private javax.swing.JPanel Karten_Spieler4;
     private javax.swing.JPanel Karten_Spieler5;
+    private javax.swing.JLabel Spieler1Coin1;
+    private javax.swing.JLabel Spieler1Coin2;
+    private javax.swing.JLabel Spieler2Coin1;
+    private javax.swing.JLabel Spieler2Coin2;
+    private javax.swing.JLabel Spieler3Coin1;
+    private javax.swing.JLabel Spieler3Coin2;
+    private javax.swing.JLabel Spieler4Coin1;
+    private javax.swing.JLabel Spieler4Coin2;
+    private javax.swing.JLabel Spieler5Coin1;
+    private javax.swing.JLabel Spieler5Coin2;
     private javax.swing.JTextField TextFieldGebenSieIhrenNamenEin;
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
