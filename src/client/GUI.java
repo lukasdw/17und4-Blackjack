@@ -1578,7 +1578,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-        if (ArrayGewinnerNamen[0].equals("null")) {
+        if (ArrayGewinnerNamen[0].equals(null)) {
             fehlermeldungGenerieren("Jeder ist ueber 21.. Die Bank hat gewonnen!");
             controller.getSpieler().get(0).setKontostand(controller.getSpieler().get(0).getKontostand() + (controller.getSpieler().get(0).getEinsatz() * 2));
         } else {
