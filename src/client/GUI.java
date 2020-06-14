@@ -14,6 +14,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
     private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
 
+    int ArrayGewinnerPunkte[];
+    String ArrayGewinnerNamen[];
+
     /* Konstruktor */
     public GUI() {
         initComponents();
@@ -37,6 +40,13 @@ public class GUI extends javax.swing.JFrame {
         picDreieck = new javax.swing.JLabel();
         jTextAreaFehlermeldung = new javax.swing.JTextArea();
         jButtonFehlermeldungOk = new javax.swing.JButton();
+        jFrameGewinner = new javax.swing.JFrame();
+        jPanel1 = new javax.swing.JPanel();
+        jTextGewinner1Siegerehrung = new javax.swing.JTextField();
+        jTextGewinner2Siegerehrung = new javax.swing.JTextField();
+        jTextGewinner3Siegerehrung = new javax.swing.JTextField();
+        jButtonBeendenSiegerehrung = new javax.swing.JButton();
+        jLabelSiegerehrung = new javax.swing.JLabel();
         jPanelHauptmenue = new javax.swing.JPanel();
         jPanel1Hauptmenue = new javax.swing.JPanel();
         jButtonMP1PC = new javax.swing.JButton();
@@ -201,7 +211,7 @@ public class GUI extends javax.swing.JFrame {
         jTextAreaFehlermeldung.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTextAreaFehlermeldung.setRows(5);
         jTextAreaFehlermeldung.setText("Dieser Text wird in der Funktion verändert.");
-        jPanelFehlermeldung.add(jTextAreaFehlermeldung, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 240, 40));
+        jPanelFehlermeldung.add(jTextAreaFehlermeldung, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 240, 50));
 
         jButtonFehlermeldungOk.setText("Ok");
         jButtonFehlermeldungOk.addActionListener(new java.awt.event.ActionListener() {
@@ -219,8 +229,60 @@ public class GUI extends javax.swing.JFrame {
         );
         jDialogFehlermeldungLayout.setVerticalGroup(
             jDialogFehlermeldungLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelFehlermeldung, javax.swing.GroupLayout.PREFERRED_SIZE, 92, Short.MAX_VALUE)
+            .addComponent(jPanelFehlermeldung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jFrameGewinner.setBackground(new java.awt.Color(255, 255, 0));
+        jFrameGewinner.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextGewinner1Siegerehrung.setEditable(false);
+        jTextGewinner1Siegerehrung.setBackground(new java.awt.Color(218, 165, 33));
+        jTextGewinner1Siegerehrung.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextGewinner1Siegerehrung.setForeground(new java.awt.Color(255, 255, 255));
+        jTextGewinner1Siegerehrung.setText("jTextField1");
+        jTextGewinner1Siegerehrung.setBorder(null);
+        jTextGewinner1Siegerehrung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextGewinner1SiegerehrungActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextGewinner1Siegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 340, 90));
+
+        jTextGewinner2Siegerehrung.setBackground(new java.awt.Color(192, 192, 192));
+        jTextGewinner2Siegerehrung.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextGewinner2Siegerehrung.setForeground(new java.awt.Color(255, 255, 255));
+        jTextGewinner2Siegerehrung.setText("jTextField1");
+        jTextGewinner2Siegerehrung.setBorder(null);
+        jPanel1.add(jTextGewinner2Siegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 340, 90));
+
+        jTextGewinner3Siegerehrung.setBackground(new java.awt.Color(152, 99, 67));
+        jTextGewinner3Siegerehrung.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTextGewinner3Siegerehrung.setForeground(new java.awt.Color(255, 255, 255));
+        jTextGewinner3Siegerehrung.setText("jTextField1");
+        jTextGewinner3Siegerehrung.setBorder(null);
+        jTextGewinner3Siegerehrung.setCaretColor(new java.awt.Color(152, 99, 67));
+        jTextGewinner3Siegerehrung.setDisabledTextColor(new java.awt.Color(152, 99, 67));
+        jTextGewinner3Siegerehrung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextGewinner3SiegerehrungActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextGewinner3Siegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 340, 80));
+
+        jButtonBeendenSiegerehrung.setText("Beenden");
+        jButtonBeendenSiegerehrung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBeendenSiegerehrungActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonBeendenSiegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, -1, 30));
+
+        jLabelSiegerehrung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sieger.png"))); // NOI18N
+        jPanel1.add(jLabelSiegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 408));
+
+        jFrameGewinner.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 460));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("(Client) WIT2B - No.3: 17 und 4 - Blackjack (12.05.2020 - 23.06.2020)");
@@ -1178,7 +1240,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
         // Das Programm wird beendet
-        programmBeenden();
+        siegerehrungStarten(ArrayGewinnerNamen, ArrayGewinnerPunkte);
         controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
@@ -1269,6 +1331,18 @@ public class GUI extends javax.swing.JFrame {
         jDialogFehlermeldung.setVisible(false);
         controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonFehlermeldungOkActionPerformed
+
+    private void jTextGewinner1SiegerehrungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextGewinner1SiegerehrungActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextGewinner1SiegerehrungActionPerformed
+
+    private void jTextGewinner3SiegerehrungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextGewinner3SiegerehrungActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextGewinner3SiegerehrungActionPerformed
+
+    private void jButtonBeendenSiegerehrungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBeendenSiegerehrungActionPerformed
+        programmBeenden();
+    }//GEN-LAST:event_jButtonBeendenSiegerehrungActionPerformed
 
     public void comboBoxSpieleranzahlAnzeigeUpdate() {
         /* Wenn eine andere Option gewählt wird, wird dies erkannt und die
@@ -1502,10 +1576,10 @@ public class GUI extends javax.swing.JFrame {
 
     public void einsatzSetzenButton() {
         /* Sobald der Button gedrückt wird, wird überprüft, ob das Textfeld leer ist und der Einsatz kleiner oder genauso hoch ist, als vom Bänker. */
-        if (!jLabelEinsatz.getText().equals("") && controller.getRunde() == 1) {
+        if ((!jLabelEinsatz.getText().equals("")) && (controller.getRunde() == 1) && (Integer.parseInt(jTextFieldEinsatz.getText()) <= controller.getSpieler().get(controller.getAktuellerSpieler()).getKontostand()) && (Integer.parseInt(jTextFieldEinsatz.getText()) > 0)) {
             // Sobald die Überprüfung erfolgreich war, setzt der Spieler seinen Einsatz.
             controller.getSpieler().get(controller.getAktuellerSpieler()).setEinsatz(Integer.parseInt(jTextFieldEinsatz.getText()));
-            spielerCoins[controller.getAktuellerSpieler()][(int) (Math.random() * 2)*1].setVisible(true);
+            gelegteCoinsUpdaten();
             controller.highscoreAktuallisieren(jTableHighscore);
             jTextFieldEinsatz.setText("");
             // Der nächste Spieler ist am Zug
@@ -1516,7 +1590,7 @@ public class GUI extends javax.swing.JFrame {
                 spielerTextfeldAnzeigeUpdaten();
             }
         } else {
-            fehlermeldungGenerieren("Fehler.");
+            fehlermeldungGenerieren("Dein Einsatz muss zwischen 1 und " + controller.getSpieler().get(controller.getAktuellerSpieler()).getKontostand() + " sein\nund darf den Einsatz des Bänkers nicht\nüberschreiten.");
         }
     }
 
@@ -1527,7 +1601,7 @@ public class GUI extends javax.swing.JFrame {
             // verschiebeKarte(spielerKartenJLabelArray[controller.getAktuellerSpieler()][controller.getSpieler().get(controller.getAktuellerSpieler()).getHand().size() - 1], picDeck);
             controller.getSound().abspielen("card");
         } else {
-            fehlermeldungGenerieren("Fehler.");
+            fehlermeldungGenerieren("Du hast bereits drei Karten.");
         }
     }
 
@@ -1710,6 +1784,47 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
+    public void gelegteCoinsUpdaten() {
+        if (controller.getSpieler().get(controller.getAktuellerSpieler()).getEinsatz() >= 10) {
+            spielerCoins[controller.getAktuellerSpieler()][0].setVisible(true);
+        }
+        if (controller.getSpieler().get(controller.getAktuellerSpieler()).getEinsatz() % 10 != 0) {
+            spielerCoins[controller.getAktuellerSpieler()][1].setVisible(true);
+        }
+    }
+
+    public void siegerehrungStarten(String[] ArrayGewinnerNamen, int[] ArrayGewinnerPunkte) {
+        jFrameInDieMitteSetzen(jFrameGewinner);
+        jFrameGewinner.setVisible(true);
+
+        int ArrayTempPunkte[] = new int[controller.getSpieler().size()];
+        String ArrayTempNamen[] = new String[controller.getSpieler().size()];
+
+        for (int Zeile = 0; Zeile < jTableHighscore.getRowCount(); Zeile++) {
+            ArrayTempNamen[Zeile] = (String) jTableHighscore.getModel().getValueAt(Zeile, 1);
+            ArrayTempPunkte[Zeile] = (int) jTableHighscore.getModel().getValueAt(Zeile, 2);
+        }
+
+        int tempPunkte;
+        String tempName;
+        for (int i = 1; i < ArrayTempPunkte.length; i++) {
+            for (int j = 0; j < ArrayTempPunkte.length - i; j++) {
+                if (ArrayTempPunkte[j] < ArrayTempPunkte[j + 1]) {
+                    tempPunkte = ArrayTempPunkte[j];
+                    tempName = ArrayTempNamen[j];
+                    ArrayTempPunkte[j] = ArrayTempPunkte[j + 1];
+                    ArrayTempNamen[j] = ArrayTempNamen[j + 1];
+                    ArrayTempPunkte[j + 1] = tempPunkte;
+                    ArrayTempNamen[j + 1] = tempName;
+                }
+            }
+        }
+
+        jTextGewinner1Siegerehrung.setText(ArrayTempNamen[0] + " - " + ArrayTempPunkte[0]);
+        jTextGewinner2Siegerehrung.setText(ArrayTempNamen[1] + " - " + ArrayTempPunkte[1]);
+        jTextGewinner3Siegerehrung.setText(ArrayTempNamen[2] + " - " + ArrayTempPunkte[2]);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Anfang1jLabel;
     private javax.swing.JLabel Anfang2jLabel;
@@ -1752,6 +1867,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldPort;
     private javax.swing.JTextField TextFieldServerIP;
     private javax.swing.JButton jButtonBeenden;
+    private javax.swing.JButton jButtonBeendenSiegerehrung;
     private javax.swing.JButton jButtonCredits;
     private javax.swing.JButton jButtonEinsatz;
     private javax.swing.JButton jButtonFehlermeldungOk;
@@ -1769,6 +1885,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxAnzahlSpielerMP1PC1;
     private javax.swing.JComboBox<String> jComboBoxKarten;
     private javax.swing.JDialog jDialogFehlermeldung;
+    private javax.swing.JFrame jFrameGewinner;
     private javax.swing.JLabel jLabelAktuellerSpieler;
     private javax.swing.JLabel jLabelEinsatz;
     private javax.swing.JLabel jLabelInternetIP;
@@ -1781,7 +1898,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLANIPText;
     private javax.swing.JLabel jLabelRunde;
     private javax.swing.JLabel jLabelServerstatus;
+    private javax.swing.JLabel jLabelSiegerehrung;
     private javax.swing.JLabel jLabelSoundUndAnimationAnzeige;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel1Hauptmenue;
     private javax.swing.JPanel jPanelAktuellerSpieler;
     private javax.swing.JPanel jPanelBrett;
@@ -1809,6 +1928,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaPort;
     private javax.swing.JTextArea jTextAreaServerIP;
     private javax.swing.JTextField jTextFieldEinsatz;
+    private javax.swing.JTextField jTextGewinner1Siegerehrung;
+    private javax.swing.JTextField jTextGewinner2Siegerehrung;
+    private javax.swing.JTextField jTextGewinner3Siegerehrung;
     private javax.swing.JLabel karte1_Baenker;
     private javax.swing.JLabel karte1_Spieler1;
     private javax.swing.JLabel karte1_Spieler2;

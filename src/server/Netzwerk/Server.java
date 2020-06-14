@@ -21,6 +21,12 @@ public class Server implements ServerInterface {
     private DataOutputStream output;
     private DataInputStream input;
 
+    // Diese IP zeigt die HostIP im internen Netz
+    private String localIP = "keine Verbindung";
+
+    // Diese IP zeigt die HostIP im internen Netz
+    private String internetIP = "keine Verbindung";
+
     public Server(int port, String name) {
         this.port = port;
         this.name = name;
@@ -71,6 +77,24 @@ public class Server implements ServerInterface {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
         model.addRow(spalte);
+    }
+
+    public String getLocalIP() {
+        try {
+            this.localIP = InetAddress.getLocalHost().getHostAddress();
+        } catch (Exception e) {
+        }
+        return this.localIP;
+    }
+
+    public String getInternetIP() {
+        try {
+            URL url_name = new URL("http://bot.whatismyipaddress.com");
+            BufferedReader sc = new BufferedReader(new InputStreamReader(url_name.openStream()));
+            this.internetIP = sc.readLine().trim();
+        } catch (Exception e) {
+        }
+        return internetIP;
     }
 
     // Getter und Setter
