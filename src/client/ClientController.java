@@ -33,7 +33,7 @@ public class ClientController {
     }
 
     public void naechsterSpieler() {
-        this.model.nächsterSpieler();
+        this.model.naechsterSpieler();
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
