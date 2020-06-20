@@ -8,6 +8,6 @@ Das Spiel, 17 und 4 bzw. Blackjack ist ein Projekt, welches wir am 12. Juni star
 # Objektdiagramm
 
 # Klassendiagramm
-
+![](klassendiagramm.png)
 # Quellen:
 Spielregeln: https://www.grandcasino-bern.ch/grand-casino-bern/media/gcb.content.pdfs/Spielanleitungen/Black_Jack/GrundbegriffeBackJack.pdf
