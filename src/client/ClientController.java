@@ -32,7 +32,7 @@ public class ClientController {
         this.model.spielerNamenEingeben(spielername);
     }
 
-    public void nächsterSpieler() {
+    public void naechsterSpieler() {
         this.model.nächsterSpieler();
     }
 
