@@ -14,8 +14,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
     private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
 
-    private int ArrayGewinnerPunkte[];
-    private String ArrayGewinnerNamen[];
+    private int arrayGewinnerPunkte[];
+    private String arrayGewinnerNamen[];
 
     /* Konstruktor */
     public GUI() {
@@ -1240,7 +1240,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jButtonStoppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoppActionPerformed
         // Das Programm wird beendet
-        siegerehrungStarten(ArrayGewinnerNamen, ArrayGewinnerPunkte);
+        siegerehrungStarten(arrayGewinnerNamen, arrayGewinnerPunkte);
         this.controller.getSound().abspielen("klick");
     }//GEN-LAST:event_jButtonStoppActionPerformed
 
@@ -1627,43 +1627,43 @@ public class GUI extends javax.swing.JFrame {
         jLabelRunde.setText("Der Gewinner ist...");
         this.controller.getSound().abspielen("win");
 
-        int ArrayGewinnerPunkte[] = new int[this.controller.getSpieler().size()];
-        String ArrayGewinnerNamen[] = new String[this.controller.getSpieler().size()];
+        int arrayGewinnerPunkte[] = new int[this.controller.getSpieler().size()];
+        String arrayGewinnerNamen[] = new String[this.controller.getSpieler().size()];
 
         for (int i = 0; i < this.controller.getSpieler().size(); i++) {
             if (this.controller.getSpieler().get(i).getHandPunkte() <= 21) {
-                ArrayGewinnerPunkte[i] = this.controller.getSpieler().get(i).getHandPunkte();
-                ArrayGewinnerNamen[i] = this.controller.getSpieler().get(i).getSpielerName();
+                arrayGewinnerPunkte[i] = this.controller.getSpieler().get(i).getHandPunkte();
+                arrayGewinnerNamen[i] = this.controller.getSpieler().get(i).getSpielerName();
             }
         }
 
         int tempPunkte;
         String tempName;
-        for (int i = 1; i < ArrayGewinnerPunkte.length; i++) {
-            for (int j = 0; j < ArrayGewinnerPunkte.length - i; j++) {
-                if (ArrayGewinnerPunkte[j] < ArrayGewinnerPunkte[j + 1]) {
-                    tempPunkte = ArrayGewinnerPunkte[j];
-                    tempName = ArrayGewinnerNamen[j];
-                    ArrayGewinnerPunkte[j] = ArrayGewinnerPunkte[j + 1];
-                    ArrayGewinnerNamen[j] = ArrayGewinnerNamen[j + 1];
-                    ArrayGewinnerPunkte[j + 1] = tempPunkte;
-                    ArrayGewinnerNamen[j + 1] = tempName;
+        for (int i = 1; i < arrayGewinnerPunkte.length; i++) {
+            for (int j = 0; j < arrayGewinnerPunkte.length - i; j++) {
+                if (arrayGewinnerPunkte[j] < arrayGewinnerPunkte[j + 1]) {
+                    tempPunkte = arrayGewinnerPunkte[j];
+                    tempName = arrayGewinnerNamen[j];
+                    arrayGewinnerPunkte[j] = arrayGewinnerPunkte[j + 1];
+                    arrayGewinnerNamen[j] = arrayGewinnerNamen[j + 1];
+                    arrayGewinnerPunkte[j + 1] = tempPunkte;
+                    arrayGewinnerNamen[j + 1] = tempName;
                 }
             }
         }
 
-        if (ArrayGewinnerNamen[0].equals(null)) {
+        if (arrayGewinnerNamen[0].equals(null)) {
             fehlermeldungGenerieren("Jeder ist ueber 21.. Die Bank hat gewonnen!");
             this.controller.getSpieler().get(0).setKontostand(this.controller.getSpieler().get(0).getKontostand() + (this.controller.getSpieler().get(0).getEinsatz() * 2));
         } else {
-            for (int i = 0; i < ArrayGewinnerNamen.length; i++) {
-                if (ArrayGewinnerPunkte[0] == ArrayGewinnerPunkte[i]) {
-                    fehlermeldungGenerieren(ArrayGewinnerNamen[0] + " hat mit " + ArrayGewinnerPunkte[0] + " gewonnen!");
+            for (int i = 0; i < arrayGewinnerNamen.length; i++) {
+                if (arrayGewinnerPunkte[0] == arrayGewinnerPunkte[i]) {
+                    fehlermeldungGenerieren(arrayGewinnerNamen[0] + " hat mit " + arrayGewinnerPunkte[0] + " gewonnen!");
                 }
             }
 
             for (int i = 0; i < this.controller.getSpieler().size(); i++) {
-                if (this.controller.getSpieler().get(i).getSpielerName().equals(ArrayGewinnerNamen[0])) {
+                if (this.controller.getSpieler().get(i).getSpielerName().equals(arrayGewinnerNamen[0])) {
                     this.controller.getSpieler().get(i).setKontostand(this.controller.getSpieler().get(i).getKontostand() + (this.controller.getSpieler().get(i).getEinsatz() * 2));
                 } else {
                     this.controller.getSpieler().get(i).setKontostand(this.controller.getSpieler().get(i).getKontostand() - this.controller.getSpieler().get(i).getEinsatz());
@@ -1793,7 +1793,7 @@ public class GUI extends javax.swing.JFrame {
         }
     }
 
-    public void siegerehrungStarten(String[] ArrayGewinnerNamen, int[] ArrayGewinnerPunkte) {
+    public void siegerehrungStarten(String[] arrayGewinnerNamen, int[] arrayGewinnerPunkte) {
         jFrameInDieMitteSetzen(jFrameGewinner);
         jFrameGewinner.setVisible(true);
 
