@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JFrame" name="AnfangJFrame">
+    <Container class="javax.swing.JFrame" name="jFrameLadeBildschirm">
       <Properties>
         <Property name="alwaysOnTop" type="boolean" value="true"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -18,7 +18,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="AnfangjPanel">
+        <Container class="javax.swing.JPanel" name="jPanelLadeBildschirm">
           <Properties>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[240, 325]"/>
@@ -37,10 +37,10 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="picLogo">
+            <Component class="javax.swing.JLabel" name="pictureJLabelLogoLadeBildschirm">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/logo klein.png"/>
+                  <Image iconType="3" name="/logoLadeBildschirm.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -49,7 +49,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="Anfang1jLabel">
+            <Component class="javax.swing.JLabel" name="jLabelLadeBildschirmNamen">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="0"/>
@@ -66,7 +66,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="Anfang2jLabel">
+            <Component class="javax.swing.JLabel" name="jLabelLadeBildschirmProjekName">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="18" style="1"/>
@@ -82,7 +82,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JProgressBar" name="AnfangjProgressBar">
+            <Component class="javax.swing.JProgressBar" name="jProgressBarLadeBildschirm">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="66" red="0" type="rgb"/>
@@ -141,7 +141,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="picDreieck">
+            <Component class="javax.swing.JLabel" name="pictureJLabelDreieck">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/dreieck.png"/>
@@ -198,7 +198,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="jPanelGewinner">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="0" width="520" height="460"/>
@@ -465,7 +465,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="picLogo1" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelLogoHauptmenu" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -485,7 +485,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="picLogo1" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelLogoHauptmenu" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonMP1PC" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
@@ -557,19 +557,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBeendenActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="picLogo1">
+            <Component class="javax.swing.JLabel" name="pictureJLabelLogoHauptmenu">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/logo noch kleiner.png"/>
+                  <Image iconType="3" name="/logoHauptmenu.png"/>
                 </Property>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="piMenuBackround">
+        <Component class="javax.swing.JLabel" name="pictureJLabelHauptmenuBackround">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -616,7 +616,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="AnzahlSpielerButton1">
+            <Component class="javax.swing.JButton" name="jButtonAnzahlSpieler">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -625,7 +625,7 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AnzahlSpielerButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnzahlSpielerActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -666,7 +666,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelB&#xe4;nkerMP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelB&#xe4;nkerMP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -679,7 +679,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextlB&#xe4;nkerMP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextlB&#xe4;nkerMP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -692,7 +692,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelSpieler1MP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelSpieler1MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -705,7 +705,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextSpieler1MP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextSpieler1MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -718,7 +718,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelSpieler2MP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelSpieler2MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -731,7 +731,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextSpieler2MP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextSpieler2MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -744,7 +744,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelSpieler3MP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelSpieler3MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -757,7 +757,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextSpieler3MP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextSpieler3MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -770,7 +770,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelSpieler4MP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelSpieler4MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -783,7 +783,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextSpieler4MP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextSpieler4MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -796,7 +796,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="JLabelSpieler5MP1PC1">
+            <Component class="javax.swing.JLabel" name="jLabelSpieler5MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -809,7 +809,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="JTextSpieler5MP1PC1">
+            <Component class="javax.swing.JTextField" name="jTextSpieler5MP1PC1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -852,10 +852,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="piMenuBackroundMP1PC1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBackroundMP1PC1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -909,7 +909,7 @@
                                   <Component id="jLabelServerstatus" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
                                   <Component id="jScrollPaneSpieler" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="TextFieldGebenSieIhrenNamenEin" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextFieldGebenSieIhrenNamenEin" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTextAreaGebenSieIhrenNamenEin" alignment="0" pref="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jTextAreaServerIP" min="-2" pref="56" max="-2" attributes="0"/>
@@ -918,9 +918,9 @@
                                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="TextFieldServerIP" min="-2" pref="126" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldServerIP" min="-2" pref="126" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="TextFieldPort" min="-2" pref="74" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldPort" min="-2" pref="74" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -929,7 +929,7 @@
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jButtonZurueck" min="-2" pref="117" max="-2" attributes="0"/>
-                                  <Component id="ButtonLobbySuchen" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <Component id="jButtonLobbySuchen" min="-2" pref="117" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -947,13 +947,13 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TextFieldServerIP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TextFieldPort" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldServerIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldPort" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTextAreaGebenSieIhrenNamenEin" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="TextFieldGebenSieIhrenNamenEin" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldGebenSieIhrenNamenEin" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabelServerstatus" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
@@ -961,14 +961,14 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonZurueck" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ButtonLobbySuchen" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonLobbySuchen" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="ButtonLobbySuchen">
+            <Component class="javax.swing.JButton" name="jButtonLobbySuchen">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -976,10 +976,10 @@
                 <Property name="text" type="java.lang.String" value="Lobby suchen"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLobbySuchenActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLobbySuchenActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="TextFieldGebenSieIhrenNamenEin">
+            <Component class="javax.swing.JTextField" name="jTextFieldGebenSieIhrenNamenEin">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -1009,7 +1009,7 @@
                 <Property name="text" type="java.lang.String" value="Server-IP&#xa;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TextFieldServerIP">
+            <Component class="javax.swing.JTextField" name="jTextFieldServerIP">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -1028,7 +1028,7 @@
                 <Property name="text" type="java.lang.String" value="Port&#xa;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TextFieldPort">
+            <Component class="javax.swing.JTextField" name="jTextFieldPort">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="0"/>
@@ -1089,10 +1089,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="piMenuBackround3">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBackroundMPInternet">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1312,10 +1312,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="piMenuBackroundMP1PC2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBackroundMP1PC2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1397,10 +1397,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="piMenuBackroundMP1PC3">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBackroundMP1PC3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1425,11 +1425,11 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="BankCoin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBankCoin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1438,11 +1438,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="BankCoin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBankCoin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1451,11 +1451,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler1Coin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler1Coin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1464,11 +1464,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler1Coin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler1Coin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1477,11 +1477,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler2Coin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler2Coin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1490,11 +1490,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler2Coin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler2Coin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1503,11 +1503,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler3Coin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler3Coin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1516,11 +1516,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler3Coin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler3Coin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1529,11 +1529,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler4Coin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler4Coin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1542,11 +1542,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler4Coin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler4Coin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1555,11 +1555,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler5Coin1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler5Coin1">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-blau.png"/>
+              <Image iconType="3" name="/chipBlau.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1568,11 +1568,11 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Spieler5Coin2">
+        <Component class="javax.swing.JLabel" name="pictureJLabelSpieler5Coin2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/chip-rot.png"/>
+              <Image iconType="3" name="/chipRot.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1920,7 +1920,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Baenker">
+        <Container class="javax.swing.JPanel" name="jPanelKartenBaenker">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -1942,11 +1942,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte1_Baenker" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Baenker" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Baenker" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Baenker" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte3_Baenker" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Baenker" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1955,16 +1955,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte1_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte3_Baenker" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Baenker" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Baenker" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Baenker" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Baenker">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -1972,7 +1972,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Baenker">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -1980,7 +1980,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Baenker">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Baenker">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -1990,7 +1990,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Spieler1">
+        <Container class="javax.swing.JPanel" name="jPanelKartenSpieler1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -2012,11 +2012,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte3_Spieler1" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Spieler1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Spieler1" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Spieler1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte1_Spieler1" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Spieler1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2025,16 +2025,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte3_Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte1_Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Spieler1" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Spieler1">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2042,7 +2042,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Spieler1">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2050,7 +2050,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Spieler1">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Spieler1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2060,7 +2060,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Spieler2">
+        <Container class="javax.swing.JPanel" name="jPanelKartenSpieler2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -2082,11 +2082,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte3_Spieler2" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Spieler2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Spieler2" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Spieler2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte1_Spieler2" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Spieler2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2095,16 +2095,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte3_Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte1_Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Spieler2" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Spieler2">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2112,7 +2112,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Spieler2">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2120,7 +2120,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Spieler2">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Spieler2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2130,7 +2130,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Spieler3">
+        <Container class="javax.swing.JPanel" name="jPanelKartenSpieler3">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -2152,11 +2152,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte3_Spieler3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Spieler3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Spieler3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Spieler3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte1_Spieler3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Spieler3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2165,16 +2165,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte3_Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte1_Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Spieler3" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Spieler3">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2182,7 +2182,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Spieler3">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2190,7 +2190,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Spieler3">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Spieler3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2200,7 +2200,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Spieler4">
+        <Container class="javax.swing.JPanel" name="jPanelKartenSpieler4">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -2222,11 +2222,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte3_Spieler4" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Spieler4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Spieler4" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Spieler4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte1_Spieler4" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Spieler4" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2235,16 +2235,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte3_Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte1_Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Spieler4" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Spieler4">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2252,7 +2252,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Spieler4">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2260,7 +2260,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Spieler4">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Spieler4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2270,7 +2270,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="Karten_Spieler5">
+        <Container class="javax.swing.JPanel" name="jPanelKartenSpieler5">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="6" green="56" red="9" type="rgb"/>
@@ -2292,11 +2292,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                      <Component id="karte3_Spieler5" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte3Spieler5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte2_Spieler5" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte2Spieler5" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                      <Component id="karte1_Spieler5" min="-2" max="-2" attributes="0"/>
+                      <Component id="pictureJLabelKarte1Spieler5" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2305,16 +2305,16 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="karte3_Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte2_Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="karte1_Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte3Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte2Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="pictureJLabelKarte1Spieler5" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="karte1_Spieler5">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte1Spieler5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2322,7 +2322,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte2_Spieler5">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte2Spieler5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2330,7 +2330,7 @@
                 <Property name="alignmentY" type="float" value="0.0"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="karte3_Spieler5">
+            <Component class="javax.swing.JLabel" name="pictureJLabelKarte3Spieler5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/karten-klein/r&#xfc;ckseite.png"/>
@@ -2340,7 +2340,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="picDeck">
+        <Component class="javax.swing.JLabel" name="pictureJLabelDeck">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Karten/quer_Unbenannt.png"/>
@@ -2353,7 +2353,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="picBrett">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBrett">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/brett.png"/>
@@ -2365,10 +2365,10 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="piMenuBackround1">
+        <Component class="javax.swing.JLabel" name="pictureJLabelBackroundBrett">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/menu_backround.png"/>
+              <Image iconType="3" name="/backround.png"/>
             </Property>
           </Properties>
           <Constraints>
