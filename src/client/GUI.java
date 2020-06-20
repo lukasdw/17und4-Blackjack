@@ -8,11 +8,11 @@ public class GUI extends javax.swing.JFrame {
 
     private ClientController controller = new ClientController(this);
 
-    private javax.swing.JLabel spielerKartenJLabelArray[][] = new javax.swing.JLabel[6][3];
-    private javax.swing.JLabel spielerCoins[][] = new javax.swing.JLabel[6][2];
-    private javax.swing.JTextField comboBoxSpieleranzahlJTextArray[] = new javax.swing.JTextField[6];
-    private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
-    private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
+    private javax.swing.JLabel jLabelSpielerKartenArray[][] = new javax.swing.JLabel[6][3];
+    private javax.swing.JLabel jLabelSpielerCoins[][] = new javax.swing.JLabel[6][2];
+    private javax.swing.JTextField jComboBoxSpieleranzahlJTextArray[] = new javax.swing.JTextField[6];
+    private javax.swing.JLabel jComboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
+    private javax.swing.JPanel jPanelSpielerKartenArray[] = new javax.swing.JPanel[6];
 
     private int arrayGewinnerPunkte[];
     private String arrayGewinnerNamen[];
@@ -46,7 +46,7 @@ public class GUI extends javax.swing.JFrame {
         jTextGewinner2Siegerehrung = new javax.swing.JTextField();
         jTextGewinner3Siegerehrung = new javax.swing.JTextField();
         jButtonBeendenSiegerehrung = new javax.swing.JButton();
-        jLabelSiegerehrung = new javax.swing.JLabel();
+        pictureJLabelSiegerehrung = new javax.swing.JLabel();
         jPanelHauptmenue = new javax.swing.JPanel();
         jPanel1Hauptmenue = new javax.swing.JPanel();
         jButtonMP1PC = new javax.swing.JButton();
@@ -279,8 +279,8 @@ public class GUI extends javax.swing.JFrame {
         });
         jPanelGewinner.add(jButtonBeendenSiegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, -1, 30));
 
-        jLabelSiegerehrung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sieger.png"))); // NOI18N
-        jPanelGewinner.add(jLabelSiegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 408));
+        pictureJLabelSiegerehrung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sieger.png"))); // NOI18N
+        jPanelGewinner.add(pictureJLabelSiegerehrung, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 408));
 
         jFrameGewinner.getContentPane().add(jPanelGewinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 460));
 
@@ -1349,17 +1349,17 @@ public class GUI extends javax.swing.JFrame {
         Möglichkeiten der Spielenameneingaben aktualisiert */
         for (int i = 0; i < jComboBoxAnzahlSpielerMP1PC1.getItemCount(); i++) {
             if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= 0) {
-                comboBoxSpieleranzahlJLabelArray[0].setVisible(true);
-                comboBoxSpieleranzahlJTextArray[0].setVisible(true);
-                comboBoxSpieleranzahlJLabelArray[1].setVisible(true);
-                comboBoxSpieleranzahlJTextArray[1].setVisible(true);
+                jComboBoxSpieleranzahlJLabelArray[0].setVisible(true);
+                jComboBoxSpieleranzahlJTextArray[0].setVisible(true);
+                jComboBoxSpieleranzahlJLabelArray[1].setVisible(true);
+                jComboBoxSpieleranzahlJTextArray[1].setVisible(true);
             }
             if (jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() >= i) {
-                comboBoxSpieleranzahlJTextArray[i + 1].setVisible(true);
-                comboBoxSpieleranzahlJLabelArray[i + 1].setVisible(true);
+                jComboBoxSpieleranzahlJTextArray[i + 1].setVisible(true);
+                jComboBoxSpieleranzahlJLabelArray[i + 1].setVisible(true);
             } else {
-                comboBoxSpieleranzahlJTextArray[i + 1].setVisible(false);
-                comboBoxSpieleranzahlJLabelArray[i + 1].setVisible(false);
+                jComboBoxSpieleranzahlJTextArray[i + 1].setVisible(false);
+                jComboBoxSpieleranzahlJLabelArray[i + 1].setVisible(false);
             }
         }
     }
@@ -1372,11 +1372,11 @@ public class GUI extends javax.swing.JFrame {
             for (int karten = 0; karten < this.controller.getSpieler().get(spieler).getHand().size(); karten++) {
                 if (this.controller.getAktuellerSpieler() == spieler) {
                     // Gehört die Karte dem aktuellen Spieler wird das demensprechende Kartenbild geladen und sichtbar gemacht.
-                    spielerKartenJLabelArray[spieler][karten].setVisible(true);
-                    spielerKartenJLabelArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource(this.controller.getSpieler().get(spieler).getHand().get(karten).getBilderPfad())));
+                    jLabelSpielerKartenArray[spieler][karten].setVisible(true);
+                    jLabelSpielerKartenArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource(this.controller.getSpieler().get(spieler).getHand().get(karten).getBilderPfad())));
                 } else {
                     // Gehört die Karte nicht dem aktuellen Spieler wird die Rückseite der Karte angezeigt.
-                    spielerKartenJLabelArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
+                    jLabelSpielerKartenArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource("/karten-klein/rückseite.png")));
                 }
             }
         }
@@ -1385,7 +1385,7 @@ public class GUI extends javax.swing.JFrame {
     public void KartenBilderUpdaten_alleKarten() {
         for (int spieler = 0; spieler < this.controller.getSpieler().size(); spieler++) {
             for (int karten = 0; karten < this.controller.getSpieler().get(spieler).getHand().size(); karten++) {
-                spielerKartenJLabelArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource(this.controller.getSpieler().get(spieler).getHand().get(karten).getBilderPfad())));
+                jLabelSpielerKartenArray[spieler][karten].setIcon(new javax.swing.ImageIcon(getClass().getResource(this.controller.getSpieler().get(spieler).getHand().get(karten).getBilderPfad())));
             }
         }
     }
@@ -1394,15 +1394,15 @@ public class GUI extends javax.swing.JFrame {
         /* Die erste Option in der Combobox hat den Index 0 und beinhaltet zwei Spieler, daher muss bei der Übergabe +2 gerechnet werden.*/
         this.controller.setAnzahlSpieler(jComboBoxAnzahlSpielerMP1PC1.getSelectedIndex() + 2);
         for (int i = 0; i < this.controller.getAnzahlSpieler(); i++) {
-            this.controller.spielerNamenEingeben(comboBoxSpieleranzahlJTextArray[i].getText());
+            this.controller.spielerNamenEingeben(jComboBoxSpieleranzahlJTextArray[i].getText());
         }
     }
 
-    public void spielerKartenJPanelArraySichtbarMachen() {
+    public void jPanelSpielerKartenArraySichtbarMachen() {
         /* Hier wird überprüft welche Spieler mitspielen und somit die Karten
         sichtbar gemacht. */
         for (int i = 0; i < this.controller.getAnzahlSpieler(); i++) {
-            spielerKartenJPanelArray[i].setVisible(true);
+            jPanelSpielerKartenArray[i].setVisible(true);
         }
     }
 
@@ -1427,15 +1427,15 @@ public class GUI extends javax.swing.JFrame {
     public void brettKartenUnsichtbarMachen() {
         /* Die dritte Karte wird immer unsichtbar gestellt, da der Spieler
         selbst entscheiden kann, ob er eine Karte in der zweiten Runde ziehen möchte */
-        for (int i = 0; i < spielerKartenJLabelArray.length; i++) {
+        for (int i = 0; i < jLabelSpielerKartenArray.length; i++) {
             for (int j = 0; j < 3; j++) {
-                spielerKartenJLabelArray[i][j].setVisible(false);
+                jLabelSpielerKartenArray[i][j].setVisible(false);
             }
         }
 
         // Brett-JPanel
-        for (int i = 0; i < spielerKartenJLabelArray.length; i++) {
-            spielerKartenJPanelArray[i].setVisible(false);
+        for (int i = 0; i < jLabelSpielerKartenArray.length; i++) {
+            jPanelSpielerKartenArray[i].setVisible(false);
         }
     }
 
@@ -1514,7 +1514,7 @@ public class GUI extends javax.swing.JFrame {
         this.controller.setAktuellerSpieler(0);
 
         brettKartenUnsichtbarMachen();
-        spielerKartenJPanelArraySichtbarMachen();
+        jPanelSpielerKartenArraySichtbarMachen();
 
         for (int i = 0; i < this.controller.getSpieler().size(); i++) {
             this.controller.getSpieler().get(i).getHand().clear();
@@ -1533,7 +1533,7 @@ public class GUI extends javax.swing.JFrame {
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 2; j++) {
-                spielerCoins[i][j].setVisible(false);
+                jLabelSpielerCoins[i][j].setVisible(false);
             }
         }
 
@@ -1563,13 +1563,13 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void schaltflaecheDesAktuellenSpielersFarbigAktuallisieren() {
-        for (int i = 0; i < spielerKartenJPanelArray.length; i++) {
+        for (int i = 0; i < jPanelSpielerKartenArray.length; i++) {
             if (this.controller.getAktuellerSpieler() == i) {
                 float[] hsb = Color.RGBtoHSB(4, 39, 3, null);
-                spielerKartenJPanelArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
+                jPanelSpielerKartenArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
             } else {
                 float[] hsb = Color.RGBtoHSB(9, 88, 7, null);
-                spielerKartenJPanelArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
+                jPanelSpielerKartenArray[i].setBackground(Color.getHSBColor(hsb[0], hsb[1], hsb[2]));
             }
         }
     }
@@ -1598,7 +1598,7 @@ public class GUI extends javax.swing.JFrame {
         if (this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).getHand().size() == 2) {
             this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).karteZiehen(this.controller.getDeck());
             KartenBilderUpdaten_aktuellerSpieler();
-            // verschiebeKarte(spielerKartenJLabelArray[this.controller.getAktuellerSpieler()][this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).getHand().size() - 1], picDeck);
+            // verschiebeKarte(jLabelSpielerKartenArray[this.controller.getAktuellerSpieler()][this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).getHand().size() - 1], picDeck);
             this.controller.getSound().abspielen("card");
         } else {
             fehlermeldungGenerieren("Du hast bereits drei Karten.");
@@ -1652,7 +1652,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-        if (arrayGewinnerNamen[0].equals(null)) {
+        if (arrayGewinnerNamen[0].equals("")) {
             fehlermeldungGenerieren("Jeder ist ueber 21.. Die Bank hat gewonnen!");
             this.controller.getSpieler().get(0).setKontostand(this.controller.getSpieler().get(0).getKontostand() + (this.controller.getSpieler().get(0).getEinsatz() * 2));
         } else {
@@ -1711,58 +1711,58 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public void arraysFuellen() {
-        spielerKartenJLabelArray[0][0] = pictureJLabelKarte1Baenker;
-        spielerKartenJLabelArray[0][1] = pictureJLabelKarte2Baenker;
-        spielerKartenJLabelArray[0][2] = pictureJLabelKarte3Baenker;
-        spielerKartenJLabelArray[1][0] = pictureJLabelKarte1Spieler1;
-        spielerKartenJLabelArray[1][1] = pictureJLabelKarte2Spieler1;
-        spielerKartenJLabelArray[1][2] = pictureJLabelKarte3Spieler1;
-        spielerKartenJLabelArray[2][0] = pictureJLabelKarte1Spieler2;
-        spielerKartenJLabelArray[2][1] = pictureJLabelKarte2Spieler2;
-        spielerKartenJLabelArray[2][2] = pictureJLabelKarte3Spieler2;
-        spielerKartenJLabelArray[3][0] = pictureJLabelKarte1Spieler3;
-        spielerKartenJLabelArray[3][1] = pictureJLabelKarte2Spieler3;
-        spielerKartenJLabelArray[3][2] = pictureJLabelKarte3Spieler3;
-        spielerKartenJLabelArray[4][0] = pictureJLabelKarte1Spieler4;
-        spielerKartenJLabelArray[4][1] = pictureJLabelKarte2Spieler4;
-        spielerKartenJLabelArray[4][2] = pictureJLabelKarte3Spieler4;
-        spielerKartenJLabelArray[5][0] = pictureJLabelKarte1Spieler5;
-        spielerKartenJLabelArray[5][1] = pictureJLabelKarte2Spieler5;
-        spielerKartenJLabelArray[5][2] = pictureJLabelKarte3Spieler5;
+        jLabelSpielerKartenArray[0][0] = pictureJLabelKarte1Baenker;
+        jLabelSpielerKartenArray[0][1] = pictureJLabelKarte2Baenker;
+        jLabelSpielerKartenArray[0][2] = pictureJLabelKarte3Baenker;
+        jLabelSpielerKartenArray[1][0] = pictureJLabelKarte1Spieler1;
+        jLabelSpielerKartenArray[1][1] = pictureJLabelKarte2Spieler1;
+        jLabelSpielerKartenArray[1][2] = pictureJLabelKarte3Spieler1;
+        jLabelSpielerKartenArray[2][0] = pictureJLabelKarte1Spieler2;
+        jLabelSpielerKartenArray[2][1] = pictureJLabelKarte2Spieler2;
+        jLabelSpielerKartenArray[2][2] = pictureJLabelKarte3Spieler2;
+        jLabelSpielerKartenArray[3][0] = pictureJLabelKarte1Spieler3;
+        jLabelSpielerKartenArray[3][1] = pictureJLabelKarte2Spieler3;
+        jLabelSpielerKartenArray[3][2] = pictureJLabelKarte3Spieler3;
+        jLabelSpielerKartenArray[4][0] = pictureJLabelKarte1Spieler4;
+        jLabelSpielerKartenArray[4][1] = pictureJLabelKarte2Spieler4;
+        jLabelSpielerKartenArray[4][2] = pictureJLabelKarte3Spieler4;
+        jLabelSpielerKartenArray[5][0] = pictureJLabelKarte1Spieler5;
+        jLabelSpielerKartenArray[5][1] = pictureJLabelKarte2Spieler5;
+        jLabelSpielerKartenArray[5][2] = pictureJLabelKarte3Spieler5;
 
-        spielerCoins[0][0] = pictureJLabelBankCoin1;
-        spielerCoins[0][1] = pictureJLabelBankCoin2;
-        spielerCoins[1][0] = pictureJLabelSpieler1Coin1;
-        spielerCoins[1][1] = pictureJLabelSpieler1Coin2;
-        spielerCoins[2][0] = pictureJLabelSpieler2Coin1;
-        spielerCoins[2][1] = pictureJLabelSpieler2Coin2;
-        spielerCoins[3][0] = pictureJLabelSpieler3Coin1;
-        spielerCoins[3][1] = pictureJLabelSpieler3Coin2;
-        spielerCoins[4][0] = pictureJLabelSpieler4Coin1;
-        spielerCoins[4][1] = pictureJLabelSpieler4Coin2;
-        spielerCoins[5][0] = pictureJLabelSpieler5Coin1;
-        spielerCoins[5][1] = pictureJLabelSpieler5Coin2;
+        jLabelSpielerCoins[0][0] = pictureJLabelBankCoin1;
+        jLabelSpielerCoins[0][1] = pictureJLabelBankCoin2;
+        jLabelSpielerCoins[1][0] = pictureJLabelSpieler1Coin1;
+        jLabelSpielerCoins[1][1] = pictureJLabelSpieler1Coin2;
+        jLabelSpielerCoins[2][0] = pictureJLabelSpieler2Coin1;
+        jLabelSpielerCoins[2][1] = pictureJLabelSpieler2Coin2;
+        jLabelSpielerCoins[3][0] = pictureJLabelSpieler3Coin1;
+        jLabelSpielerCoins[3][1] = pictureJLabelSpieler3Coin2;
+        jLabelSpielerCoins[4][0] = pictureJLabelSpieler4Coin1;
+        jLabelSpielerCoins[4][1] = pictureJLabelSpieler4Coin2;
+        jLabelSpielerCoins[5][0] = pictureJLabelSpieler5Coin1;
+        jLabelSpielerCoins[5][1] = pictureJLabelSpieler5Coin2;
 
-        comboBoxSpieleranzahlJLabelArray[0] = jLabelBänkerMP1PC1;
-        comboBoxSpieleranzahlJLabelArray[1] = jLabelSpieler1MP1PC1;
-        comboBoxSpieleranzahlJLabelArray[2] = jLabelSpieler2MP1PC1;
-        comboBoxSpieleranzahlJLabelArray[3] = jLabelSpieler3MP1PC1;
-        comboBoxSpieleranzahlJLabelArray[4] = jLabelSpieler4MP1PC1;
-        comboBoxSpieleranzahlJLabelArray[5] = jLabelSpieler5MP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[0] = jLabelBänkerMP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[1] = jLabelSpieler1MP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[2] = jLabelSpieler2MP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[3] = jLabelSpieler3MP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[4] = jLabelSpieler4MP1PC1;
+        jComboBoxSpieleranzahlJLabelArray[5] = jLabelSpieler5MP1PC1;
 
-        comboBoxSpieleranzahlJTextArray[0] = jTextlBänkerMP1PC1;
-        comboBoxSpieleranzahlJTextArray[1] = jTextSpieler1MP1PC1;
-        comboBoxSpieleranzahlJTextArray[2] = jTextSpieler2MP1PC1;
-        comboBoxSpieleranzahlJTextArray[3] = jTextSpieler3MP1PC1;
-        comboBoxSpieleranzahlJTextArray[4] = jTextSpieler4MP1PC1;
-        comboBoxSpieleranzahlJTextArray[5] = jTextSpieler5MP1PC1;
+        jComboBoxSpieleranzahlJTextArray[0] = jTextlBänkerMP1PC1;
+        jComboBoxSpieleranzahlJTextArray[1] = jTextSpieler1MP1PC1;
+        jComboBoxSpieleranzahlJTextArray[2] = jTextSpieler2MP1PC1;
+        jComboBoxSpieleranzahlJTextArray[3] = jTextSpieler3MP1PC1;
+        jComboBoxSpieleranzahlJTextArray[4] = jTextSpieler4MP1PC1;
+        jComboBoxSpieleranzahlJTextArray[5] = jTextSpieler5MP1PC1;
 
-        spielerKartenJPanelArray[0] = jPanelKartenBaenker;
-        spielerKartenJPanelArray[1] = jPanelKartenSpieler1;
-        spielerKartenJPanelArray[2] = jPanelKartenSpieler2;
-        spielerKartenJPanelArray[3] = jPanelKartenSpieler3;
-        spielerKartenJPanelArray[4] = jPanelKartenSpieler4;
-        spielerKartenJPanelArray[5] = jPanelKartenSpieler5;
+        jPanelSpielerKartenArray[0] = jPanelKartenBaenker;
+        jPanelSpielerKartenArray[1] = jPanelKartenSpieler1;
+        jPanelSpielerKartenArray[2] = jPanelKartenSpieler2;
+        jPanelSpielerKartenArray[3] = jPanelKartenSpieler3;
+        jPanelSpielerKartenArray[4] = jPanelKartenSpieler4;
+        jPanelSpielerKartenArray[5] = jPanelKartenSpieler5;
     }
 
     // Läuft nicht!
@@ -1786,15 +1786,25 @@ public class GUI extends javax.swing.JFrame {
 
     public void gelegteCoinsUpdaten() {
         if (this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).getEinsatz() >= 10) {
-            spielerCoins[this.controller.getAktuellerSpieler()][0].setVisible(true);
+            jLabelSpielerCoins[this.controller.getAktuellerSpieler()][0].setVisible(true);
         }
         if (this.controller.getSpieler().get(this.controller.getAktuellerSpieler()).getEinsatz() % 10 != 0) {
-            spielerCoins[this.controller.getAktuellerSpieler()][1].setVisible(true);
+            jLabelSpielerCoins[this.controller.getAktuellerSpieler()][1].setVisible(true);
         }
     }
 
     public void siegerehrungStarten(String[] arrayGewinnerNamen, int[] arrayGewinnerPunkte) {
         jFrameInDieMitteSetzen(jFrameGewinner);
+        
+        if(controller.getAnzahlSpieler() < 3){
+            pictureJLabelSiegerehrung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sieger2Spieler.png")));
+            pictureJLabelSiegerehrung.repaint();
+            jTextGewinner3Siegerehrung.setVisible(false);
+        }else{
+            pictureJLabelSiegerehrung.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sieger.png")));
+            pictureJLabelSiegerehrung.repaint();
+            jTextGewinner3Siegerehrung.setVisible(true);
+        }
         jFrameGewinner.setVisible(true);
 
         int ArrayTempPunkte[] = new int[this.controller.getSpieler().size()];
@@ -1822,7 +1832,9 @@ public class GUI extends javax.swing.JFrame {
 
         jTextGewinner1Siegerehrung.setText(ArrayTempNamen[0] + " - " + ArrayTempPunkte[0]);
         jTextGewinner2Siegerehrung.setText(ArrayTempNamen[1] + " - " + ArrayTempPunkte[1]);
-        jTextGewinner3Siegerehrung.setText(ArrayTempNamen[2] + " - " + ArrayTempPunkte[2]);
+        if(jTextGewinner3Siegerehrung.isVisible()){
+            jTextGewinner3Siegerehrung.setText(ArrayTempNamen[2] + " - " + ArrayTempPunkte[2]);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1864,7 +1876,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLadeBildschirmProjekName;
     private javax.swing.JLabel jLabelRunde;
     private javax.swing.JLabel jLabelServerstatus;
-    private javax.swing.JLabel jLabelSiegerehrung;
     private javax.swing.JLabel jLabelSoundUndAnimationAnzeige;
     private javax.swing.JLabel jLabelSpieler1MP1PC1;
     private javax.swing.JLabel jLabelSpieler2MP1PC1;
@@ -1950,6 +1961,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel pictureJLabelKarte3Spieler5;
     private javax.swing.JLabel pictureJLabelLogoHauptmenu;
     private javax.swing.JLabel pictureJLabelLogoLadeBildschirm;
+    private javax.swing.JLabel pictureJLabelSiegerehrung;
     private javax.swing.JLabel pictureJLabelSpieler1Coin1;
     private javax.swing.JLabel pictureJLabelSpieler1Coin2;
     private javax.swing.JLabel pictureJLabelSpieler2Coin1;
