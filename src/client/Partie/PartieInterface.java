@@ -16,7 +16,7 @@ public interface PartieInterface {
     // public void kartenWerteRechnen();
     public void deckEinlesen(String datei);
     public void spielerNamenEingeben(String spielername);
-    public void nächsterSpieler();
+    public void naechsterSpieler();
     public void highscoreAktuallisieren(JTable jTableTabelle);
 
     /* Getter und Setter */
