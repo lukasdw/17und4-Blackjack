@@ -48,12 +48,12 @@ public class Spieler implements SpielerInterface {
         deck.remove(zufallszahl);
 
         /* Hier werden die Handpunkte der aktuell gezogenen Karte addiert */
-        handPunkte = handPunkte + hand.get(hand.size()-1).getWert();
+        this.handPunkte = this.handPunkte + this.hand.get(this.hand.size()-1).getWert();
     }
 
     /* Getter und Setter */
     public String getSpielerName() {
-        return spielerName;
+        return this.spielerName;
     }
 
     public void setSpielerName(String spielerName) {
@@ -61,7 +61,7 @@ public class Spieler implements SpielerInterface {
     }
 
     public int getKontostand() {
-        return kontostand;
+        return this.kontostand;
     }
 
     public void setKontostand(int kontostand) {
@@ -69,7 +69,7 @@ public class Spieler implements SpielerInterface {
     }
 
     public int getEinsatz() {
-        return einsatz;
+        return this.einsatz;
     }
 
     public void setEinsatz(int einsatz) {
@@ -77,7 +77,7 @@ public class Spieler implements SpielerInterface {
     }
 
     public ArrayList<KarteInterface> getHand() {
-        return hand;
+        return this.hand;
     }
 
     public void setHand(ArrayList<KarteInterface> hand) {
@@ -85,7 +85,7 @@ public class Spieler implements SpielerInterface {
     }
 
     public int getHandPunkte() {
-        return handPunkte;
+        return this.handPunkte;
     }
 
     public void setHandPunkte(int handPunkte) {

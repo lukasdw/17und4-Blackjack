@@ -17,7 +17,7 @@ public class Karte implements KarteInterface {
 
     /* Getter und Setter */
     public int getWert() {
-        return wert;
+        return this.wert;
     }
 
     public void setWert(int wert) {
@@ -25,7 +25,7 @@ public class Karte implements KarteInterface {
     }
 
     public String getKarteName() {
-        return karteName;
+        return this.karteName;
     }
 
     public void setKarteName(String karteName) {
@@ -33,7 +33,7 @@ public class Karte implements KarteInterface {
     }
 
     public String getFarbe() {
-        return farbe;
+        return this.farbe;
     }
 
     public void setFarbe(String farbe) {
@@ -41,7 +41,7 @@ public class Karte implements KarteInterface {
     }
 
     public String getBilderPfad() {
-        return bilderPfad;
+        return this.bilderPfad;
     }
 
     public void setBilderPfad(String bilderPfad) {

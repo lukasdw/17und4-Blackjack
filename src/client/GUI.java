@@ -14,8 +14,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel comboBoxSpieleranzahlJLabelArray[] = new javax.swing.JLabel[6];
     private javax.swing.JPanel spielerKartenJPanelArray[] = new javax.swing.JPanel[6];
 
-    int ArrayGewinnerPunkte[];
-    String ArrayGewinnerNamen[];
+    private int ArrayGewinnerPunkte[];
+    private String ArrayGewinnerNamen[];
 
     /* Konstruktor */
     public GUI() {
@@ -1219,9 +1219,9 @@ public class GUI extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 1, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanelCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 29, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

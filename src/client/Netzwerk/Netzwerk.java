@@ -35,21 +35,21 @@ public class Netzwerk implements NetzwerkInterface {
         this.port = port;
         this.spielername = spielername;
         try {
-            client = new Socket(ip, port);
+            this.client = new Socket(ip, port);
 
             // Der DataOutputStream sendet Daten zum Server
-            DataOutputStream output = new DataOutputStream(client.getOutputStream());
+            DataOutputStream output = new DataOutputStream(this.client.getOutputStream());
             output.writeUTF(spielername);
             System.out.println(spielername);
 
             // Der DataInputStream empfängt Daten zum Server
-            DataInputStream input = new DataInputStream(client.getInputStream());
-            servername = input.readUTF();
+            DataInputStream input = new DataInputStream(this.client.getInputStream());
+            this.servername = input.readUTF();
             System.out.println(input.readUTF());
 
             /* Sind alle Daten empfangen werden die Verbindung zwischen Server
             und Client geschlossen */
-            client.close();
+            this.client.close();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class Netzwerk implements NetzwerkInterface {
             this.internetIP = sc.readLine().trim();
         } catch (Exception e) {
         }
-        return internetIP;
+        return this.internetIP;
     }
 
     public void spieleZurLobbyTabelleHinzugefuegen(JTable jTableTabelle) {
@@ -85,13 +85,13 @@ public class Netzwerk implements NetzwerkInterface {
         hinzugefügt. */
         spalte[0] = "Spieler 1";
         spalte[1] = spielername;
-        spalte[2] = client.getRemoteSocketAddress();
+        spalte[2] = this.client.getRemoteSocketAddress();
         model.addRow(spalte);
     }
 
     // Getter und Setter
     public String getServerIP() {
-        return serverIP;
+        return this.serverIP;
     }
 
     public void setServerIP(String serverIP) {
@@ -99,7 +99,7 @@ public class Netzwerk implements NetzwerkInterface {
     }
 
     public int getPort() {
-        return port;
+        return this.port;
     }
 
     public void setPort(int port) {
@@ -107,7 +107,7 @@ public class Netzwerk implements NetzwerkInterface {
     }
 
     public Socket getClient() {
-        return client;
+        return this.client;
     }
 
     public void setClient(Socket client) {
@@ -115,7 +115,7 @@ public class Netzwerk implements NetzwerkInterface {
     }
 
     public String getServername() {
-        return servername;
+        return this.servername;
     }
 
     public void setServername(String servername) {

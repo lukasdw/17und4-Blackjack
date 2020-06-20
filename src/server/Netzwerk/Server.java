@@ -31,8 +31,8 @@ public class Server implements ServerInterface {
         this.port = port;
         this.name = name;
         try {
-            server = new ServerSocket(port);
-            server.setSoTimeout(1000000);
+            this.server = new ServerSocket(port);
+            this.server.setSoTimeout(1000000);
         } catch (SocketException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -43,15 +43,15 @@ public class Server implements ServerInterface {
     public void spielerSuchen() {
         while (true) {
             try {
-                client = server.accept();
+                this.client = server.accept();
                 // Dies sind die gesendeten Daten
-                DataOutputStream output = new DataOutputStream(client.getOutputStream());
-                output.writeUTF(name);
-                System.out.println(name);
+                DataOutputStream output = new DataOutputStream(this.client.getOutputStream());
+                output.writeUTF(this.name);
+                System.out.println(this.name);
                 // Dies sind die empfangenen Daten
-                DataInputStream input = new DataInputStream(client.getInputStream());
+                DataInputStream input = new DataInputStream(this.client.getInputStream());
                 System.out.println(input.readUTF());
-                client.close();
+                this.client.close();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -71,8 +71,8 @@ public class Server implements ServerInterface {
         try {
             spalte[0] = "Spieler 1";
             this.spielername = input.readUTF();
-            spalte[1] = input.readUTF();
-            spalte[2] = client.getRemoteSocketAddress();
+            spalte[1] = this.input.readUTF();
+            spalte[2] = this.client.getRemoteSocketAddress();
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -94,7 +94,7 @@ public class Server implements ServerInterface {
             this.internetIP = sc.readLine().trim();
         } catch (Exception e) {
         }
-        return internetIP;
+        return this.internetIP;
     }
 
     // Getter und Setter
@@ -107,7 +107,7 @@ public class Server implements ServerInterface {
     }
 
     public int getPort() {
-        return port;
+        return this.port;
     }
 
     public void setPort(int port) {
@@ -115,7 +115,7 @@ public class Server implements ServerInterface {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -123,7 +123,7 @@ public class Server implements ServerInterface {
     }
 
     public String getSpielername() {
-        return spielername;
+        return this.spielername;
     }
 
     public void setSpielername(String spielername) {

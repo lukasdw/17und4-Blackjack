@@ -47,13 +47,13 @@ public class Partie implements PartieInterface {
     und 2 ausgeführt. */
     public void jederZiehtZweiKarten() {
         // Alle Spieler(i) ...
-        for (int i = 0; i < spieler.size(); i++) {
+        for (int i = 0; i < this.spieler.size(); i++) {
             // ziehen zwei Karten(j).
             for (int j = 0; j < 2; j++) {
-                spieler.get(i).karteZiehen(this.deck);
+                this.spieler.get(i).karteZiehen(this.deck);
             }
         }
-        sound.abspielen("card");
+        this.sound.abspielen("card");
     }
 
     public void deckEinlesen(String datei) {
@@ -80,12 +80,12 @@ public class Partie implements PartieInterface {
 
     // Mit dieser Funktion wird ein Spieler hinzugefügt.
     public void spielerNamenEingeben(String spielername) {
-        spieler.add(new Spieler(spielername));
+        this.spieler.add(new Spieler(spielername));
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
     public void nächsterSpieler() {
-        aktuellerSpieler++;
+        this.aktuellerSpieler++;
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
@@ -109,22 +109,22 @@ public class Partie implements PartieInterface {
         hinzugefügt. Die erste Spalte ist die Spielerart (Bank, Spieler 1, usw.).
         Danach kommt der Name des Spielers, sein aktueller Kontostand und sein
         Einsatz während der Partie.*/
-        for (int i = 0; i < spieler.size(); i++) {
+        for (int i = 0; i < this.spieler.size(); i++) {
             if (i == 0) {
                 spalte[0] = "Bank";
             } else {
                 spalte[0] = "Spieler " + i;
             }
-            spalte[1] = spieler.get(i).getSpielerName();
-            spalte[2] = spieler.get(i).getKontostand();
-            spalte[3] = spieler.get(i).getEinsatz();
+            spalte[1] = this.spieler.get(i).getSpielerName();
+            spalte[2] = this.spieler.get(i).getKontostand();
+            spalte[3] = this.spieler.get(i).getEinsatz();
             model.addRow(spalte);
         }
     }
 
     /* Getter und Setter */
     public NetzwerkInterface getEtc() {
-        return etc;
+        return this.etc;
     }
 
     public void setEtc(NetzwerkInterface etc) {
@@ -132,7 +132,7 @@ public class Partie implements PartieInterface {
     }
 
     public ArrayList<KarteInterface> getDeck() {
-        return deck;
+        return this.deck;
     }
 
     public void setDeck(ArrayList<KarteInterface> deck) {
@@ -140,7 +140,7 @@ public class Partie implements PartieInterface {
     }
 
     public ArrayList<SpielerInterface> getSpieler() {
-        return spieler;
+        return this.spieler;
     }
 
     public void setSpieler(ArrayList<SpielerInterface> spieler) {
@@ -148,7 +148,7 @@ public class Partie implements PartieInterface {
     }
 
     public int getAnzahlSpieler() {
-        return anzahlSpieler;
+        return this.anzahlSpieler;
     }
 
     public void setAnzahlSpieler(int anzahlSpieler) {
@@ -156,7 +156,7 @@ public class Partie implements PartieInterface {
     }
 
     public int getAnzahlSpielerCounter() {
-        return anzahlSpielerCounter;
+        return this.anzahlSpielerCounter;
     }
 
     public void setAnzahlSpielerCounter(int anzahlSpielerCounter) {
@@ -164,7 +164,7 @@ public class Partie implements PartieInterface {
     }
 
     public int getAktuellerSpieler() {
-        return aktuellerSpieler;
+        return this.aktuellerSpieler;
     }
 
     public void setAktuellerSpieler(int aktuellerSpieler) {
@@ -172,7 +172,7 @@ public class Partie implements PartieInterface {
     }
 
     public int getRunde() {
-        return runde;
+        return this.runde;
     }
 
     public void setRunde(int runde) {
@@ -180,7 +180,7 @@ public class Partie implements PartieInterface {
     }
 
     public SoundInterface getSound() {
-        return sound;
+        return this.sound;
     }
 
     public void setSound(SoundInterface sound) {

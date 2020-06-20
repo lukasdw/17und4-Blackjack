@@ -143,9 +143,9 @@ public class GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonLobbyAnzahlSpielerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLobbyAnzahlSpielerActionPerformed
-        server = new Server(Integer.parseInt(TextFieldPort.getText()), TextFieldServername.getText());
-        server.spielerSuchen();
-        server.spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
+        this.server = new Server(Integer.parseInt(TextFieldPort.getText()), TextFieldServername.getText());
+        this.server.spielerSuchen();
+        this.server.spieleZurLobbyTabelleHinzugefuegen(jTableSpieler);
         jLabelServerstatus.setText(server.getSpielername() + "ist dem Server beigetreten.");
     }//GEN-LAST:event_ButtonLobbyAnzahlSpielerActionPerformed
 

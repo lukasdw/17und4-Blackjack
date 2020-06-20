@@ -21,86 +21,86 @@ public class ClientController {
     
     // Getter und Setter (Controller)
     public void jederZiehtZweiKarten() {
-        model.jederZiehtZweiKarten();
+        this.model.jederZiehtZweiKarten();
     }
 
     public void deckEinlesen(String datei) {
-        model.deckEinlesen(datei);
+        this.model.deckEinlesen(datei);
     }
 
     public void spielerNamenEingeben(String spielername) {
-        model.spielerNamenEingeben(spielername);
+        this.model.spielerNamenEingeben(spielername);
     }
 
     public void nächsterSpieler() {
-        model.nächsterSpieler();
+        this.model.nächsterSpieler();
     }
 
     public void highscoreAktuallisieren(JTable jTableTabelle) {
-        model.highscoreAktuallisieren(jTableTabelle);
+        this.model.highscoreAktuallisieren(jTableTabelle);
     }
 
     public NetzwerkInterface getEtc() {
-        return model.getEtc();
+        return this.model.getEtc();
     }
 
     public void setEtc(NetzwerkInterface etc) {
-        model.setEtc(etc);
+        this.model.setEtc(etc);
     }
 
     public ArrayList<KarteInterface> getDeck() {
-        return model.getDeck();
+        return this.model.getDeck();
     }
 
     public void setDeck(ArrayList<KarteInterface> deck) {
-        model.setDeck(deck);
+        this.model.setDeck(deck);
     }
 
     public ArrayList<SpielerInterface> getSpieler() {
-        return model.getSpieler();
+        return this.model.getSpieler();
     }
 
     public void setSpieler(ArrayList<SpielerInterface> spieler) {
-        model.setSpieler(spieler);
+        this.model.setSpieler(spieler);
     }
 
     public int getAnzahlSpieler() {
-        return model.getAnzahlSpieler();
+        return this.model.getAnzahlSpieler();
     }
 
     public void setAnzahlSpieler(int anzahlSpieler) {
-        model.setAnzahlSpieler(anzahlSpieler);
+        this.model.setAnzahlSpieler(anzahlSpieler);
     }
 
     public int getAnzahlSpielerCounter() {
-        return model.getAnzahlSpielerCounter();
+        return this.model.getAnzahlSpielerCounter();
     }
 
     public void setAnzahlSpielerCounter(int anzahlSpielerCounter) {
-        model.setAnzahlSpielerCounter(anzahlSpielerCounter);
+        this.model.setAnzahlSpielerCounter(anzahlSpielerCounter);
     }
 
     public int getAktuellerSpieler() {
-        return model.getAktuellerSpieler();
+        return this.model.getAktuellerSpieler();
     }
 
     public void setAktuellerSpieler(int aktuellerSpieler) {
-        model.setAktuellerSpieler(aktuellerSpieler);
+        this.model.setAktuellerSpieler(aktuellerSpieler);
     }
 
     public int getRunde() {
-        return model.getRunde();
+        return this.model.getRunde();
     }
 
     public void setRunde(int runde) {
-        model.setRunde(runde);
+        this.model.setRunde(runde);
     }
 
     public SoundInterface getSound() {
-        return model.getSound();
+        return this.model.getSound();
     }
 
     public void setSound(SoundInterface sound) {
-        model.setSound(sound);
-    }   
+        this.model.setSound(sound);
+    }
 }
