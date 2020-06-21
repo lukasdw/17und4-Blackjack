@@ -1586,7 +1586,7 @@ public class GUI extends javax.swing.JFrame {
             if (this.controller.getAktuellerSpieler() == this.controller.getAnzahlSpieler() - 1) {
                 starteRunde2_KartenZiehen();
             } else {
-                this.controller.nächsterSpieler();
+                this.controller.naechsterSpieler();
                 spielerTextfeldAnzeigeUpdaten();
             }
         } else {
@@ -1612,7 +1612,7 @@ public class GUI extends javax.swing.JFrame {
             KartenBilderUpdaten_alleKarten();
             starteRunde3_gewinnerAusgeben();
         } else {
-            this.controller.nächsterSpieler();
+            this.controller.naechsterSpieler();
             KartenBilderUpdaten_aktuellerSpieler();
             spielerTextfeldAnzeigeUpdaten();
         }

@@ -84,7 +84,7 @@ public class Partie implements PartieInterface {
     }
 
     /* Wenn der Spieler die Runde beendet, ist der nächste Spieler am Zug. */
-    public void nächsterSpieler() {
+    public void naechsterSpieler() {
         this.aktuellerSpieler++;
     }
 
